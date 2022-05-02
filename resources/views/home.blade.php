@@ -28,7 +28,7 @@
         <div class="container">
             <h3 class="text-center">Top Holiday Deals</h3>
             <div class="row">
-                <div class="col">
+                <div class="col-lg">
                     <div class="card">
                             <img src="{{ asset('index.jpeg') }}" alt=""  class="card-img-top">
                         <div class="card-body">
@@ -45,7 +45,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col">
+                <div class="col-lg">
                     <div class="card">
                             <img src="{{ asset('index.jpeg') }}" alt=""  class="card-img-top">
                         <div class="card-body">
@@ -62,7 +62,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col">
+                <div class="col-lg">
                     <div class="card">
                             <img src="{{ asset('index.jpeg') }}" alt=""  class="card-img-top">
                         <div class="card-body">
@@ -87,7 +87,7 @@
         <div class="container">
             <h5 class="text-center"> <script type="text/javascript"> document.write( new Date().getFullYear());</script> LEGENDARY DEALS - YOU CAN'T AFFORD TO MISS</h5>
             <div class="row">
-                <div class="col">
+                <div class="col-lg">
                     <div class="card">
                             <img src="{{ asset('index.jpeg') }}" alt=""  class="card-img-top">
                         <div class="card-body">
@@ -98,7 +98,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col">
+                <div class="col-lg">
                     <div class="card">
                             <img src="{{ asset('index.jpeg') }}" alt=""  class="card-img-top">
                         <div class="card-body">
@@ -109,7 +109,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col">
+                <div class="col-lg">
                     <div class="card">
                             <img src="{{ asset('index.jpeg') }}" alt=""  class="card-img-top">
                         <div class="card-body">

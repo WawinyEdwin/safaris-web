@@ -17,6 +17,8 @@
 
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
         
         <style>
             body {
@@ -31,6 +33,7 @@
 
             .safari {
                 list-style-type: square;
+                color: #28a745;
             }
 
             .carousel-item {
@@ -47,7 +50,7 @@
             <div class="container">
                 <a href="{{ url('/')}}" class="navbar-brand text-white">Safaris</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar">
-                    <span class="navbar-toggler-icon bg-white"></span>
+                <i class="bi bi-list text-white"></i>
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbar">
@@ -57,7 +60,7 @@
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Kenya Tours
                             </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <div class="dropdown-menu bg-success text-white" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="#">Camping Safaris</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#">Lodges</a>
@@ -139,11 +142,11 @@
                 </div>
                     <div >
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">Phone - +2547 598 888</li>
+                        <li class="nav-item"><i class="bi bi-telephone-outbound text-success"></i> +2547 598 888</li>
                         <li class="nav-item">
-                            <i class="fa fa-facebook"></i>
-                            <i class="fa fa-twitter"></i>
-                            <i class="fa fa-instagram"></i>
+                            <i class="bi bi-facebook text-success"></i>
+                            <i class="bi bi-twitter text-success"></i>
+                            <i class="bi bi-instagram text-success"></i>
                         </li>
                     </ul>             
                     </div>
@@ -159,24 +162,24 @@
                     <!-- <div class="row"> -->
                         <!-- <div class="col"> -->
                             <ul class="safari">
-                                <li><a href="{{ route('about') }}">About Us</a></li>
-                                <li><a href="{{ route('about') }}">Choose Us</a></li>
-                                <li><a href="{{ route('testimony') }}">Testimonials</a></li>
-                                <li><a href="{{ route('affiliation') }}">Affiliations</a></li>
-                                <li><a href="{{ route('help') }}">Help</a></li>
-                                <li><a href="{{ route('travel') }}">Travel Info</a></li>
-                                <li><a href="{{ route('policy') }}">Privacy Policy</a></li>
+                                <li><a href="{{ route('about') }}" class="text-success">About Us</a></li>
+                                <li><a href="{{ route('about') }}"class="text-success">Choose Us</a></li>
+                                <li><a href="{{ route('testimony') }}" class="text-success">Testimonials</a></li>
+                                <li><a href="{{ route('affiliation') }}" class="text-success">Affiliations</a></li>
+                                <li><a href="{{ route('help') }}" class="text-success">Help</a></li>
+                                <li><a href="{{ route('travel') }}" class="text-success">Travel Info</a></li>
+                                <li><a href="{{ route('policy') }}" class="text-success">Privacy Policy</a></li>
                             </ul>
                         <!-- </div> -->
                         <!-- <div class="col"> -->
                             <ul class="safari">
-                                <li><a href="{{ route('careers') }}">Careers</a></li>
-                                <li><a href="{{ route('media') }}">In the Media</a></li>
-                                <li><a href="{{ route('awards') }}">Awards</a></li>
-                                <li><a href="{{ route('videos') }}">Safari Videos</a></li>
-                                <li><a href="{{ route('faqs') }}">FAQs</a></li>
-                                <li><a href="{{ route('team') }}">Our Team</a></li>
-                                <li><a href="{{ route('contact') }}">Contact Us</a></li>
+                                <li><a href="{{ route('careers') }}" class="text-success">Careers</a></li>
+                                <li><a href="{{ route('media') }}" class="text-success">In the Media</a></li>
+                                <li><a href="{{ route('awards') }}" class="text-success">Awards</a></li>
+                                <li><a href="{{ route('videos') }}" class="text-success">Safari Videos</a></li>
+                                <li><a href="{{ route('faqs') }}" class="text-success">FAQs</a></li>
+                                <li><a href="{{ route('team') }}" class="text-success">Our Team</a></li>
+                                <li><a href="{{ route('contact') }}" class="text-success">Contact Us</a></li>
                             </ul>
                         <!-- </div> -->
                     <!-- </div> -->
@@ -214,7 +217,7 @@
         <br>
         <footer class="footer footer-expand-lg ">
                 <div class="text-center">
-                    <p class="lead" id="year"> <script type="text/javascript"> document.write( new Date().getFullYear());</script> | Safaris Limited.</p>
+                    <p class="lead text-success" id="year"> <script type="text/javascript"> document.write( new Date().getFullYear());</script> | Safaris Limited.</p>
                 </div>
         </footer>
 

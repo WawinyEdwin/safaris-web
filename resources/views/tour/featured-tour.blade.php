@@ -18,9 +18,9 @@
     <br>
     <br>
     <div class="row">
-        <div class="col-7">
+        <div class="col-lg-7 col-sm-12">
             <div class="card">
-                <h5 class="text-center">Lake Elementatita Deals | 2days, 1 Night</h5>
+                <h5 class="text-center pt-2">Lake Elementatita Deals | 2days, 1 Night</h5>
                 <div class="card-body">
                     <table class="table table-responsive">
                         <thead>
@@ -60,7 +60,7 @@
                 <br>
             </div>
         </div>
-        <div class="col">
+        <div class="col-lg">
             
             <div class="card mb-3">
 
@@ -69,7 +69,7 @@
                     <hr>
                     <div class="row no gutters">
                         <div class="col">
-                            <img src="" alt="" class="card-img">
+                            <img src="{{ asset('index.jpeg') }}" alt="" class="card-img">
                         </div>
                         <div class="col">
                             <p>5 days, 4 nights</p>
@@ -79,7 +79,7 @@
                     <hr>
                     <div class="row no gutters">
                         <div class="col">
-                            <img src="" alt="" class="card-img">
+                            <img src="{{ asset('index.jpeg') }}" alt="" class="card-img">
                         </div>
                         <div class="col">
                             <p>5 days, 4 nights</p>
@@ -89,7 +89,7 @@
                     <hr>
                     <div class="row no gutters">
                         <div class="col">
-                            <img src="" alt="" class="card-img">
+                            <img src="{{ asset('index.jpeg') }}" alt="" class="card-img">
                         </div>
                         <div class="col">
                             <p>5 days, 4 nights</p>
@@ -105,7 +105,7 @@
                     <p class="card-text">We would be more than happy to help, our travel consultants are always available 24/7
                         for a chat/call,
                         <br>
-                        <i class="fa fa-phone"></i> 0723 344 567
+                        <i class="bi bi-phone text-success"></i> 0723 344 567
                     </p>
                 </div>
             </div>
