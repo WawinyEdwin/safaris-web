@@ -40,7 +40,7 @@ Route::resource('bookings', BookingController::class);
 
 Route::resource('tours', ToursController::class);
 
-Route::get('/featured', HomeController::class, 'featured')->name('featured');
+Route::get('/featured', [HomeController::class, 'featured'])->name('featured');
 
 
 Route::get('send-mail', function() {
