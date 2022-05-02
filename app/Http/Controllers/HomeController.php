@@ -65,4 +65,8 @@ class HomeController extends Controller
     {
         return view('admin.home');
     }
+
+    public function featured() {
+        return view('tour.featured-tour');
+    }
 }
