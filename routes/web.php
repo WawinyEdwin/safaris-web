@@ -32,7 +32,7 @@ Route::get('/travel-info', [HomeController::class, 'travel'])->name('travel');
 Route::get('/affiliation', [HomeController::class, 'affiliation'])->name('affiliation');
 Route::get('/media', [HomeController::class, 'media'])->name('media');
 Route::get('/videos', [HomeController::class, 'videos'])->name('videos');
-
+Route::get('/blog', [HomeController::class, 'blog'])->name('blog');
 
 Route::get('/admin', [ToursController::class, 'index'])->name('admin');
 
@@ -40,7 +40,10 @@ Route::resource('bookings', BookingController::class);
 
 Route::resource('tours', ToursController::class);
 
+Route::get('/tour/{category}', [ToursController::class, 'tours'])->name('tour');
+
 Route::get('/featured', [HomeController::class, 'featured'])->name('featured');
+// Route::get('/category', [HomeController::class, 'featured'])->name('featured');
 
 
 Route::get('send-mail', function() {

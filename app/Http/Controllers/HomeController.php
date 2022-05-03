@@ -3,12 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Tours;
 
 class HomeController extends Controller
 {
     //index page
     public function index() {
-        return view('home');
+
+        $tours = Tours::all();
+
+        return view('home', ['tours' => $tours]);
     }
 
     public function about()
@@ -69,4 +73,18 @@ class HomeController extends Controller
     public function featured() {
         return view('tour.featured-tour');
     }
+    
+    public function contact() {
+        return view('safaris.contact-us');
+    }
+
+    public function blog() {
+        return view('safaris.blog');
+    }
+    // public function tours($category) {
+      
+    //     $tours =  Tours::where('category', $category);
+ 
+    //     return view('tour.category', [$tours => 'tours']);
+    //  }
 }

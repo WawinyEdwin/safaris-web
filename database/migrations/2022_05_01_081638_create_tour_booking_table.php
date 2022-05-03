@@ -21,8 +21,8 @@ return new class extends Migration
             $table->string('phone_number');
             $table->string('country');
             $table->date('arrival_date');
-            $table->int('adults');
-            $table->int('kids');
+            $table->string('adults');
+            $table->string('kids');
             $table->text('special_requirements');
             $table->timestamps();
         });

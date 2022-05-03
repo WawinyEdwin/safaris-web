@@ -2,10 +2,8 @@
 
 @section('content')
 
-<br>
-
-    <div class="">
-        <table class="table">
+<div class="table-responsive">
+        <table class="table  ">
             <thead>
                 <th scope="col">Id</th>
                 <th scope="col">Category</th>
@@ -29,7 +27,7 @@
                     <td>{{ $tour->single_room }}</td>
                     <td>{{ $tour->meals }}</td>
                     <td>
-                    <img src="{{ $tour->image }}" alt="" style="width: 200px;">
+                        <img src="{{ $tour->image }}" alt="" style="width: 200px;">
                     </td>
                     <td>
                         <form action="{{ route('tours.destroy', $tour->id) }}" method="post">
@@ -48,8 +46,6 @@
             </tbody>
         </table>
     </div>
-    <br>
 
-    {{ $tours->links() }}
-
+    <hr>
 @endsection

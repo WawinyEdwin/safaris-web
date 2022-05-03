@@ -19,6 +19,7 @@ return new class extends Migration
             $table->text('transport');
             $table->text('per_person_sharing');
             $table->text('single_room');
+            $table->text('category');
             $table->text('meals');
             $table->text('image');
             $table->timestamps();

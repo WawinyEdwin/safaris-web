@@ -15,12 +15,10 @@ class ToursController extends Controller
      */
     public function index()
     {
-        //
-        $bookings = Booking::latest()->paginate(5);
-        return view('admin.home', compact('bookings'))->with('i', (request()->input('page', 1) - 1) * 5);
-
-        $tours = Tours::latest()->paginate(5);
+        
+        $tours = Tours::latest()->paginate(20);
         return view('admin.home', compact('tours'))->with('i', (request()->input('page', 1) - 1) * 5);
+        // return view('tours.index', ['tours' => $tours]);
     }
 
     /**
@@ -42,25 +40,32 @@ class ToursController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // //
         $request->validate([
             'hotel' => 'required',
             'transport' => 'required',
-            'image' => 'required | jpg, jpeg, png',
+            'image' => 'required',
             'single_room' => 'required',
+            'per_person_sharing' => 'required',
             'meals' => 'required',
             'category' => 'required'
         ]);
 
-        $newImg = 
+       
 
+        $tours = new Tours;
+        $path = $request->image->store('images', 'public');
+        $tours->hotel = $request->hotel;
+        $tours->transport = $request->transport;
+        $tours->single_room = $request->single_room;
+        $tours->meals = $request->meals;
+        $tours->category = $request->category;
+        $tours->per_person_sharing = $request->per_person_sharing;
+        $tours->image = $path;
 
+        $tours->save();
 
-
-
-        Tours::create($request->all());
-
-        return redirect()->route('admin.tours')->with('success', 'You Added a Tour.');
+        return redirect()->route('tours.index')->with('success', 'You Added a Tour.');
     }
 
     /**
@@ -72,7 +77,7 @@ class ToursController extends Controller
     public function show(Tours $tours)
     {
         //
-        return view('tours.show');
+        return view('tours.show', compact('tours'), ['tours' => $tours]);
     }
 
     /**
@@ -84,7 +89,7 @@ class ToursController extends Controller
     public function edit(Tours $tours)
     {
         //
-        return view('tours.edit');
+        return view('tours.edit', compact('tours'), ['tours' => $tours]);
         
     }
 
@@ -95,18 +100,32 @@ class ToursController extends Controller
      * @param  \App\Models\Tours  $tours
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Tours $tours)
+    public function update(Request $request, Tours $tours, $id)
     {
         //
+
         $request->validate([
             'hotel' => 'required',
             'transport' => 'required',
-            'per_person_sharing' => 'required',
+            'image' => 'required | jpg, jpeg, png',
             'single_room' => 'required',
+            'per_person_sharing' => 'required',
             'meals' => 'required',
+            'category' => 'required'
         ]);
 
-        Tours::create($request->all());
+        $tours = new Tours;
+        $tours = Tours::find($id);
+        $path = $request->image->store('images', 'public');
+        $tours->hotel = $request->hotel;
+        $tours->transport = $request->transport;
+        $tours->single_room = $request->single_room;
+        $tours->meals = $request->meals;
+        $tours->category = $request->category;
+        $tours->per_person_sharing = $request->per_person_sharing;
+        $tours->image = $path;
+
+        $tours->update();
 
         return redirect()->route('admin.tours')->with('success', 'You Updated a Tour.');
     }
@@ -122,6 +141,13 @@ class ToursController extends Controller
         //
         $tours->delete();
 
-        return redirect()->route('admin.tours')->with('success', 'You Deleted a Tour.');
+        return redirect()->route('admin')->with('success', 'You Deleted a Tour.');
     }
+
+    public function tours($category) {
+      
+        $tours =  Tours::where('category', $category)->get();
+ 
+        return view('tour.category', ['tours' => $tours], ['category' => $category]);
+     }
 }

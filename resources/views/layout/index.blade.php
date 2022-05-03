@@ -40,9 +40,18 @@
                 height: 500px;
             }
 
-            /* ul {
-                list-style-type: bullets;
-            } */
+            .carousel {
+                height: 500px;
+            }
+
+ 
+
+        .carousel-item img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            min-height: 500px;
+        }
         </style>
     </head>
     <body>
@@ -55,54 +64,13 @@
 
                 <div class="collapse navbar-collapse" id="navbar">
                     <div class="navbar-nav">
-                        <li class="nav-item active"><a href="" class="nav-link">Home</a></li>
-                        <li class="nav-item dropdown"> 
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Kenya Tours
-                            </a>
-                            <div class="dropdown-menu bg-success text-white" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#">Camping Safaris</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Lodges</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Walking</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Flight Safaris</a>
-                            </div>
-                        </li>
-                        <li class="nav-item dropdown"> 
-                            <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Season Holidays
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#">Camping Safaris</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Lodges</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Walking</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Flight Safaris</a>
-                            </div>
-                        </li>
-                        <li class="nav-item dropdown"> 
-                            <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Honey Moons
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#">Camping Safaris</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Lodges</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Walking</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Flight Safaris</a>
-                            </div>
-                        </li>
-                        <li class="nav-item dropdown"> 
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        
+                        <li class="nav-item active"><a href="{{ url('/') }}" class="nav-link">Home</a></li>
+                        <li class="nav-item "> 
+                            <a class="nav-link dropdown-toggle" href="{{ route('tour', 'topDeals') }}" >
                                 Top Deals
                             </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <!-- <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="#">Camping Safaris</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#">Lodges</a>
@@ -110,15 +78,59 @@
                                 <a class="dropdown-item" href="#">Walking</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#">Flight Safaris</a>
-                            </div>
+                            </div> -->
                         </li>
+                        <li class="nav-item "> 
+                            <a class="nav-link dropdown-toggle" href="{{ route('tour', 'KenyanTours' ) }}">
+                                Kenya Tours
+                            </a>
+                            <!-- <div class="dropdown-menu bg-success text-white" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{ route('tour', 'kenyaTours') }}">Camping Safaris</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="{{ route('tour', 'kenyaTours') }}">Lodges</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="{{ route('tour', 'kenyaTours') }}">Walking</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="{{ route('tour', 'kenyaTours') }}">Flight Safaris</a>
+                            </div> -->
+                        </li>
+                        <li class="nav-item"> 
+                            <a class="nav-link dropdown-toggle" href="{{ route('tour', 'HoneyMoons') }}">
+                                Honey Moons
+                            </a>
+                            <!-- <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="#">Camping Safaris</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Lodges</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Walking</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Flight Safaris</a>
+                            </div> -->
+                        </li>
+                        <li class="nav-item "> 
+                            <a class="nav-link dropdown-toggle" href="{{ route('tour', 'seasonHolidays') }}" >
+                            Season Holidays
+                            </a>
+                            <!-- <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="#">Camping Safaris</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Lodges</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Walking</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Flight Safaris</a>
+                            </div> -->
+                        </li>
+                        
+                       
                         <li class="nav-item"> 
                             <a class="nav-link btn btn-outline-light" href="{{ route('contact') }}">
                                 Contact
                             </a>
                         </li>
                         <li class="nav-item"> 
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="{{ route('blog') }}">
                                 Blog
                             </a>
                         </li>
@@ -142,10 +154,10 @@
                 </div>
                     <div >
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item"><i class="bi bi-telephone-outbound text-success"></i> +2547 598 888</li>
+                        <li class="nav-item"><i class="bi bi-telephone-outbound text-success"></i> +2547 598 888 / +2547 456 765</li>
                         <li class="nav-item">
                             <i class="bi bi-facebook text-success"></i>
-                            <i class="bi bi-twitter text-success"></i>
+                            <i class="bi bi-twitter text-primary"></i>
                             <i class="bi bi-instagram text-success"></i>
                         </li>
                     </ul>             
@@ -156,6 +168,7 @@
         @yield('content')
 
         <br>
+        <hr>
         <div class="container">
             <div class="row">
                 <div class="col">
@@ -222,7 +235,7 @@
         </footer>
 
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
 
             <!--Start of Tawk.to Script-->
         <script type="text/javascript">

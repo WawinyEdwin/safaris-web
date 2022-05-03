@@ -19,114 +19,79 @@
 
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
         <style>
-            .wrapper {
-                display: flex;
-                width: 100%;
-                align-items: stretch;
+
+body {
+                font-family: 'Josefin Sans', sans-serif;
             }
 
-            a, a:hover, a:focus {
-                text-decoration: none;
-                color: inherit;
-                transition: all 0.3s;
+            a {
+                color: #ffffff;
             }
-
-            #sidebar {
-                min-width: 250px;
-                max-width: 250px;
-                min-height: 100vh;
-                transition: all 0.3s;
-                background: #7386D5;
-                color: #fff;
-            }
-
-            #sidebar ul .components {
-                padding: 20px 0;
-                border-bottom: 1px solid #47748b;
-            }
-
-            #sidebar ul li a {
-                padding: 10px;
-                font-size: 1.1rem;
-                display: block;
-            }
-
-            #sidebar ul li a:hover {
-                color: #7386d5;
-                background: #fff;
-            }
-
-            ul {
-                list-style-type: none;
-            }
-
-
-            ul ul a {
-                font-size: 0.9rem !important;
-                padding-left: 30px !important;
-                background: #6d7fcc;
-            }
-
-            #sidebar ul p {
-                color: #fff;
-                padding: 10px;
-            }
-
-            #sidebar .active {
-                margin-left: -250px;
-            }
-
-            #sidebar ul li:active > a, a[aria-expanded="true"] {
-                color: #fff;
-                background: #6d7fcc;
-            }
-
-            @media (max-width: 768px) {
-                #sidebar {
-                    margin-left: -250px;
-                }
-                #sidebar .active {
-                    margin-left: 0;
-                }
-            }
+           
         </style>
     </head>
     <body>
 
-    <nav class="navbar navbar-expand-lg bg-dark text-white">
-        <a href="" class="navbar-brand">Safaris</a>
+    <nav class="navbar navbar-expand-lg bg-success text-white">
+        <a href="" class="navbar-brand">Safaris Admin</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupported" aria-controls="navbarSupported" aria-expanded="false" aria-label="Toggle Navigation">
-            <span class="navbar-toggler-icon"></span>
+            
         </button>
         <div class="collapse navbar-collapse" id="navbarSupported">
-            <ul class="navbar-nav mr-auto">
-                    <li class=" nav-item active">
-                        <a href="" class="nav-link">Home</a>
-                    </li>
+            <ul class="navbar-nav ">
                     <li class="nav-item">
-                        <a href="{{ route('bookings.index') }}" class="nav-link">Bookings</a>
+                        <a href="{{ route('bookings.index') }}" class="nav-link ">Bookings</a>
                     </li>
                     <li class="nav-item">
                         <a href="{{ route('tours.index') }}" class="nav-link">Tours</a>
                     </li>
-                    <li class="nav-item">
-                        <a href="{{ route('tours.index') }}" class="nav-link">Holidays</a>
+                    <!-- <li class="nav-item">
+                        <a href="{{ route('tour', 'seasonHolidays') }}" class="nav-link">Holidays</a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ route('tours.index') }}" class="nav-link">Top Deals</a>
+                        <a href="{{ route('tour', 'topDeals') }}" class="nav-link">Top Deals</a>
                     </li>
+                    <li class="nav-item">
+                        <a href="{{ route('tour', 'HoneyMoon') }}" class="nav-link">Honey Moon</a>
+                    </li> -->
             </ul>
             <ul class=" navbar-nav ml-auto">
                 <li  class="nav-item">Logout</li>
             </ul>
         </div>
     </nav>
+
     <div class="container">
+        <div class="row">
+
+            <div class="col">
+                <div class="card-body">
+                    <h5 class="card-title">Tours</h5>
+                    <p class="card-text">Easily Manage Tours, For your Users</p>
+                    <a href="{{ route('tours.create') }}" class="btn btn-success">NEW TOUR</a>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card-body">
+                    <h5 class="card-title">Bookings</h5>
+                    <p class="card-text">Easily Manage Bookings, For your Users</p>
+                    <a href="{{ route('bookings.index') }}" class="btn btn-success">Bookings</a>
+                </div>
+            </div>
+        </div>
+<hr>
         @yield('content')
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+    <br>
+    <footer class="footer footer-expand-lg  bg-success text-white">
+                <div class="text-center">
+                    <p class="lead " id="year"> <script type="text/javascript"> document.write( new Date().getFullYear());</script> | Safaris Limited.</p>
+                </div>
+        </footer>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
 
 </body>
 

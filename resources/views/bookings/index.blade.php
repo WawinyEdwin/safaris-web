@@ -1,4 +1,4 @@
-@extends('layout.index')
+@extends('layout.admin')
 
 @section('content')
 
@@ -7,14 +7,15 @@
 <div class="container">
 <div class="col-lg-12">
         <div class="text-left">
-            <h2>Available Tours</h2>
+            <h2>Bookings</h2>
         </div>
         <div class="text-right">
-            <a href="{{ route('tours.create') }}" class="btn btn-success">Add Tour</a>
+            <a href="{{ route('tours.create') }}" class="btn btn-success">Add Booking</a>
         </div>
     </div>
-    <div class="">
-        <table class="table">
+    <br>
+    <div class="table-responsive">
+        <table class="table ">
             <thead>
                 <th scope="col">Id</th>
                 <th scope="col">First Name</th>
@@ -25,8 +26,6 @@
                 <th scope="col">Kids</th>
                 <th scope="col">Arrival Date</th>
                 <th scope="col">special_requirements</th>
-                <th scope="col">Charges</th>
-                <th scope="col">Destination</th>
                 <th>Action</th>
             </thead>
             <tbody>
@@ -41,18 +40,21 @@
                     <td>{{ $booking->kids }}</td>
                     <td>{{ $booking->arrival_date }}</td>
                     <td>{{ $booking->special_requirements }}</td>
-                    <td>{{ $booking->charges }}</td>
+                
                     <td>
-                        <a href="{{ route('bookings.edit') }}" class="btn btn-primary">Edit</a>
+                        <a href="{{ route('bookings.edit', $booking->id ) }}" class="btn btn-primary">Edit</a>
+                    </td>
+                    <td>
+                        <a href="{{ route('bookings.show', $booking->id ) }}" class="btn btn-info">Show</a>
                     </td>
                 </tr>
                 @endforeach
             </tbody>
         </table>
 
-        {{ !!$bookings->links() !!}}
+      
     </div>
 </div>
-
+{{ $bookings->links() }}
 <hr>
 @endsection

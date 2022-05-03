@@ -8,10 +8,10 @@
       <img class="d-block w-100" src="{{ asset('index.jpeg') }}" alt="First slide">
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="{{ asset('index.jpeg') }}" alt="Second slide">
+      <img class="d-block w-100" src="{{ asset('image1.jpg') }}" alt="Second slide">
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="{{ asset('index.jpeg') }}" alt="Third slide">
+      <img class="d-block w-100" src="{{ asset('image2.jpg') }}" alt="Third slide">
     </div>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -41,7 +41,7 @@
                             <small class="card-text">2days Resort & Spa</small>
                             <br>
                             <br>
-                            <a href="{{ route('featured') }}" class="btn btn-success">SEE ALL OFFERS</a>
+                            <a href="{{ route('tour', 'topDeals') }}" class="btn btn-success">SEE ALL OFFERS</a>
                         </div>
                     </div>
                 </div>
@@ -58,7 +58,7 @@
                             <small class="card-text">2days Resort & Spa</small>
                             <br>
                             <br>
-                            <a href="{{ route('featured') }}" class="btn btn-success">SEE ALL OFFERS</a>
+                            <a href="{{ route('tour', 'topDeals') }}" class="btn btn-success">SEE ALL OFFERS</a>
                         </div>
                     </div>
                 </div>
@@ -75,7 +75,7 @@
                             <small class="card-text">2days Resort & Spa</small>
                             <br>
                             <br>
-                            <a href="{{ route('featured') }}" class="btn btn-success">SEE ALL OFFERS</a>
+                            <a href="{{ route('tour', 'topDeals') }}" class="btn btn-success">SEE ALL OFFERS</a>
                         </div>
                     </div>
                 </div>
@@ -94,7 +94,7 @@
                             <h5 class="card-title">Nairobi Staycation Tour | 2022</h5>
                             <small class="card-text">Radison Hotel - KSH 24550</small>
                             <br> <br>
-                            <a href="" class="btn btn-success">SEE ALL TOUR OFFERS</a>
+                            <a href="{{ route('tour', 'seasonHolidays') }}" class="btn btn-success">SEE ALL TOUR OFFERS</a>
                         </div>
                     </div>
                 </div>
@@ -105,7 +105,7 @@
                             <h5 class="card-title">Nairobi Staycation Tour | 2022</h5>
                             <small class="card-text">Radison Hotel - KSH 24550</small>
                             <br> <br>
-                            <a href="" class="btn btn-success">SEE ALL TOUR OFFERS</a>
+                            <a href="{{ route('tour', 'seasonHolidays') }}" class="btn btn-success">SEE ALL TOUR OFFERS</a>
                         </div>
                     </div>
                 </div>
@@ -116,7 +116,7 @@
                             <h5 class="card-title">Nairobi Staycation Tour | 2022</h5>
                             <small class="card-text">Radison Hotel - KSH 24550</small>
                             <br> <br>
-                            <a href="" class="btn btn-success">SEE ALL TOUR OFFERS</a>
+                            <a href="{{ route('tour', 'seasonHolidays') }}" class="btn btn-success">SEE ALL TOUR OFFERS</a>
                         </div>
                     </div>
                 </div>
@@ -196,7 +196,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Fascinating HoneyMoon</h5>
                                     <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, dolores!</p>
-                                    <a href="" class="btn btn-success">Read More</a>
+                                    <a href="{{ route('tour', 'HoneyMoon') }}" class="btn btn-success">Explore</a>
                                 </div>
                             </div>
                         </div>
@@ -212,7 +212,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Fascinating HoneyMoon</h5>
                                     <p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos, sapiente.</p>
-                                    <a href="" class="btn btn-success">Read More</a>
+                                    <a href="{{ route('tour', 'HoneyMoon') }}" class="btn btn-success">Explore</a>
                                 </div>
                             </div>
                         </div>

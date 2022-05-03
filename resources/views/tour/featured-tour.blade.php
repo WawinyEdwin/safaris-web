@@ -4,14 +4,14 @@
 
 <div class=" bg-success navbar expand-lg ">
     <div class="container">
-    <p class="lead ">Home / Lake Elementatita Deals.</p>
+    <p class="lead text-white">Home / Lake Elementatita Deals.</p>
     </div>
    
 </div> 
 <br>
 <div class="container">
     <div>
-        <a href="" class="btn btn-success"> 
+        <a href="{{ route('bookings.create') }}" class="btn btn-success"> 
             Book Now
         </a>
     </div>
@@ -53,14 +53,14 @@
                 <br>
                
                 <div class="card-body">
-                    <a href="" class="btn btn-success"> 
+                    <a href="{{ route('bookings.create') }}" class="btn btn-success"> 
                         Book Now
                     </a>
                 </div>
                 <br>
             </div>
         </div>
-        <div class="col-lg">
+        <div class="col-lg-4 col-sm-12">
             
             <div class="card mb-3">
 
@@ -114,13 +114,13 @@
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Why Book With Us!</h5>
-                    <p><i class=""></i>1000+ Destinations</p>
+                    <p><i class="bi bi-geo-alt text-success"></i> 1000+ Destinations</p>
                     <small>Amazing places for you to explore</small>
                     <br>
-                    <p>Low Rates & Savings</p>
+                    <p><i class="bi bi-piggy-bank text-success"></i> Low Rates & Savings</p>
                     <small>Best Holidays at prices you like.</small>
                     <br>
-                    <p>Excellent Customer Care</p>
+                    <p><i class="bi bi-check2-circle text-success"></i> Excellent Customer Care</p>
                     <small>Always there to guide you all the way.</small>
                     <br>
                     

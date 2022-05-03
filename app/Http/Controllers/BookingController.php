@@ -12,11 +12,12 @@ class BookingController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+   
     public function index()
     {
         //
         $bookings = Booking::latest()->paginate(5);
-        return view('admin.bookings', compact('bookings'))->with('i', (request()->input('page', 1) - 1) * 5);
+        return view('bookings.index', compact('bookings'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     /**
@@ -40,21 +41,40 @@ class BookingController extends Controller
     public function store(Request $request)
     {
         
+        
         //
         $request->validate([
             'first_name' => 'required',
             'last_name' => 'required',
-            'email' => 'required',
             'phone_number' => 'required',
             'arrival_date' => 'required',
             'adults' => 'required',
             'kids' => 'required',
-
         ]);
 
-        Booking::create($request->all());
+        if($request->email1 == $request->email2 ) 
+        {
+            $email = $request->email1;
+        } else {
+           
+            return redirect()->route('bookings.create')->with('failure', 'please provide matching emails');
+        }
 
-        return redirect()->route('tours.bookings')->with('success', 'Booking has been successfull!');
+     
+        $booking = new Booking;
+        $booking->first_name = $request->first_name;
+        $booking->last_name = $request->last_name;
+        $booking->email = $email;
+        $booking->arrival_date = $request->arrival_date;
+        $booking->adults = $request->adults;
+        $booking->kids = $request->kids;
+        $booking->phone_number = $request->phone_number;
+        $booking->country = $request->country;
+        $booking->special_requirements = $request->special_requirements;
+
+        $booking->save();
+        
+        return redirect()->route('bookings.create')->with('success', 'Booking has been successfull!');
         
     }
 

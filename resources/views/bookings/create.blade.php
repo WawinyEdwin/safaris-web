@@ -4,10 +4,11 @@
 
 <div class=" bg-success navbar expand-lg ">
     <div class="container">
-    <p class="lead ">Home / Confirm Booking.</p>
+    <p class="lead "> <a href="{{ url('/') }}" class="text-white">Home </a>/ Confirm Booking.</p>
     </div>
    
 </div>
+<br>
 
 <div class="container">
     @if($errors->any())
@@ -20,8 +21,22 @@
         </ul>
     </div>
     @endif
+
+    @if($message = Session::get('failure'))
+    <div class="alert alert-info">
+        <p>{{ $message }}</p>
+    </div>
+    @endif
+
+    
+    @if($message = Session::get('success'))
+    <div class="alert alert-success">
+        <p>{{ $message }}</p>
+    </div>
+    @endif
+
 <div class="row">
-    <div class="col-7 mr-2">
+    <div class="col-lg-7 col-sm-12 mr-2">
         <div class="text-center">
         <p>Booking Information</p>
             <small>Please fill all the details correctly!</small>
@@ -31,6 +46,8 @@
         <div class="card-body">
            
         <form action="{{ route('bookings.store') }}" method="post" class="form-group">
+            @csrf 
+            @method('POST')
             <div class="row">
                 <div class="col">
                 <label for="first_name" class="form-label">First Name</label>
@@ -94,14 +111,14 @@
             </textarea>
 
             <br>
-            <button class="btn btn-success">
+            <button class="btn btn-success" type="submit" onSubmit=" alert('Success, you will recieve an email with further details')">
                 Confirm Booking
             </button>
         </form>
         </div>
         </div> 
     </div>
-    <div class="col-4">
+    <div class="col-lg-4 col-sm-12">
         <p class="text-center">Top Holiday Deals</p>
         <div class="card">
             <div class="">
