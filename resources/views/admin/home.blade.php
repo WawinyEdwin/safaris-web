@@ -4,6 +4,10 @@
 
 <br>
 
+<div class="text-left">
+            <h2>Tours</h2>
+        </div>
+
     <div class="table-responsive">
         <table class="table">
             <thead>
