@@ -55,3 +55,6 @@ Route::get('send-mail', function() {
     \Mail::to('crud3swift@gmail.com')->send( new \App\Mail\BookingMail($successMessage));
 
 });
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
