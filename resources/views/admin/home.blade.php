@@ -4,7 +4,7 @@
 
 <br>
 
-    <div class="">
+    <div class="table-responsive">
         <table class="table">
             <thead>
                 <th scope="col">Id</th>

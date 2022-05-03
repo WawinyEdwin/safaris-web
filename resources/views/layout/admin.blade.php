@@ -35,7 +35,7 @@ body {
     <nav class="navbar navbar-expand-lg bg-success text-white">
         <a href="" class="navbar-brand">Safaris Admin</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupported" aria-controls="navbarSupported" aria-expanded="false" aria-label="Toggle Navigation">
-            
+        <i class="bi bi-list text-white"></i>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupported">
             <ul class="navbar-nav ">
@@ -43,7 +43,7 @@ body {
                         <a href="{{ route('bookings.index') }}" class="nav-link ">Bookings</a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ route('tours.index') }}" class="nav-link">Tours</a>
+                        <a href="{{ route('admin') }}" class="nav-link">Tours</a>
                     </li>
                     <!-- <li class="nav-item">
                         <a href="{{ route('tour', 'seasonHolidays') }}" class="nav-link">Holidays</a>
