@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class=" bg-success navbar expand-lg ">
+<div class=" bg-primary navbar expand-lg ">
     <div class="container">
     <p class="lead "> <a href="{{ url('/') }}" class="text-white">Home </a>/ Confirm Booking.</p>
     </div>
@@ -111,7 +111,7 @@
             </textarea>
 
             <br>
-            <button class="btn btn-success" type="submit" onSubmit=" alert('Success, you will recieve an email with further details')">
+            <button class="btn btn-primary" type="submit" onSubmit=" alert('Success, you will recieve an email with further details')">
                 Confirm Booking
             </button>
         </form>

@@ -32,7 +32,7 @@ body {
     </head>
     <body>
 
-    <nav class="navbar navbar-expand-lg bg-success text-white">
+    <nav class="navbar navbar-expand-lg bg-primary text-white">
         <a href="" class="navbar-brand">Safaris Admin</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupported" aria-controls="navbarSupported" aria-expanded="false" aria-label="Toggle Navigation">
         <i class="bi bi-list text-white"></i>
@@ -68,14 +68,14 @@ body {
                 <div class="card-body">
                     <h5 class="card-title">Tours</h5>
                     <p class="card-text">Easily Manage Tours, For your Users</p>
-                    <a href="{{ route('tours.create') }}" class="btn btn-success">NEW TOUR</a>
+                    <a href="{{ route('tours.create') }}" class="btn btn-primary">NEW TOUR</a>
                 </div>
             </div>
             <div class="col">
                 <div class="card-body">
                     <h5 class="card-title">Bookings</h5>
                     <p class="card-text">Easily Manage Bookings, For your Users</p>
-                    <a href="{{ route('bookings.index') }}" class="btn btn-success">Bookings</a>
+                    <a href="{{ route('bookings.index') }}" class="btn btn-primary">Bookings</a>
                 </div>
             </div>
         </div>
@@ -84,7 +84,7 @@ body {
     </div>
 
     <br>
-    <footer class="footer footer-expand-lg  bg-success text-white">
+    <footer class="footer footer-expand-lg  bg-primary text-white">
                 <div class="text-center">
                     <p class="lead " id="year"> <script type="text/javascript"> document.write( new Date().getFullYear());</script> | Safaris Limited.</p>
                 </div>

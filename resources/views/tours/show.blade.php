@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class=" bg-success navbar expand-lg ">
+<div class=" bg-primary navbar expand-lg ">
     <div class="container">
     <p class="lead "> <a href="{{ url('/') }}" class="text-white">Home </a>/ Deals </p>
     </div>
@@ -13,7 +13,7 @@
     <div class="">
         <br>
         <div class="text-right">
-            <a href="{{ url('/') }}" class="btn btn-success">Back</a>
+            <a href="{{ url('/') }}" class="btn btn-primary">Back</a>
         </div>
         <div class="text-left">
             <p>Your Next Destination</p>
@@ -30,7 +30,7 @@
                     <li>Transport : {{ $tours->transport }}</li>
                     <li>Single Room : {{ $tours->single_room }}</li>
                     <li>Meals : {{ $tours->meals }}</li>
-                    <a href="{{ route('bookings.create', $tours->id ) }}" class="btn btn-success">Book Now</a>
+                    <a href="{{ route('bookings.create', $tours->id ) }}" class="btn btn-primary">Book Now</a>
                 </ul>
             </div>
         </div>

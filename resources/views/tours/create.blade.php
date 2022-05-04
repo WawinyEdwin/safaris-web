@@ -5,7 +5,7 @@
 <div class="">
     <div class="">
         <div class="text-right">
-            <a href="{{ route('admin') }}" class="btn btn-success">Back</a>
+            <a href="{{ route('admin') }}" class="btn btn-primary">Back</a>
         </div>
         <div class="text-left">
             <p>Add Tour</p>
@@ -61,7 +61,7 @@
                 </select>
             </div>
             <div class="text-center">
-                <button type="submit" class="btn btn-success" > 
+                <button type="submit" class="btn btn-primary" > 
                     Add Tour
                 </button>
             </div>

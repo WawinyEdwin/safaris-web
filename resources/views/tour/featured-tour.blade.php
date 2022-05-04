@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class=" bg-success navbar expand-lg ">
+<div class=" bg-primary navbar expand-lg ">
     <div class="container">
     <p class="lead text-white">Home / Lake Elementatita Deals.</p>
     </div>
@@ -11,7 +11,7 @@
 <br>
 <div class="container">
     <div>
-        <a href="{{ route('bookings.create') }}" class="btn btn-success"> 
+        <a href="{{ route('bookings.create') }}" class="btn btn-primary"> 
             Book Now
         </a>
     </div>
@@ -53,7 +53,7 @@
                 <br>
                
                 <div class="card-body">
-                    <a href="{{ route('bookings.create') }}" class="btn btn-success"> 
+                    <a href="{{ route('bookings.create') }}" class="btn btn-primary"> 
                         Book Now
                     </a>
                 </div>
@@ -65,7 +65,7 @@
             <div class="card mb-3">
 
                 <div class="card-body">
-                    <p class="text-success text-center">Top Holiday Deals</p>
+                    <p class="text-primary text-center">Top Holiday Deals</p>
                     <hr>
                     <div class="row no gutters">
                         <div class="col">
@@ -105,7 +105,7 @@
                     <p class="card-text">We would be more than happy to help, our travel consultants are always available 24/7
                         for a chat/call,
                         <br>
-                        <i class="bi bi-phone text-success"></i> 0723 344 567
+                        <i class="bi bi-phone text-primary"></i> 0723 344 567
                     </p>
                 </div>
             </div>
@@ -114,13 +114,13 @@
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Why Book With Us!</h5>
-                    <p><i class="bi bi-geo-alt text-success"></i> 1000+ Destinations</p>
+                    <p><i class="bi bi-geo-alt text-primary"></i> 1000+ Destinations</p>
                     <small>Amazing places for you to explore</small>
                     <br>
-                    <p><i class="bi bi-piggy-bank text-success"></i> Low Rates & Savings</p>
+                    <p><i class="bi bi-piggy-bank text-primary"></i> Low Rates & Savings</p>
                     <small>Best Holidays at prices you like.</small>
                     <br>
-                    <p><i class="bi bi-check2-circle text-success"></i> Excellent Customer Care</p>
+                    <p><i class="bi bi-check2-circle text-primary"></i> Excellent Customer Care</p>
                     <small>Always there to guide you all the way.</small>
                     <br>
                     

@@ -5,7 +5,7 @@
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img class="d-block w-100" src="{{ asset('index.jpeg') }}" alt="First slide">
+      <img class="d-block w-100" src="{{ asset('image1.jpg') }}" alt="First slide">
     </div>
     <div class="carousel-item">
       <img class="d-block w-100" src="{{ asset('image1.jpg') }}" alt="Second slide">
@@ -14,11 +14,11 @@
       <img class="d-block w-100" src="{{ asset('image2.jpg') }}" alt="Third slide">
     </div>
   </div>
-  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+  <a class="carousel-control-prev kala" href="#carouselExampleControls" role="button" data-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="sr-only">Previous</span>
   </a>
-  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+  <a class="carousel-control-next kala" href="#carouselExampleControls" role="button" data-slide="next">
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
   </a>
@@ -41,7 +41,7 @@
                             <small class="card-text">2days Resort & Spa</small>
                             <br>
                             <br>
-                            <a href="{{ route('tour', 'topDeals') }}" class="btn btn-success">SEE ALL OFFERS</a>
+                            <a href="{{ route('tour', 'topDeals') }}" class="btn btn-primary">SEE ALL OFFERS</a>
                         </div>
                     </div>
                 </div>
@@ -58,7 +58,7 @@
                             <small class="card-text">2days Resort & Spa</small>
                             <br>
                             <br>
-                            <a href="{{ route('tour', 'topDeals') }}" class="btn btn-success">SEE ALL OFFERS</a>
+                            <a href="{{ route('tour', 'topDeals') }}" class="btn btn-primary">SEE ALL OFFERS</a>
                         </div>
                     </div>
                 </div>
@@ -75,7 +75,7 @@
                             <small class="card-text">2days Resort & Spa</small>
                             <br>
                             <br>
-                            <a href="{{ route('tour', 'topDeals') }}" class="btn btn-success">SEE ALL OFFERS</a>
+                            <a href="{{ route('tour', 'topDeals') }}" class="btn btn-primary">SEE ALL OFFERS</a>
                         </div>
                     </div>
                 </div>
@@ -94,7 +94,7 @@
                             <h5 class="card-title">Nairobi Staycation Tour | 2022</h5>
                             <small class="card-text">Radison Hotel - KSH 24550</small>
                             <br> <br>
-                            <a href="{{ route('tour', 'seasonHolidays') }}" class="btn btn-success">SEE ALL TOUR OFFERS</a>
+                            <a href="{{ route('tour', 'seasonHolidays') }}" class="btn btn-primary">SEE ALL TOUR OFFERS</a>
                         </div>
                     </div>
                 </div>
@@ -105,7 +105,7 @@
                             <h5 class="card-title">Nairobi Staycation Tour | 2022</h5>
                             <small class="card-text">Radison Hotel - KSH 24550</small>
                             <br> <br>
-                            <a href="{{ route('tour', 'seasonHolidays') }}" class="btn btn-success">SEE ALL TOUR OFFERS</a>
+                            <a href="{{ route('tour', 'seasonHolidays') }}" class="btn btn-primary">SEE ALL TOUR OFFERS</a>
                         </div>
                     </div>
                 </div>
@@ -116,7 +116,7 @@
                             <h5 class="card-title">Nairobi Staycation Tour | 2022</h5>
                             <small class="card-text">Radison Hotel - KSH 24550</small>
                             <br> <br>
-                            <a href="{{ route('tour', 'seasonHolidays') }}" class="btn btn-success">SEE ALL TOUR OFFERS</a>
+                            <a href="{{ route('tour', 'seasonHolidays') }}" class="btn btn-primary">SEE ALL TOUR OFFERS</a>
                         </div>
                     </div>
                 </div>
@@ -137,7 +137,7 @@
                             <small class="card-text">From Ksh 45000 per person</small>
                             <br>
                             <br>
-                            <a href="{{ route('bookings.create') }}" class="btn btn-success">Book Now</a>
+                            <a href="{{ route('bookings.create') }}" class="btn btn-primary">Book Now</a>
                         </div>
                     </div>
                 </div>
@@ -150,7 +150,7 @@
                             <small class="card-text">From Ksh 45000 per person</small>
                             <br>
                             <br>
-                            <a href="{{ route('bookings.create') }}" class="btn btn-success">Book Now</a>
+                            <a href="{{ route('bookings.create') }}" class="btn btn-primary">Book Now</a>
                         </div>
                     </div>
                 </div>
@@ -163,7 +163,7 @@
                             <small class="card-text">From Ksh 45000 per person</small>
                             <br>
                             <br>
-                            <a href="{{ route('bookings.create') }}" class="btn btn-success">Book Now</a>
+                            <a href="{{ route('bookings.create') }}" class="btn btn-primary">Book Now</a>
                         </div>
                     </div>
                 </div>
@@ -176,7 +176,7 @@
                             <small class="card-text">From Ksh 45000 per person</small>
                             <br>
                             <br>
-                            <a href="{{ route('bookings.create') }}" class="btn btn-success">Book Now</a>
+                            <a href="{{ route('bookings.create') }}" class="btn btn-primary">Book Now</a>
                         </div>
                     </div>
                 </div>
@@ -196,7 +196,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Fascinating HoneyMoon</h5>
                                     <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, dolores!</p>
-                                    <a href="{{ route('tour', 'HoneyMoon') }}" class="btn btn-success">Explore</a>
+                                    <a href="{{ route('tour', 'HoneyMoon') }}" class="btn btn-primary">Explore</a>
                                 </div>
                             </div>
                         </div>
@@ -212,7 +212,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Fascinating HoneyMoon</h5>
                                     <p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos, sapiente.</p>
-                                    <a href="{{ route('tour', 'HoneyMoon') }}" class="btn btn-success">Explore</a>
+                                    <a href="{{ route('tour', 'HoneyMoon') }}" class="btn btn-primary">Explore</a>
                                 </div>
                             </div>
                         </div>

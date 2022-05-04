@@ -4,13 +4,13 @@
 
 
 
-<div class="container">
+<div class="container-fluid">
 <div class="col-lg-12">
         <div class="text-left">
             <h2>Bookings</h2>
         </div>
         <div class="text-right">
-            <a href="{{ route('tours.create') }}" class="btn btn-success">Add Booking</a>
+            <a href="{{ route('tours.create') }}" class="btn btn-primary">Add Booking</a>
         </div>
     </div>
     <br>
