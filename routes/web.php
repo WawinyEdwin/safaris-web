@@ -7,6 +7,7 @@ use App\Http\Controllers\BookingController;
 use App\Http\Controllers\ToursController;
 use App\Http\Controllers\HolidayController;
 use App\Http\Controllers\HoneyMoonController;
+use App\Http\Controllers\EnquiryController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,7 +23,7 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/about', [HomeController::class, 'about'])->name('about');
 Route::get('/careers', [HomeController::class, 'careers'])->name('careers');
 Route::get('/awards', [HomeController::class, 'awards'])->name('awards');
-Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
+// Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 Route::get('/faqs', [HomeController::class, 'faqs'])->name('faqs');
 Route::get('/help', [HomeController::class, 'help'])->name('help');
 Route::get('/team', [HomeController::class, 'team'])->name('team');
@@ -34,11 +35,13 @@ Route::get('/media', [HomeController::class, 'media'])->name('media');
 Route::get('/videos', [HomeController::class, 'videos'])->name('videos');
 Route::get('/blog', [HomeController::class, 'blog'])->name('blog');
 
-Route::get('/admin', [ToursController::class, 'index'])->name('admin');
+Route::get('/admin', [ToursController::class, 'index'])->name('admin')->middleware('auth');
 
 Route::resource('bookings', BookingController::class);
 
 Route::resource('tours', ToursController::class);
+
+Route::resource('enquiries', EnquiryController::class);
 
 Route::get('/tour/{category}', [ToursController::class, 'tours'])->name('tour');
 
@@ -57,4 +60,4 @@ Route::get('send-mail', function() {
 });
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

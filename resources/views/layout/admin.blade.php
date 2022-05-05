@@ -45,6 +45,9 @@ body {
                     <li class="nav-item">
                         <a href="{{ route('admin') }}" class="nav-link">Tours</a>
                     </li>
+                    <li class="nav-item">
+                        <a href="{{ route('enquiries.index') }}" class="nav-link">Customer Enquiries</a>
+                    </li>
                     <!-- <li class="nav-item">
                         <a href="{{ route('tour', 'seasonHolidays') }}" class="nav-link">Holidays</a>
                     </li>
@@ -55,9 +58,17 @@ body {
                         <a href="{{ route('tour', 'HoneyMoon') }}" class="nav-link">Honey Moon</a>
                     </li> -->
             </ul>
-            <ul class=" navbar-nav ml-auto">
-                <li  class="nav-item">Logout</li>
-            </ul>
+            <li class="nav-item">
+                    <a class="btn btn-light" href="{{ route('logout') }}"
+                        onclick="event.preventDefault();
+                        document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                    </a>
+
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
+            </li>
         </div>
     </nav>
 
@@ -68,7 +79,7 @@ body {
                 <div class="card-body">
                     <h5 class="card-title">Tours</h5>
                     <p class="card-text">Easily Manage Tours, For your Users</p>
-                    <a href="{{ route('tours.create') }}" class="btn btn-primary">NEW TOUR</a>
+                    <a href="{{ route('tours.create') }}" class="btn btn-primary">New Tour</a>
                 </div>
             </div>
             <div class="col">
@@ -76,6 +87,12 @@ body {
                     <h5 class="card-title">Bookings</h5>
                     <p class="card-text">Easily Manage Bookings, For your Users</p>
                     <a href="{{ route('bookings.index') }}" class="btn btn-primary">Bookings</a>
+                </div>
+            </div>
+            <div class="card-body">
+                    <h5 class="card-title">Enquiries</h5>
+                    <p class="card-text">Easily Manage Enquiries, For your Users</p>
+                    <a href="{{ route('enquiries.index') }}" class="btn btn-primary">Enquiries</a>
                 </div>
             </div>
         </div>

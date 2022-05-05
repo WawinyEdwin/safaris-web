@@ -9,24 +9,72 @@
    
 </div>
 
+<br>
 <div class="container">
-    <div class="row">
-        @foreach($tours as $tour)
-        <div class="col-lg">
-            <div class="card">
-                <img src="{{ asset('index.jpeg') }}" alt=""  class="card-img-top" style=" height: 200px">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ $tour->hotel }}</h5>
-                            <small class="card-text"> From - {{ $tour->single_room }}</small>
-                                <br> <br>
-                            <a href="{{ route('tours.show', $tour->id) }}" class="btn btn-primary">View Details</a>
-                    </div>
-            </div>
-        </div>
-        @endforeach
-    
+
+<div>
+        <a href="{{ route('bookings.create') }}" class="btn btn-primary"> 
+            Book Now
+        </a>
     </div>
+
+    <br>
+
+<div class="table-responsive">
+        <table class="table">
+            <thead>
+                <th scope="col">Hotel Name</th>
+                <th scope="col">Location</th>
+                <th scope="col">Transport</th>
+                <th scope="col">PerPerson Sharing</th>
+                <th scope="col">Single Room</th>
+                
+                <th scope="col">Meals</th>
+            </thead>
+            <tbody>
+                @foreach ($tours as $tour)
+                <tr>
+                    
+                    <td>{{ $tour->hotel }}</td>
+                    <td>{{ $tour->location }}</td>
+                    <td>{{ $tour->transport }}</td>
+                    <td>{{ $tour->per_person_sharing }}</td>
+                    <td>{{ $tour->single_room }}</td>
+                    <td>{{ $tour->meals }}</td>
+    
+                </tr>
+                @endforeach
+            </tbody>
+        </table>
+    </div>
+
+    <div>
+        <a href="{{ route('bookings.create') }}" class="btn btn-primary"> 
+            Book Now
+        </a>
+    </div>
+
+    <br>
+
+    <div class="">
+        <h5>Inclusions</h5>
+        <ul>
+            <li>1/2 nights Accomodation</li>
+            <li>Meals as indicated</li>
+            <li>Use of Hotel Facilities</li>
+            <li>Entertainment at the Hotel</li>
+        </ul>
+        <br>
+        <br>
+        <h5>Exclusions</h5>
+        <ul>
+            <li>Peronal Expenses</li>
+            <li>Park/Conservancy Fees</li>
+            <li>Any other fees not included</li>
+        </ul>
+    </div>
+
+
 </div>
 
-<hr>
 @endsection

@@ -14,6 +14,7 @@
                 <th scope="col">Id</th>
                 <th scope="col">Category</th>
                 <th scope="col">Hotel</th>
+                <th scope="col">Location</th>
                 <th scope="col">Transport</th>
                 <th scope="col">PerPerson Sharing</th>
                 <th scope="col">Single Room</th>
@@ -28,6 +29,7 @@
                     <td>{{ ++$i }}</td>
                     <td>{{ $tour->category }}</td>
                     <td>{{ $tour->hotel }}</td>
+                    <td>{{ $tour->location }}</td>
                     <td>{{ $tour->transport }}</td>
                     <td>{{ $tour->per_person_sharing }}</td>
                     <td>{{ $tour->single_room }}</td>

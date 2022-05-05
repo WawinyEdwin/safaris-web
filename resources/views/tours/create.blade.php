@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="">
+<div class="container">
     <div class="">
         <div class="text-right">
             <a href="{{ route('admin') }}" class="btn btn-primary">Back</a>
@@ -28,27 +28,31 @@
         @method('POST')    
             <div class="form-group">
                 <label for="image" class="form-label">Hotel Image</label>
-                <input type="file" name="image" id="image" class="form-control-file">
+                <input type="file" name="image" id="image" class="form-control-file" required>
             </div>
             <div class="form-group">
                 <label for="hotel" class="form-label">Hotel Name</label>
-                <input type="text" name="hotel" id="hotel" class="form-control">
+                <input type="text" name="hotel" id="hotel" class="form-control" required>
+            </div>
+            <div class="form-group" >
+                <label for="location" class="form-label">Location</label>
+                <input type="text" name="location" id="location" class="form-control" required>
             </div>
             <div class="form-group" >
                 <label for="transport" class="form-label">Transport</label>
-                <input type="text" name="transport" id="transport" class="form-control">
+                <input type="text" name="transport" id="transport" class="form-control" required>
             </div>
             <div class="form-group">
                 <label for="per_person_sharing" class="form-label">PerPerson Sharing</label>
-                <input type="text" name="per_person_sharing" id="per_person_sharing" class="form-control">
+                <input type="text" name="per_person_sharing" id="per_person_sharing" class="form-control" required>
             </div>
             <div class="form-group">
                 <label for="single_room" class="form-label">Single Room</label>
-                <input type="text" name="single_room" id="single_room" class="form-control">
+                <input type="text" name="single_room" id="single_room" class="form-control" required>
             </div>
             <div class="form-group" class="form-label">
                 <label for="meals" class="form-label">Meals</label>
-                <input type="text" name="meals" id="meals"class="form-control">
+                <input type="text" name="meals" id="meals"class="form-control" required>
             </div>
             <div class="form-group" class="form-label">
                 <label for="category" class="form-label">Category</label>

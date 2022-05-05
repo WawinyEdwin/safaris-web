@@ -37,23 +37,28 @@
             }
 
             .carousel-item {
-                height: 500px;
+                height: 400px;
             }
 
             .carousel {
-                height: 500px;
+                height: 400px;
             }
 
             .kala {
                 color: #0096FF;
             }
  
+            
+            .carousel-control-next,
+            .carousel-control-prev , .carousel-indicators  {
+                filter: invert(100%);
+            }
 
         .carousel-item img {
             position: absolute;
             top: 0;
             left: 0;
-            min-height: 500px;
+            min-height: 400px;
         }
         </style>
     </head>
@@ -128,7 +133,7 @@
                         
                        
                         <li class="nav-item"> 
-                            <a class="nav-link btn btn-outline-light" href="{{ route('contact') }}">
+                            <a class="nav-link btn btn-outline-light" href="{{ route('enquiries.create') }}">
                                 Contact
                             </a>
                         </li>
@@ -195,7 +200,7 @@
                                 <li><a href="{{ route('videos') }}" class="text-primary">Safari Videos</a></li>
                                 <li><a href="{{ route('faqs') }}" class="text-primary">FAQs</a></li>
                                 <li><a href="{{ route('team') }}" class="text-primary">Our Team</a></li>
-                                <li><a href="{{ route('contact') }}" class="text-primary">Contact Us</a></li>
+                                <li><a href="{{ route('enquiries.create') }}" class="text-primary">Contact Us</a></li>
                             </ul>
                         <!-- </div> -->
                     <!-- </div> -->

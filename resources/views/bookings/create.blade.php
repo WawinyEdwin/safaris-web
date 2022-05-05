@@ -36,7 +36,7 @@
     @endif
 
 <div class="row">
-    <div class="col-lg-7 col-sm-12 mr-2">
+    <div class="col-lg col-sm-12 mr-2">
         <div class="text-center">
         <p>Booking Information</p>
             <small>Please fill all the details correctly!</small>
@@ -116,9 +116,16 @@
             </button>
         </form>
         </div>
+      
         </div> 
+        <br>
+        <div class="text-center">
+        <a href="{{ url('/') }}" class="btn btn-primary"> 
+            More Holiday Deals
+        </a>
     </div>
-    <div class="col-lg-4 col-sm-12">
+    </div>
+    <!-- <div class="col-lg-4 col-sm-12">
         <p class="text-center">Top Holiday Deals</p>
         <div class="card">
             <div class="">
@@ -135,9 +142,10 @@
                 <img src="" alt="">
                 <p>Lorem ipsum dolor sit amet consectetur.</p>
             </div>
-        </div>
-    </div>
+        </div> -->
+    <!-- </div> -->
 
+    
 </div>
 </div>
 
