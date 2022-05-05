@@ -4,14 +4,35 @@
 
 <div class=" bg-primary navbar expand-lg ">
     <div class="container">
-    <p class="lead "> <a href="{{ url('/') }}" class="text-white">Home </a>/ {{ $category }}</p>
+    <h2 class="lead text-white"> <a href="{{ url('/') }}" class="text-white" >Home </a>/ {{ $category }}</h2>
     </div>
    
 </div>
 
 <br>
 <div class="container">
-
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="{{ asset('image1.jpg') }}" alt="First slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="{{ asset('image1.jpg') }}" alt="Second slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="{{ asset('image2.jpg') }}" alt="Third slide">
+    </div>
+  </div>
+  <a class="carousel-control-prev kala" href="#carouselExampleControls" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next kala" href="#carouselExampleControls" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+<br>
 <div>
         <a href="{{ route('bookings.create') }}" class="btn btn-primary"> 
             Book Now
@@ -48,11 +69,7 @@
         </table>
     </div>
 
-    <div>
-        <a href="{{ route('bookings.create') }}" class="btn btn-primary"> 
-            Book Now
-        </a>
-    </div>
+    
 
     <br>
 
@@ -72,6 +89,12 @@
             <li>Park/Conservancy Fees</li>
             <li>Any other fees not included</li>
         </ul>
+    </div>
+
+    <div>
+        <a href="{{ route('bookings.create') }}" class="btn btn-primary"> 
+            Book Now
+        </a>
     </div>
 
 

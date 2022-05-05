@@ -35,7 +35,8 @@
                     <td>{{ $tour->single_room }}</td>
                     <td>{{ $tour->meals }}</td>
                     <td>
-                    <img src="{{ $tour->image }}" alt="" style="width: 200px;">
+                    
+                    <img src="{{ asset('/storage/' .$tour->image) }}" alt="" style="width: 200px; height: 50px;">
                     </td>
                     <td>
                         <form action="{{ route('tours.destroy', $tour->id) }}" method="post">

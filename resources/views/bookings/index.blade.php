@@ -26,7 +26,7 @@
                 <th scope="col">Kids</th>
                 <th scope="col">Arrival Date</th>
                 <th scope="col">special_requirements</th>
-                <th>Action</th>
+                <!-- <th>Action</th> -->
             </thead>
             <tbody>
                 @foreach ($bookings as $booking)
@@ -41,12 +41,12 @@
                     <td>{{ $booking->arrival_date }}</td>
                     <td>{{ $booking->special_requirements }}</td>
                 
-                    <td>
+                    <!-- <td>
                         <a href="{{ route('bookings.edit', $booking->id ) }}" class="btn btn-primary">Edit</a>
                     </td>
                     <td>
                         <a href="{{ route('bookings.show', $booking->id ) }}" class="btn btn-info">Show</a>
-                    </td>
+                    </td> -->
                 </tr>
                 @endforeach
             </tbody>

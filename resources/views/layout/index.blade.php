@@ -60,6 +60,10 @@
             left: 0;
             min-height: 400px;
         }
+
+        .text-primary {
+            color: #
+        }
         </style>
     </head>
     <body>
