@@ -11,7 +11,7 @@ class BookingMail extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $successMessage;
+    public $email;
 
     /**
      * Create a new message instance.
@@ -21,7 +21,7 @@ class BookingMail extends Mailable
     public function __construct()
     {
         //
-        $this->successMessage = $successMessage;
+        $this->email = $email;
     }
 
     /**
@@ -32,6 +32,6 @@ class BookingMail extends Mailable
     public function build()
     {
         // return $this->view('view.name');
-        return $this->subject('Booking Confirmation of your select Tour')->view('emails.success');
+        return $this->subject('Thank you for for the Booking Confirmation of your select Tour')->view('emails.success');
     }
 }

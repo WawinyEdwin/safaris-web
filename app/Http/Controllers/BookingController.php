@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\BookingMail;
 use App\Models\Booking;
 use Illuminate\Http\Request;
 
@@ -73,6 +74,16 @@ class BookingController extends Controller
         $booking->special_requirements = $request->special_requirements;
 
         $booking->save();
+
+        if($booking) {
+            Mail::to($email)->send(new BookingMail($email));
+            return new JsonResponse(
+                [
+                    'success' => true,
+                    'message' => "Thank You for Booking With Us, check your mail for details"
+                ], 200
+            );
+        }
         
         return redirect()->route('bookings.create')->with('success', 'Booking has been successfull!');
         

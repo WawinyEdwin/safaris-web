@@ -27,8 +27,20 @@
         @csrf
         @method('POST')    
             <div class="form-group">
-                <label for="image" class="form-label">Hotel Image</label>
+                <div class="row">
+                    <div class="col">
+                    <label for="image" class="form-label">Hotel Image</label>
                 <input type="file" name="image" id="image" class="form-control-file" required>
+                    </div>
+                    <div class="col">
+                    <label for="image1" class="form-label">Hotel Image 2</label>
+                <input type="file" name="image1" id="image1" class="form-control-file" required>
+                    </div>
+                    <div class="col">
+                    <label for="image2" class="form-label">Hotel Image 3</label>
+                <input type="file" name="image2" id="image2" class="form-control-file" required>
+                    </div>
+                </div>
             </div>
             <div class="form-group">
                 <label for="hotel" class="form-label">Hotel Name</label>

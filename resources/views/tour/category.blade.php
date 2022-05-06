@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class=" bg-primary navbar expand-lg ">
+<div class=" bg-primar navbar expand-lg ">
     <div class="container">
     <h2 class="lead text-white"> <a href="{{ url('/') }}" class="text-white" >Home </a>/ {{ $category }}</h2>
     </div>
@@ -16,12 +16,14 @@
     <div class="carousel-item active">
       <img class="d-block w-100" src="{{ asset('image1.jpg') }}" alt="First slide">
     </div>
+      @foreach ($tours as $tour)
     <div class="carousel-item">
-      <img class="d-block w-100" src="{{ asset('image1.jpg') }}" alt="Second slide">
+      <img class="d-block w-100" src="{{ asset('/storage/'.$tour->image) }}" alt="Second slide">
     </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="{{ asset('image2.jpg') }}" alt="Third slide">
-    </div>
+    <!-- <div class="carousel-item">
+      <img class="d-block w-100" src="{{ asset('/storage/'.$tour->image) }}" alt="Third slide">
+    </div> -->
+    @endforeach
   </div>
   <a class="carousel-control-prev kala" href="#carouselExampleControls" role="button" data-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -34,7 +36,7 @@
 </div>
 <br>
 <div>
-        <a href="{{ route('bookings.create') }}" class="btn btn-primary"> 
+        <a href="{{ route('bookings.create') }}" class="btn btn-primar"> 
             Book Now
         </a>
     </div>
@@ -92,7 +94,7 @@
     </div>
 
     <div>
-        <a href="{{ route('bookings.create') }}" class="btn btn-primary"> 
+        <a href="{{ route('bookings.create') }}" class="btn btn-primar"> 
             Book Now
         </a>
     </div>

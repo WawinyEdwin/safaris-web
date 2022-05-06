@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class=" bg-primary navbar expand-lg ">
+<div class=" bg-primar navbar expand-lg ">
     <div class="container">
     <p class="lead "> <a href="{{ url('/') }}" class="text-white">Home </a>/ Contact-US</p>
     </div>
@@ -111,7 +111,7 @@
 
                                     </textarea>
                                     <br>
-                                    <button type="submit" class="btn btn-primary">
+                                    <button type="submit" class="btn btn-primar">
                                         Send Message
                                     </button>
                                 </form>

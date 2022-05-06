@@ -3,71 +3,90 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="_wawiny" >
 
         <title>Safaris</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400;1,500&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400;1,500&display=swap" 
+        rel="stylesheet">
         
         <!-- Styles -->
         <link rel="stylesheet" href="{{ asset('css/app.css')}}">
         <link rel="stylesheet" href="{{ asset('bootstrap/bootstrap.css') }}">
 
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+        <!-- bootstrap  -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+         integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 
-
+        <!-- Icons  -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
         
         <style>
             body {
                 font-family: 'Josefin Sans', sans-serif;
             }
-            /* .nav-item {
-                text-transform: uppercase;
-            } */
+          
             .nav-link {
                 color: white;
             }
 
             .safari {
                 list-style-type: square;
-                /* color: #28a745; */
             }
 
-            .carousel-item {
-                height: 400px;
+            .price {
+                color:  #550a35;
             }
 
-            .carousel {
-                height: 400px;
+            a:hover {
+                text-decoration: none;
+                color: #ffffff;
             }
 
-            .kala {
-                color: #0096FF;
+        
+            .bg-primar {
+                background-color: #4863a0;
+                /* #87CEEB #87CEFA*/
+            }
+
+            .carousel .carousel-item {
+                height: 300px;
+            }
+            .carousel-item img {
+                object-fit: cover;
+                position: absolute;
+                top: 0;
+                left: 0;
+                max-height: 300px;
             }
  
             
             .carousel-control-next,
-            .carousel-control-prev , .carousel-indicators  {
-                filter: invert(100%);
+            .carousel-control-prev ,  {
+                /* filter: invert(100%); */
+                color:  #ffffff;
+            background-color: #4863a0;
             }
 
-        .carousel-item img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            min-height: 400px;
+        .btn-primar {
+            background-color: #550a35;
+            color: #ffffff;
         }
 
-        .text-primary {
-            color: #
+        .text-primar {
+            color:  #550a35;
+        }
+        .btn-outline-primar {
+            color:  #ffffff;
+            background-color: #4863a0;
         }
         </style>
     </head>
     <body>
-        <nav class="navbar navbar-expand-lg bg-primary text-white fixed-top">
+        <nav class="navbar navbar-expand-lg bg-primar text-white fixed-top">
             <div class="container">
                 <a href="{{ url('/')}}" class="navbar-brand text-white">Safaris</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar">
@@ -82,57 +101,25 @@
                             <a class="nav-link dropdown-toggle" href="{{ route('tour', 'topDeals') }}" >
                                 Top Deals
                             </a>
-                            <!-- <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#">Camping Safaris</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Lodges</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Walking</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Flight Safaris</a>
-                            </div> -->
+                        
                         </li>
                         <li class="nav-item "> 
                             <a class="nav-link dropdown-toggle" href="{{ route('tour', 'KenyanTours' ) }}">
                                 Kenya Tours
                             </a>
-                            <!-- <div class="dropdown-menu bg-success text-white" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('tour', 'kenyaTours') }}">Camping Safaris</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="{{ route('tour', 'kenyaTours') }}">Lodges</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="{{ route('tour', 'kenyaTours') }}">Walking</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="{{ route('tour', 'kenyaTours') }}">Flight Safaris</a>
-                            </div> -->
+                        
                         </li>
                         <li class="nav-item"> 
                             <a class="nav-link dropdown-toggle" href="{{ route('tour', 'HoneyMoons') }}">
                                 Honey Moons
                             </a>
-                            <!-- <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#">Camping Safaris</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Lodges</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Walking</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Flight Safaris</a>
-                            </div> -->
+                        
                         </li>
                         <li class="nav-item "> 
                             <a class="nav-link dropdown-toggle" href="{{ route('tour', 'seasonHolidays') }}" >
                             Season Holidays
                             </a>
-                            <!-- <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#">Camping Safaris</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Lodges</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Walking</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Flight Safaris</a>
-                            </div> -->
+                      
                         </li>
                         
                        
@@ -161,12 +148,12 @@
                 <div class="navbar-nav mr-auto">
                     <form class="form-inline ">
                         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+                        <button class="btn btn-outline-primar my-2 my-sm-0" type="submit">Search</button>
                     </form>
                 </div>
                     <div >
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item"><i class="bi bi-telephone-outbound text-primary"></i> +2547 598 888 / +2547 456 765</li>
+                        <li class="nav-item"><i class="bi bi-telephone-outbound price"></i> +2547 598 888 / +2547 456 765</li>
                         <li class="nav-item">
                             <i class="bi bi-facebook text-primary"></i>
                             <i class="bi bi-twitter text-primary"></i>
@@ -176,73 +163,68 @@
                     </div>
             </div>   
         </div>
+        <br>
 
         @yield('content')
 
         <br>
         <hr>
-        <div class="container">
+        
+        <div class="container ">
             <div class="row">
                 <div class="col">
                     <!-- <div class="row"> -->
                         <!-- <div class="col"> -->
                             <ul class="safari">
-                                <li><a href="{{ route('about') }}" class="text-primary">About Us</a></li>
-                                <li><a href="{{ route('about') }}"class="text-primary">Choose Us</a></li>
-                                <li><a href="{{ route('testimony') }}" class="text-primary">Testimonials</a></li>
-                                <li><a href="{{ route('affiliation') }}" class="text-primary">Affiliations</a></li>
-                                <li><a href="{{ route('help') }}" class="text-primary">Help</a></li>
-                                <li><a href="{{ route('travel') }}" class="text-primary">Travel Info</a></li>
-                                <li><a href="{{ route('policy') }}" class="text-primary">Privacy Policy</a></li>
+                                <li><a href="{{ route('about') }}" class="text-primar">About Us</a></li>
+                                <li><a href="{{ route('about') }}"class="text-primar">Choose Us</a></li>
+                                <li><a href="{{ route('testimony') }}" class="text-primar">Testimonials</a></li>
+                                <li><a href="{{ route('affiliation') }}" class="text-primar">Affiliations</a></li>
+                                <li><a href="{{ route('help') }}" class="text-primar">Help</a></li>
+                                <li><a href="{{ route('travel') }}" class="text-primar">Travel Info</a></li>
+                                <li><a href="{{ route('policy') }}" class="text-primar">Privacy Policy</a></li>
                             </ul>
                         <!-- </div> -->
                         <!-- <div class="col"> -->
                             <ul class="safari">
-                                <li><a href="{{ route('careers') }}" class="text-primary">Careers</a></li>
-                                <li><a href="{{ route('media') }}" class="text-primary">In the Media</a></li>
-                                <li><a href="{{ route('awards') }}" class="text-primary">Awards</a></li>
-                                <li><a href="{{ route('videos') }}" class="text-primary">Safari Videos</a></li>
-                                <li><a href="{{ route('faqs') }}" class="text-primary">FAQs</a></li>
-                                <li><a href="{{ route('team') }}" class="text-primary">Our Team</a></li>
-                                <li><a href="{{ route('enquiries.create') }}" class="text-primary">Contact Us</a></li>
+                                <li><a href="{{ route('careers') }}" class="text-primar">Careers</a></li>
+                                <li><a href="{{ route('media') }}" class="text-primar">In the Media</a></li>
+                                <li><a href="{{ route('awards') }}" class="text-primar">Awards</a></li>
+                                <li><a href="{{ route('videos') }}" class="text-primar">Safari Videos</a></li>
+                                <li><a href="{{ route('faqs') }}" class="text-primar">FAQs</a></li>
+                                <li><a href="{{ route('team') }}" class="text-primar">Our Team</a></li>
+                                <li><a href="{{ route('enquiries.create') }}" class="text-primar">Contact Us</a></li>
                             </ul>
-                        <!-- </div> -->
-                    <!-- </div> -->
-                    <!-- <div class="row">
-                    <p class="text-primary">Secure Online Payment</p>
-                        <div class="d-flex flex-row ">
-                            <div class="p-2">Mpesa</div>
-                            <div class="p-2">Airtel Money</div>
-                        </div>
-                    </div> -->
                 </div>
                 <div class="col">
                     <img src="{{ asset('index.jpeg') }} " alt="about">
                     <br>
-                    <p class="text-primary">About Us</p>
+                    <p class="text-primar">About Us</p>
                     <div class="">
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, eaque odio. 
                             Dicta optio tempora unde eligendi amet laborum ipsum fugit quos cumque? Iusto.</p>
                     </div>
                 </div>
                 <div class="col">
-                    <p class="text-primary">Recent Tweets</p>
+                    <p class="text-primar">Recent Tweets</p>
+                    <ul>
                     <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos cumque officia sint ullam fugit dignissimos facilis ducimus harum accusamus nulla?</li>
                     <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos cumque officia sint ullam fugit dignissimos facilis ducimus harum accusamus nulla?</li>
-                    <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos cumque officia sint ullam fugit dignissimos facilis ducimus harum accusamus nulla?</li>
+                    </ul>
                 </div>
                 <div class="col">
-                    <p class="text-primary">Latest from Blog</p>
+                    <p class="text-primar">Latest from Blog</p>
+                    <ul>
                     <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos cumque officia sint ullam fugit dignissimos facilis ducimus harum accusamus nulla?</li>
                     <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos cumque officia sint ullam fugit dignissimos facilis ducimus harum accusamus nulla?</li>
-                    <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos cumque officia sint ullam fugit dignissimos facilis ducimus harum accusamus nulla?</li>
+    </ul>
                 </div>
             </div>
         </div>
         <br>
         <footer class="footer footer-expand-lg ">
                 <div class="text-center">
-                    <p class="lead text-primary" id="year"> <script type="text/javascript"> document.write( new Date().getFullYear());</script> | Safaris Limited.</p>
+                    <p class="lead text-primar" id="year"> <script type="text/javascript"> document.write( new Date().getFullYear());</script> | Safaris Limited.</p>
                 </div>
         </footer>
 

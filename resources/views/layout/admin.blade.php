@@ -27,36 +27,40 @@ body {
             a {
                 color: #ffffff;
             }
+
+            .bg-primar {
+                background-color: #4863a0;
+                /* #87CEEB #87CEFA*/
+            }
+            .btn-primar {
+            background-color: #550a35;
+            color: #ffffff;
+        }
            
         </style>
     </head>
     <body>
 
-    <nav class="navbar navbar-expand-lg bg-primary text-white">
-        <a href="" class="navbar-brand">Safaris Admin</a>
+    <nav class="navbar navbar-expand-lg bg-primar text-white">
+        <a href="{{ route('admin') }}" class="navbar-brand">Dashboard</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupported" aria-controls="navbarSupported" aria-expanded="false" aria-label="Toggle Navigation">
         <i class="bi bi-list text-white"></i>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupported">
             <ul class="navbar-nav ">
                     <li class="nav-item">
-                        <a href="{{ route('bookings.index') }}" class="nav-link ">Bookings</a>
+                        <a href="{{ route('bookings.index') }}" class="nav-link "><i class="bi bi-book"></i> Bookings</a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ route('admin') }}" class="nav-link">Tours</a>
+                        <a href="{{ route('tours.index') }}" class="nav-link"><i class="bi bi-geo-alt"></i> Tours</a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ route('enquiries.index') }}" class="nav-link">Customer Enquiries</a>
-                    </li>
-                    <!-- <li class="nav-item">
-                        <a href="{{ route('tour', 'seasonHolidays') }}" class="nav-link">Holidays</a>
+                        <a href="{{ route('enquiries.index') }}" class="nav-link"><i class="bi bi-card-checklist"></i> Customer Enquiries</a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ route('tour', 'topDeals') }}" class="nav-link">Top Deals</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{{ route('tour', 'HoneyMoon') }}" class="nav-link">Honey Moon</a>
-                    </li> -->
+                        <a href="https://dashboard.tawk.to/#/dashboard" class="nav-link"><i class="bi bi-chat-dots"></i> Support Chat</a>
+                    </li> 
+                  
             </ul>
             <li class="nav-item">
                     <a class="btn btn-light" href="{{ route('logout') }}"
@@ -71,37 +75,12 @@ body {
             </li>
         </div>
     </nav>
-
-    <div class="container">
-        <div class="row">
-
-            <div class="col">
-                <div class="card-body">
-                    <h5 class="card-title">Tours</h5>
-                    <p class="card-text">Easily Manage Tours, For your Users</p>
-                    <a href="{{ route('tours.create') }}" class="btn btn-primary">New Tour</a>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card-body">
-                    <h5 class="card-title">Bookings</h5>
-                    <p class="card-text">Easily Manage Bookings, For your Users</p>
-                    <a href="{{ route('bookings.index') }}" class="btn btn-primary">Bookings</a>
-                </div>
-            </div>
-            <div class="card-body">
-                    <h5 class="card-title">Enquiries</h5>
-                    <p class="card-text">Easily Manage Enquiries, For your Users</p>
-                    <a href="{{ route('enquiries.index') }}" class="btn btn-primary">Enquiries</a>
-                </div>
-            </div>
-        </div>
-<hr>
+<div class="container">
         @yield('content')
     </div>
 
     <br>
-    <footer class="footer footer-expand-lg  bg-primary text-white">
+    <footer class="footer footer-expand-lg ">
                 <div class="text-center">
                     <p class="lead " id="year"> <script type="text/javascript"> document.write( new Date().getFullYear());</script> | Safaris Limited.</p>
                 </div>

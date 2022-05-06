@@ -10,7 +10,7 @@
             <h2>Bookings</h2>
         </div>
         <div class="text-right">
-            <a href="{{ route('tours.create') }}" class="btn btn-primary">Add Booking</a>
+            <a href="{{ route('tours.create') }}" class="btn btn-primar">Add Booking</a>
         </div>
     </div>
     <br>
