@@ -20,6 +20,8 @@ return new class extends Migration
             $table->text('per_person_sharing');
             $table->text('single_room');
             $table->text('category');
+            $table->text('image1');
+            $table->text('image2');
             $table->text('meals');
             $table->text('image');
             $table->timestamps();
