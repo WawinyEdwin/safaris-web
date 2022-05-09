@@ -130,21 +130,23 @@
         <div class="container">
             <h5 class="text-center"> <script type="text/javascript"> document.write( new Date().getFullYear());</script> LEGENDARY DEALS - YOU CAN'T AFFORD TO MISS</h5>
             <div class="row">
-                @forelse($olderTours as $tour)
+                @forelse($olderTours as $tours)
                 <div class="col-lg-4 col-md-4">
                     <div class="card">
                             <img src="{{ asset('index.jpeg') }}" alt=""  class="card-img-top">
                         <div class="card-body">
-                            <h5 class="card-title">{{ $tour->category }}</h5>
+                            <h5 class="card-title">{{ $tours->category }}</h5>
                             <div class="d-flex space-between">
-                                <p class="card-text">{{ $tour->hotel }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-                                <p class="price">KSH {{ $tour->single_room }}</p>
+                                <p class="card-text">{{ $tours->hotel }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                                <p class="price">KSH {{ $tours->single_room }}</p>
                             </div>
                             <a href="{{ route('tour', $tour->category ) }}" class="btn btn-primar">SEE ALL OFFERS</a>
                         </div>
                     </div>
                 </div>
+
                 @empty
+                
                 <div class="col-lg-4 col-md-4">
                     <div class="card">
                             <img src="{{ asset('index.jpeg') }}" alt=""  class="card-img-top">

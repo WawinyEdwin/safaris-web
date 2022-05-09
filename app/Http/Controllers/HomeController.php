@@ -13,7 +13,7 @@ class HomeController extends Controller
 
         $categories = Category::all();
 
-        $olderTours = Tours::latest()->limit(3);
+        $olderTours = Tours::latest()->limit(3)->get();
       
         $tuas = Tours::inRandomOrder()->limit(4)->get();
 
