@@ -4,7 +4,7 @@
 
 <div class=" bg-primar navbar expand-lg ">
     <div class="container">
-    <h2 class="lead text-white"> <a href="{{ url('/') }}" class="text-white" >Home </a>/ {{ $category }}</h2>
+    <h2 class="lead text-white"> <a href="{{ url('/') }}" class="text-white" >Home </a>/ The Best Deals and Offers </h2>
     </div>
    
 </div>
@@ -43,8 +43,12 @@
 
     <br>
 
+    <div class="text-center">
+      <p class="lead">{{ $tour->category }}</p>
+    </div>
+
 <div class="table-responsive">
-        <table class="table">
+        <table class="table table-bordered">
             <thead>
                 <th scope="col">Hotel Name</th>
                 <th scope="col">Location</th>

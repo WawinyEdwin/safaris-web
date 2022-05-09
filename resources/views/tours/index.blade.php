@@ -13,7 +13,7 @@
     <br>
 
 <div class="table-responsive">
-        <table class="table">
+        <table class="table table-bordered">
             <thead>
                 <th scope="col">Id</th>
                 <th scope="col">Category</th>

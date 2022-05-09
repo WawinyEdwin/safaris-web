@@ -85,10 +85,6 @@
             color:  #ffffff;
             background-color: #4863a0;
         }
-
-        .card-title {
-            color: #704214;
-        }
         </style>
     </head>
     <body>
@@ -104,16 +100,24 @@
                         
                         <li class="nav-item active"><a href="{{ url('/') }}" class="nav-link">Home</a></li>
 
-                        @foreach($categories as $category)
                         <li class="nav-item "> 
-                            <a class="nav-link dropdown-toggle" href="{{ route('tour',  $tour->category) }}" >
-                                {{ $category->category }}
+                            <a class="nav-link dropdown-toggle" href="{{ url('/') }}" >
+                                Kenya Safaris
                             </a>
                         </li>
-                        @endforeach 
-
+                        <li class="nav-item "> 
+                            <a class="nav-link dropdown-toggle" href="{{ url('/') }}" >
+                                Holidays
+                            </a>
+                        </li>
+                        <li class="nav-item "> 
+                            <a class="nav-link dropdown-toggle" href="{{ url('/') }}" >
+                                Honey Moons
+                            </a>
+                        </li>
+                    
                         <li class="nav-item"> 
-                            <a class="nav-link btn btn-outline-light" href="{{ route('enquiries.create') }}">
+                            <a class="nav-link btn btn-outline-light" href="{{ url('/') }}">
                                 Contact
                             </a>
                         </li>

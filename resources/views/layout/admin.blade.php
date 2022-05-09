@@ -13,7 +13,7 @@
         
         <!-- Styles -->
         <link rel="stylesheet" href="{{ asset('css/app.css')}}">
-        <link rel="stylesheet" href="{{ asset('bootstrap/bootstrap.css') }}">
+        <!-- <link rel="stylesheet" href="{{ asset('bootstrap/bootstrap.css') }}"> -->
 
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 
@@ -39,14 +39,14 @@ body {
            
         </style>
     </head>
-    <body>
-
+<body>
     <nav class="navbar navbar-expand-lg bg-primar text-white">
-        <a href="{{ route('admin') }}" class="navbar-brand">Dashboard</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupported" aria-controls="navbarSupported" aria-expanded="false" aria-label="Toggle Navigation">
-        <i class="bi bi-list text-white"></i>
-        </button>
+            <a href="{{ route('admin') }}" class="navbar-brand">Dashboard</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupported" aria-controls="navbarSupported" aria-expanded="false" aria-label="Toggle Navigation">
+            <i class="bi bi-list text-white"></i>
+            </button>
         <div class="collapse navbar-collapse" id="navbarSupported">
+            @auth
             <ul class="navbar-nav ">
                     <li class="nav-item">
                         <a href="{{ route('bookings.index') }}" class="nav-link "><i class="bi bi-book"></i> Bookings</a>
@@ -55,24 +55,29 @@ body {
                         <a href="{{ route('tours.index') }}" class="nav-link"><i class="bi bi-geo-alt"></i> Tours</a>
                     </li>
                     <li class="nav-item">
+                        <a href="{{ route('categories.index') }}" class="nav-link"><i class="bi bi-tags"></i> Tour Categories</a>
+                    </li>
+                    <li class="nav-item">
                         <a href="{{ route('enquiries.index') }}" class="nav-link"><i class="bi bi-card-checklist"></i> Customer Enquiries</a>
                     </li>
                     <li class="nav-item">
                         <a href="https://dashboard.tawk.to/#/dashboard" class="nav-link"><i class="bi bi-chat-dots"></i> Support Chat</a>
                     </li> 
-                  
             </ul>
-            <li class="nav-item">
-                    <a class="btn btn-light" href="{{ route('logout') }}"
-                        onclick="event.preventDefault();
-                        document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                    </a>
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                        <a class="btn btn-light" href="{{ route('logout') }}"
+                            onclick="event.preventDefault();
+                            document.getElementById('logout-form').submit();">
+                                            {{ __('Logout') }}
+                        </a>
 
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                        @csrf
-                    </form>
-            </li>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
+                </li>
+            </ul>
+            @endauth
         </div>
     </nav>
 <div class="container">

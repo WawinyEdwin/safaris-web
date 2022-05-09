@@ -4,7 +4,7 @@
 
 
 
-<div class="container-fluid">
+<div class="p-2">
 <div class="col-lg-12">
         <div class="text-left">
             <h2>Enquiry</h2>
@@ -15,7 +15,7 @@
     </div>
     <br>
     <div class="table-responsive">
-        <table class="table ">
+        <table class="table table-bordered">
             <thead>
                 <th scope="col">Id</th>
                 <th scope="col">Full Name</th>

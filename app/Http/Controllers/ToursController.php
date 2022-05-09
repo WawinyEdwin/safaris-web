@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Tours;
 use App\Models\Booking;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class ToursController extends Controller
@@ -29,7 +30,9 @@ class ToursController extends Controller
     public function create()
     {
         //
-        return view('tours.create');
+        $categories = Category::all();
+
+        return view('tours.create', ['categories' => $categories]);
     }
 
     /**
@@ -162,14 +165,7 @@ class ToursController extends Controller
         return redirect()->route('tours.index')->with('success', 'You Deleted a Tour.');
     }
 
-    public function tours($category) {
-
-        $tours =  Tours::where('category', $category)->get();
-      
-        // $tours =  Tours::where('category', $category)->first();
-
-        return view('tour.category', compact('tours'), ['category' => $category]);
-     }
+    
 
      public function admin() {
          return view('admin.home');

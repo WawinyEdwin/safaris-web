@@ -4,16 +4,32 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Tours;
+use App\Models\Category;
 
 class HomeController extends Controller
 {
     //index page
     public function index() {
 
-        $tours = Tours::all();
+        $categories = Category::all();
 
-        return view('home', ['tours' => $tours]);
+        $olderTours = Tours::latest()->limit(3);
+      
+        $tuas = Tours::inRandomOrder()->limit(4)->get();
+
+        $tours = Tours::inRandomOrder()->limit(3)->get();
+
+        return view('home', ['categories' => $categories, 'tours' => $tours, 'olderTours' => $olderTours, 'tuas' => $tuas]);
     }
+
+    public function tours($category) {
+
+        $tours =  Tours::where('category', $category)->get();
+      
+        $categories = Category::all();
+
+        return view('tour.category',['categories' => $categories], ['tours' => $tours]);
+     }
 
     public function about()
     {
@@ -81,10 +97,4 @@ class HomeController extends Controller
     public function blog() {
         return view('safaris.blog');
     }
-    // public function tours($category) {
-      
-    //     $tours =  Tours::where('category', $category);
- 
-    //     return view('tour.category', [$tours => 'tours']);
-    //  }
 }

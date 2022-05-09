@@ -1,10 +1,10 @@
-@extends('layout.index')
+@extends('layout.new')
 
 @section('content')
 
 <div class=" bg-primar navbar expand-lg ">
     <div class="container">
-    <p class="lead "> <a href="{{ url('/') }}" class="text-white">Home </a>/ Contact-US</p>
+    <p class="lead text-white"> <a href="{{ url('/') }}" class="text-white">Home </a>/ Contact-US</p>
     </div>
    
 </div>
@@ -42,7 +42,7 @@
     </div>
     @endif
     <div class="row">
-        <div class="col">
+        <div class="col-lg-7 col-sm-12">
             <div class="card">
                 <div class="card-body">
                     <p class="lead">Let's plan your dream holiday ~ Talk to us</p>
@@ -107,10 +107,16 @@
                                     </div>
 
                                     <label for="additional_info" class="form-label">Additional Info</label>
-                                    <textarea name="additional_info" id="additional_info" cols="30" rows="10" class="form-control">
+                                    <textarea name="additional_info" id="additional_info" cols="30" rows="5" class="form-control">
 
                                     </textarea>
+
                                     <br>
+                                    {!! NoCaptcha::display() !!}
+                     
+                     <span>@error('g-recaptcha-response') {{ $message }} @enderror</span>
+                     <br>
+
                                     <button type="submit" class="btn btn-primar">
                                         Send Message
                                     </button>
@@ -118,24 +124,24 @@
                     </div>
         </div>
         </div>
-    </div>
-    <div class="card">
+        <div class="col-lg-5 col-sm-12">
+        <div class="card">
         <div class="card-body">
-            <h5> <i class="bi bi-house"></i> Physical Address</h5>
+            <h5> <i class="bi bi-house text-primary"></i> Physical Address</h5>
             <p>Victoria Plaza</p>
             <p>Nairobi Kenya</p>
             <br>
-            <h5><i class="bi bi-phone"></i> Phone</h5>
+            <h5><i class="bi bi-phone  text-primary"></i> Phone</h5>
             <p>Tel : 00000000</p>
             <p>Mobile : 0000000</p>
             <br>
-            <h5> <i class="bi bi-envelope"></i> Email</h5>
+            <h5> <i class="bi bi-envelope  text-primary"></i> Email</h5>
             <p>info@xxxxxxx.com</p>
             <p><a href="">wwww.xxxxxx.com</i></p>
         </div>
     </div>
-
-    
+        </div>
+    </div>
 </div>
-
+{!! NoCaptcha::renderJs() !!}
 @endsection

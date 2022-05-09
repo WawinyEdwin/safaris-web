@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Mail\BookingMail;
 use App\Models\Booking;
+use App\Models\Tours;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class BookingController extends Controller
@@ -29,7 +31,12 @@ class BookingController extends Controller
     public function create()
     {
         //
-        return view('bookings.create');
+        // $tours =  Tours::where('category', $category)->get();
+        $tours = Tours::all();
+    
+        $categories = Category::all();
+
+        return view('bookings.create',['categories' => $categories, 'tours' => $tours]);
 
     }
 
@@ -51,6 +58,7 @@ class BookingController extends Controller
             'arrival_date' => 'required',
             'adults' => 'required',
             'kids' => 'required',
+            'g-recaptcha-response' => 'required|captcha',
         ]);
 
         if($request->email1 == $request->email2 ) 

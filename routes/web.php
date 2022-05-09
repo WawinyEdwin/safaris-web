@@ -8,6 +8,7 @@ use App\Http\Controllers\ToursController;
 use App\Http\Controllers\HolidayController;
 use App\Http\Controllers\HoneyMoonController;
 use App\Http\Controllers\EnquiryController;
+use App\Http\Controllers\CategoryController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -39,11 +40,13 @@ Route::get('/admin', [ToursController::class, 'admin'])->name('admin')->middlewa
 
 Route::resource('bookings', BookingController::class);
 
-Route::resource('tours', ToursController::class);
+Route::resource('tours', ToursController::class)->middleware('auth');
 
 Route::resource('enquiries', EnquiryController::class);
 
-Route::get('/tour/{category}', [ToursController::class, 'tours'])->name('tour');
+Route::resource('categories', CategoryController::class)->middleware('auth');
+
+Route::get('/tour/{category}', [HomeController::class, 'tours'])->name('tour');
 
 Route::get('/featured', [HomeController::class, 'featured'])->name('featured');
 

@@ -28,6 +28,26 @@
         <div class="container">
             <h3 class="text-center">Top Holiday Deals</h3>
             <div class="row">
+                @forelse($tours as $tour )
+                <div class="col-lg-4 col-md-4">
+                    <div class="card">
+                            <img src="{{ asset('/storage/'.$tour->image) }}" alt="tour image"  class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ $tour->category }}</h5>
+                    
+                                <div class="d-flex space-between">
+                                    <p class="card-text">From&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                                    <p class="price">{{ $tour->single_room }}</p>
+                                </div>
+                            <div class="d-flex space-between">
+                                    <p class="card-text">Offers From&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                                    <p class="price">{{ $tour->per_person_sharing }}</p>
+                                </div>  
+                            <a href="{{ route('tour', $tour->category) }}" class="btn btn-primar">SEE ALL OFFERS</a>
+                        </div>
+                    </div>
+                </div>
+              @empty
                 <div class="col-lg-4 col-md-4">
                     <div class="card">
                             <img src="{{ asset('index.jpeg') }}" alt=""  class="card-img-top">
@@ -101,6 +121,7 @@
                         </div>
                     </div>
                 </div>
+                @endforelse
             </div>
         </div>
 
@@ -109,6 +130,21 @@
         <div class="container">
             <h5 class="text-center"> <script type="text/javascript"> document.write( new Date().getFullYear());</script> LEGENDARY DEALS - YOU CAN'T AFFORD TO MISS</h5>
             <div class="row">
+                @forelse($olderTours as $tour)
+                <div class="col-lg-4 col-md-4">
+                    <div class="card">
+                            <img src="{{ asset('index.jpeg') }}" alt=""  class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ $tour->category }}</h5>
+                            <div class="d-flex space-between">
+                                <p class="card-text">{{ $tour->hotel }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                                <p class="price">KSH {{ $tour->single_room }}</p>
+                            </div>
+                            <a href="{{ route('tour', $tour->category ) }}" class="btn btn-primar">SEE ALL OFFERS</a>
+                        </div>
+                    </div>
+                </div>
+                @empty
                 <div class="col-lg-4 col-md-4">
                     <div class="card">
                             <img src="{{ asset('index.jpeg') }}" alt=""  class="card-img-top">
@@ -154,6 +190,7 @@
                         </div>
                     </div>
                 </div>
+                @endforelse
             </div>
         </div>
 
@@ -162,6 +199,22 @@
         <div class="container">
             <h3 class="text-center">Featured Tours</h3>
             <div class="row">
+                @forelse($tuas as $tour)
+                <div class="col-lg-3 col-sm-3">
+                    <div class="card">
+                            <img src="{{ asset('/storage/'.$tour->image ) }}" alt="Tour Image" class="card-img-top">
+                        <div class="card-body">
+                            <p class="card-text">{{ $tour->hotel }}</p>
+                            <hr>
+                            <p class="card-text">From {{ $tour->single_room}} per person</p>
+                            
+                            <a href="{{ route('bookings.create') }}" class="btn btn-primar">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                @empty
+
                 <div class="col-lg-3 col-sm-3">
                     <div class="card">
                             <img src="{{ asset('index.jpeg') }}" alt="" class="card-img-top">
@@ -174,6 +227,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="col-lg-3 col-sm-3">
                     <div class="card">
                             <img src="{{ asset('index.jpeg') }}" alt="" class="card-img-top">
@@ -210,6 +264,7 @@
                         </div>
                     </div>
                 </div>
+                @endforelse
             </div>
             <br>
 
