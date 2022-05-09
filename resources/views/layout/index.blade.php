@@ -104,13 +104,21 @@
                         
                         <li class="nav-item active"><a href="{{ url('/') }}" class="nav-link">Home</a></li>
 
-                        @foreach($categories as $category)
+                        @forelse($categories as $category)
                         <li class="nav-item "> 
                             <a class="nav-link dropdown-toggle" href="{{ route('tour',  $tour->category) }}" >
                                 {{ $category->category }}
                             </a>
                         </li>
-                        @endforeach 
+                        
+                        @empty
+                        <li class="nav-item "> 
+                            <a class="nav-link dropdown-toggle" href="{{ route('tour',  $tour->category) }}" >
+                                No Categories
+                            </a>
+                        </li>
+                        
+                        @endforelse
 
                         <li class="nav-item"> 
                             <a class="nav-link btn btn-outline-light" href="{{ route('enquiries.create') }}">
