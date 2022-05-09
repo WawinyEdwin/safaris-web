@@ -26,9 +26,6 @@ return new class extends Migration
      */
     public function down()
     {
-        // Schema::table('tours', function($table) {
-        //     $table->dropColumn('image1');
-        //     $table->dropColumn('image2');
-        // });
+        
     }
 };
