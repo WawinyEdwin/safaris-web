@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Tours;
+use App\Models\User;
 use App\Models\Category;
+use Illuminate\Support\Facades\Hash;
 
 class HomeController extends Controller
 {
@@ -31,6 +33,37 @@ class HomeController extends Controller
         return view('tour.category',['categories' => $categories], ['tours' => $tours]);
      }
 
+
+     //credentials page
+    public function updateView() {
+        return view('auth.register');
+    }
+
+     //credentials update
+    public function update(Request $request, User $user,  $id)
+     {
+       
+        if($request->password != $request->password_confirmation) {
+            return redirect()->back()->with('error', 'Password does not match');
+        }
+
+
+        $user = new User;
+ 
+         $user = User::find($id);
+
+         $user->name = $request->name;
+
+         $user->email = $request->email;
+
+         $user->password = Hash::make($request->password);
+         
+         $user->update();
+
+         return redirect()->route('admin')->with('success', 'Credentials updated successfully');
+    }
+
+    //about page
     public function about()
     {
         return view('safaris.about-us');

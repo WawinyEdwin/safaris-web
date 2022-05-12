@@ -206,7 +206,7 @@
                     <div class="card">
                             <img src="{{ asset('/storage/'.$tour->image ) }}" alt="Tour Image" class="card-img-top">
                         <div class="card-body">
-                            <p class="card-text">{{ $tour->hotel }}</p>
+                            <p class="card-text pri">{{ $tour->hotel }}</p>
                             <hr>
                             <p class="card-text">From {{ $tour->single_room}} per person</p>
                             

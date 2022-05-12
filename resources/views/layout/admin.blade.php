@@ -36,6 +36,14 @@ body {
             background-color: #550a35;
             color: #ffffff;
         }
+
+        .card-title {
+            color:  #4863a0;
+        }
+
+        a:hover {
+            color: #ffffff;
+        }
            
         </style>
     </head>
@@ -47,7 +55,7 @@ body {
             </button>
         <div class="collapse navbar-collapse" id="navbarSupported">
             @auth
-            <ul class="navbar-nav ">
+            <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
                         <a href="{{ route('bookings.index') }}" class="nav-link "><i class="bi bi-book"></i> Bookings</a>
                     </li>
@@ -61,20 +69,35 @@ body {
                         <a href="{{ route('enquiries.index') }}" class="nav-link"><i class="bi bi-card-checklist"></i> Customer Enquiries</a>
                     </li>
                     <li class="nav-item">
-                        <a href="https://dashboard.tawk.to/#/dashboard" class="nav-link"><i class="bi bi-chat-dots"></i> Support Chat</a>
-                    </li> 
-            </ul>
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                        <a class="btn btn-light" href="{{ route('logout') }}"
-                            onclick="event.preventDefault();
-                            document.getElementById('logout-form').submit();">
-                                            {{ __('Logout') }}
-                        </a>
+                        <a href="https://dashboard.tawk.to/#/dashboard" target="blank"  class="nav-link"><i class="bi bi-chat-dots"></i> Support Chat</a>
+                    </li>  
 
+            </ul>
+            <ul class="navbar-nav dropdown  ms-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="bi bi-person-check"></i>
+                    {{ Auth::user()->name }}
+
+                    </a>
+                    
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a href="{{ route('updatePage') }}" class="dropdown-item">
+                            <i class="bi bi-lock"></i>Reset Credentials
+                        </a>
+                        <a class="dropdown-item" href="{{ route('logout') }}"  onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                            <i class="bi bi-power"></i> Logout
+                        </a>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                             @csrf
                         </form>
+                    </div>
+                </li>
+                <li>
+                    <a href="{{ route('home') }}" class="nav-link">
+                        <i class="bi bi-home"></i> Home
+
+                    </a>
                 </li>
             </ul>
             @endauth

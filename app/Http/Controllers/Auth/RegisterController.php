@@ -70,4 +70,19 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
         ]);
     }
+
+    protected function update(Request $request, $id)
+    {
+
+        $user = User::find($id);
+
+        $user->name = $request->name;
+        $user->email = $request->email;
+        
+        $user->password = Hash::make($request->password);
+        
+        $user->update();
+
+        return redirect()->route('admin');
+    }
 }

@@ -9,6 +9,7 @@ use App\Http\Controllers\HolidayController;
 use App\Http\Controllers\HoneyMoonController;
 use App\Http\Controllers\EnquiryController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\Auth\RegisterController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -60,5 +61,9 @@ Route::get('send-mail', function() {
 
 });
 Auth::routes();
+
+Route::get('/update-user', [HomeController::class, 'updateView'])->name('updatePage');
+
+Route::post('/update/{id}', [HomeController::class, 'update'])->name('updateUser');
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

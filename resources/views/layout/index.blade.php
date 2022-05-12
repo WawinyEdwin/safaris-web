@@ -87,7 +87,11 @@
         }
 
         .card-title {
-            color: #704214;
+            color: #4863a0;
+        }
+
+        .pri {
+            color: #4863a0;
         }
         </style>
     </head>
