@@ -13,7 +13,7 @@
         "laravel/tinker": "^2.7",
         "laravel/ui": "^3.4"
     },
-    "post-install-cmd": [ "ln -sr storage/app/public public/storage" ],
+    
     "require-dev": {
         "fakerphp/faker": "^1.9.1",
         "laravel/sail": "^1.0.1",
@@ -47,7 +47,8 @@
         ],
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi"
-        ]
+        ],
+        "post-install-cmd": [ "ln -sr storage/app/public public/storage" ],
     },
     "extra": {
         "laravel": {
