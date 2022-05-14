@@ -40,7 +40,7 @@
             }
 
             .price {
-                color:  #550a35;
+                color:  #4863a0;
             }
 
             a:hover {
@@ -85,6 +85,20 @@
             color:  #ffffff;
             background-color: #4863a0;
         }
+
+        .pri {
+            color: #4863a0;
+        }
+
+        .blog > li > a {
+            color: black;
+
+        }
+        .blog > li > a:hover {
+            color: #4863a0;
+
+        }
+
         </style>
     </head>
     <body>
@@ -101,31 +115,31 @@
                         <li class="nav-item active"><a href="{{ url('/') }}" class="nav-link">Home</a></li>
 
                         <li class="nav-item "> 
-                            <a class="nav-link dropdown-toggle" href="{{ url('/') }}" >
-                                Kenya Safaris
+                            <a class="nav-link dropdown-toggle" href="{{ route('tour', 'Exciting Holiday Offers' ) }}" >
+                                Exciting Holiday Offers
                             </a>
                         </li>
                         <li class="nav-item "> 
-                            <a class="nav-link dropdown-toggle" href="{{ url('/') }}" >
-                                Holidays
+                            <a class="nav-link dropdown-toggle" href="{{ route('tour', 'Exciting Holiday Offers' ) }}" >
+                                Tembea Ujionee
                             </a>
                         </li>
                         <li class="nav-item "> 
-                            <a class="nav-link dropdown-toggle" href="{{ url('/') }}" >
-                                Honey Moons
+                            <a class="nav-link dropdown-toggle" href="{{ route('tour', 'Exciting Holiday Offers' ) }}" >
+                                Local Tours
                             </a>
                         </li>
                     
                         <li class="nav-item"> 
-                            <a class="nav-link btn btn-outline-light" href="{{ url('/') }}">
+                            <a class="nav-link btn btn-outline-light" href="{{ route('enquiries.create') }}">
                                 Contact
                             </a>
                         </li>
-                        <!-- <li class="nav-item"> 
-                            <a class="nav-link" href="{{ route('blog') }}">
+                        <li class="nav-item"> 
+                            <a class="nav-link" href="{{ route('blogs.index') }}">
                                 Blog
                             </a>
-                        </li> -->
+                        </li>
                     </div>
                 </div>
             </div>
@@ -136,11 +150,10 @@
 
         <div class="bg-white navbar d-none d-lg-flex">
             <div class="container p-2">
-                <!-- <a href="{{ url('/')}}" class="navbar-brand ">Safaris</a> -->
-               
+           
                 <div class="navbar-nav mr-auto">
-                    <form class="form-inline ">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <form class="form-inline" action="{{ route('search') }}" method="GET" role="search">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search" name="term" id="term" aria-label="Search">
                         <button class="btn btn-outline-primar my-2 my-sm-0" type="submit">Search</button>
                     </form>
                 </div>
@@ -157,7 +170,6 @@
             </div>   
         </div>
         <br>
-
         @yield('content')
 
         <br>
@@ -183,7 +195,7 @@
                                 <li><a href="{{ route('careers') }}" class="text-primar">Careers</a></li>
                                 <li><a href="{{ route('media') }}" class="text-primar">In the Media</a></li>
                                 <li><a href="{{ route('awards') }}" class="text-primar">Awards</a></li>
-                                <li><a href="{{ route('videos') }}" class="text-primar">Safari Videos</a></li>
+                                <li><a href="{{ route('videos.index') }}" class="text-primar">Safari Videos</a></li>
                                 <li><a href="{{ route('faqs') }}" class="text-primar">FAQs</a></li>
                                 <li><a href="{{ route('team') }}" class="text-primar">Our Team</a></li>
                                 <li><a href="{{ route('enquiries.create') }}" class="text-primar">Contact Us</a></li>
@@ -205,19 +217,24 @@
                     <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos cumque officia sint ullam fugit dignissimos facilis ducimus harum accusamus nulla?</li>
                     </ul>
                 </div>
-                <!-- <div class="col">
+                <div class="col">
                     <p class="text-primar">Latest from Blog</p>
-                    <ul>
-                    <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos cumque officia sint ullam fugit dignissimos facilis ducimus harum accusamus nulla?</li>
-                    <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos cumque officia sint ullam fugit dignissimos facilis ducimus harum accusamus nulla?</li>
-    </ul>
-                </div> -->
+                    <ul class="blog">
+                        @foreach($blogs as $blog)
+                    <li>
+                        <a href="{{ route('blogs.show', $blog->id) }}">
+                            <p>{{ \Illuminate\Support\Str::limit($blog->content, 100, $end='...') }}</p>
+                        </a>
+                    </li>
+                        @endforeach
+                    </ul>
+                </div>
             </div>
         </div>
         <br>
         <footer class="footer footer-expand-lg ">
                 <div class="text-center">
-                    <p class="lead text-primar" id="year"> <script type="text/javascript"> document.write( new Date().getFullYear());</script> | Safaris Limited.</p>
+                    <p class="lead pri fw-bold" id="year"> <script type="text/javascript"> document.write( new Date().getFullYear());</script> | Safaris Limited.</p>
                 </div>
         </footer>
 

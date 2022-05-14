@@ -3,32 +3,32 @@
 @section('content')
 
 <div id="carouselExampleControls" class="carousel slide carousel-slide" data-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img class="d-block w-100 " src="{{ asset('image1.jpg') }}" alt="First slide" >
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img class="d-block w-100 " src="{{ asset('image1.jpg') }}" alt="Beautiful Highlights" >
+        </div>
+
+        @foreach($highlights as $highlight)
+            <div class="carousel-item">
+                <img class="d-block w-100" src="{{ asset('/storage/'.$highlight->image) }}" alt="Beautiful Highlights">
+            </div>
+        @endforeach
     </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="{{ asset('image1.jpg') }}" alt="Second slide">
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="{{ asset('image2.jpg') }}" alt="Third slide">
-    </div>
-  </div>
-  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-    <span><i class="bi bi-arrow-left-circle-fill" style="font-size: 40px; color: #550a35;"  aria-hidden="true"></i></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-  <span><i class="bi bi-arrow-right-circle-fill" style="font-size: 40px; color:#550a35;"  aria-hidden="true"></i></span>
-    <span class="sr-only">Next</span>
-  </a>
+    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+        <span><i class="bi bi-arrow-left-circle-fill" style="font-size: 40px; color: #550a35;"  aria-hidden="true"></i></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+        <span><i class="bi bi-arrow-right-circle-fill" style="font-size: 40px; color:#550a35;"  aria-hidden="true"></i></span>
+        <span class="sr-only">Next</span>
+    </a>
 </div>
 
 <br>
         <div class="container">
-            <h3 class="text-center">Top Holiday Deals</h3>
+            <h3 class="text-center">Exciting Holiday Offers</h3>
             <div class="row">
-                @forelse($tours as $tour )
+                @forelse($holidayOffers as $tour )
                 <div class="col-lg-4 col-md-4">
                     <div class="card">
                             <img src="{{ asset('/storage/'.$tour->image) }}" alt="tour image"  class="card-img-top">
@@ -43,7 +43,7 @@
                                     <p class="card-text">Offers From&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
                                     <p class="price">{{ $tour->per_person_sharing }}</p>
                                 </div>  
-                            <a href="{{ route('tour', $tour->category) }}" class="btn btn-primar">SEE ALL OFFERS</a>
+                            <a href="{{ route('tour', 'Exciting Holiday Offers' ) }}" class="btn btn-primar">SEE ALL OFFERS</a>
                         </div>
                     </div>
                 </div>
@@ -68,7 +68,7 @@
                                     <p class="price">KSH 13600</p>
                                 </div>
                            
-                            <a href="{{ route('tour', 'topDeals') }}" class="btn btn-primar">SEE ALL OFFERS</a>
+                            <a href="{{ route('tour', 'Exciting Holiday Offers') }}" class="btn btn-primar">SEE ALL OFFERS</a>
                         </div>
                     </div>
                 </div>
@@ -92,7 +92,7 @@
                                     <p class="price">KSH 13600</p>
                                 </div>
                             
-                            <a href="{{ route('tour', 'topDeals') }}" class="btn btn-primar">SEE ALL OFFERS</a>
+                            <a href="{{ route('tour', 'Exciting Holiday Offers') }}" class="btn btn-primar">SEE ALL OFFERS</a>
                         </div>
                     </div>
                 </div>
@@ -117,7 +117,7 @@
                                     <p class="price">KSH 13600</p>
                                 </div>
                            
-                            <a href="{{ route('tour', 'topDeals') }}" class="btn btn-primar">SEE ALL OFFERS</a>
+                            <a href="{{ route('tour', 'Exciting Holiday Offers') }}" class="btn btn-primar">SEE ALL OFFERS</a>
                         </div>
                     </div>
                 </div>
@@ -128,9 +128,9 @@
         <br>
 
         <div class="container">
-            <h5 class="text-center"> <script type="text/javascript"> document.write( new Date().getFullYear());</script> LEGENDARY DEALS - YOU CAN'T AFFORD TO MISS</h5>
+            <h5 class="text-center"> TEMBEA UJIONEE <script type="text/javascript"> document.write( new Date().getFullYear());</script></h5>
             <div class="row">
-                @forelse($olderTours as $tours)
+                @forelse($tembeaTours as $tours)
                 <div class="col-lg-4 col-md-4">
                     <div class="card">
                             <img src="{{ asset('index.jpeg') }}" alt=""  class="card-img-top">
@@ -140,7 +140,7 @@
                                 <p class="card-text">{{ $tours->hotel }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
                                 <p class="price">KSH {{ $tours->single_room }}</p>
                             </div>
-                            <a href="{{ route('tour', $tour->category ) }}" class="btn btn-primar">SEE ALL OFFERS</a>
+                            <a href="{{ route('tour', 'Tembea Ujionee' ) }}" class="btn btn-primar">SEE ALL OFFERS</a>
                         </div>
                     </div>
                 </div>
@@ -158,7 +158,7 @@
                             </div>
                             
                         
-                            <a href="{{ route('tour', 'seasonHolidays') }}" class="btn btn-primar">SEE ALL OFFERS</a>
+                            <a href="{{ route('tour', 'Tembea Ujionee') }}" class="btn btn-primar">SEE ALL OFFERS</a>
                         </div>
                     </div>
                 </div>
@@ -173,7 +173,7 @@
                             </div>
                             
                            
-                            <a href="{{ route('tour', 'seasonHolidays') }}" class="btn btn-primar">SEE ALL OFFERS</a>
+                            <a href="{{ route('tour', 'Tembea Ujionee') }}" class="btn btn-primar">SEE ALL OFFERS</a>
                         </div>
                     </div>
                 </div>
@@ -188,7 +188,7 @@
                             </div>
                             
                          
-                            <a href="{{ route('tour', 'seasonHolidays') }}" class="btn btn-primar">SEE ALL OFFERS</a>
+                            <a href="{{ route('tour', 'Tembea Ujionee') }}" class="btn btn-primar">SEE ALL OFFERS</a>
                         </div>
                     </div>
                 </div>
@@ -199,9 +199,9 @@
         <br>
 
         <div class="container">
-            <h3 class="text-center">Featured Tours</h3>
+            <h3 class="text-center">Local Tours</h3>
             <div class="row">
-                @forelse($tuas as $tour)
+                @forelse($localTours as $tour)
                 <div class="col-lg-3 col-sm-3">
                     <div class="card">
                             <img src="{{ asset('/storage/'.$tour->image ) }}" alt="Tour Image" class="card-img-top">
@@ -271,7 +271,7 @@
             <br>
 
 
-            <p class="lead text-center">Romantic HoneyMoons || Couple Holidays</p>
+            <!-- <p class="lead text-center">Romantic HoneyMoons || Couple Holidays</p>
             <div class="row">
                 <div class="col-lg">
                     <div class="card mb-3" style="max-width: 540px">
@@ -305,6 +305,6 @@
                         </div>
                     </div>                        
                 </div>
-            </div>
+            </div> -->
         </div>
 @endsection

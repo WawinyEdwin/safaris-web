@@ -9,7 +9,11 @@ use App\Http\Controllers\HolidayController;
 use App\Http\Controllers\HoneyMoonController;
 use App\Http\Controllers\EnquiryController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\BlogController;
+use App\Http\Controllers\VideoController;
+use App\Http\Controllers\HighlightController;
 use App\Http\Controllers\Auth\RegisterController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,7 +29,6 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/about', [HomeController::class, 'about'])->name('about');
 Route::get('/careers', [HomeController::class, 'careers'])->name('careers');
 Route::get('/awards', [HomeController::class, 'awards'])->name('awards');
-// Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 Route::get('/faqs', [HomeController::class, 'faqs'])->name('faqs');
 Route::get('/help', [HomeController::class, 'help'])->name('help');
 Route::get('/team', [HomeController::class, 'team'])->name('team');
@@ -34,7 +37,6 @@ Route::get('/testimonies', [HomeController::class, 'testimony'])->name('testimon
 Route::get('/travel-info', [HomeController::class, 'travel'])->name('travel');
 Route::get('/affiliation', [HomeController::class, 'affiliation'])->name('affiliation');
 Route::get('/media', [HomeController::class, 'media'])->name('media');
-Route::get('/videos', [HomeController::class, 'videos'])->name('videos');
 Route::get('/blog', [HomeController::class, 'blog'])->name('blog');
 
 Route::get('/admin', [ToursController::class, 'admin'])->name('admin')->middleware('auth');
@@ -44,6 +46,12 @@ Route::resource('bookings', BookingController::class);
 Route::resource('tours', ToursController::class)->middleware('auth');
 
 Route::resource('enquiries', EnquiryController::class);
+
+Route::resource('blogs', BlogController::class);
+
+Route::resource('videos', VideoController::class);
+
+Route::resource('highlights', HighlightController::class);
 
 Route::resource('categories', CategoryController::class)->middleware('auth');
 
@@ -60,10 +68,19 @@ Route::get('send-mail', function() {
     \Mail::to('crud3swift@gmail.com')->send( new \App\Mail\BookingMail($successMessage));
 
 });
+
 Auth::routes();
 
 Route::get('/update-user', [HomeController::class, 'updateView'])->name('updatePage');
 
 Route::post('/update/{id}', [HomeController::class, 'update'])->name('updateUser');
+
+Route::get('/search',[HomeController::class, 'search'])->name('search');
+
+Route::post('/sub_category',[CategoryController::class, 'store_sub'])->name('store_sub');
+Route::get('/sub_category/create',[CategoryController::class, 'sub_create'])->name('create_sub');
+Route::get('/sub_category/edit/{id}',[CategoryController::class, 'sub_edit'])->name('edit_sub');
+Route::post('/sub_category',[CategoryController::class, 'update_sub'])->name('update_sub');
+Route::post('/sub_category/delete/{id}',[CategoryController::class, 'sub_create'])->name('delete_sub');
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

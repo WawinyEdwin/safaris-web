@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Category;
+use App\Models\Sub_category;
 
 class CategoryController extends Controller
 {
@@ -15,8 +16,10 @@ class CategoryController extends Controller
     public function index()
     {
         //
+        $sub_categories = Sub_category::latest()->paginate(10);
+        
         $categories = Category::latest()->paginate(10);
-        return view('categories.index', compact('categories'))->with('i', (request()->input('page', 1) - 1) * 5);
+        return view('categories.index',['sub_categories' => $sub_categories ], compact('categories'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     /**
@@ -28,6 +31,12 @@ class CategoryController extends Controller
     {
         //
         return view('categories.create');
+    }
+
+    public function sub_create()
+    {
+        //
+        return view('categories.sub_create');
     }
 
     /**
@@ -47,6 +56,22 @@ class CategoryController extends Controller
         $category->category = $request->category;
 
         $category->save();
+
+        return redirect()->route('categories.index')->with('success', 'Category Saved!');
+    }
+
+    //sub category 
+    public function store_sub(Request $request)
+    {
+        //
+        $request->validate([
+            'sub_category' => 'required'
+        ]);
+
+        $sub_category = new Sub_category;
+        $sub_category->sub_category = $request->sub_category;
+
+        $sub_category->save();
 
         return redirect()->route('categories.index')->with('success', 'Category Saved!');
     }
@@ -76,6 +101,14 @@ class CategoryController extends Controller
         return view('categories.edit', compact('category'));
     }
 
+    public function sub_edit($id)
+    {
+        //
+        $sub_category = Sub_category::find($id);
+
+        return view('categories.sub_edit', compact('sub_category'));
+    }
+
     /**
      * Update the specified resource in storage.
      *
@@ -100,6 +133,24 @@ class CategoryController extends Controller
         return redirect()->route('categories.index')->with('success', 'Category Updated!');
     }
 
+    //update sub category
+    public function update_sub(Request $request, $id)
+    {
+        //
+        $request->validate([
+            'sub_category' => 'required'
+        ]);
+
+        $sub_category = new Sub_category;
+        $sub_category = Sub_category::find($id);
+
+        $sub_category->category = $request->category;
+
+        $category->update();
+
+        return redirect()->route('categories.index')->with('success', 'Sub category Updated!');
+    }
+
     /**
      * Remove the specified resource from storage.
      *
@@ -113,6 +164,17 @@ class CategoryController extends Controller
         $category= Category::find($id);
 
         $category->delete();
+
+        return redirect()->route('categories.index')->with('success', 'Deleted Successfully');
+
+    }
+
+    public function destroy_sub($id)
+    {
+        //
+        $sub_category = Sub_category::find($id);
+
+        $sub_category->delete();
 
         return redirect()->route('categories.index')->with('success', 'Deleted Successfully');
 

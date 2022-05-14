@@ -5,48 +5,102 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Tours;
 use App\Models\User;
+use App\Models\Blog;
 use App\Models\Category;
+use App\Models\Highlight;
 use Illuminate\Support\Facades\Hash;
 
 class HomeController extends Controller
 {
-    //index page
-    public function index() {
 
+    //search 
+    public function search(Request $request) 
+    {
+        //develop a query from the Model
+        $tours = Tours::where([
+            ['hotel', '!=', Null],
+            [function ($query) use ($request) {
+                if(($term = $request->item)) {
+                    $query->orWhere('hotel', 'LIKE', '%' . $term . '%')->get();
+                }
+            }]
+        ])->orderBy("id", "desc")->paginate(10);
+
+        //find a category
         $categories = Category::all();
-
-        $olderTours = Tours::latest()->limit(3)->get();
-      
-        $tuas = Tours::inRandomOrder()->limit(4)->get();
+        $blogs = Blog::all();
 
         $tours = Tours::inRandomOrder()->limit(3)->get();
 
-        return view('home', ['categories' => $categories, 'tours' => $tours, 'olderTours' => $olderTours, 'tuas' => $tuas]);
+        return view('tour.search',
+            [
+                'categories' => $categories,
+                'tours' => $tours,
+                'blogs' => $blogs,
+            ], compact('tours'))->with('i', (request()->input('page', 1) -1) * 5);
+
+    }
+    //index page
+    public function index() {
+
+        //find categories
+        $categories = Category::all();
+
+        //find blogs
+        $blogs = Blog::all();
+
+        //fetches tours
+        $tours = Tours::inRandomOrder()->limit(3)->get();
+
+        $holidayOffers = Tours::where('category', 'Exciting Holiday Offers')->limit(3)->get();
+      
+        $localTours = Tours::where('category', 'Local Tours')->limit(4)->get();
+
+        $tembeaTours = Tours::where('category', 'Tembea Ujionee')->limit(3)->get();
+
+
+        //to appear in carousel
+        $highlights = Highlight::all();
+    
+        return view('home', [
+            'categories' => $categories,
+            'tours' => $tours,
+            'blogs' => $blogs,
+            'holidayOffers' => $holidayOffers,
+            'localTours' => $localTours,
+            'tembeaTours' => $tembeaTours,
+            'highlights' => $highlights
+        ]);
     }
 
+    //dynamic category switch.
     public function tours($category) {
 
         $tours =  Tours::where('category', $category)->get();
       
         $categories = Category::all();
 
-        return view('tour.category',['categories' => $categories], ['tours' => $tours]);
+        // dd($categories);
+
+        return view('tour.category',[
+            'categories' => $categories,
+            'tours' => $tours
+        ]);
      }
 
 
-     //credentials page
+    //credentials page.
     public function updateView() {
         return view('auth.register');
     }
 
      //credentials update
     public function update(Request $request, User $user,  $id)
-     {
+    {
        
         if($request->password != $request->password_confirmation) {
             return redirect()->back()->with('error', 'Password does not match');
         }
-
 
         $user = new User;
  

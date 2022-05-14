@@ -23,6 +23,7 @@
     </div>
     @endif
 
+    <p class="text-center pri">Information you input here will be visible to your users, once posted</p>
     <form action="{{ route('tours.store') }}" method="post" enctype="multipart/form-data">   
         @csrf
         @method('POST')    
@@ -48,6 +49,9 @@
                         <label for="category" class="form-label">Category</label>
                         <select name="category" id="category" class="form-control">
                             <option value="">--choose category--</option>
+                            <option value="Exciting Holiday Offers">Exciting Holiday Offers</option>
+                            <option value="Tembea Ujionee">Tembea Ujionee</option>
+                            <option value="Local Tours">Local Tours</option>
                             @foreach($categories as $category )
                                 <option value="{{ $category->category }}">{{ $category->category }}</option>
                             @endforeach

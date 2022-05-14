@@ -108,32 +108,24 @@
                         
                         <li class="nav-item active"><a href="{{ url('/') }}" class="nav-link">Home</a></li>
 
-                        @forelse($categories as $category)
+                        @foreach($categories as $category)
                         <li class="nav-item "> 
-                            <a class="nav-link dropdown-toggle" href="{{ route('tour',  $tour->category) }}" >
+                            <a class="nav-link dropdown-toggle" href="{{ route('tour',  $category->category ) }}" >
                                 {{ $category->category }}
                             </a>
-                        </li>
-                        
-                        @empty
-                        <li class="nav-item "> 
-                            <a class="nav-link dropdown-toggle" href="{{ route('tour',  $tour->category) }}" >
-                                No Categories
-                            </a>
-                        </li>
-                        
-                        @endforelse
+                        </li> 
+                        @endforeach
 
                         <li class="nav-item"> 
                             <a class="nav-link btn btn-outline-light" href="{{ route('enquiries.create') }}">
                                 Contact
                             </a>
                         </li>
-                        <!-- <li class="nav-item"> 
-                            <a class="nav-link" href="{{ route('blog') }}">
+                        <li class="nav-item"> 
+                            <a class="nav-link" href="{{ route('blogs.index') }}">
                                 Blog
                             </a>
-                        </li> -->
+                        </li>
                     </div>
                 </div>
             </div>
@@ -146,9 +138,9 @@
             <div class="container p-2">
                 <!-- <a href="{{ url('/')}}" class="navbar-brand ">Safaris</a> -->
                
-                <div class="navbar-nav mr-auto">
-                    <form class="form-inline ">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <div class="navbar-nav text-center">
+                    <form class="form-inline" action="{{ route('search') }}" method="GET" role="search">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search" name="term" id="term" aria-label="Search">
                         <button class="btn btn-outline-primar my-2 my-sm-0" type="submit">Search</button>
                     </form>
                 </div>
@@ -191,7 +183,7 @@
                                 <li><a href="{{ route('careers') }}" class="text-primar">Careers</a></li>
                                 <li><a href="{{ route('media') }}" class="text-primar">In the Media</a></li>
                                 <li><a href="{{ route('awards') }}" class="text-primar">Awards</a></li>
-                                <li><a href="{{ route('videos') }}" class="text-primar">Safari Videos</a></li>
+                                <li><a href="{{ route('videos.index') }}" class="text-primar">Safari Videos</a></li>
                                 <li><a href="{{ route('faqs') }}" class="text-primar">FAQs</a></li>
                                 <li><a href="{{ route('team') }}" class="text-primar">Our Team</a></li>
                                 <li><a href="{{ route('enquiries.create') }}" class="text-primar">Contact Us</a></li>
@@ -213,13 +205,16 @@
                     <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos cumque officia sint ullam fugit dignissimos facilis ducimus harum accusamus nulla?</li>
                     </ul>
                 </div>
-                <!-- <div class="col">
+                <div class="col">
                     <p class="text-primar">Latest from Blog</p>
                     <ul>
-                    <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos cumque officia sint ullam fugit dignissimos facilis ducimus harum accusamus nulla?</li>
-                    <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos cumque officia sint ullam fugit dignissimos facilis ducimus harum accusamus nulla?</li>
-    </ul>
-                </div> -->
+                        @foreach($blogs as $blog)
+                        <li>
+                            <p>{{ \Illuminate\Support\Str::limit($blog->content, 100, $end='...') }}</p>
+                        </li>
+                        @endforeach
+                    </ul>
+                </div>
             </div>
         </div>
         <br>

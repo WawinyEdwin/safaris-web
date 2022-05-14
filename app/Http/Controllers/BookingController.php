@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Mail\BookingMail;
 use App\Models\Booking;
 use App\Models\Tours;
+use App\Models\Blog;
 use App\Models\Category;
 use Illuminate\Http\Request;
 
@@ -36,7 +37,14 @@ class BookingController extends Controller
     
         $categories = Category::all();
 
-        return view('bookings.create',['categories' => $categories, 'tours' => $tours]);
+        $blogs = Blog::all();
+
+        return view('bookings.create',
+            [
+                'categories' => $categories,
+                'tours' => $tours,
+                'blogs' => $blogs
+            ]);
 
     }
 
@@ -157,6 +165,6 @@ class BookingController extends Controller
     {
         //
         $booking->delete();
-        return redirect()->route('tours.bookings')->with('success', 'Booking deleted successfully!');
+        return redirect()->route('bookings.index')->with('success', 'Booking deleted successfully!');
     }
 }

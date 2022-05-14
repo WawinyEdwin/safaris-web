@@ -1,66 +1,75 @@
-@extends('layout.index')
+@extends('layout.new')
 
 @section('content')
 
-<div class=" bg-primary navbar expand-lg ">
+<div class=" bg-primar navbar expand-lg ">
     <div class="container">
-    <p class="lead text-white">Home / Lake Elementatita Deals.</p>
-    </div>
-   
+    <p class="lead text-white">Exquisite places you can visit and special Deals.</p>
+    </div> 
 </div> 
 <br>
 <div class="container">
-    <div>
-        <a href="{{ route('bookings.create') }}" class="btn btn-primary"> 
-            Book Now
-        </a>
-    </div>
-    <br>
-    <br>
     <div class="row">
-        <div class="col-lg-7 col-sm-12">
-            <div class="card">
-                <h5 class="text-center pt-2">Lake Elementatita Deals | 2days, 1 Night</h5>
-                <div class="card-body">
-                    <table class="table table-responsive">
+        <div class="col">
+            <div class="">
+                <h5 class="text-center pt-2">Search Results</h5>
+                <div class="table-responsive">
+                    <table class="table table-bordered">
                         <thead>
                             <th scope="col">Hotel</th>
+                            <th scope="col">Location</th>
                             <th scope="col">Transport</th>
                             <th scope="col">Per Person Sharing</th>
                             <th scope="col">Single Room</th>
                             <th scope="col">Meals on Board</th>
                         </thead>
                         <tbody>
-                            <td>Sirvelle</td>
-                            <td>Self Drive</td>
-                            <td>Ksh.5500</td>
-                            <td>Ksh.10500</td>
-                            <td>All Inclusive</td>
+
+                            @forelse($tours as $tour)
+                            <tr>
+                            <td>{{ $tour->hotel }}</td>
+                            <td>{{ $tour->location }}</td>
+                            <td>{{ $tour->transport }}</td>
+                            <td>{{ $tour->per_person_sharing }}</td>
+                            <td>{{ $tour->single_room }}</td>
+                            <td>{{ $tour-> meals}}</td>
+                            </tr>
                         </tbody>
                     </table>
+                            @empty
+                                <p class="text-danger lead text-center" >Oops! No Deals were found, Try a different Search term</p>
+
+                            @endforelse
                 </div>
                 <br>
                 <br>
-                <div class="card-body">
-                    <p>Whats Included?</p>
+                <br>
+                <div class="">
+                    <h5>Inclusions</h5>
                     <ul>
-                        <li>1 Night Accomodation.</li>
-                        <li>Meals as per each Hotel specification.</li>
+                        <li>1/2 nights Accomodation</li>
+                        <li>Meals as indicated</li>
                         <li>Use of Hotel Facilities</li>
-                        <li>Entertainment at the Hotel.</li>
+                        <li>Entertainment at the Hotel</li>
+                    </ul>
+                    <br>
+                    <br>
+                    <h5>Exclusions</h5>
+                    <ul>
+                        <li>Peronal Expenses</li>
+                        <li>Park/Conservancy Fees</li>
+                        <li>Any other fees not included</li>
                     </ul>
                 </div>
-                <br>
-               
-                <div class="card-body">
-                    <a href="{{ route('bookings.create') }}" class="btn btn-primary"> 
-                        Book Now
-                    </a>
-                </div>
-                <br>
+
+            <div>
+                <a href="{{ route('bookings.create') }}" class="btn btn-primar"> 
+                    Book Now
+                </a>
+            </div>
             </div>
         </div>
-        <div class="col-lg-4 col-sm-12">
+        <!-- <div class="col-lg-4 col-sm-12">
             
             <div class="card mb-3">
 
@@ -127,7 +136,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 </div>
 
 <hr>

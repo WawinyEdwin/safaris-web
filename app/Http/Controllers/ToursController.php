@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Tours;
+use App\Models\Blog;
 use App\Models\Booking;
 use App\Models\Category;
 use Illuminate\Http\Request;
@@ -89,7 +90,16 @@ class ToursController extends Controller
     {
         //
         $tours = Tours::find($id);
-        return view('tours.show', compact('tours'), ['tours' => $tours]);
+
+        $categories = Category::all();
+
+        $blogs = Blog::all();
+        
+        return view('tours.show', compact('tours'),
+        [
+            'categories' => $categories,
+            'blogs' => $blogs
+        ]);
     }
 
     /**
@@ -102,7 +112,13 @@ class ToursController extends Controller
     {
         //
         $tours = Tours::find($id);
-        return view('tours.edit', compact('tours'), ['tours' => $tours]);
+        $categories = Category::all();
+
+        return view('tours.edit',
+            [
+             'categories' => $categories,
+             'tours' => $tours
+            ]);
         
     }
 

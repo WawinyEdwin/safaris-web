@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Enquiry;
+use App\Models\Blog;
 use Illuminate\Http\Request;
 
 class EnquiryController extends Controller
@@ -28,7 +29,12 @@ class EnquiryController extends Controller
     public function create()
     {
         //
-        return view('enquiries.create');
+        $blogs = Blog::all();
+
+        return view('enquiries.create',
+        [
+            'blogs' => $blogs
+        ]);
     }
 
     /**

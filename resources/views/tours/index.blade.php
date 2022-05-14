@@ -2,14 +2,13 @@
 
 @section('content')
 
-.<div class="col-lg-12">
+.<div class="container">
         <div class="text-left">
-            <h2>Tours Posted</h2>
+            <h2 class="pri">Tours Posted</h2>
         </div>
         <div class="text-right">
             <a href="{{ route('tours.create') }}" class="btn btn-primar">Add Tour</a>
         </div>
-    </div>
     <br>
 
 <div class="table-responsive">
@@ -58,6 +57,6 @@
             </tbody>
         </table>
     </div>
-
+    </div>
     <hr>
 @endsection

@@ -4,15 +4,11 @@
 
 
 
-<div class="p-2">
-<div class="col-lg-12">
+<div class="">
+    <br>
         <div class="text-left">
-            <h2>Enquiry</h2>
+            <h2 class="pri">Enquiry</h2>
         </div>
-        <!-- <div class="text-right">
-            <a href="" class="btn btn-primary">Add Booking</a>
-        </div> -->
-    </div>
     <br>
     <div class="table-responsive">
         <table class="table table-bordered">
@@ -58,9 +54,7 @@
                 </tr>
                 @endforeach
             </tbody>
-        </table>
-
-      
+        </table>      
     </div>
 </div>
 {{ $enquiries->links() }}

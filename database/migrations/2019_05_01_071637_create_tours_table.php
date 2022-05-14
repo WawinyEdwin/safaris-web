@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('hotel');
             $table->text('transport');
+            $table->text('location');
             $table->text('per_person_sharing');
             $table->text('single_room');
             $table->text('category');

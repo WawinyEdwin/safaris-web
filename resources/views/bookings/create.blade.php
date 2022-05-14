@@ -4,7 +4,7 @@
 
 <div class=" bg-primar navbar expand-lg ">
     <div class="container">
-    <p class="lead "> <a href="{{ url('/') }}" class="text-white">Home </a>/ Confirm Booking.</p>
+    <p class="lead text-white"> <a href="{{ url('/') }}" class="text-white">Home </a>/ Confirm Booking.</p>
     </div>
    
 </div>
@@ -26,7 +26,7 @@
     <div class="row">
         <div class="col-lg-7 col-sm-12">
             <div class="text-center">
-                <p>Booking Information</p>
+                <p class="lead pri" >Booking Information</p>
                 <small>Please fill all the details correctly!</small>
             </div>
             <div class="card mr-3">
@@ -110,7 +110,7 @@
                         <br>
                         {!! NoCaptcha::display() !!}
                      
-                        <span>@error('g-recaptcha-response') {{ $message }} @enderror</span>
+                        <span class="text-danger" >@error('g-recaptcha-response') {{ $message }} @enderror</span>
 
                         <br>
                         <button class="btn btn-primar" type="submit" onSubmit=" alert('Success, you will recieve an email with further details')">
@@ -131,35 +131,18 @@
                 <div class="card-body">
                     <p class="text-primary text-center">Top Holiday Deals</p>
                     <hr>
+                    @foreach($tours as $tour)
                 <div class="row no gutters">
                     <div class="col">
-                        <img src="{{ asset('index.jpeg') }}" alt="" class="card-img">
+                        <img src="{{ asset('/storage', $tour->image ) }}" alt="Exciting tour offer" class="card-img-top">
                     </div>
                     <div class="col">
-                        <p>5 days, 4 nights</p>
-                        <p>Temebeza Wazazi Package</p>
+                        <p></p>
+                        <p></p>
                     </div>
                 </div>
                 <hr>
-                <div class="row no gutters">
-                    <div class="col">
-                        <img src="{{ asset('index.jpeg') }}" alt="" class="card-img">
-                    </div>
-                    <div class="col">
-                        <p>5 days, 4 nights</p>
-                        <p>Temebeza Wazazi Package</p>
-                    </div>
-                </div>
-                <hr>
-                <div class="row no gutters">
-                    <div class="col">
-                        <img src="{{ asset('index.jpeg') }}" alt="" class="card-img">
-                    </div>
-                    <div class="col">
-                        <p>5 days, 4 nights</p>
-                        <p>Temebeza Wazazi Package</p>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
 <br>
