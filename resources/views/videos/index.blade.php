@@ -15,8 +15,9 @@
         @foreach($videos as $video)
         <div class="col-lg-4 col-sm-12">
             <div class="card">
-                <iframe  class="card-img-top" src="{{ $video->url }}">
-                </iframe>
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{{$video->url}}" allowfullscreen></iframe>
+                </div>
                 @auth
                 <div class="card-body">
                     <form action="{{ route('videos.destroy', $video->id ) }}" method="post">

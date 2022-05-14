@@ -51,7 +51,15 @@ class VideoController extends Controller
             'url' => 'required'
         ]);
 
-        Video::create($request->all());
+        $video = new Video;
+
+        $split_url = explode("/",$request->url);
+
+        $video->url = end($split_url);
+
+        $video->save();
+
+        
 
         return redirect()->route('videos.index')->with('success', 'Video Added Succsfully!');
     }
@@ -96,10 +104,11 @@ class VideoController extends Controller
      * @param  \App\Models\Video  $video
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Video $video, $id)
+    public function destroy(Video $video)
     {
         //
-        $video = Video::find($id);
+        // $video = Video::find($id);
+
         $video->delete();
 
         return redirect()->route('videos.index')->with('success', 'Deleted!');
