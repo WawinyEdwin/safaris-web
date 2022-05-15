@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Tours;
+use App\Models\Video;
 use App\Models\User;
 use App\Models\Blog;
 use App\Models\Category;
+use App\Models\Sub_category;
 use App\Models\Highlight;
 use Illuminate\Support\Facades\Hash;
 
@@ -26,9 +28,11 @@ class HomeController extends Controller
             }]
         ])->orderBy("id", "desc")->paginate(10);
 
-        //find a category
+        //find categories
         $categories = Category::all();
-        $blogs = Blog::all();
+
+        //find blogs
+        $blogs =  Blog::latest()->limit(2)->get();
 
         $tours = Tours::inRandomOrder()->limit(3)->get();
 
@@ -46,8 +50,15 @@ class HomeController extends Controller
         //find categories
         $categories = Category::all();
 
+        //find sub_categories
+        $sub_categories = Sub_category::all();
+
         //find blogs
-        $blogs = Blog::all();
+        $blogs = Blog::latest()->limit(2)->get();
+
+        $coverBlogs = Blog::latest()->limit(3)->get();
+
+        $videos = Video::inRandomOrder()->limit(4)->get();
 
         //fetches tours
         $tours = Tours::inRandomOrder()->limit(3)->get();
@@ -64,8 +75,11 @@ class HomeController extends Controller
     
         return view('home', [
             'categories' => $categories,
+            'sub_categories' => $sub_categories,
             'tours' => $tours,
             'blogs' => $blogs,
+            'coverBlogs' => $coverBlogs,
+            'videos' => $videos,
             'holidayOffers' => $holidayOffers,
             'localTours' => $localTours,
             'tembeaTours' => $tembeaTours,
@@ -77,14 +91,49 @@ class HomeController extends Controller
     public function tours($category) {
 
         $tours =  Tours::where('category', $category)->get();
+
+        // dd($tours);
       
         $categories = Category::all();
+
+        //find sub_categories
+        $sub_categories = Sub_category::all();
+
+        $blogs =  Blog::latest()->limit(2)->get();
 
         // dd($categories);
 
         return view('tour.category',[
             'categories' => $categories,
-            'tours' => $tours
+            'category' => $category,
+            'sub_categories' => $sub_categories,
+            'tours' => $tours,
+            'blogs' => $blogs
+        ]);
+     }
+
+     //dynamic subcategory switch.
+    public function tour_cat($sub_category) {
+
+        $tours =  Tours::where('sub_category', $sub_category)->get();
+      
+        $categories = Category::all();
+
+        // dd($tours);
+
+        //find sub_categories
+        $sub_categories = Sub_category::all();
+
+        $blogs =  Blog::latest()->limit(2)->get();
+
+        // dd($categories);
+
+        return view('tour.sub_category',[
+            'categories' => $categories,
+            'sub_categories' => $sub_categories,
+            'tours' => $tours,
+            'sub_category' =>  $sub_category,
+            'blogs' => $blogs
         ]);
      }
 
@@ -120,7 +169,20 @@ class HomeController extends Controller
     //about page
     public function about()
     {
-        return view('safaris.about-us');
+        $blogs = Blog::latest()->limit(2)->get();
+
+        $categories = Category::all();
+
+        //find sub_categories
+        $sub_categories = Sub_category::all();
+
+        return view('safaris.about-us',
+        [
+            'categories' => $categories,
+            'sub_categories' => $sub_categories,
+            'blogs' => $blogs
+        ]
+    );
     }
 
     public function affiliations() 
@@ -130,27 +192,76 @@ class HomeController extends Controller
 
     public function  careers()
     {
-        return view('safaris.careers');
+        $blogs = Blog::latest()->limit(2)->get();
+
+        $categories = Category::all();
+
+        //find sub_categories
+        $sub_categories = Sub_category::all();
+
+        return view('safaris.careers', 
+    [
+        'categories' => $categories,
+        'sub_categories' => $sub_categories,
+        'blogs' => $blogs
+    ]);
     }
 
     public function faqs()
     {
-        return view('safaris.faqs');
+        $blogs = Blog::latest()->limit(3)->get();
+
+        $categories = Category::all();
+
+        //find sub_categories
+        $sub_categories = Sub_category::all();
+
+        return view('safaris.faqs',
+        [
+            'categories' => $categories,
+            'sub_categories' => $sub_categories,
+            'blogs' => $blogs
+        ]);
     }
     
     public function awards()
     {
+        $blogs = Blog::latest()->limit(3)->get();
+
+        $categories = Category::all();
+
+        //find sub_categories
+        $sub_categories = Sub_category::all();
+
         return view('safaris.awards');
     }
 
     public function policy()
     {
+        $blogs = Blog::latest()->limit(3)->get();
+
+        $categories = Category::all();
+
+        //find sub_categories
+        $sub_categories = Sub_category::all();
+
         return view('safaris.policy');
     }
 
     public function help()
     {
-        return view('safaris.help');
+        $blogs = Blog::latest()->limit(2)->get();
+
+        $categories = Category::all();
+
+        //find sub_categories
+        $sub_categories = Sub_category::all();
+
+        return view('safaris.help', [
+            'categories' => $categories,
+            'sub_categories' => $sub_categories,
+            'blogs' => $blogs
+        ]);
     }
 
     public function travel()
@@ -165,6 +276,13 @@ class HomeController extends Controller
 
     public function team()
     {
+        $blogs = Blog::latest()->limit(3)->get();
+
+        $categories = Category::all();
+
+        //find sub_categories
+        $sub_categories = Sub_category::all();
+
         return view('safaris.team');
     }
 

@@ -2,8 +2,6 @@
 
 @section('content')
 
-
-
 <div class="">
     <br>
         <div class="text-left">

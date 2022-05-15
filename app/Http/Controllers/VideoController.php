@@ -16,7 +16,7 @@ class VideoController extends Controller
     public function index()
     {
         //
-        $videos = Video::all();
+        $videos = Video::latest()->paginate(6);
         $blogs = Blog::all();
 
         return view('videos.index', 
@@ -48,7 +48,8 @@ class VideoController extends Controller
     {
         //
         $request->validate([
-            'url' => 'required'
+            'url' => 'required',
+            'name' => 'required'
         ]);
 
         $video = new Video;
@@ -56,6 +57,7 @@ class VideoController extends Controller
         $split_url = explode("/",$request->url);
 
         $video->url = end($split_url);
+        $video->name = $request->name;
 
         $video->save();
 
@@ -106,9 +108,7 @@ class VideoController extends Controller
      */
     public function destroy(Video $video)
     {
-        //
-        // $video = Video::find($id);
-
+     
         $video->delete();
 
         return redirect()->route('videos.index')->with('success', 'Deleted!');

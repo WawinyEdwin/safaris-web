@@ -3,9 +3,10 @@
 @section('content')
 
 <div class="container">
-    
+    <p class="pri text-center">Explore Exciting Travel Tales and learn about places you are to visit!</p>
+    <hr>
     <div class="row">
-        @foreach($blogs as $blog)
+        @foreach($coverBlogs as $blog)
         <div class="col-lg-4 col-sm-12">
             <div class="card">
                 <img src="{{ asset('/storage/'. $blog->image) }}" alt="" class="card-img-top">
@@ -36,7 +37,7 @@
         </div>
         @endforeach
     </div>
+    <p class="text-center">Explore More Tales</p>
+    {{ $coverBlogs->links() }}
 </div>
-
-
 @endsection

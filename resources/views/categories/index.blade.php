@@ -57,9 +57,9 @@
            </tbody>
        </table>
    </div>
-   <br> <br>
-   <!-- <div class="table-responsive">
-       <p>Sub Categories</p> 
+   <br> 
+   <div class="table-responsive">
+       <p class="lead pri">Sub Categories</p> 
        <div class="text-right">
             <a href="{{ route('create_sub') }}" class="btn btn-primar">Add Sub-Category</a>
         </div>
@@ -91,7 +91,7 @@
                @endforeach
            </tbody>
        </table>
-   </div> -->
+   </div>
 </div>
 
 @endsection

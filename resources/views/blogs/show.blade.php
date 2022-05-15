@@ -33,8 +33,7 @@
                 </div>
                 <div class="card-body">
                     <div class="text-center">
-                        <h5 class="card-title">{{ $blog->title }}</h5> 
-                        <small>{{ $blog->created_at }}</small>
+                        <h5 class="card-title">{{ $blog->title }} <i class="bi bi-clock pri"></i><small> {{ $blog->created_at }}</small></h5> 
                     </div>
                     <div class="container">
                         <p>{{ $blog->content }}</p>
@@ -42,12 +41,13 @@
                 </div>
             </div>
         </div>
+        <br>
         <div class="col-lg-5 col-sm-12">
             <div class="card mb-3">
                     <div class="card-body">
                         <p class="text-primary text-center">Top Holiday Stories</p>
                         <hr>
-                        @foreach($blogs as $blog)
+                        @foreach($coverBlogs as $blog)
                             <div class="row no gutters">
                                 <div class="col">
                                     <img src="{{ asset('/storage/'. $blog->image ) }}" alt="" class="card-img-top">
@@ -59,7 +59,6 @@
                             </div>
                             <hr>
                         @endforeach
-                       
                     </div>
             </div>
         </div>

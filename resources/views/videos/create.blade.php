@@ -17,10 +17,15 @@
             <form action="{{ route('videos.store') }}" method="post">
                 @csrf 
                 @method('POST')
+                <div class="form-group">
+                    <label for="name" class="form-label">Video Name </label>
+                    <small  class="form-text text-info">reference name</small>
+                    <input type="text" name="name" id="name" class="form-control" required>
+                </div>
 
                 <div class="form-group">
                     <label for="url" class="form-label">New Video -- </label>
-                    <small>Please paste the youtube url of the desired video</small>
+                    <small class="form-text text-info">Please paste the youtube url of the desired video</small>
                     <input type="text" name="url" id="url" class="form-control" required>
                 </div>
 

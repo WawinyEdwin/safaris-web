@@ -12,7 +12,7 @@
     <div class="row">
         <div class="col">
             <div class="">
-                <h5 class="text-center pt-2">Search Results</h5>
+                <h5 class="text-center pt-2 pri">Your Search Results</h5>
                 <div class="table-responsive">
                     <table class="table table-bordered">
                         <thead>

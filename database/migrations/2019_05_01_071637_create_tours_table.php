@@ -18,13 +18,15 @@ return new class extends Migration
             $table->string('hotel');
             $table->text('transport');
             $table->text('location');
-            $table->text('per_person_sharing');
-            $table->text('single_room');
             $table->text('category');
+            $table->text('sub_category');
+            $table->text('image');
             $table->text('image1');
             $table->text('image2');
+            $table->text('per_person_sharing');
+            $table->text('single_room');
             $table->text('meals');
-            $table->text('image');
+            $table->text('additional_info')->nullable();
             $table->timestamps();
         });
     }

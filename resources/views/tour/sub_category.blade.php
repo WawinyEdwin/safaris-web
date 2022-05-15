@@ -4,11 +4,10 @@
 
 <div class=" bg-primar navbar expand-lg ">
     <div class="container">
-    <h2 class="lead text-white"> <a href="{{ url('/') }}" class="text-white" >Home </a>/ The Best Deals and Offers </h2>
+    <h2 class="lead text-white"> <a href="{{ url('/') }}" class="text-white" >Home </a>/ {{ $sub_category  }} </h2>
     </div>
    
 </div>
-
 <br>
 <div class="container">
   <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">

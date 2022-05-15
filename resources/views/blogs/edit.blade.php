@@ -1,9 +1,9 @@
-@extends('layout.new')
+@extends('layout.admin')
 
 @section('content')
 
 <div class="container">
-    <h5 class="text-center">Create Textual Content for your audience here.</h5>
+    <h5 class="text-center">Edit Textual Content for your audience here.</h5>
     <br>
     <form action="{{ route('blogs.store') }}" method="post" enctype="multipart/form-data" >
         @csrf 

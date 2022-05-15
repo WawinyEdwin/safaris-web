@@ -1,14 +1,6 @@
-@extends('layout.index')
+@extends('layout.admin')
 
 @section('content')
-
-<div class=" bg-primar navbar expand-lg ">
-    <div class="container">
-    <p class="lead text-white"> <a href="{{ url('/') }}" class="text-white">Home </a>/ {{ $tours->category }} </p>
-    </div>
-   
-</div>
-
 <div class="container">
     <div class="">
         <br>
@@ -39,6 +31,10 @@
                         <br>
                         <li>Meals : {{ $tours->meals }}</li>
                     </ul>
+                    <div class="">
+                        <p>Additional Info</p>
+                        <p>{{ $tours->additional_info }}</p>
+                    </div>
                 </div>
             </div>
         </div>

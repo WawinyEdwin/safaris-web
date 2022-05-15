@@ -2,7 +2,7 @@
 
 @section('content')
 
-.<div class="container">
+.<div class="container-fluid">
         <div class="text-left">
             <h2 class="pri">Tours Posted</h2>
         </div>
@@ -16,6 +16,7 @@
             <thead>
                 <th scope="col">Id</th>
                 <th scope="col">Category</th>
+                <th scope="col">Sub-Category</th>
                 <th scope="col">Hotel</th>
                 <th scope="col">Location</th>
                 <th scope="col">Transport</th>
@@ -31,6 +32,7 @@
                 <tr>
                     <td>{{ ++$i }}</td>
                     <td>{{ $tour->category }}</td>
+                    <td>{{ $tour->sub_category }}</td>
                     <td>{{ $tour->hotel }}</td>
                     <td>{{ $tour->location }}</td>
                     <td>{{ $tour->transport }}</td>
@@ -57,6 +59,7 @@
             </tbody>
         </table>
     </div>
-    </div>
+    {{ $tours->links() }}
+</div>
     <hr>
 @endsection

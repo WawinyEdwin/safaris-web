@@ -3,8 +3,7 @@
 @section('content')
 <hr>
 <div class="container">
-    <br>
-<p class="text-center lead pri">Exciting videos about past travels.</p>
+<h3 class="text-center pri">Exciting videos about past travels.</h3>
 @auth
 <div class="text-right">
     <a href="{{ route('videos.create' )}}" class="btn btn-primar">Add New</a>
@@ -18,6 +17,7 @@
                 <div class="embed-responsive embed-responsive-16by9">
                     <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{{$video->url}}" allowfullscreen></iframe>
                 </div>
+                <p class="text-center">{{ $video->name }}</p>
                 @auth
                 <div class="card-body">
                     <form action="{{ route('videos.destroy', $video->id ) }}" method="post">
@@ -35,5 +35,5 @@
     </div>
 </div>
 
-
+{{ $videos->links() }}
 @endsection

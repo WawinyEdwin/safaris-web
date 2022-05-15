@@ -16,7 +16,7 @@ class EnquiryController extends Controller
     public function index()
     {
         //
-        $enquiries = Enquiry::latest()->paginate(5);
+        $enquiries = Enquiry::latest()->paginate(10);
         return view('enquiries.index', compact('enquiries'))->with('i', (request()->input('page', 1) - 1) * 5);
 
     }

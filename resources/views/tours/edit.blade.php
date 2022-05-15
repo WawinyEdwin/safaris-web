@@ -38,6 +38,7 @@
                     </div>
                 </div>
                 <br>
+                <br>
                 <div class="row">
                     <div class="col-lg-6 col-sm-12">
                         <label for="image2" class="form-label">Hotel Image 3</label>
@@ -45,9 +46,15 @@
                     </div>
 
                     <div class="col-lg-6 col-sm-12">
-                        <label for="category" class="form-label">Category</label>
+                        
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-lg-6 col-sm-12">
+                    <label for="category" class="form-label">Category</label>
                         <select name="category" id="category" class="form-control">
-                            <option value="">---choose category---</option>
+                            <option value="{{ $tours->category }}">{{ $tours->category }}</option>
                             <option value="Exciting Holiday Offers">Exciting Holiday Offers</option>
                             <option value="Tembea Ujionee">Tembea Ujionee</option>
                             <option value="Local Tours">Local Tours</option>
@@ -56,8 +63,16 @@
                             @endforeach
                         </select>
                     </div>
+                    <div class="col-lg-6 col-sm-12">
+                        <label for="sub_category" class="form-label">Sub Category</label>
+                        <select name="sub_category" id="sub_category" class="form-control">
+                            <option value="{{ $tours->sub_category }}">{{ $tours->sub_category }}</option>
+                            @foreach($sub_categories as $category )
+                                <option value="{{ $category->sub_category }}">{{ $category->sub_category }}</option>
+                            @endforeach
+                        </select>
+                    </div>
                 </div>
-                <br>
                 <div class="row">
                     <div class="col-lg-6 col-sm-12">
                         <label for="hotel" class="form-label">Hotel Name</label>
@@ -89,6 +104,12 @@
                         <label for="meals" class="form-label">Meals</label>
                         <input type="text" name="meals" id="meals"class="form-control"  value="{{ $tours->meals }}" required>
                     </div>
+                </div>
+                <br>
+                <div class="">
+                    <label for="additional_info" class="form-label">Additional Info</label>
+                    <small class="form-text text-muted">Tell your visitor more...</small>
+                    <textarea name="additonal_info" id="additonal_info" cols="20" rows="10" class="form-control" value="{{ $tours->additional_info }}"></textarea>
                 </div>
             </div>
             <div class="text-center">

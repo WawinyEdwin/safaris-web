@@ -33,6 +33,7 @@ class CategoryController extends Controller
         return view('categories.create');
     }
 
+    //create form for sub category
     public function sub_create()
     {
         //
@@ -60,7 +61,7 @@ class CategoryController extends Controller
         return redirect()->route('categories.index')->with('success', 'Category Saved!');
     }
 
-    //sub category 
+    //sub category db additi
     public function store_sub(Request $request)
     {
         //
@@ -101,6 +102,7 @@ class CategoryController extends Controller
         return view('categories.edit', compact('category'));
     }
 
+    //subcategory edit form
     public function sub_edit($id)
     {
         //
@@ -124,10 +126,9 @@ class CategoryController extends Controller
         ]);
 
         $category = new Category;
-        $category= Category::find($id);
-
+        $category = Category::find($id);
         $category->category = $request->category;
-
+        
         $category->update();
 
         return redirect()->route('categories.index')->with('success', 'Category Updated!');
@@ -144,9 +145,9 @@ class CategoryController extends Controller
         $sub_category = new Sub_category;
         $sub_category = Sub_category::find($id);
 
-        $sub_category->category = $request->category;
+        $sub_category->sub_category = $request->sub_category;
 
-        $category->update();
+        $sub_category->update();
 
         return redirect()->route('categories.index')->with('success', 'Sub category Updated!');
     }

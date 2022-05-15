@@ -2,10 +2,8 @@
 
 @section('content')
 
-
-
 <div class="container-fluid">
-<div class="col-lg-12">
+    <div class="col-lg-12">
         <div class="text-left">
             <h2  class="pri">Bookings</h2>
         </div>
@@ -52,8 +50,6 @@
                 @endforeach
             </tbody>
         </table>
-
-      
     </div>
 </div>
 {{ $bookings->links() }}

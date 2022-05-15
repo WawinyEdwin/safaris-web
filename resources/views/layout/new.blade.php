@@ -16,7 +16,6 @@
         rel="stylesheet">
         
         <!-- Styles -->
-        <link rel="stylesheet" href="{{ asset('css/app.css')}}">
         <link rel="stylesheet" href="{{ asset('bootstrap/bootstrap.css') }}">
 
         <!-- bootstrap  -->
@@ -73,31 +72,51 @@
             background-color: #4863a0;
             }
 
-        .btn-primar {
-            background-color: #550a35;
-            color: #ffffff;
-        }
+            .btn-primar {
+                background-color: #550a35;
+                color: #ffffff;
+            }
 
-        .text-primar {
-            color:  #550a35;
-        }
-        .btn-outline-primar {
-            color:  #ffffff;
-            background-color: #4863a0;
-        }
+            .text-primar {
+                color:  #550a35;
+            }
+            .btn-outline-primar {
+                color:  #ffffff;
+                background-color: #4863a0;
+            }
 
-        .pri {
-            color: #4863a0;
-        }
+            .pri {
+                color: #4863a0;
+            }
 
-        .blog > li > a {
-            color: black;
+            .blog > li > a {
+                color: black;
 
-        }
-        .blog > li > a:hover {
-            color: #4863a0;
+            }
+            .blog > li > a:hover {
+                color: #4863a0;
 
-        }
+            }
+          /* scroll to top button  */
+          #myBtn {
+                display: none;
+                position: fixed;
+                bottom: 20px;
+                left: 30px;
+                z-index: 99;
+                border: none;
+                outline: none;
+                background-color: #4863a0;
+                color: #ffffff;
+                cursor: pointer;
+                padding: 15px;
+                border-radius: 10px;
+                font-size: 18px;
+            }
+
+            #myBtn:hover {
+                background-color: #4863a0;
+            }
 
         </style>
     </head>
@@ -177,32 +196,23 @@
         
         <div class="container ">
             <div class="row">
-                <div class="col">
-                    <!-- <div class="row"> -->
-                        <!-- <div class="col"> -->
-                            <ul class="safari">
-                                <li><a href="{{ route('about') }}" class="text-primar">About Us</a></li>
-                                <li><a href="{{ route('about') }}"class="text-primar">Choose Us</a></li>
-                                <li><a href="{{ route('testimony') }}" class="text-primar">Testimonials</a></li>
-                                <li><a href="{{ route('affiliation') }}" class="text-primar">Affiliations</a></li>
-                                <li><a href="{{ route('help') }}" class="text-primar">Help</a></li>
-                                <li><a href="{{ route('travel') }}" class="text-primar">Travel Info</a></li>
-                                <li><a href="{{ route('policy') }}" class="text-primar">Privacy Policy</a></li>
-                            </ul>
-                        <!-- </div> -->
-                        <!-- <div class="col"> -->
-                            <ul class="safari">
-                                <li><a href="{{ route('careers') }}" class="text-primar">Careers</a></li>
-                                <li><a href="{{ route('media') }}" class="text-primar">In the Media</a></li>
-                                <li><a href="{{ route('awards') }}" class="text-primar">Awards</a></li>
-                                <li><a href="{{ route('videos.index') }}" class="text-primar">Safari Videos</a></li>
-                                <li><a href="{{ route('faqs') }}" class="text-primar">FAQs</a></li>
-                                <li><a href="{{ route('team') }}" class="text-primar">Our Team</a></li>
-                                <li><a href="{{ route('enquiries.create') }}" class="text-primar">Contact Us</a></li>
-                            </ul>
+                <div class="col-lg-3 col-sm-12">
+                    <ul class="safari">
+                        <li><a href="{{ route('enquiries.create') }}" class="text-primar">Contact Us</a></li>
+                        <li><a href="{{ route('about') }}" class="text-primar">About Us</a></li>
+                        <li><a href="{{ route('videos.index') }}" class="text-primar">Safari Videos</a></li>
+                        <li><a href="{{ route('media') }}" class="text-primar">In the Media</a></li>
+                        <li><a href="{{ route('travel') }}" class="text-primar">Travel Info</a></li>
+                        <li><a href="{{ route('careers') }}" class="text-primar">Careers</a></li>
+                        <li><a href="{{ route('affiliation') }}" class="text-primar">Affiliations</a></li>
+                        <li><a href="{{ route('team') }}" class="text-primar">Our Team</a></li>
+                        <li><a href="{{ route('faqs') }}" class="text-primar">FAQs</a></li>
+                        <li><a href="{{ route('help') }}" class="text-primar">Help</a></li>
+                        <li><a href="{{ route('policy') }}" class="text-primar">Privacy Policy</a></li>
+                    </ul>
                 </div>
-                <div class="col">
-                    <img src="{{ asset('index.jpeg') }} " alt="about">
+                <div class="col-lg-3  col-sm-12">
+                    <img src="{{ asset('index.jpeg') }} " alt="about" class="img-fluid">
                     <br>
                     <p class="text-primar">About Us</p>
                     <div class="">
@@ -210,33 +220,55 @@
                             Dicta optio tempora unde eligendi amet laborum ipsum fugit quos cumque? Iusto.</p>
                     </div>
                 </div>
-                <div class="col">
-                    <p class="text-primar">Recent Tweets</p>
-                    <ul>
-                    <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos cumque officia sint ullam fugit dignissimos facilis ducimus harum accusamus nulla?</li>
-                    <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos cumque officia sint ullam fugit dignissimos facilis ducimus harum accusamus nulla?</li>
-                    </ul>
+                <div class="col-lg-3 col-sm-12">
+                    <p class="pri">Recent Tweets</p>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos cumque officia sint ullam fugit dignissimos facilis ducimus harum accusamus nulla?</p>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos cumque officia sint ullam fugit dignissimos facilis ducimus harum accusamus nulla?</p>
                 </div>
-                <div class="col">
-                    <p class="text-primar">Latest from Blog</p>
-                    <ul class="blog">
-                        @foreach($blogs as $blog)
-                    <li>
-                        <a href="{{ route('blogs.show', $blog->id) }}">
-                            <p>{{ \Illuminate\Support\Str::limit($blog->content, 100, $end='...') }}</p>
-                        </a>
-                    </li>
-                        @endforeach
-                    </ul>
+                <div class="col-lg-3 col-sm-12">
+                    <p class="pri">Latest from Blog</p>
+                    @foreach($blogs as $blog)
+                        <p>{{ \Illuminate\Support\Str::limit($blog->content, 100, $end='...') }}</p>
+                    @endforeach
                 </div>
             </div>
         </div>
         <br>
         <footer class="footer footer-expand-lg ">
                 <div class="text-center">
-                    <p class="lead pri fw-bold" id="year"> <script type="text/javascript"> document.write( new Date().getFullYear());</script> | Safaris Limited.</p>
+                    <p class="lead pri" id="year"> <script type="text/javascript"> document.write( new Date().getFullYear());</script> | Safaris Limited.</p>
                 </div>
         </footer>
+
+        <span onclick="topFunction()" id="myBtn" title="Back to Top">
+            <i class="bi bi-arrow-up text-white"></i>
+        </span>
+
+        <script>
+            myButton = document.getElementById("myBtn");
+
+            //show button on scroll
+            window.onscroll = function() {
+                scrollFunction()
+            }
+
+            //when there is a scroll down 20px
+
+            function scrollFunction() {
+                if(document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                    myButton.style.display = "block";
+                } else{
+                    myButton.style.display = "none";
+                }
+              
+            }
+
+            //when the button is clicked.
+            function topFunction() {
+                document.body.scrollTop = 0;
+                document.documentElement.scrollTop = 0;
+            }
+        </script>
 
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>

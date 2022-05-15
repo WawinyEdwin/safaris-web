@@ -6,10 +6,18 @@ use App\Models\Tours;
 use App\Models\Blog;
 use App\Models\Booking;
 use App\Models\Category;
+use App\Models\Sub_category;
 use Illuminate\Http\Request;
 
 class ToursController extends Controller
 {
+    //show admin page
+    public function admin() {
+
+        return view('admin.home');
+
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -20,7 +28,6 @@ class ToursController extends Controller
         
         $tours = Tours::latest()->paginate(20);
         return view('tours.index', compact('tours'))->with('i', (request()->input('page', 1) - 1) * 5);
-        // return view('tours.index', ['tours' => $tours]);
     }
 
     /**
@@ -33,7 +40,13 @@ class ToursController extends Controller
         //
         $categories = Category::all();
 
-        return view('tours.create', ['categories' => $categories]);
+        $sub_categories = Sub_category::all();
+
+        return view('tours.create', 
+        [
+            'categories' => $categories,
+            'sub_categories' => $sub_categories
+        ]);
     }
 
     /**
@@ -55,7 +68,8 @@ class ToursController extends Controller
             'per_person_sharing' => 'required',
             'meals' => 'required',
             'category' => 'required',
-            'location' => 'required'
+            'sub_category' => 'required',
+            'location' => 'required',
         ]);
 
        
@@ -69,6 +83,8 @@ class ToursController extends Controller
         $tours->single_room = $request->single_room;
         $tours->meals = $request->meals;
         $tours->category = $request->category;
+        $tours->sub_category = $request->sub_category;
+        $tours->additional_info = $request->additional_info;
         $tours->per_person_sharing = $request->per_person_sharing;
         $tours->image = $path;
         $tours->image1 = $path1;
@@ -93,11 +109,13 @@ class ToursController extends Controller
 
         $categories = Category::all();
 
+        $sub_categories = Sub_category::all();
         $blogs = Blog::all();
         
         return view('tours.show', compact('tours'),
         [
             'categories' => $categories,
+            'sub_categories' => $sub_categories,
             'blogs' => $blogs
         ]);
     }
@@ -114,9 +132,12 @@ class ToursController extends Controller
         $tours = Tours::find($id);
         $categories = Category::all();
 
+        $sub_categories = Sub_category::all();
+
         return view('tours.edit',
             [
              'categories' => $categories,
+             'sub_categories' => $sub_categories,
              'tours' => $tours
             ]);
         
@@ -142,7 +163,8 @@ class ToursController extends Controller
             'single_room' => 'required',
             'per_person_sharing' => 'required',
             'meals' => 'required',
-            'category' => 'required'
+            'category' => 'required',
+            'sub_category' => 'required'
         ]);
 
         $tours = new Tours;
@@ -155,6 +177,7 @@ class ToursController extends Controller
         $tours->single_room = $request->single_room;
         $tours->meals = $request->meals;
         $tours->category = $request->category;
+        $tours->sub_category = $request->sub_category;
         $tours->per_person_sharing = $request->per_person_sharing;
         $tours->image = $path;
         $tours->image1 = $path1;
@@ -180,10 +203,4 @@ class ToursController extends Controller
 
         return redirect()->route('tours.index')->with('success', 'You Deleted a Tour.');
     }
-
-    
-
-     public function admin() {
-         return view('admin.home');
-     }
 }

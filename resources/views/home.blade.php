@@ -156,8 +156,6 @@
                                 <p class="card-text">Radison Hotel&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
                                 <p class="price">KSH 24550</p>
                             </div>
-                            
-                        
                             <a href="{{ route('tour', 'Tembea Ujionee') }}" class="btn btn-primar">SEE ALL OFFERS</a>
                         </div>
                     </div>
@@ -171,8 +169,6 @@
                                 <p class="card-text">Radison Hotel&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
                                 <p class="price">KSH 24550</p>
                             </div>
-                            
-                           
                             <a href="{{ route('tour', 'Tembea Ujionee') }}" class="btn btn-primar">SEE ALL OFFERS</a>
                         </div>
                     </div>
@@ -186,8 +182,6 @@
                                 <p class="card-text">Radison Hotel&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
                                 <p class="price">KSH 24550</p>
                             </div>
-                            
-                         
                             <a href="{{ route('tour', 'Tembea Ujionee') }}" class="btn btn-primar">SEE ALL OFFERS</a>
                         </div>
                     </div>
@@ -209,7 +203,6 @@
                             <p class="card-text pri">{{ $tour->hotel }}</p>
                             <hr>
                             <p class="card-text">From {{ $tour->single_room}} per person</p>
-                            
                             <a href="{{ route('bookings.create') }}" class="btn btn-primar">Book Now</a>
                         </div>
                     </div>
@@ -229,7 +222,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="col-lg-3 col-sm-3">
                     <div class="card">
                             <img src="{{ asset('index.jpeg') }}" alt="" class="card-img-top">
@@ -269,42 +261,40 @@
                 @endforelse
             </div>
             <br>
-
-
-            <!-- <p class="lead text-center">Romantic HoneyMoons || Couple Holidays</p>
+        </div>
+        <div class="container">
+            <h3 class="text-center">Latest Travel Tales</h3>
             <div class="row">
-                <div class="col-lg">
-                    <div class="card mb-3" style="max-width: 540px">
-                        <div class="row no-gutters">
-                            <div class="col-4">
-                                <img src="{{ asset('index.jpeg') }}" alt="" class="card-img">
-                            </div>
-                            <div class="col-8">
-                                <div class="card-body">
-                                    <h5 class="card-title">Fascinating HoneyMoon</h5>
-                                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, dolores!</p>
-                                    <a href="{{ route('tour', 'HoneyMoon') }}" class="btn btn-primar">Explore</a>
-                                </div>
-                            </div>
+                @foreach($coverBlogs as $blog)
+                <div class="col-lg-4 col-sm-12">
+                    <div class="card">
+                        <img src="{{ asset('/storage/'. $blog->image) }}" alt="" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ \Illuminate\Support\Str::limit($blog->title, 30, $end='...') }}</h5>
+                            <p class="card-text">{{ \Illuminate\Support\Str::limit($blog->content, 100, $end='...') }}</p>
+                            <a href="{{ route('blogs.show', $blog->id) }}"class="btn btn-primar" >Read More</a>
                         </div>
                     </div>
+                    <br>
                 </div>
-                <div class="col-lg">
-                <div class="card mb-3" style="max-width: 540px">
-                        <div class="row no-gutters">
-                            <div class="col-4">
-                                <img src="{{ asset('index.jpeg') }}" alt="" class="card-img">
-                            </div>
-                            <div class="col-8">
-                                <div class="card-body">
-                                    <h5 class="card-title">Fascinating HoneyMoon</h5>
-                                    <p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos, sapiente.</p>
-                                    <a href="{{ route('tour', 'HoneyMoon') }}" class="btn btn-primar">Explore</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>                        
-                </div>
-            </div> -->
+                @endforeach
+            </div>
         </div>
+        <div class="container">
+        <h3 class="text-center ">Exciting videos about past adventures.</h3>
+        <br>
+            <div class="row">
+                @foreach($videos as $video)
+                <div class="col-lg-3 col-sm-12">
+                    <div class="card">
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{{$video->url}}" allowfullscreen></iframe>
+                            </div>
+                    </div>
+                </div>
+                @endforeach
+            </div>
+        </div>
+        <br>
+
 @endsection

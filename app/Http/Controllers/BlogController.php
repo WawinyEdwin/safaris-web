@@ -15,10 +15,14 @@ class BlogController extends Controller
     public function index()
     {
         //
-        $blogs = Blog::all();
+        $coverBlogs = Blog::latest()->paginate(6);
+
+        $blogs = Blog::latest()->limit(2)->get();
+
         return view('blogs.index',
         [
-            'blogs' => $blogs
+            'blogs' => $blogs,
+            'coverBlogs' => $coverBlogs
         ]);
     }
 
@@ -30,6 +34,7 @@ class BlogController extends Controller
     public function create()
     {
         //
+        $blogs = Blog::all();
         return view('blogs.create', compact('blogs'));
     }
 
@@ -71,9 +76,12 @@ class BlogController extends Controller
     public function show(Blog $blog)
     {
         //
-        $blogs = Blog::all();
+        $blogs = Blog::latest()->limit(2)->get();
+        $coverBlogs = Blog::latest()->limit(4)->get();
+
         return view('blogs.show',compact('blog'),[
-            'blogs' => $blogs
+            'blogs' => $blogs,
+            'coverBlogs' => $coverBlogs 
         ]);
     }
 
