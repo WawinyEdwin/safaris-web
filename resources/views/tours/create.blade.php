@@ -5,7 +5,7 @@
 <div class="container">
     <div class="">
         <div class="text-right pt-2">
-            <a href="{{ route('tours.index') }}" class="btn btn-primar">Back</a>
+            <a href="{{ route('tours') }}" class="btn btn-primar">Back</a>
         </div>
         <div class="text-left">
             <p>Add Tour</p>
@@ -24,7 +24,7 @@
     @endif
 
     <p class="text-center pri">Information you input here will be visible to your users, once posted</p>
-    <form action="{{ route('tours.store') }}" method="post" enctype="multipart/form-data">   
+    <form action="{{ route('addtour.store') }}" method="post" enctype="multipart/form-data">   
         @csrf
         @method('POST')    
             <div class="form-group">
@@ -113,7 +113,7 @@
                 <div class="">
                     <label for="additional_info" class="form-label">Additional Info</label>
                     <small class="form-text text-muted">Tell your visitor more...</small>
-                    <textarea name="additonal_info" id="additonal_info" cols="20" rows="10" class="form-control"></textarea>
+                    <textarea name="additonal_info" id="summernote" cols="20" rows="10" class="form-control"></textarea>
                 </div>
             </div>
             <div class="text-center">

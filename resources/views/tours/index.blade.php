@@ -7,7 +7,7 @@
             <h2 class="pri">Tours Posted</h2>
         </div>
         <div class="text-right">
-            <a href="{{ route('tours.create') }}" class="btn btn-primar">Add Tour</a>
+            <a href="{{ route('addtour.create') }}" class="btn btn-primar">Add Tour</a>
         </div>
     <br>
 
@@ -43,9 +43,9 @@
                         <img src="{{ asset('/storage/'.$tour->image) }}" alt="" style="width: 100px; height: 50px;">
                     </td>
                     <td>
-                        <form action="{{ route('tours.destroy', $tour->id) }}" method="post">
-                            <a href="{{ route('tours.show', $tour->id) }}" class="btn btn-info">Show</a>
-                            <a href="{{ route('tours.edit', $tour->id) }}" class="btn btn-primary">Edit</a>
+                        <form action="{{ route('addtour.delete', $tour->id) }}" method="post">
+                            <a href="{{ route('addtour.show', $tour->id) }}" class="btn btn-info">Show</a>
+                            <a href="{{ route('addtour.edit', $tour->id) }}" class="btn btn-primary">Edit</a>
 
                             @csrf 
                             @method('DELETE')

@@ -5,7 +5,7 @@
     <div class="">
         <br>
         <div class="text-right">
-            <a href="{{ route('tours.index') }}" class="btn btn-primar">Back</a>
+            <a href="{{ route('tours') }}" class="btn btn-primar">Back</a>
         </div>
     </div>
     <br>
@@ -33,7 +33,7 @@
                     </ul>
                     <div class="">
                         <p>Additional Info</p>
-                        <p>{{ $tours->additional_info }}</p>
+                        <p>{!! $tours->additional_info !!}</p>
                     </div>
                 </div>
             </div>

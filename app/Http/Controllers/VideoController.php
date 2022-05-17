@@ -63,7 +63,7 @@ class VideoController extends Controller
 
         
 
-        return redirect()->route('videos.index')->with('success', 'Video Added Succsfully!');
+        return redirect()->route('videos')->with('success', 'Video Added Succsfully!');
     }
 
     /**
@@ -106,11 +106,12 @@ class VideoController extends Controller
      * @param  \App\Models\Video  $video
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Video $video)
+    public function destroy(Video $video, $id)
     {
      
+        $video = Video::find($id);
         $video->delete();
 
-        return redirect()->route('videos.index')->with('success', 'Deleted!');
+        return redirect()->route('videos')->with('success', 'Deleted!');
     }
 }

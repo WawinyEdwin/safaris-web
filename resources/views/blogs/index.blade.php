@@ -12,7 +12,7 @@
                 <img src="{{ asset('/storage/'. $blog->image) }}" alt="" class="card-img-top">
                 <div class="card-body">
                     <h5 class="card-title">{{ \Illuminate\Support\Str::limit($blog->title, 30, $end='...') }}</h5>
-                    <p class="card-text">{{ \Illuminate\Support\Str::limit($blog->content, 100, $end='...') }}</p>
+                    <p class="card-text">{!! \Illuminate\Support\Str::limit($blog->content, 100, $end='...') !!}</p>
                     <a href="{{ route('blogs.show', $blog->id) }}"class="btn btn-primar" >Read More</a>
                     <br>
                     <br>
@@ -21,7 +21,7 @@
                             <div class="col">
                                 <a href="{{ route('blogs.edit', $blog->id) }}" class="btn btn-info">Edit</a>
                             </div>
-                            <form action="{{ route('blogs.destroy', $blog->id ) }}" method="post">
+                            <form action="{{ route('blogs.delete', $blog->id ) }}" method="post">
                                 @csrf 
                                 @method('DELETE')
 

@@ -39,7 +39,7 @@
                     <td>{{ $booking->arrival_date }}</td>
                     <td>{{ $booking->special_requirements }}</td>
                     <td>
-                        <form action="{{ route('bookings.destroy', $booking->id) }}" method="post">
+                        <form action="{{ route('bookings.delete', $booking->id) }}" method="post">
                             @csrf 
                             @method('DELETE')
 

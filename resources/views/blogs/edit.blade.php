@@ -19,7 +19,7 @@
         </div>
         <div class="form-group">
             <label for="content" class="form-label">Blog Content</label>
-            <textarea name="content" id="content" cols="30" rows="10"  value="{{ $blog->content }}" class="form-control" required></textarea>
+            <textarea name="content" id="summernote" cols="30" rows="10"  value="{{ $blog->content }}" class="form-control" required></textarea>
         </div>
 
         <button type="submit" class="btn btn-primar">Edit Blog</button>

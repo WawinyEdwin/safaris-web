@@ -245,7 +245,12 @@ class HomeController extends Controller
         //find sub_categories
         $sub_categories = Sub_category::all();
 
-        return view('safaris.policy');
+        return view('safaris.policy',
+        [
+            'categories' => $categories,
+            'sub_categories' => $sub_categories,
+            'blogs' => $blogs
+        ]);
     }
 
     public function help()

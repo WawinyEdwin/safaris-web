@@ -93,7 +93,7 @@ class ToursController extends Controller
 
         $tours->save();
 
-        return redirect()->route('tours.index')->with('success', 'You Added a Tour.');
+        return redirect()->route('tours')->with('success', 'You Added a Tour.');
     }
 
     /**
@@ -201,6 +201,6 @@ class ToursController extends Controller
 
         $tours->delete();
 
-        return redirect()->route('tours.index')->with('success', 'You Deleted a Tour.');
+        return redirect()->route('tours')->with('success', 'You Deleted a Tour.');
     }
 }

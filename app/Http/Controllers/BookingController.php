@@ -33,7 +33,10 @@ class BookingController extends Controller
     {
         //
         // $tours =  Tours::where('category', $category)->get();
-        $tours = Tours::all();
+        $tours = Tours::latest()->limit(3)->get();
+
+
+        // dd($tours);
     
         $categories = Category::all();
 
@@ -91,16 +94,14 @@ class BookingController extends Controller
 
         $booking->save();
 
-        if($booking) {
-            Mail::to($email)->send(new BookingMail($email));
-            return new JsonResponse(
-                [
-                    'success' => true,
-                    'message' => "Thank You for Booking With Us, check your mail for details"
-                ], 200
-            );
-        }
         
+        // $successMessage = [
+        //     'title' => 'Booking Success!',
+        //     'body' => 'We have recieved your booking confirmation and one of our customer representatives will get back to you with further details.'
+        // ];
+    
+        // \Mail::to('crud3swift@gmail.com')->send( new \App\Mail\BookingMail($successMessage));
+
         return redirect()->route('bookings.create')->with('success', 'Booking has been successfull!');
         
     }
@@ -161,10 +162,11 @@ class BookingController extends Controller
      * @param  \App\Models\Booking  $booking
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Booking $booking)
+    public function destroy(Booking $booking, $id)
     {
         //
+        $booking = Booking::find($id);
         $booking->delete();
-        return redirect()->route('bookings.index')->with('success', 'Booking deleted successfully!');
+        return redirect()->route('bookings')->with('success', 'Booking deleted successfully!');
     }
 }

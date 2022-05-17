@@ -2,6 +2,7 @@
 
 @section('content')
 
+
 <div class="container">
     <h5 class="text-center">Create Textual Content for your audience here.</h5>
     <form action="{{ route('blogs.store') }}" method="post" enctype="multipart/form-data" >
@@ -18,7 +19,7 @@
         </div>
         <div class="form-group">
             <label for="content" class="form-label">Blog Content</label>
-            <textarea name="content" id="content" cols="30" rows="10" class="form-control" required></textarea>
+            <textarea name="content" id="summernote" cols="30" rows="10" class="form-control" required></textarea>
         </div>
 
         <button type="submit" class="btn btn-primar">Create Blog</button>

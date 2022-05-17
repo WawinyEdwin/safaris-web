@@ -24,7 +24,7 @@
                 <th scope="col">Medium</th>
                 <th scope="col">Luxury</th>
                 <th scope="col">Additional Info</th>
-                <!-- <th>Action</th> -->
+                <th scope="col">Action</th>
             </thead>
             <tbody>
                 @foreach ($enquiries as $enquiry)
@@ -43,18 +43,22 @@
                     <td>{{ $enquiry->luxury }}</td>
                     <td>{{ $enquiry->additional_info }}</td>
                 
-                    <!-- <td>
-                        <a href="" class="btn btn-primary">Edit</a>
-                    </td>
                     <td>
-                        <a href=" class="btn btn-info">Show</a>
-                    </td> -->
+                        <form action="{{ route('enquiries.destroy', $enquiry->id) }}" method="post">
+
+                            @csrf 
+                            @method('DELETE')
+
+                            <button type="submit" class="btn btn-danger">Delete</button>
+                            
+                        </form>
+                    </td>
                 </tr>
                 @endforeach
             </tbody>
         </table>      
     </div>
 </div>
-{{ $enquiries->links() }}
+{!! $enquiries->links() !!}
 <hr>
 @endsection

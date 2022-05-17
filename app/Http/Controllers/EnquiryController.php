@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Enquiry;
 use App\Models\Blog;
 use Illuminate\Http\Request;
+use App\Mail\EnquiryMail;
 
 class EnquiryController extends Controller
 {
@@ -77,6 +78,13 @@ class EnquiryController extends Controller
 
         
         $enquiry->save();
+
+        // $successMessage = [
+        //     'title' => 'Success!',
+        //     'body' => 'We have recieved your enquiry and one of our representatives will get back to you with further details.'
+        // ];
+    
+        // \Mail::to('crud3swift@gmail.com')->send( new \App\Mail\EnquiryMail($successMessage));
         
         return redirect()->route('enquiries.create')->with('success', 'We have recieved your Message, Thank You');
 
@@ -125,5 +133,10 @@ class EnquiryController extends Controller
     public function destroy(Enquiry $enquiry)
     {
         //
+        $enquiry = Enquiry::find($enquiry->id);
+
+        $enquiry->delete();
+
+        return redirect()->route('enquiries.index')->with('success', 'Enquiry Deleted Successfully');
     }
 }

@@ -8,8 +8,8 @@
             <div class="card-body">
                 <h5 class="card-title"><i class="bi bi-geo-alt"></i> Tours</h5>
                 <p class="card-text">Easily Manage Tours, For your Users</p>
-                <a href="{{ route('tours.index') }}" class="btn btn-primar">Tours</a>
-                <a href="{{ route('tours.create') }}" class="btn btn-primar">New</a>
+                <a href="{{ route('tours') }}" class="btn btn-primar">Tours</a>
+                <a href="{{ route('addtour.create') }}" class="btn btn-primar">New</a>
             </div>
         </div> 
     </div>
@@ -28,7 +28,7 @@
             <div class="card-body">
                 <h5 class="card-title"><i class="bi bi-book"></i> Bookings</h5>
                 <p class="card-text">Easily Manage Bookings, For your Users</p>
-                <a href="{{ route('bookings.index') }}" class="btn btn-primar">Bookings</a>
+                <a href="{{ route('bookings') }}" class="btn btn-primar">Bookings</a>
             </div>
         </div>
     </div>
@@ -49,7 +49,7 @@
             <div class="card-body">
                 <h5 class="card-title"><i class="bi bi-card-checklist"></i> Blogs </h5>
                 <p class="card-text">Easily Manage Blogs, Content you share</p>
-                <a href="{{ route('blogs.index') }}" class="btn btn-primar">All Blogs </a>
+                <a href="{{ route('blogs') }}" class="btn btn-primar">All Blogs </a>
                 <a href="{{ route('blogs.create') }}" class="btn btn-primar">New </a>
             </div>
         </div>
@@ -69,7 +69,7 @@
             <div class="card-body">
                 <h5 class="card-title"><i class="bi bi-card-checklist"></i> Videos</h5>
                     <p class="card-text">Manage the Videos users see in Safari.</p>
-                    <a href="{{ route('videos.index') }}" class="btn btn-primar">All Videos</a>
+                    <a href="{{ route('videos') }}" class="btn btn-primar">All Videos</a>
                     <a href="{{ route('videos.create') }}" class="btn btn-primar">New </a>
             </div>
         </div>

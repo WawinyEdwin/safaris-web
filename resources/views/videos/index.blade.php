@@ -20,7 +20,7 @@
                 <p class="text-center">{{ $video->name }}</p>
                 @auth
                 <div class="card-body">
-                    <form action="{{ route('videos.destroy', $video->id ) }}" method="post">
+                    <form action="{{ route('videos.delete', $video->id ) }}" method="post">
                         @csrf 
                         @method('DELETE')
                         <div class="text-center">

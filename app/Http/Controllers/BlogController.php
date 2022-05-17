@@ -64,7 +64,7 @@ class BlogController extends Controller
 
         $blog->save();
 
-        return redirect()->route('blogs.index')->with('success', 'Content Created Successfully!');
+        return redirect()->route('blogs')->with('success', 'Content Created Successfully!');
     }
 
     /**
@@ -91,10 +91,10 @@ class BlogController extends Controller
      * @param  \App\Models\Blog  $blog
      * @return \Illuminate\Http\Response
      */
-    public function edit(Blog $blog)
+    public function edit(Blog $blog, $id)
     {
         //
-        // $blog = Blog::find($id);
+        $blog = Blog::find($id);
         return view('blogs.edit', compact('blog'));
     }
 
@@ -127,7 +127,7 @@ class BlogController extends Controller
 
         $blog->save();
 
-        return redirect()->route('blogs.index')->with('success', 'Content Created Successfully!');
+        return redirect()->route('blogs')->with('success', 'Content Created Successfully!');
     }
 
     /**
@@ -142,7 +142,7 @@ class BlogController extends Controller
         $blog = Blog::find($id);
         $blog->delete();
 
-        return redirect()->route('blogs.index')->with('success', 'Content Deleted');
+        return redirect()->route('blogs')->with('success', 'Content Deleted');
 
     }
 }

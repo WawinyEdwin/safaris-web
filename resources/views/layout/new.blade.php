@@ -24,6 +24,12 @@
 
         <!-- Icons  -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+
+        <!-- favicon   -->
+        <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('favicon_io/apple-touch-icon.png') }} ">
+        <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('favicon_io/favicon-32x32.png') }} ">
+        <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('favicon_io/favicon-16x16.png') }} ">
+        <link rel="manifest" href="{{ asset('favicon_ico/site.webmanifest') }}">
         
         <style>
             body {
@@ -155,7 +161,7 @@
                             </a>
                         </li>
                         <li class="nav-item"> 
-                            <a class="nav-link" href="{{ route('blogs.index') }}">
+                            <a class="nav-link" href="{{ route('blogs') }}">
                                 Blog
                             </a>
                         </li>
@@ -200,7 +206,7 @@
                     <ul class="safari">
                         <li><a href="{{ route('enquiries.create') }}" class="text-primar">Contact Us</a></li>
                         <li><a href="{{ route('about') }}" class="text-primar">About Us</a></li>
-                        <li><a href="{{ route('videos.index') }}" class="text-primar">Safari Videos</a></li>
+                        <li><a href="{{ route('videos') }}" class="text-primar">Safari Videos</a></li>
                         <li><a href="{{ route('media') }}" class="text-primar">In the Media</a></li>
                         <li><a href="{{ route('travel') }}" class="text-primar">Travel Info</a></li>
                         <li><a href="{{ route('careers') }}" class="text-primar">Careers</a></li>
@@ -228,7 +234,7 @@
                 <div class="col-lg-3 col-sm-12">
                     <p class="pri">Latest from Blog</p>
                     @foreach($blogs as $blog)
-                        <p>{{ \Illuminate\Support\Str::limit($blog->content, 100, $end='...') }}</p>
+                        <p>{!! \Illuminate\Support\Str::limit($blog->content, 100, $end='...') !!}</p>
                     @endforeach
                 </div>
             </div>

@@ -158,12 +158,17 @@
                     <p>Nairobi Kenya</p>
                     <br>
                     <h5><i class="bi bi-phone  text-primary"></i> Phone</h5>
-                    <p>Tel : 00000000</p>
-                    <p>Mobile : 0000000</p>
+                    <p>0742 659 292</p>
+                    <p>0701 700 144</p>
                     <br>
                     <h5> <i class="bi bi-envelope  text-primary"></i> Email</h5>
-                    <p>info@xxxxxxx.com</p>
-                    <p><a href="">wwww.xxxxxx.com</i></p>
+                    <p>
+                        <a href="mailto:info@okulinksafaris.com">info@okulinksafaris.com</a>
+                    </p>
+                    <h5>Website</h5>
+                    <p>
+                        <a href="http://www.okulinksafaris.com">www.okulinksafaris.com</a>
+                    </p>
                 </div>
             </div>
         </div>

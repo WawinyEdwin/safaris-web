@@ -134,11 +134,12 @@
                     @foreach($tours as $tour)
                 <div class="row no gutters">
                     <div class="col">
-                        <img src="{{ asset('/storage', $tour->image ) }}" alt="Exciting tour offer" class="card-img-top">
+                        <img src="{{ asset('/storage/'. $tour->image ) }}" alt="Exciting tour offer" class="card-img-top">
                     </div>
                     <div class="col">
-                        <p></p>
-                        <p></p>
+                        <p>{{ $tour->hotel }}
+                        </p>
+                        <p>Prices From {{ $tour->single_room }}</p>
                     </div>
                 </div>
                 <hr>
@@ -152,7 +153,7 @@
                 <p class="card-text">We would be more than happy to help, our travel consultants are always available 24/7
                     for a chat/call,
                 <br>
-                <i class="bi bi-phone text-primary"></i> 0723 344 567
+                <i class="bi bi-phone text-primary"></i>0701 700 144
                 </p>
             </div>
         </div>
@@ -177,5 +178,6 @@
     </div>
 </div>
 
+{!! NoCaptcha::renderJs() !!}
 
 @endsection

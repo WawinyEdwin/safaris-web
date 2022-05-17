@@ -36,7 +36,7 @@
                         <h5 class="card-title">{{ $blog->title }} <i class="bi bi-clock pri"></i><small> {{ $blog->created_at }}</small></h5> 
                     </div>
                     <div class="container">
-                        <p>{{ $blog->content }}</p>
+                        <p>{!!  $blog->content  !!}</p>
                     </div>
                 </div>
             </div>
