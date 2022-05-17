@@ -14,7 +14,7 @@
 <div class="container">
     <div class="career text-center">
         <h4>We currently do not have any open positions, keep watch of this section for updates.</h4>
-        <a href="{{ route('home')" class="btn btn-primar">Back Home</a>
+        <a href="{{ url('/')" class="btn btn-primar">Back Home</a>
     </div>
 </div>
 

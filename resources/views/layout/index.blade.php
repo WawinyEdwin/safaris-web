@@ -229,13 +229,13 @@
                         <li><a href="{{ route('enquiries.create') }}" class="text-primar">Contact Us</a></li>
                         <li><a href="{{ route('about') }}" class="text-primar">About Us</a></li>
                         <li><a href="{{ route('videos') }}" class="text-primar">Safari Videos</a></li>
-                        <li><a href="{{ route('media') }}" class="text-primar">In the Media</a></li>
-                        <li><a href="{{ route('travel') }}" class="text-primar">Travel Info</a></li>
+                        <li><a href="{{ url('/') }}" class="text-primar">In the Media</a></li>
+                        <li><a href="{{ url('/') }}" class="text-primar">Travel Info</a></li>
                         <li><a href="{{ route('careers') }}" class="text-primar">Careers</a></li>
-                        <li><a href="{{ route('affiliation') }}" class="text-primar">Affiliations</a></li>
-                        <li><a href="{{ route('team') }}" class="text-primar">Our Team</a></li>
-                        <li><a href="{{ route('faqs') }}" class="text-primar">FAQs</a></li>
-                        <li><a href="{{ route('help') }}" class="text-primar">Help</a></li>
+                        <li><a href="{{ url('/') }}" class="text-primar">Affiliations</a></li>
+                        <li><a href="{{ url('/') }}" class="text-primar">Our Team</a></li>
+                        <li><a href="{{ route('about') }}" class="text-primar">FAQs</a></li>
+                        <li><a href="{{ route('enquiries.create') }}" class="text-primar">Help</a></li>
                         <li><a href="{{ route('policy') }}" class="text-primar">Privacy Policy</a></li>
                     </ul>
                 </div>
