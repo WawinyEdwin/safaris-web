@@ -98,10 +98,10 @@ class HighlightController extends Controller
      * @param  \App\Models\Highlight  $highlight
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Highlight $highlight, $id)
+    public function destroy(Highlight $highlight, )
     {
         //
-        $highlight = Highlight::find($id);
+        $highlight = Highlight::find($highlight->id);
 
         $highlight->delete();
 
