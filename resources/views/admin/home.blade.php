@@ -47,7 +47,7 @@
     <div class="col-lg-3 col-sm-12">
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title"><i class="bi bi-card-checklist"></i> Blogs </h5>
+                <h5 class="card-title"><i class="bi bi-pencil-square"></i> Blogs </h5>
                 <p class="card-text">Easily Manage Blogs, Content you share</p>
                 <a href="{{ route('blogs') }}" class="btn btn-primar">All Blogs </a>
                 <a href="{{ route('blogs.create') }}" class="btn btn-primar">New </a>
@@ -57,7 +57,7 @@
     <div class="col-lg-3 col-sm-12">
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title"><i class="bi bi-card-checklist"></i> Highlights</h5>
+                <h5 class="card-title"><i class="bi bi-check-square"></i> Highlights</h5>
                     <p class="card-text">Manage the images in the promo slider.</p>
                     <a href="{{ route('highlights.index') }}" class="btn btn-primar">All Highlights</a>
                     <a href="{{ route('highlights.create') }}" class="btn btn-primar">New </a>
@@ -67,7 +67,7 @@
     <div class="col-lg-3 col-sm-12">
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title"><i class="bi bi-card-checklist"></i> Videos</h5>
+                <h5 class="card-title"><i class="bi bi-file-earmark-play"></i> Videos</h5>
                     <p class="card-text">Manage the Videos users see in Safari.</p>
                     <a href="{{ route('videos') }}" class="btn btn-primar">All Videos</a>
                     <a href="{{ route('videos.create') }}" class="btn btn-primar">New </a>
