@@ -73,7 +73,7 @@ Route::get('/search',[HomeController::class, 'search'])->name('search');
 
 //BLOGS
 Route::get('/blogs',[BlogController::class, 'index'])->name('blogs');
-Route::get('/blogs/create',[CategoryController::class, 'create'])->name('blogs.create')->middleware('auth');
+Route::get('/blogs/create',[BlogController::class, 'create'])->name('blogs.create')->middleware('auth');
 Route::get('/blogs/show/{id}',[BlogController::class, 'show'])->name('blogs.show');
 Route::post('/blogs/store',[BlogController::class, 'store'])->name('blogs.store')->middleware('auth');
 Route::get('/blogs/edit/{id}',[BlogController::class, 'edit'])->name('blogs.edit')->middleware('auth');

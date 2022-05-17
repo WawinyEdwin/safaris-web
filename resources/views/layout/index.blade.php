@@ -142,6 +142,10 @@
             #myBtn:hover {
                 background-color: #4863a0;
             }
+
+            img {
+                object-fit: cover;
+            }
         </style>
     </head>
     <body class="scrollTop">
