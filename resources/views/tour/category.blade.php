@@ -6,40 +6,50 @@
     <div class="container">
     <h2 class="lead text-white"> <a href="{{ url('/') }}" class="text-white" >Home </a>/ The Best Deals and Offers </h2>
     </div>
-   
 </div>
 
 <br>
 <div class="container">
-  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-      <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img class="d-block w-100" src="{{ asset('image1.jpg') }}" alt="First slide">
-          </div>
-            @foreach ($tours as $tour)
-            <div class="carousel-item">
-              <img class="d-block w-100" src="{{ asset('/storage/'.$tour->image) }}" alt="Second slide">
-            </div>
-          @endforeach
-      </div>
-      <a class="carousel-control-prev kala" href="#carouselExampleControls" role="button" data-slide="prev">
-            <span><i class="bi bi-arrow-left-circle-fill" style="font-size: 40px; color: #550a35;"  aria-hidden="true"></i></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="carousel-control-next kala" href="#carouselExampleControls" role="button" data-slide="next">
-            <span><i class="bi bi-arrow-right-circle-fill" style="font-size: 40px; color: #550a35;"  aria-hidden="true"></i></span>
-        <span class="sr-only">Next</span>
-      </a>
-  </div>
-<br>
-    <div>
+    <div class="text-center">
         <a href="{{ route('bookings.create') }}" class="btn btn-primar"> 
             Book Now
         </a>
     </div>
     <br>
-      <p class="lead text-center">Exciting Holiday Offers</p>
-<div class="table-responsive">
+  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+          
+            @forelse($tours as $tour)
+            <div class="carousel-item active">
+              <img class="d-block w-100" src="{{ asset('/storage/'.$tour->image) }}" alt="Second slide">
+            </div>
+            <div class="carousel-item ">
+            <img class="d-block w-100" src="{{ asset('/storage/'.$tour->image1) }}" alt="First slide">
+          </div>
+          <div class="carousel-item active">
+            <img class="d-block w-100" src="{{ asset('/storage/'.$tour->image2) }}" alt="First slide">
+          </div>
+
+          @empty 
+          <div class="carousel-item active">
+              <img class="d-block w-100" src="{{ asset('okulink.jpg') }}" alt="Second slide">
+            </div>
+
+          @endforelse
+      </div>
+      <a class="carousel-control-prev kala" href="#carouselExampleControls" role="button" data-slide="prev">
+            <span><i class="bi bi-arrow-left-circle-fill" style="font-size: 40px; color: #000;"  aria-hidden="true"></i></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next kala" href="#carouselExampleControls" role="button" data-slide="next">
+            <span><i class="bi bi-arrow-right-circle-fill" style="font-size: 40px; color: #000;"  aria-hidden="true"></i></span>
+        <span class="sr-only">Next</span>
+      </a>
+  </div>
+<br>
+   
+    <p class="lead text-center">Exciting Holiday Offers</p>
+    <div class="table-responsive">
         <table class="table table-bordered">
             <thead>
                 <th scope="col">Hotel Name</th>
@@ -65,24 +75,22 @@
         </table>
     </div>
     <br>
-    <div class="">
+    <h5 class="pri">More Information</h5>
         <h5>Inclusions</h5>
         <ul>
-            <li>1/2 nights Accomodation</li>
+            <li>Accomodation</li>
             <li>Meals as indicated</li>
             <li>Use of Hotel Facilities</li>
             <li>Entertainment at the Hotel</li>
         </ul>
-        <br>
-        <br>
         <h5>Exclusions</h5>
         <ul>
             <li>Personal Expenses</li>
             <li>Park/Conservancy Fees</li>
             <li>Any other fees not included</li>
         </ul>
-    </div>
-    <div>
+  
+    <div class="text-center">
         <a href="{{ route('bookings.create') }}" class="btn btn-primar"> 
             Book Now
         </a>

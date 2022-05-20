@@ -10,6 +10,6 @@ class Tours extends Model
     use HasFactory;
 
     protected $fillable = [
-        'hotel', 'transport', 'image', 'per_person_sharing', 'single_room', 'meals', 'image1', 'image2'
+        'hotel', 'transport', 'image', 'per_person_sharing', 'single_room', 'meals'
     ];
 }

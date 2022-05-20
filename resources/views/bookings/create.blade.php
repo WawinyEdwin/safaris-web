@@ -8,7 +8,6 @@
     </div>
    
 </div>
-
 <div class="container">
 
     @if($message = Session::get('failure'))
@@ -23,6 +22,7 @@
         <p>{{ $message }}</p>
     </div>
     @endif
+
     <div class="row">
         <div class="col-lg-7 col-sm-12">
             <div class="text-center">
@@ -113,16 +113,18 @@
                         <span class="text-danger" >@error('g-recaptcha-response') {{ $message }} @enderror</span>
 
                         <br>
-                        <button class="btn btn-primar" type="submit" onSubmit=" alert('Success, you will recieve an email with further details')">
-                            Confirm Booking
-                        </button>
+                        <div class="text-center">
+                            <button class="btn btn-primar" type="submit" onSubmit=" alert('Success, you will recieve an email with further details')">
+                                Confirm Booking
+                            </button>
+                        </div>
                     </form>
                 </div>
             </div> 
             <br>
             <div class="text-center">
                 <a href="{{ url('/') }}" class="btn btn-primar"> 
-                    More Holiday Deals
+                    More Holiday Deals <i class="bi bi-arrow-right text-white"></i>
                 </a>
             </div>
         </div>
@@ -146,7 +148,9 @@
                 @endforeach
             </div>
         </div>
-<br>
+
+        <br>
+
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title">Need Help planning Your Holiday?</h5>
@@ -157,23 +161,25 @@
                 </p>
             </div>
         </div>
-<br>
-<br>
+
+            <br>
+            <br>
+
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title">Why Book With Us!</h5>
                 <p><i class="bi bi-geo-alt text-primary"></i> 1000+ Destinations</p>
                 <small>Amazing places for you to explore</small>
-            <br>
+                <br>
+
                 <p><i class="bi bi-piggy-bank text-primary"></i> Low Rates & Savings</p>
                 <small>Best Holidays at prices you like.</small>
-            <br>
+                <br>
+
                 <p><i class="bi bi-check2-circle text-primary"></i> Excellent Customer Care</p>
                 <small>Always there to guide you all the way.</small>
-            <br> 
+                <br> 
             </div>
-        </div>
-</div>
         </div>
     </div>
 </div>

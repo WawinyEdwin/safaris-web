@@ -3,11 +3,13 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="author" content="_wawiny" >
-        <meta name="description" content="">
+        <meta name="robots" content="index, follow">
+        <meta name="description" content="Okulink safaris is about discoveries, exploration and transformation. We believe that people are
+        in pursuit of something new, identity and ability to transform themselves for better. We are on a journey of giving magical experiences
+        through travel, branding and celebrating Africa's tourism industry.">
         <meta name="robots" content="index, follow">
 
-        <title>Safaris</title>
+        <title>Okulink Safaris | We are on a journey of giving magical experiences through travel, branding and celebrating Africa's tourism industry.</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -60,14 +62,14 @@
             }
 
             .carousel .carousel-item {
-                height: 300px;
+                height: 400px;
             }
-            .carousel-item img {
+            .carousel-item > img {
                 object-fit: cover;
                 position: absolute;
                 top: 0;
                 left: 0;
-                max-height: 300px;
+                min-height: 400px;
             }
  
             
@@ -124,12 +126,17 @@
                 background-color: #4863a0;
             }
 
+            .img-rounded {
+                border-radius: 50%;
+            }
+
         </style>
     </head>
     <body>
         <nav class="navbar navbar-expand-lg bg-primar text-white fixed-top">
             <div class="container">
-                <a href="{{ url('/')}}" class="navbar-brand text-white">Safaris</a>
+                <a href="{{ url('/')}}" class="navbar-brand text-white">
+                <img src="{{ asset('okulink.jpg') }}" alt="Okulink" width="50" height="50" class="d-inline-block-align-top img-rounded"> Okulink Safaris</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar">
                 <i class="bi bi-list text-white"></i>
                 </button>
@@ -172,23 +179,30 @@
 
         <br>
         <br>
+        <br>
 
-        <div class="bg-white navbar d-none d-lg-flex">
+        <div class="bg-white navbar">
             <div class="container p-2">
-           
-                <div class="navbar-nav mr-auto">
-                <form class="form-inline" action="{{ route('search') }}" method="GET" role="search">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Search" name="term" id="term" aria-label="Search">
-                        <button class="btn btn-outline-primar my-2 my-sm-0" type="submit">Search</button>
+                <a href="{{ url('/')}}" class="navbar-brand d-none d-lg-flex">
+                    <img src="{{ asset('okulink.jpg') }}" alt="Okulink" width="130" height="100" class="d-inline-block-align-top">
+                </a>
+                <div class="navbar-nav text-center">
+                    <form class="form-inline " action="{{ route('search') }}" method="GET" role="search">
+                        <div class="form-group mx-sm-3 mb-2">
+                            <input class="form-control mr-sm-2" type="search" placeholder="Search" name="term" id="term" aria-label="Search">
+                        </div>
+                        <button class="btn btn-outline-primar mb-2" type="submit">
+                            <i class="bi bi-search"></i>
+                        </button>
                     </form>
                 </div>
                     <div >
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item"><i class="bi bi-telephone-outbound price"></i> +2547 598 888 / +2547 456 765</li>
-                        <li class="nav-item">
-                            <i class="bi bi-facebook text-primary"></i>
+                    <ul class="navbar-nav ml-auto ">
+                        <li class="nav-item">Call&nbsp;<i class="bi bi-telephone-outbound price"></i> &nbsp;0742 659 292&nbsp;/&nbsp;0701 700 144</li>
+                        <li class="nav-item d-none d-lg-flex">
+                            <i class="bi bi-facebook text-primary"></i>&nbsp;
                             <i class="bi bi-twitter text-primary"></i>
-                            <i class="bi bi-instagram text-black"></i>
+                            <a href="http://www.instagram.com/okulinksafaris"><i class="bi bi-instagram text-black"></i></a>
                         </li>
                     </ul>             
                     </div>
@@ -199,39 +213,40 @@
 
         <br>
         <hr>
-        
+    
         <div class="container ">
             <div class="row">
-                <div class="col-lg-3 col-sm-12">
+                <div class="col-lg-4 col-sm-12">
                     <ul class="safari">
                         <li><a href="{{ route('enquiries.create') }}" class="text-primar">Contact Us</a></li>
                         <li><a href="{{ route('about') }}" class="text-primar">About Us</a></li>
                         <li><a href="{{ route('videos') }}" class="text-primar">Safari Videos</a></li>
                         <li><a href="{{ route('media') }}" class="text-primar">In the Media</a></li>
-                        <li><a href="{{ route('travel') }}" class="text-primar">Travel Info</a></li>
+                        <li><a href="{{ route('enquiries.create') }}" class="text-primar">Travel Info</a></li>
                         <li><a href="{{ route('careers') }}" class="text-primar">Careers</a></li>
-                        <li><a href="{{ route('affiliation') }}" class="text-primar">Affiliations</a></li>
-                        <li><a href="{{ route('team') }}" class="text-primar">Our Team</a></li>
-                        <li><a href="{{ route('faqs') }}" class="text-primar">FAQs</a></li>
-                        <li><a href="{{ route('help') }}" class="text-primar">Help</a></li>
+                        <li><a href="{{ route('about') }}" class="text-primar">Affiliations</a></li>
+                        <li><a href="{{ route('about') }}" class="text-primar">Our Team</a></li>
+                        <li><a href="{{ route('about') }}" class="text-primar">FAQs</a></li>
+                        <li><a href="{{ route('about') }}" class="text-primar">Help</a></li>
                         <li><a href="{{ route('policy') }}" class="text-primar">Privacy Policy</a></li>
                     </ul>
                 </div>
-                <div class="col-lg-3  col-sm-12">
-                    <img src="{{ asset('index.jpeg') }} " alt="about" class="img-fluid">
+                <div class="col-lg-4  col-sm-12">
+                    <img src="{{ asset('okulink.jpg') }} " alt="about" height="150" >
                     <br>
                     <p class="text-primar">About Us</p>
                     <div class="">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, eaque odio. 
-                            Dicta optio tempora unde eligendi amet laborum ipsum fugit quos cumque? Iusto.</p>
+                    <p>Okulink safaris is about discoveries, exploration and transformation. We are on a journey of giving magical experiences
+                            through travel, branding and celebrating Africa's tourism industry.
+                        </p>
                     </div>
                 </div>
-                <div class="col-lg-3 col-sm-12">
+                <!-- <div class="col-lg-3 col-sm-12">
                     <p class="pri">Recent Tweets</p>
                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos cumque officia sint ullam fugit dignissimos facilis ducimus harum accusamus nulla?</p>
                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos cumque officia sint ullam fugit dignissimos facilis ducimus harum accusamus nulla?</p>
-                </div>
-                <div class="col-lg-3 col-sm-12">
+                </div> -->
+                <div class="col-lg-4 col-sm-12">
                     <p class="pri">Latest from Blog</p>
                     @foreach($blogs as $blog)
                         <p>{!! \Illuminate\Support\Str::limit($blog->content, 100, $end='...') !!}</p>

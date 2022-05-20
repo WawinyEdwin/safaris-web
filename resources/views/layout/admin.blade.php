@@ -68,6 +68,16 @@
                 color: #4863a0
             }
            
+            /* custom dropdown  */
+            .dropdown:hover .dropdown-menu {
+                display: block;
+                background-color: #4863a0;
+            }
+
+            .dropdown-item {
+                color: #ffffff;
+            }
+
         </style>
     </head>
 <body>
@@ -116,7 +126,6 @@
                 <li>
                     <a href="{{ route('home') }}" class="nav-link">
                         <i class="bi bi-home"></i> Home
-
                     </a>
                 </li>
             </ul>

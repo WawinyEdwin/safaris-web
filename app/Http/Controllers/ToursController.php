@@ -57,13 +57,13 @@ class ToursController extends Controller
      */
     public function store(Request $request)
     {
-        // //
+        //Validate the input fields.
         $request->validate([
             'hotel' => 'required',
             'transport' => 'required',
-            'image' => 'required',
-            'image1' => 'required ',
-            'image2' => 'required ',
+            'image' => 'required|mimes:jpg,jpeg,svg|max:2048',
+            'image1' => 'required|mimes:jpg,jpeg,svg|max:2048 ',
+            'image2' => 'required|mimes:jpg,jpeg,svg|max:2048 ',
             'single_room' => 'required',
             'per_person_sharing' => 'required',
             'meals' => 'required',
@@ -71,8 +71,6 @@ class ToursController extends Controller
             'sub_category' => 'required',
             'location' => 'required',
         ]);
-
-       
 
         $tours = new Tours;
         $path = $request->image->store('images', 'public');
@@ -157,9 +155,6 @@ class ToursController extends Controller
         $request->validate([
             'hotel' => 'required',
             'transport' => 'required',
-            'image' => 'required ',
-            'image1' => 'required ',
-            'image2' => 'required ',
             'single_room' => 'required',
             'per_person_sharing' => 'required',
             'meals' => 'required',
@@ -169,23 +164,37 @@ class ToursController extends Controller
 
         $tours = new Tours;
         $tours = Tours::find($id);
-        $path1 = $request->image1->store('images', 'public');
-        $path2 = $request->image2->store('images', 'public');
-        $path = $request->image->store('images', 'public');
-        $tours->hotel = $request->hotel;
-        $tours->transport = $request->transport;
-        $tours->single_room = $request->single_room;
-        $tours->meals = $request->meals;
-        $tours->category = $request->category;
-        $tours->sub_category = $request->sub_category;
-        $tours->per_person_sharing = $request->per_person_sharing;
-        $tours->image = $path;
-        $tours->image1 = $path1;
-        $tours->image2 = $path2;
 
+        //Check the presence of images first.
+        if($request->hasFile('image') || $request->hasFile('image1') || $request->hasFile('image2')) 
+        {
+            $path = $request->image->store('images', 'public');
+            $path1 = $request->image1->store('images', 'public');
+            $path2 = $request->image2->store('images', 'public');
+            $tours->image = $path;
+            $tours->image1 = $path1;
+            $tours->image2 = $path2;
+            
+        } else {
+
+            unset($tours['image']);
+            unset($tours['image1']);
+            unset($tours['image2']);
+        }
+
+            $tours->hotel = $request->hotel;
+            $tours->transport = $request->transport;
+            $tours->single_room = $request->single_room;
+            $tours->meals = $request->meals;
+            $tours->category = $request->category;
+            $tours->sub_category = $request->sub_category;
+            $tours->per_person_sharing = $request->per_person_sharing;
+            $tours->additional_info = $request->additional_info;
+            
+        
         $tours->update();
 
-        return redirect()->route('admin.tours')->with('success', 'You Updated a Tour.');
+        return redirect()->route('tours')->with('success', 'You Updated a Tour.');
     }
 
     /**

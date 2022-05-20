@@ -12,16 +12,7 @@
         </div>
     </div>
     
-    @if($errors->any())
-    <div class="alert alert-danger">
-        <p>Something went wrong!, Retry</p>
-        <ul>
-            @foreach($errors as $error)
-            <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-    @endif
+  
 
     <form action="{{ route('addtour.update', $tours->id) }}" method="post" enctype="multipart/form-data">   
         @csrf
@@ -30,11 +21,13 @@
                 <div class="row">
                     <div class="col-lg-6 col-sm-12">
                         <label for="image" class="form-label">Hotel Image</label>
-                        <input type="file" name="image" id="image" class="form-control-file" required>
+                        <input type="file" name="image" id="image" value="{!! $tours->image !!}" class="form-control-file" >
+                        <span class="text-danger">@error('image') {{ $message }} @enderror</span>
                     </div>
                     <div class="col-lg-6 col-sm-12">
                         <label for="image1" class="form-label">Hotel Image 2</label>
-                        <input type="file" name="image1" id="image1" class="form-control-file" required>
+                        <input type="file" name="image1" id="image1" value="{{ $tours->image1 }}" class="form-control-file" >
+                        <span class="text-danger">@error('image1') {{ $message }} @enderror</span>
                     </div>
                 </div>
                 <br>
@@ -42,7 +35,8 @@
                 <div class="row">
                     <div class="col-lg-6 col-sm-12">
                         <label for="image2" class="form-label">Hotel Image 3</label>
-                        <input type="file" name="image2" id="image2" class="form-control-file" required>
+                        <input type="file" name="image2" id="image2" value="{{ $tours->image2 }}" class="form-control-file" >
+                        <span class="text-danger">@error('image2') {{ $message }} @enderror</span>
                     </div>
 
                     <div class="col-lg-6 col-sm-12">
@@ -62,6 +56,7 @@
                                 <option value="{{ $category->category }}">{{ $category->category }}</option>
                             @endforeach
                         </select>
+                        <span class="text-danger">@error('category') {{ $message }} @enderror</span>
                     </div>
                     <div class="col-lg-6 col-sm-12">
                         <label for="sub_category" class="form-label">Sub Category</label>
@@ -71,16 +66,19 @@
                                 <option value="{{ $category->sub_category }}">{{ $category->sub_category }}</option>
                             @endforeach
                         </select>
+                        <span class="text-danger">@error('sub_category') {{ $message }} @enderror</span>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-lg-6 col-sm-12">
                         <label for="hotel" class="form-label">Hotel Name</label>
                         <input type="text" name="hotel" id="hotel" class="form-control" value="{{ $tours->hotel }}" required>
+                        <span class="text-danger">@error('hotel') {{ $message }} @enderror</span>
                     </div>
                     <div class="col-lg-6 col-sm-12" >
                         <label for="location" class="form-label">Location</label>
                         <input type="text" name="location" id="location" class="form-control"  value="{{ $tours->location }}" required>
+                        <span class="text-danger">@error('location') {{ $message }} @enderror</span>
                     </div>
                 </div>
                 <br>
@@ -88,10 +86,12 @@
                     <div class="col-lg-6 col-sm-12" >
                         <label for="transport" class="form-label">Transport</label>
                         <input type="text" name="transport" id="transport" class="form-control"  value="{{ $tours->transport }}" required>
+                        <span class="text-danger">@error('transport') {{ $message }} @enderror</span>
                     </div>
                     <div class="col-lg-6 col-sm-12">
                         <label for="per_person_sharing" class="form-label">PerPerson Sharing</label>
                         <input type="text" name="per_person_sharing" id="per_person_sharing" class="form-control"  value="{{ $tours->per_person_sharing }}" required>
+                        <span class="text-danger">@error('per_person_sharing') {{ $message }} @enderror</span>
                     </div>
                 </div>
                     <br>
@@ -99,17 +99,19 @@
                     <div class="col-lg-6 col-sm-12">
                         <label for="single_room" class="form-label">Single Room</label>
                         <input type="text" name="single_room" id="single_room" class="form-control"  value="{{ $tours->single_room }}" required>
+                        <span class="text-danger">@error('single_room') {{ $message }} @enderror</span>
                     </div>
                     <div class="col-lg-6 col-sm-12" class="form-label">
                         <label for="meals" class="form-label">Meals</label>
                         <input type="text" name="meals" id="meals"class="form-control"  value="{{ $tours->meals }}" required>
+                        <span class="text-danger">@error('meals') {{ $message }} @enderror</span>
                     </div>
                 </div>
                 <br>
                 <div class="">
                     <label for="additional_info" class="form-label">Additional Info</label>
                     <small class="form-text text-muted">Tell your visitor more...</small>
-                    <textarea name="additonal_info" id="summernote" cols="20" rows="10" class="form-control" value="{{ $tours->additional_info }}"></textarea>
+                    <textarea name="additional_info" id="summernote" cols="20" rows="10" class="form-control" value="{!! $tours->additional_info !!}"></textarea>
                 </div>
             </div>
             <div class="text-center">

@@ -5,21 +5,21 @@
 <div id="carouselExampleControls" class="carousel slide carousel-slide" data-ride="carousel">
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img class="d-block w-100 " src="{{ asset('image1.jpg') }}" alt="Beautiful Highlights" >
+            <img class="d-block " src="{{ asset('image1.jpg') }}" alt="Beautiful Highlights">
         </div>
 
         @foreach($highlights as $highlight)
             <div class="carousel-item">
-                <img class="d-block w-100" src="{{ asset('/storage/'.$highlight->image) }}" alt="Beautiful Highlights">
+                <img class="d-block " src="{{ asset('/storage/'.$highlight->image) }}" alt="Beautiful Highlights" >
             </div>
         @endforeach
     </div>
     <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-        <span><i class="bi bi-arrow-left-circle-fill" style="font-size: 40px; color: #550a35;"  aria-hidden="true"></i></span>
+        <span><i class="bi bi-arrow-left-circle-fill" style="font-size: 50px; color: #000000; "  aria-hidden="true"></i></span>
         <span class="sr-only">Previous</span>
     </a>
     <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-        <span><i class="bi bi-arrow-right-circle-fill" style="font-size: 40px; color:#550a35;"  aria-hidden="true"></i></span>
+        <span><i class="bi bi-arrow-right-circle-fill" style="font-size: 50px; color:#000000;"  aria-hidden="true"></i></span>
         <span class="sr-only">Next</span>
     </a>
 </div>

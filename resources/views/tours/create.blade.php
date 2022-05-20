@@ -113,7 +113,7 @@
                 <div class="">
                     <label for="additional_info" class="form-label">Additional Info</label>
                     <small class="form-text text-muted">Tell your visitor more...</small>
-                    <textarea name="additonal_info" id="summernote" cols="20" rows="10" class="form-control"></textarea>
+                    <textarea name="additional_info" id="summernote" cols="20" rows="10" class="form-control"></textarea>
                 </div>
             </div>
             <div class="text-center">

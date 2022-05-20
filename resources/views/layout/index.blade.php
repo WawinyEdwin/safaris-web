@@ -35,6 +35,7 @@
                 
 
         <meta name="google-site-verification" content="YFUSoj09b1SvxCBLp5rcoHrN67CJdW6tnJXCfKbekiM" />
+
         <style>
 
             /* universal styles  */
@@ -70,17 +71,25 @@
                 /* #87CEEB #87CEFA*/
             }
 
-            /* carousel custom  */
-            .carousel .carousel-item {
-                height: 300px;
+            .carousel {
+                max-height: 440px;
+                overflow: hidden;
+                margin:auto;
+
             }
-            .carousel-item img {
+    
+            .carousel-inner .carousel-item > img {
+                /* position: absolute; */
                 object-fit: cover;
-                position: absolute;
-                top: 0;
-                left: 0;
-                max-height: 300px;
+                height: 440px;
+                width:100%;
             }
+
+            /* .w-100 {
+                min-height: 440px;
+                object-fit: cover;
+                width:100%;
+            } */
  
             
             .carousel-control-next,
@@ -146,21 +155,29 @@
             img {
                 object-fit: cover;
             }
+
+            .img-rounded {
+                border-radius: 50%;
+            }
+
+            .blogs > a {
+                text-decoration: none;
+                color: #000;
+            }
         </style>
     </head>
     <body class="scrollTop">
-        <nav class="navbar navbar-expand-lg bg-primar text-white fixed-top">
+        <nav class="navbar navbar-expand-lg bg-primar text-white fixed-top mb-2">
             <div class="container">
-                <a href="{{ url('/')}}" class="navbar-brand text-white">Okulink Safaris</a>
+                <a href="{{ url('/')}}" class="navbar-brand text-white">
+                    <img src="{{ asset('okulink.jpg') }}" alt="Okulink" width="50" height="50" class="d-inline-block-align-top img-rounded">&nbsp;Okulink Safaris</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar">
                 <i class="bi bi-list text-white"></i>
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbar">
-                    <div class="navbar-nav">
-                        
+                    <ul class="navbar-nav mr-auto">
                         <li class="nav-item active"><a href="{{ url('/') }}" class="nav-link">Home</a></li>
-
                         @foreach($categories as $category)
                         <li class="nav-item dropdown show"> 
                             <a class="nav-link dropdown-toggle" href="{{ route('tour',  $category->category ) }}" id="navbarDropdown"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -183,40 +200,52 @@
                             <a class="nav-link" href="{{ route('blogs') }}">
                                 Blog
                             </a>
-                        </li>
-                    </div>
+                        </li> 
+                    </ul>
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"> 
+                                <a class="nav-link" href="{{ route('admin') }}">
+                                    <i class="bi bi-lock"></i>
+                                    Account
+                                </a>
+                            </li>
+                    </ul>
                 </div>
             </div>
         </nav>
 
         <br>
         <br>
+        <br>
 
-        <div class="bg-white navbar d-none d-lg-flex">
-            <div class="container p-2">
-                <a href="{{ url('/')}}" class="navbar-brand ">
-                    <img src="{{ asset('okulink.jpg') }}" alt="Okulink" width="100" height="90" class="d-inline-block-align-top">
+        <div class="bg-white navbar pt-2">
+            <div class="container ">
+                <a href="{{ url('/')}}" class="navbar-brand d-none d-lg-flex">
+                    <img src="{{ asset('okulink.jpg') }}" alt="Okulink" width="130" height="100" class="d-inline-block-align-top">
                 </a>
                 <div class="navbar-nav text-center">
-                    <form class="form-inline" action="{{ route('search') }}" method="GET" role="search">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Search" name="term" id="term" aria-label="Search">
-                        <button class="btn btn-outline-primar my-2 my-sm-0" type="submit">Search</button>
+                    <form class="form-inline " action="{{ route('search') }}" method="GET" role="search">
+                        <div class="form-group mx-sm-3 mb-2">
+                            <input class="form-control mx-sm-2" type="search" placeholder="Search hotel" name="term" id="term" aria-label="Search">
+                        </div>
+                        <button class="btn btn-outline-primar mb-2" type="submit">
+                            <i class="bi bi-search"></i>
+                        </button>
                     </form>
                 </div>
                     <div >
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item"><i class="bi bi-telephone-outbound price"></i> 0742 659 292/ 0701 700 144</li>
-                        <li class="nav-item">
-                            <i class="bi bi-facebook text-primary"></i>
+                    <ul class="navbar-nav ml-auto ">
+                        <li class="nav-item">Call&nbsp;<i class="bi bi-telephone-outbound price"></i> &nbsp;0742 659 292&nbsp;/&nbsp;0701 700 144</li>
+                        <li class="nav-item d-none d-lg-flex">
+                            <i class="bi bi-facebook text-primary"></i>&nbsp;
                             <i class="bi bi-twitter text-primary"></i>
-                            <i class="bi bi-instagram text-black"></i>
+                            <a href="http://www.instagram.com/okulinksafaris"><i class="bi bi-instagram text-black"></i></a>
                         </li>
                     </ul>             
                     </div>
             </div>   
         </div>
-        <br>
-
+      
         @yield('content')
 
         <br>
@@ -254,10 +283,13 @@
                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos cumque officia sint ullam fugit dignissimos facilis ducimus harum accusamus nulla?</p>
                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos cumque officia sint ullam fugit dignissimos facilis ducimus harum accusamus nulla?</p>
                 </div> -->
-                <div class="col-lg-4 col-sm-12">
+                <div class="col-lg-4 col-sm-12 blogs">
                     <p class="pri">Latest from Blog</p>
                     @foreach($blogs as $blog)
-                        <p>{!! \Illuminate\Support\Str::limit($blog->content, 100, $end='...') !!}</p>
+                    <a href="{{ route('blogs.show',$blog->id) }}">
+                        <p>{{ \Illuminate\Support\Str::limit($blog->title, 30, $end='...') }}</p>
+                        <small>{!! \Illuminate\Support\Str::limit($blog->content, 100, $end='...') !!}</small>
+                        </a>
                     @endforeach
                 </div>
             </div>

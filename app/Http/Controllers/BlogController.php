@@ -73,10 +73,13 @@ class BlogController extends Controller
      * @param  \App\Models\Blog  $blog
      * @return \Illuminate\Http\Response
      */
-    public function show(Blog $blog)
+    public function show(Blog $blog, $id)
     {
         //
         $blogs = Blog::latest()->limit(2)->get();
+
+        $blog = Blog::find($id);
+
         $coverBlogs = Blog::latest()->limit(4)->get();
 
         return view('blogs.show',compact('blog'),[

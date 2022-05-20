@@ -33,7 +33,7 @@
                 </div>
                 <div class="card-body">
                     <div class="text-center">
-                        <h5 class="card-title">{{ $blog->title }} <i class="bi bi-clock pri"></i><small> {{ $blog->created_at }}</small></h5> 
+                        <h5 class="card-title">{{ $blog->title }}</h5> <i class="bi bi-clock pri"></i><small> {{ $blog->created_at }}</small>
                     </div>
                     <div class="container">
                         <p>{!!  $blog->content  !!}</p>

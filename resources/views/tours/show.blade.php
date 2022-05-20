@@ -12,6 +12,15 @@
     <div class="row">
         <div class="col-lg-6 col-sm-12">
             <img src="{{ asset('/storage/'.$tours->image) }}" alt="" class="img-fluid" >
+            <p>Other Images</p>
+            <div class="row">
+                <div class="col">
+                    <img src="{{ asset('/storage/'.$tours->image1) }}" alt="" class="img-fluid" >
+                </div>
+                <div class="col">
+                    <img src="{{ asset('/storage/'.$tours->image1) }}" alt="" class="img-fluid"  >
+                </div>
+            </div>
         </div>
         <div class="col-lg-6 col-sm-12">
             <div class="card">

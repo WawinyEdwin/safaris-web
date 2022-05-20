@@ -1,8 +1,14 @@
 @extends('layout.new')
 
 @section('content')
-
-<div class="container">
+<!-- 
+<style>
+    .blog {
+        background-color: green;
+    }
+</style> -->
+<hr>
+<div class="container blog">
     <p class="pri text-center">Explore Exciting Travel Tales and learn about places you are to visit!</p>
     <hr>
     <div class="row">
