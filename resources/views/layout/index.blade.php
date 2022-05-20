@@ -236,10 +236,10 @@
                     <div >
                     <ul class="navbar-nav ml-auto ">
                         <li class="nav-item">Call&nbsp;<i class="bi bi-telephone-outbound price"></i> &nbsp;0742 659 292&nbsp;/&nbsp;0701 700 144</li>
-                        <li class="nav-item d-none d-lg-flex">
-                            <i class="bi bi-facebook text-primary"></i>&nbsp;
-                            <i class="bi bi-twitter text-primary"></i>
-                            <a href="http://www.instagram.com/okulinksafaris"><i class="bi bi-instagram text-black"></i></a>
+                        <li class="nav-item d-none d-lg-flex ">
+                            <i class="bi bi-facebook text-primary fa-lg"></i>&nbsp;&nbsp;
+                            <i class="bi bi-twitter text-primary"></i>&nbsp;&nbsp;
+                            <a href="http://www.instagram.com/okulinksafaris"><i class="bi bi-instagram text-danger"></i></a>
                         </li>
                     </ul>             
                     </div>
