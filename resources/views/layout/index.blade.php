@@ -78,7 +78,7 @@
 
             }
 
-            @media (min-height: 768px) {
+            @media only screen and (max-width: 600px){
                 
                 .carousel {
                 max-height: 300px;
