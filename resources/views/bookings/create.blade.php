@@ -61,7 +61,6 @@
                                 <input type="email2" name="email2" id="email2" class="form-control" placeholder="example@mail.com" required>
                             </div>
                         </div>
-
                         <div class="row">
                             <div class="col-lg-6 col-sm-12">
                                 <label for="country" class="form-label">Country</label>
