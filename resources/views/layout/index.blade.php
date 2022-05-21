@@ -41,9 +41,9 @@
             /* universal styles  */
             body {
                 font-family: 'Josefin Sans', sans-serif;
-                /* height: 5000px; */
+                
             }
-          
+  
             .nav-link {
                 color: white;
             }
@@ -76,6 +76,21 @@
                 overflow: hidden;
                 margin:auto;
 
+            }
+
+            @media (min-height: 768px) {
+                
+                .carousel {
+                max-height: 300px;
+                overflow: hidden;
+                margin:auto;
+                }
+                .carousel-inner .carousel-item > img {
+                    /* position: absolute; */
+                    object-fit: cover;
+                    height: 300px;
+                    width:100%;
+                }
             }
     
             .carousel-inner .carousel-item > img {

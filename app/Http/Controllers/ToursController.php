@@ -61,9 +61,9 @@ class ToursController extends Controller
         $request->validate([
             'hotel' => 'required',
             'transport' => 'required',
-            'image' => 'required|mimes:jpg,jpeg,svg|max:2048',
-            'image1' => 'required|mimes:jpg,jpeg,svg|max:2048 ',
-            'image2' => 'required|mimes:jpg,jpeg,svg|max:2048 ',
+            'image' => 'required|mimes:jpg,jpeg,svg',
+            'image1' => 'required|mimes:jpg,jpeg,svg',
+            'image2' => 'required|mimes:jpg,jpeg,svg',
             'single_room' => 'required',
             'per_person_sharing' => 'required',
             'meals' => 'required',

@@ -5,7 +5,7 @@
 <div id="carouselExampleControls" class="carousel slide carousel-slide" data-ride="carousel">
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img class="d-block " src="{{ asset('image1.jpg') }}" alt="Beautiful Highlights">
+            <img class="d-block " src="{{ asset('elephant.jpg') }}" alt="Beautiful Highlights">
         </div>
 
         @foreach($highlights as $highlight)
@@ -50,7 +50,7 @@
               @empty
                 <div class="col-lg-4 col-md-4">
                     <div class="card">
-                            <img src="{{ asset('index.jpeg') }}" alt=""  class="card-img-top">
+                            <img src="{{ asset('elephant.jpg') }}" alt=""  class="card-img-top">
                         <div class="card-body">
                             <h5 class="card-title">Lake Naivasha Offers</h5>
                     
@@ -74,7 +74,7 @@
                 </div>
                 <div class="col-lg-4 col-md-4">
                     <div class="card">
-                            <img src="{{ asset('index.jpeg') }}" alt=""  class="card-img-top">
+                            <img src="{{ asset('elephant.jpg') }}" alt=""  class="card-img-top">
                         <div class="card-body">
                             <h5 class="card-title">Lake Naivasha Offers</h5>
                             
@@ -98,7 +98,7 @@
                 </div>
                 <div class="col-lg-4 col-md-4">
                     <div class="card">
-                            <img src="{{ asset('index.jpeg') }}" alt=""  class="card-img-top">
+                            <img src="{{ asset('elephant.jpg') }}" alt=""  class="card-img-top">
                         <div class="card-body">
                             <h5 class="card-title">Lake Naivasha Offers</h5>
                             
@@ -133,7 +133,7 @@
                 @forelse($tembeaTours as $tours)
                 <div class="col-lg-4 col-md-4">
                     <div class="card">
-                            <img src="{{ asset('index.jpeg') }}" alt=""  class="card-img-top">
+                            <img src="{{ asset('elephant.jpg') }}" alt=""  class="card-img-top">
                         <div class="card-body">
                             <h5 class="card-title">{{ $tours->category }}</h5>
                             <div class="d-flex space-between">
@@ -149,7 +149,7 @@
                 
                 <div class="col-lg-4 col-md-4">
                     <div class="card">
-                            <img src="{{ asset('index.jpeg') }}" alt=""  class="card-img-top">
+                            <img src="{{ asset('elephant.jpg') }}" alt=""  class="card-img-top">
                         <div class="card-body">
                             <h5 class="card-title">Nairobi Staycation Tour | 2022</h5>
                             <div class="d-flex space-between">
@@ -162,7 +162,7 @@
                 </div>
                 <div class="col-lg-4 col-md-4">
                     <div class="card">
-                            <img src="{{ asset('index.jpeg') }}" alt=""  class="card-img-top">
+                            <img src="{{ asset('elephant.jpg') }}" alt=""  class="card-img-top">
                         <div class="card-body">
                             <h5 class="card-title">Nairobi Staycation Tour | 2022</h5>
                             <div class="d-flex space-between">
@@ -175,7 +175,7 @@
                 </div>
                 <div class="col-lg-4 col-md-4">
                     <div class="card">
-                            <img src="{{ asset('index.jpeg') }}" alt=""  class="card-img-top">
+                            <img src="{{ asset('elephant.jpg') }}" alt=""  class="card-img-top">
                         <div class="card-body">
                             <h5 class="card-title">Nairobi Staycation Tour | 2022</h5>
                             <div class="d-flex space-between">
@@ -212,9 +212,9 @@
 
                 <div class="col-lg-3 col-sm-3">
                     <div class="card">
-                            <img src="{{ asset('index.jpeg') }}" alt="" class="card-img-top">
+                            <img src="{{ asset('elephant.jpg') }}" alt="" class="card-img-top">
                         <div class="card-body">
-                            <p class="card-text">Mombasa NorthCoast Beach</p>
+                            <p class="card-title">Mombasa NorthCoast Beach</p>
                             <hr>
                             <p class="card-text">From Ksh 45000 per person</p>
                             
@@ -224,9 +224,9 @@
                 </div>
                 <div class="col-lg-3 col-sm-3">
                     <div class="card">
-                            <img src="{{ asset('index.jpeg') }}" alt="" class="card-img-top">
+                            <img src="{{ asset('elephant.jpg') }}" alt="" class="card-img-top">
                         <div class="card-body">
-                            <p class="card-text">Mombasa NorthCoast Beach</p>
+                            <p class="card-title">Mombasa NorthCoast Beach</p>
                             <hr>
                             <p class="card-text">From Ksh 45000 per person</p>
                             
@@ -236,9 +236,9 @@
                 </div>
                 <div class="col-lg-3 col-sm-3">
                     <div class="card">
-                            <img src="{{ asset('index.jpeg') }}" alt="" class="card-img-top">
+                            <img src="{{ asset('elephant.jpg') }}" alt="" class="card-img-top">
                         <div class="card-body">
-                            <p class="card-text">Mombasa NorthCoast Beach</p>
+                            <p class="card-title">Mombasa NorthCoast Beach</p>
                             <hr>
                             <p class="card-text">From Ksh 45000 per person</p>
                             
@@ -248,9 +248,9 @@
                 </div>
                 <div class="col-lg-3 col-md-3">
                     <div class="card">
-                            <img src="{{ asset('index.jpeg') }}" alt="" class="card-img-top">
+                            <img src="{{ asset('elephant.jpg') }}" alt="" class="card-img-top">
                         <div class="card-body">
-                            <p class="card-text">Mombasa NorthCoast Beach</p>
+                            <p class="card-title">Mombasa NorthCoast Beach</p>
                             <hr>
                             <p class="card-text">From Ksh 45000 per person</p>
                             
