@@ -182,7 +182,7 @@
         </div>
     </div>
 </div>
-
+</div>
 {!! NoCaptcha::renderJs() !!}
-
+<br>
 @endsection

@@ -185,7 +185,7 @@
     }
 
     .info {
-        padding: 10px;
+        padding: 5px;
         background-color: #4863a0;
         color: #ffffff;
         border-radius: 10px;
