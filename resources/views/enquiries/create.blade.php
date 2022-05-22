@@ -4,7 +4,7 @@
 
 <div class=" bg-primar navbar expand-lg ">
     <div class="container">
-    <p class="lead text-white"> <a href="{{ url('/') }}" class="text-white">Home </a>/ Contact-US</p>
+    <h5 class="text-white"> <a href="{{ url('/') }}" class="text-white">Home </a>/ Contact Us</h5>
     </div>
    
 </div>
@@ -39,17 +39,6 @@
     </div>
 <br>   
 
-  @if($errors->any())
-    <div class="alert alert-danger">
-        <strong>There was a problem, please retry1</strong>
-        <ul>
-            @foreach($errors->all() as $error)
-            <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-    @endif
-
     @if($message = Session::get('failure'))
     <div class="alert alert-info">
         <p>{{ $message }}</p>
@@ -66,7 +55,7 @@
         <div class="col-lg-7 col-sm-12">
             <div class="card">
                 <div class="card-body">
-                    <p class="lead pri">Let's plan your dream holiday ~ Talk to us</p>
+                    <h5 class="text-center pri">Let's plan your dream holiday ~ Talk to us</h5>
 
                         <form action="{{ route('enquiries.store') }}" method="post">
                             @csrf 

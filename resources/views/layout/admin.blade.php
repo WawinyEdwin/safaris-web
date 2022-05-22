@@ -9,11 +9,10 @@
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400;1,500&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
         
         <!-- Styles -->
-        <link rel="stylesheet" href="{{ asset('css/app.css')}}">
-        <link rel="stylesheet" href="{{ asset('bootstrap/bootstrap.css') }}">
+        <link rel="stylesheet" href="{{ asset('bootstrap/app.css') }}">
 
         <!-- favicon   -->
         <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('favicon_io/apple-touch-icon.png') }} ">
@@ -40,7 +39,7 @@
         <style>
 
             body {
-                font-family: 'Josefin Sans', sans-serif;
+                font-family: 'Varela Round', sans-serif;
             }
 
             a {
@@ -49,25 +48,19 @@
 
             .bg-primar {
                 background-color: #4863a0;
-                /* #87CEEB #87CEFA*/
+             
             }
+
+            .card-body > a:hover {
+                color: #ffffff;
+            }
+
+
             .btn-primar {
             background-color: #550a35;
             color: #ffffff;
             }
 
-            .card-title {
-                color:  #4863a0;
-            }
-
-            a:hover {
-                color: #ffffff;
-            }
-
-            .pri {
-                color: #4863a0
-            }
-           
             /* custom dropdown  */
             .dropdown:hover .dropdown-menu {
                 display: block;
@@ -139,7 +132,7 @@
     <br>
     <footer class="footer footer-expand-lg ">
         <div class="text-center">
-            <p class="lead pri " id="year"> <script type="text/javascript"> document.write( new Date().getFullYear());</script> | Safaris Limited.</p>
+            <p class="lead pri " id="year"> <script type="text/javascript"> document.write( new Date().getFullYear());</script> | Okulink Safaris.</p>
         </div>
     </footer>
     <!-- summernote  -->

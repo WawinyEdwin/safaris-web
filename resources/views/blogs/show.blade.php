@@ -23,6 +23,11 @@
         justify-content: between;
     }
 </style>
+<div class=" bg-primar navbar expand-lg p-2">
+    <div class="container">
+    <h5 class="text-white"> <a href="{{ url('/') }}" class="text-white" > Home</a> > {{ $blog->title }}</h5>
+    </div>
+</div>
 
 <div class="container">
     <div class="row">

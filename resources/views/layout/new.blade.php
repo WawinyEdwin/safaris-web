@@ -14,11 +14,11 @@
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400;1,500&display=swap" 
-        rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
         
         <!-- Styles -->
         <link rel="stylesheet" href="{{ asset('bootstrap/bootstrap.css') }}">
+        <link rel="stylesheet" href="{{ asset('bootstrap/app.css') }}">
 
         <!-- bootstrap  -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
@@ -32,104 +32,20 @@
         <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('favicon_io/favicon-32x32.png') }} ">
         <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('favicon_io/favicon-16x16.png') }} ">
         <link rel="manifest" href="{{ asset('favicon_ico/site.webmanifest') }}">
-        
         <style>
-            body {
-                font-family: 'Josefin Sans', sans-serif;
-            }
-          
-            .nav-link {
-                color: white;
-            }
-
-            .safari {
-                list-style-type: square;
-            }
-
-            .price {
-                color:  #4863a0;
-            }
-
-            a:hover {
-                text-decoration: none;
-                color: #ffffff;
-            }
-
+             body {
+                font-family: 'Varela Round', sans-serif;
         
-            .bg-primar {
-                background-color: #4863a0;
-                /* #87CEEB #87CEFA*/
             }
-
-            .carousel .carousel-item {
-                height: 400px;
-            }
-            .carousel-item > img {
-                object-fit: cover;
-                position: absolute;
-                top: 0;
-                left: 0;
-                min-height: 400px;
-            }
- 
-            
-            .carousel-control-next,
-            .carousel-control-prev ,  {
-                /* filter: invert(100%); */
-                color:  #ffffff;
-            background-color: #4863a0;
-            }
-
+            /* custom coloring */
             .btn-primar {
                 background-color: #550a35;
                 color: #ffffff;
             }
-
-            .text-primar {
-                color:  #550a35;
-            }
             .btn-outline-primar {
-                color:  #ffffff;
-                background-color: #4863a0;
-            }
-
-            .pri {
-                color: #4863a0;
-            }
-
-            .blog > li > a {
-                color: black;
-
-            }
-            .blog > li > a:hover {
-                color: #4863a0;
-
-            }
-          /* scroll to top button  */
-          #myBtn {
-                display: none;
-                position: fixed;
-                bottom: 20px;
-                left: 30px;
-                z-index: 99;
-                border: none;
-                outline: none;
                 background-color: #4863a0;
                 color: #ffffff;
-                cursor: pointer;
-                padding: 15px;
-                border-radius: 10px;
-                font-size: 18px;
             }
-
-            #myBtn:hover {
-                background-color: #4863a0;
-            }
-
-            .img-rounded {
-                border-radius: 50%;
-            }
-
         </style>
     </head>
     <body>
@@ -196,13 +112,13 @@
                         </button>
                     </form>
                 </div>
-                    <div >
+                    <div class="info">
                     <ul class="navbar-nav ml-auto ">
-                        <li class="nav-item">Call&nbsp;<i class="bi bi-telephone-outbound price"></i> &nbsp;0742 659 292&nbsp;/&nbsp;0701 700 144</li>
+                        <li class="nav-item">Call&nbsp;<i class="bi bi-telephone-outbound"></i> &nbsp;0742 659 292&nbsp;/&nbsp;0701 700 144</li>
                         <li class="nav-item d-none d-lg-flex">
-                            <i class="bi bi-facebook text-primary"></i>&nbsp;
-                            <i class="bi bi-twitter text-primary"></i>
-                            <a href="http://www.instagram.com/okulinksafaris"><i class="bi bi-instagram text-black"></i></a>
+                            <i class="bi bi-facebook "></i>&nbsp;&nbsp;&nbsp;
+                            <i class="bi bi-twitter "></i>&nbsp;&nbsp;&nbsp;
+                            <a href="http://www.instagram.com/okulinksafaris"><i class="bi bi-instagram text-white"></i></a>
                         </li>
                     </ul>             
                     </div>
@@ -211,56 +127,61 @@
         <br>
         @yield('content')
 
-        <br>
-        <hr>
-    
+        <div class="footer bg-primar text-white pt-5">
         <div class="container ">
             <div class="row">
-                <div class="col-lg-4 col-sm-12">
-                    <ul class="safari">
-                        <li><a href="{{ route('enquiries.create') }}" class="text-primar">Contact Us</a></li>
-                        <li><a href="{{ route('about') }}" class="text-primar">About Us</a></li>
-                        <li><a href="{{ route('videos') }}" class="text-primar">Safari Videos</a></li>
-                        <li><a href="{{ route('media') }}" class="text-primar">In the Media</a></li>
-                        <li><a href="{{ route('enquiries.create') }}" class="text-primar">Travel Info</a></li>
-                        <li><a href="{{ route('careers') }}" class="text-primar">Careers</a></li>
-                        <li><a href="{{ route('about') }}" class="text-primar">Affiliations</a></li>
-                        <li><a href="{{ route('about') }}" class="text-primar">Our Team</a></li>
-                        <li><a href="{{ route('about') }}" class="text-primar">FAQs</a></li>
-                        <li><a href="{{ route('about') }}" class="text-primar">Help</a></li>
-                        <li><a href="{{ route('policy') }}" class="text-primar">Privacy Policy</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-4  col-sm-12">
-                    <img src="{{ asset('okulink.jpg') }} " alt="about" height="150" >
+                <div class="col-lg-3 col-sm-12 links p-2">
+                    <h5>Useful Links</h5>
+                    <div class="white_line"></div>
                     <br>
-                    <p class="text-primar">About Us</p>
+                        <p><a href="{{ route('enquiries.create') }}" class="text-white">Contact Us</a></p>
+                        <p><a href="{{ route('about') }}" class="text-white">About Us</a></p>
+                        <!-- <p><a href="{{ route('videos') }}" class="text-white">Safari Videos</a></p> -->
+                        <p><a href="{{ url('/') }}" class="text-white">In the Media</a></p>
+                        <p><a href="{{ url('/') }}" class="text-white">Travel Info</a></p>
+                        <p><a href="{{ route('careers') }}" class="text-white">Careers</a></p>
+                        <!-- <p><a href="{{ url('/') }}" class="text-white">Affiliations</a></p> -->
+                        <!-- <p><a href="{{ url('/') }}" class="text-white">Our Team</a></p> -->
+                        <p><a href="{{ route('about') }}" class="text-white">FAQs & Help</a></p>
+                        <p><a href="{{ route('policy') }}" class="text-white">Privacy Policy</a></p>
+                </div>
+                <div class="col-lg-3  col-sm-12 p-2">
+                    <h5>Our Values</h5>
+                    <div class="white_line"></div>
+                    <br>
+                    <img src="{{ asset('okulink.jpg') }} " alt="about" class="about" heigth="400" width="200" >
+                </div>
+ 
+                <div class="col-lg-3  col-sm-12 p-2">
+                    <h5 class="">About Us</h5>
+                    <div class="white_line"></div>
+                    <br>
                     <div class="">
-                    <p>Okulink safaris is about discoveries, exploration and transformation. We are on a journey of giving magical experiences
+                        <p>Okulink safaris is about discoveries, exploration and transformation. We are on a journey of giving magical experiences
                             through travel, branding and celebrating Africa's tourism industry.
                         </p>
+                        <a href="{{ route('about') }}" class="btn btn-outline-light">About Us</a>
                     </div>
                 </div>
-                <!-- <div class="col-lg-3 col-sm-12">
-                    <p class="pri">Recent Tweets</p>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos cumque officia sint ullam fugit dignissimos facilis ducimus harum accusamus nulla?</p>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos cumque officia sint ullam fugit dignissimos facilis ducimus harum accusamus nulla?</p>
-                </div> -->
-                <div class="col-lg-4 col-sm-12">
-                    <p class="pri">Latest from Blog</p>
+                <div class="col-lg-3 col-sm-12 blogs p-2">
+                    <h5 class="">Latest from Blog</h5>
+                    <div class="white_line"></div>
+                    <br>
                     @foreach($blogs as $blog)
-                        <p>{!! \Illuminate\Support\Str::limit($blog->content, 100, $end='...') !!}</p>
+                    <a href="{{ route('blogs.show',$blog->id) }}">
+                        <p> + {{ \Illuminate\Support\Str::limit($blog->title, 30, $end='...') }} | {!! \Illuminate\Support\Str::limit($blog->content, 100, $end='...') !!}</p>
+                        </a>
                     @endforeach
                 </div>
             </div>
         </div>
         <br>
-        <footer class="footer footer-expand-lg ">
+        <footer class="pb-2">
                 <div class="text-center">
-                    <p class="lead pri" id="year"> <script type="text/javascript"> document.write( new Date().getFullYear());</script> | Safaris Limited.</p>
+                    <h5 class="" id="year"> &copy; <script type="text/javascript"> document.write( new Date().getFullYear());</script> | Okulink Safaris.</h5>
                 </div>
         </footer>
-
+    </div>
         <span onclick="topFunction()" id="myBtn" title="Back to Top">
             <i class="bi bi-arrow-up text-white"></i>
         </span>

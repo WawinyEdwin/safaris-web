@@ -17,8 +17,14 @@
     }
 </style>
 
-<div class="container">
+    <div class=" bg-primar navbar expand-lg ">
+            <div class="container">
+            <h5 class="text-white"> <a href="{{ url('/') }}" class="text-white" >Home </a>> Privacy Policy</h5>
+            </div>
+        </div>
+        <br>
 
+<div class="container">
     <div class="card">
         <div class="card-body">
             <h4>Okulink Safaris Privacy Policy.</h4>

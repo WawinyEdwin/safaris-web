@@ -8,6 +8,13 @@
     }
 </style>
 
+    <div class=" bg-primar navbar expand-lg ">
+            <div class="container">
+            <h5 class="text-white"> <a href="{{ url('/') }}" class="text-white" >Home </a>> About Okulink Safaris</h5>
+            </div>
+        </div>
+        <br>
+
 <div class="container">
     <div class="card">
         <div class="card-body">

@@ -1,18 +1,16 @@
 @extends('layout.new')
 
 @section('content')
-<!-- 
-<style>
-    .blog {
-        background-color: green;
-    }
-</style> -->
-<hr>
-<div class="container blog">
-    <p class="pri text-center">Explore Exciting Travel Tales and learn about places you are to visit!</p>
-    <hr>
+
+<div class="bg-primar p-3">
+    <div class="container">
+    <h5 class=" text-white"> <a href="{{ url('/') }}" class="text-white"> Home </a> > Explore Exciting Travel Tales and learn about places you are to visit</h5>
+    </div>
+</div>
+<br>
+<div class="container">
     <div class="row">
-        @foreach($coverBlogs as $blog)
+        @forelse($coverBlogs as $blog)
         <div class="col-lg-4 col-sm-12">
             <div class="card">
                 <img src="{{ asset('/storage/'. $blog->image) }}" alt="" class="card-img-top">
@@ -41,9 +39,63 @@
             </div>
             <br>
         </div>
-        @endforeach
+
+        @empty 
+
+        <div class="col-lg-4 col-sm-12">
+                    <div class="card">
+                        <img src="{{ asset('elephant.jpg') }}" alt="" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">Cool Title 2</h5>
+                            <div class="blue"></div>
+                                <br>
+                            <p class="card-text">some cool blog content 3 here</p>
+                            <div class="text-right">
+                                <a href="{{ url('/') }}" class="btn btn-primar" >
+                                    Read More <i class="bi bi-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                </div>
+                <div class="col-lg-4 col-sm-12">
+                    <div class="card">
+                        <img src="{{ asset('elephant.jpg') }}" alt="" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">Cool Title 1</h5>
+                            <div class="blue"></div>
+                                <br>
+                            <p class="card-text">some cool blog content 2 here</p>
+                            <div class="text-right">
+                                <a href="{{ url('/') }}" class="btn btn-primar" >
+                                    Read More <i class="bi bi-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                </div>
+                <div class="col-lg-4 col-sm-12">
+                    <div class="card">
+                        <img src="{{ asset('elephant.jpg') }}" alt="" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">Cool Title</h5>
+                            <div class="blue"></div>
+                                <br>
+                            <p class="card-text">some cool blog content here</p>
+                            <div class="text-right">
+                                <a href="{{ url('/') }}" class="btn btn-primar" >
+                                    Read More <i class="bi bi-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                </div>
+        @endforelse
     </div>
-    <p class="text-center">Explore More Tales</p>
+    <h5 class="text-center pri">Explore More Tales</h5>
     {{ $coverBlogs->links() }}
 </div>
 @endsection
