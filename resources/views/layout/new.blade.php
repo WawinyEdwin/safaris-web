@@ -276,7 +276,7 @@
                 </div>
                     <div class="info">
                     <ul class="navbar-nav ml-auto ">
-                        <li class="nav-item">Call&nbsp;<i class="bi bi-telephone-outbound"></i> &nbsp;0742 659 292&nbsp;/&nbsp;0701 700 144</li>
+                        <li class="nav-item">&nbsp;<i class="bi bi-telephone-outbound"></i> &nbsp;0742 659 292/0701 700 144</li>
                         <li class="nav-item d-none d-lg-flex">
                             <i class="bi bi-facebook "></i>&nbsp;&nbsp;&nbsp;
                             <i class="bi bi-twitter "></i>&nbsp;&nbsp;&nbsp;
