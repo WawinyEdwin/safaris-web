@@ -24,17 +24,17 @@
                <tr>
                    <td>x</td>
                     <td>Tembea Ujionee</td>
-                    <td>System Generated</td>
+                    <td class="text-danger">System Generated</td>
                </tr>
                <tr>
                    <td>x</td>
                     <td>Exciting Holiday Offers</td>
-                    <td>System Generated</td>
+                    <td class="text-danger">System Generated</td>
                </tr>
                <tr>
                    <td>x</td>
                     <td>Local Tours</td>
-                    <td>System Generated</td>
+                    <td class="text-danger">System Generated</td>
                </tr>
                @foreach($categories as $category )
                <tr>

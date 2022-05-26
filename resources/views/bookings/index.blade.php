@@ -9,6 +9,7 @@
         </div>
         <div class="text-right">
             <a href="{{ route('bookings.create') }}" class="btn btn-primar">Add Booking</a>
+            <p>Customer boooking based on tour information you have on the site</p>
         </div>
     </div>
     <br>

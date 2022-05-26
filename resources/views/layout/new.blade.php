@@ -267,7 +267,7 @@
                 <div class="navbar-nav text-center">
                     <form class="form-inline " action="{{ route('search') }}" method="GET" role="search">
                         <div class="form-group mx-sm-3 mb-2">
-                            <input class="form-control mr-sm-2" type="search" placeholder="Search" name="term" id="term" aria-label="Search">
+                            <input class="form-control mr-sm-2" type="search" placeholder="Search destination" name="term" id="term" aria-label="Search">
                         </div>
                         <button class="btn btn-outline-primar mb-2" type="submit">
                             <i class="bi bi-search"></i>

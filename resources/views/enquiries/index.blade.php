@@ -6,6 +6,7 @@
     <br>
         <div class="text-left">
             <h2 class="pri">Enquiry</h2>
+            <p>This are enquiries made by your users via the contact form.</p>
         </div>
     <br>
     <div class="table-responsive">

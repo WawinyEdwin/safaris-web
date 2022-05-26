@@ -14,6 +14,7 @@
         @auth
         <div class="text-right">
             <a href="{{ route('videos.create' )}}" class="btn btn-primar">Add New</a>
+            <p>Videos Posted here will be visible to your users</p>
         </div>
         @endauth    
     <br>

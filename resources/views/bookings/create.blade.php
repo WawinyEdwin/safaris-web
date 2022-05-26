@@ -69,6 +69,7 @@
                                     <option value="Kenya">Kenya</option>
                                     <option value="Uganda">Uganda</option>
                                     <option value="Tanzania">Tanzania</option>
+                                    <option value="Other">Other</option>
                                 </select>
                                 <span class="text-danger">@error('country') {{ $message }} @enderror</span>
 
@@ -130,7 +131,7 @@
         <div class="col-lg-4 col-sm-12">
             <div class="card mb-3">
                 <div class="card-body">
-                    <p class="text-primary text-center">Top Holiday Deals</p>
+                    <p class="text-primar text-center">Top Holiday Deals</p>
                     <hr>
                     @foreach($tours as $tour)
                 <div class="row no gutters">
@@ -155,9 +156,10 @@
                 <h5 class="card-title">Need Help planning Your Holiday?</h5>
                 <p class="card-text">We would be more than happy to help, our travel consultants are always available 24/7
                     for a chat/call,
-                <br>
-                <i class="bi bi-phone text-primary"></i>0701 700 144
                 </p>
+                <br>
+                
+                <i class="bi bi-phone text-primary"></i>0701 700 144
             </div>
         </div>
 
