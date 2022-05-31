@@ -7,6 +7,7 @@
     <br>
     <div class="text-left">
         <h2 class="pri">Category Posted</h2>
+        <p>This categories will appear at the top navbar for enhanced user visibility</p>
     </div>
     <div class="text-right">
         <a href="{{ route('categories.create') }}" class="btn btn-primar">Add Category</a>
@@ -60,6 +61,7 @@
    <br> 
    <div class="table-responsive">
        <p class="lead pri">Sub Categories</p> 
+       <p>Appear in a dropdown fashion to user.</p>
        <div class="text-right">
             <a href="{{ route('create_sub') }}" class="btn btn-primar">Add Sub-Category</a>
         </div>

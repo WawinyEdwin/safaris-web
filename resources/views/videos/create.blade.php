@@ -19,7 +19,7 @@
                 @method('POST')
                 <div class="form-group">
                     <label for="name" class="form-label">Video Name </label>
-                    <small  class="form-text text-info">reference name</small>
+                    <small  class="form-text text-info">reference name for the video</small>
                     <input type="text" name="name" id="name" class="form-control" required>
                 </div>
 
