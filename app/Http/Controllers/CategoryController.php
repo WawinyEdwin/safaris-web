@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Category;
-use App\Models\Sub_category;
 
 class CategoryController extends Controller
 {
@@ -15,11 +14,9 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
-        $sub_categories = Sub_category::latest()->paginate(10);
         
         $categories = Category::latest()->paginate(10);
-        return view('categories.index',['sub_categories' => $sub_categories ], compact('categories'))->with('i', (request()->input('page', 1) - 1) * 5);
+        return view('categories.index', compact('categories'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     /**
@@ -33,13 +30,6 @@ class CategoryController extends Controller
         return view('categories.create');
     }
 
-    //create form for sub category
-    public function sub_create()
-    {
-        //
-        return view('categories.sub_create');
-    }
-
     /**
      * Store a newly created resource in storage.
      *
@@ -50,31 +40,19 @@ class CategoryController extends Controller
     {
         //
         $request->validate([
-            'category' => 'required'
+            'category_name' => 'required'
         ]);
 
         $category = new Category;
-        $category->category = $request->category;
+        
+        $category->category_name = $request->category_name;
+        $category->sub_category = $request->sub_category;
+        $category->sub_category1 = $request->sub_category1;
+        $category->sub_category2 = $request->sub_category2;
 
         $category->save();
 
-        return redirect()->route('categories.index')->with('success', 'Category Saved!');
-    }
-
-    //sub category db additi
-    public function store_sub(Request $request)
-    {
-        //
-        $request->validate([
-            'sub_category' => 'required'
-        ]);
-
-        $sub_category = new Sub_category;
-        $sub_category->sub_category = $request->sub_category;
-
-        $sub_category->save();
-
-        return redirect()->route('categories.index')->with('success', 'Category Saved!');
+        return redirect()->route('categories')->with('success', 'Category Saved!');
     }
 
     /**
@@ -102,15 +80,6 @@ class CategoryController extends Controller
         return view('categories.edit', compact('category'));
     }
 
-    //subcategory edit form
-    public function sub_edit($id)
-    {
-        //
-        $sub_category = Sub_category::find($id);
-
-        return view('categories.sub_edit', compact('sub_category'));
-    }
-
     /**
      * Update the specified resource in storage.
      *
@@ -120,36 +89,22 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+         //
         $request->validate([
-            'category' => 'required'
+            'category_name' => 'required'
         ]);
 
         $category = new Category;
         $category = Category::find($id);
-        $category->category = $request->category;
-        
+
+        $category->category_name = $request->category_name;
+        $category->sub_category = $request->sub_category;
+        $category->sub_category1 = $request->sub_category1;
+        $category->sub_category2 = $request->sub_category2;
+
         $category->update();
 
-        return redirect()->route('categories.index')->with('success', 'Category Updated!');
-    }
-
-    //update sub category
-    public function update_sub(Request $request, $id)
-    {
-        //
-        $request->validate([
-            'sub_category' => 'required'
-        ]);
-
-        $sub_category = new Sub_category;
-        $sub_category = Sub_category::find($id);
-
-        $sub_category->sub_category = $request->sub_category;
-
-        $sub_category->update();
-
-        return redirect()->route('categories.index')->with('success', 'Sub category Updated!');
+        return redirect()->route('categories')->with('success', 'Category Updated!');
     }
 
     /**
@@ -170,14 +125,4 @@ class CategoryController extends Controller
 
     }
 
-    public function destroy_sub($id)
-    {
-        //
-        $sub_category = Sub_category::find($id);
-
-        $sub_category->delete();
-
-        return redirect()->route('categories.index')->with('success', 'Deleted Successfully');
-
-    }
 }

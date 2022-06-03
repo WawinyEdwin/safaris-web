@@ -8,7 +8,6 @@ use App\Models\Video;
 use App\Models\User;
 use App\Models\Blog;
 use App\Models\Category;
-use App\Models\Sub_category;
 use App\Models\Highlight;
 use Illuminate\Support\Facades\Hash;
 
@@ -50,10 +49,7 @@ class HomeController extends Controller
         //find categories
         $categories = Category::all();
 
-        //find sub_categories
-        $sub_categories = Sub_category::all();
-
-        //find blogs
+        //find blogs 
         $blogs = Blog::latest()->limit(2)->get();
 
         $coverBlogs = Blog::latest()->limit(3)->get();
@@ -75,7 +71,6 @@ class HomeController extends Controller
     
         return view('home', [
             'categories' => $categories,
-            'sub_categories' => $sub_categories,
             'tours' => $tours,
             'blogs' => $blogs,
             'coverBlogs' => $coverBlogs,
@@ -92,12 +87,7 @@ class HomeController extends Controller
 
         $tours =  Tours::where('category', $category)->get();
 
-        // dd($tours);
-      
         $categories = Category::all();
-
-        //find sub_categories
-        $sub_categories = Sub_category::all();
 
         $blogs =  Blog::latest()->limit(2)->get();
 
@@ -106,7 +96,6 @@ class HomeController extends Controller
         return view('tour.category',[
             'categories' => $categories,
             'category' => $category,
-            'sub_categories' => $sub_categories,
             'tours' => $tours,
             'blogs' => $blogs
         ]);
@@ -119,52 +108,17 @@ class HomeController extends Controller
       
         $categories = Category::all();
 
-        // dd($tours);
-
-        //find sub_categories
-        $sub_categories = Sub_category::all();
-
         $blogs =  Blog::latest()->limit(2)->get();
 
         // dd($categories);
 
         return view('tour.sub_category',[
             'categories' => $categories,
-            'sub_categories' => $sub_categories,
             'tours' => $tours,
-            'sub_category' =>  $sub_category,
             'blogs' => $blogs
         ]);
      }
 
-
-    //credentials page.
-    public function updateView() {
-        return view('auth.register');
-    }
-
-     //credentials update
-    public function update(Request $request, User $user,  $id)
-    {
-       
-        if($request->password != $request->password_confirmation) {
-            return redirect()->back()->with('error', 'Password does not match');
-        }
-
-        $user = new User;
- 
-         $user = User::find($id);
-
-         $user->name = $request->name;
-
-         $user->email = $request->email;
-
-         $user->password = Hash::make($request->password);
-         
-         $user->update();
-
-         return redirect()->route('admin')->with('success', 'Credentials updated successfully');
-    }
 
     //about page
     public function about()
@@ -173,137 +127,68 @@ class HomeController extends Controller
 
         $categories = Category::all();
 
-        //find sub_categories
-        $sub_categories = Sub_category::all();
-
         return view('safaris.about-us',
         [
             'categories' => $categories,
-            'sub_categories' => $sub_categories,
             'blogs' => $blogs
         ]
     );
     }
 
-    public function affiliations() 
-    {
-        return view ('safaris.affiliations');
-    }
-
+    //careers page
     public function  careers()
     {
         $blogs = Blog::latest()->limit(2)->get();
 
         $categories = Category::all();
 
-        //find sub_categories
-        $sub_categories = Sub_category::all();
-
         return view('safaris.careers', 
     [
         'categories' => $categories,
-        'sub_categories' => $sub_categories,
         'blogs' => $blogs
     ]);
     }
 
+    //faqs page
     public function faqs()
     {
         $blogs = Blog::latest()->limit(3)->get();
 
         $categories = Category::all();
 
-        //find sub_categories
-        $sub_categories = Sub_category::all();
-
         return view('safaris.faqs',
         [
             'categories' => $categories,
-            'sub_categories' => $sub_categories,
             'blogs' => $blogs
         ]);
     }
     
-    public function awards()
-    {
-        $blogs = Blog::latest()->limit(3)->get();
-
-        $categories = Category::all();
-
-        //find sub_categories
-        $sub_categories = Sub_category::all();
-
-        return view('safaris.awards');
-    }
-
+    //privacy policy page
     public function policy()
     {
         $blogs = Blog::latest()->limit(3)->get();
 
         $categories = Category::all();
 
-        //find sub_categories
-        $sub_categories = Sub_category::all();
-
         return view('safaris.policy',
         [
             'categories' => $categories,
-            'sub_categories' => $sub_categories,
             'blogs' => $blogs
         ]);
     }
 
-    public function help()
-    {
-        $blogs = Blog::latest()->limit(2)->get();
-
-        $categories = Category::all();
-
-        //find sub_categories
-        $sub_categories = Sub_category::all();
-
-        return view('safaris.help', [
-            'categories' => $categories,
-            'sub_categories' => $sub_categories,
-            'blogs' => $blogs
-        ]);
-    }
-
-    public function travel()
-    {
-        return view('safaris.travel');
-    }
-
-    public function testimonies()
-    {
-        return view('safaris.testimonies');
-    }
-
-    public function team()
-    {
-        $blogs = Blog::latest()->limit(3)->get();
-
-        $categories = Category::all();
-
-        //find sub_categories
-        $sub_categories = Sub_category::all();
-
-        return view('safaris.team');
-    }
-
+    //admin homepage
     public function admin()
     {
         return view('admin.home');
     }
 
-    public function featured() {
-        return view('tour.featured-tour');
-    }
-    
+    //contact us page
     public function contact() {
         return view('safaris.contact-us');
     }
 
+    //all blogs 
     public function blog() {
         return view('safaris.blog');
     }

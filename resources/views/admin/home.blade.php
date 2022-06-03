@@ -18,8 +18,8 @@
             <div class="card-body">
                 <h5 class="card-title"><i class="bi bi-tags"></i> Categories </h5>
                 <p class="card-text">Easily Manage Tour Categories</p>
-                <a href="{{ route('categories.create') }}" class="btn btn-primar">Add</a>
-                <a href="{{ route('categories.index') }}" class="btn btn-primar">Categories</a>
+                <a href="{{ route('category.create') }}" class="btn btn-primar">Add</a>
+                <a href="{{ route('categories') }}" class="btn btn-primar">Categories</a>
             </div>
         </div> 
     </div>

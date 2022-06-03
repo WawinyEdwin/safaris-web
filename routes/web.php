@@ -12,7 +12,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\VideoController;
 use App\Http\Controllers\HighlightController;
-use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -82,7 +82,6 @@ Route::delete('/blogs/delete/{id}',[BlogController::class, 'destroy'])->name('bl
 
 //VIDEOS
 Route::get('/videos',[VideoController::class, 'index'])->name('videos');
-// Route::get('/videos/create',[VideoController::class, 'create'])->name('videos.create')->middleware('auth');
 Route::get('/videos/create',[VideoController::class, 'create'])->name('videos.create')->middleware('auth');
 Route::post('/videos/store',[VideoController::class, 'store'])->name('videos.store')->middleware('auth');
 Route::get('/videos/edit/{id}',[VideoController::class, 'edit'])->name('videos.edit')->middleware('auth');
@@ -93,15 +92,14 @@ Route::delete('/videos/delete/{id}',[VideoController::class, 'destroy'])->name('
 Route::get('/tour/{category}', [HomeController::class, 'tours'])->name('tour');
 Route::get('/tour/categories/{sub_category}', [HomeController::class, 'tour_cat'])->name('tour_cat');
 
-//CATEGORIES
-Route::resource('categories', CategoryController::class)->middleware('auth');
 
-//SUB CATEGORIES ROUTE
-Route::get('/sub_category/create',[CategoryController::class, 'sub_create'])->name('create_sub');
-Route::post('/sub_category/new',[CategoryController::class, 'store_sub'])->name('store_sub');
-Route::get('/sub_category/edit/{id}',[CategoryController::class, 'sub_edit'])->name('edit_sub');
-Route::post('/sub_category/update/{id}',[CategoryController::class, 'update_sub'])->name('update_sub');
-Route::delete('/sub_category/delete/{id}',[CategoryController::class, 'destroy_sub'])->name('delete_sub');
+//CATEGORIES ROUTE
+Route::get('/categories',[CategoryController::class, 'index'])->name('categories');
+Route::get('/category/create',[CategoryController::class, 'create'])->name('category.create')->middleware('auth');
+Route::post('/category/new',[CategoryController::class, 'store'])->name('category.store')->middleware('auth');
+Route::get('/category/edit/{id}',[CategoryController::class, 'edit'])->name('category.edit')->middleware('auth');
+Route::post('/category/update/{id}',[CategoryController::class, 'update'])->name('category.update')->middleware('auth');
+Route::delete('/category/delete/{id}',[CategoryController::class, 'destroy'])->name('category.delete')->middleware('auth');
 
 //HIGHLIGHTS
 Route::resource('highlights', HighlightController::class);
@@ -121,9 +119,18 @@ Route::get('/send-mail', function() {
 //AUTH ROUTE
 Auth::routes();
 
-//RESET CREDENTIALS ROUTE
-Route::get('/update-user', [HomeController::class, 'updateView'])->name('updatePage');
+//CREDENTIALS ROUTE
 
-Route::post('/update/{id}', [HomeController::class, 'update'])->name('updateUser');
+Route::get('/users', [UserController::class, 'users'])->name('users');
+
+Route::get('/users/update-user/{id}', [UserController::class, 'updateView'])->name('updatePage');
+
+Route::post('users/update/{id}', [UserController::class, 'update'])->name('updateUser');
+
+Route::delete('users/delete', [UserController::class, 'destroy'])->name('deleteUser');
+
+
+
+
 
 

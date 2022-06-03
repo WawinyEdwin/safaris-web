@@ -252,14 +252,19 @@
                         <a href="{{ route('tours') }}" class="nav-link"><i class="bi bi-geo-alt"></i> Tours</a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ route('categories.index') }}" class="nav-link"><i class="bi bi-tags"></i> Tour Categories</a>
+                        <a href="{{ route('categories') }}" class="nav-link"><i class="bi bi-tags"></i> Tour Categories</a>
                     </li>
                     <li class="nav-item">
                         <a href="{{ route('enquiries.index') }}" class="nav-link"><i class="bi bi-card-checklist"></i> Customer Enquiries</a>
                     </li>
                     <li class="nav-item">
                         <a href="https://dashboard.tawk.to/#/dashboard" target="_blank"  class="nav-link"><i class="bi bi-chat-dots"></i> Support Chat</a>
-                    </li>  
+                    </li> 
+                    @if(auth()->user()->isAdmin == True)
+                    <li class="nav-item">
+                        <a href="{{ route('users') }}" class="nav-link"><i class="bi bi-people"></i> Users</a>
+                    </li> 
+                    @endif 
             </ul>
             <ul class="navbar-nav dropdown  ms-auto">
                 <li class="nav-item dropdown">
@@ -268,7 +273,7 @@
                         {{ Auth::user()->name }}
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a href="{{ route('updatePage') }}" class="dropdown-item">
+                        <a href="{{ route('updatePage', Auth::user()->id) }}" class="dropdown-item">
                             <i class="bi bi-lock"></i>Reset Credentials
                         </a>
                         <a class="dropdown-item" href="{{ route('logout') }}"  onclick="event.preventDefault();document.getElementById('logout-form').submit();">

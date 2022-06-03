@@ -17,8 +17,6 @@
         <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
         
         <!-- Styles -->
-        <link rel="stylesheet" href="{{ asset('bootstrap/bootstrap.css') }}">
-        <link rel="stylesheet" href="{{ asset('bootstrap/app.css') }}">
 
         <!-- bootstrap  -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
@@ -49,165 +47,165 @@
                  /* universal styles  */
    
 
-    .nav-link {
-        color: white;
-    }
+            .nav-link {
+                color: white;
+            }
 
-    .nav-item > a:hover {
-        color: white;
-    }
+            .nav-item > a:hover {
+                color: white;
+            }
 
-    .text-center > a:hover {
-        color: #ffffff;
-    }
-    .text-right > a:hover {
-        color: #ffffff;
-    }
+            .text-center > a:hover {
+                color: #ffffff;
+            }
+            .text-right > a:hover {
+                color: #ffffff;
+            }
 
-    .safari {
-        list-style-type: square;
-    }
+            .safari {
+                list-style-type: square;
+            }
 
-    .price {
-        color:  #550a35;
-    }
+            .price {
+                color:  #550a35;
+            }
 
-    a:hover {
-        text-decoration: none;
-        color: #ffffff;
-    }
+            a:hover {
+                text-decoration: none;
+                color: #ffffff;
+            }
 
-    .bg-primar {
-        background-color: #4863a0;
-    }
+            .bg-primar {
+                background-color: #4863a0;
+            }
 
-    .carousel {
-        max-height: 440px;
-        overflow: hidden;
-        margin:auto;
+            .carousel {
+                max-height: 440px;
+                overflow: hidden;
+                margin:auto;
 
-    }
+            }
 
-    @media only screen and (max-width: 600px){
-        
-        .carousel {
-        max-height: 300px;
-        overflow: hidden;
-        margin:auto;
-        }
-        .carousel-inner .carousel-item > img {
-            /* position: absolute; */
-            object-fit: cover;
-            height: 300px;
-            width:100%;
-        }
-    }
+            @media only screen and (max-width: 600px){
+                
+                .carousel {
+                max-height: 300px;
+                overflow: hidden;
+                margin:auto;
+                }
+                .carousel-inner .carousel-item > img {
+                    /* position: absolute; */
+                    object-fit: cover;
+                    height: 300px;
+                    width:100%;
+                }
+            }
 
-    .carousel-inner .carousel-item > img {
-        /* position: absolute; */
-        object-fit: cover;
-        height: 440px;
-        width:100%;
-    }
+            .carousel-inner .carousel-item > img {
+                /* position: absolute; */
+                object-fit: cover;
+                height: 440px;
+                width:100%;
+            }
 
-    /* custom coloring */
-    .bt-primar {
-        background-color: #4863a0;
-        color: #ffffff;
-    }
+            /* custom coloring */
+            .bt-primar {
+                background-color: #4863a0;
+                color: #ffffff;
+            }
 
-    .text-primar {
-        color:  #550a35;
-    }
-    .btn-outline-primar {
-        color:  #ffffff;
-        background-color: #4863a0;
-    }
+            .text-primar {
+                color:  #550a35;
+            }
+            .btn-outline-primar {
+                color:  #ffffff;
+                background-color: #4863a0;
+            }
 
-    .card-title {
-        color: #4863a0;
-    }
+            .card-title {
+                color: #4863a0;
+            }
 
-    .pri {
-        color: #4863a0;
-    }
+            .pri {
+                color: #4863a0;
+            }
 
-    /* custom dropdown  */
-    .dropdown:hover .dropdown-menu {
-        display: block;
-        background-color: #4863a0;
-        color: #ffffff;
-    }
+            /* custom dropdown  */
+            .dropdown:hover .dropdown-menu {
+                display: block;
+                background-color: #4863a0;
+                color: #ffffff;
+            }
 
-    .dropdown-item {
-        color: #ffffff;
-    }
+            .dropdown-item {
+                color: #ffffff;
+            }
 
-    /* scroll to top button  */
-    #myBtn {
-        display: none;
-        position: fixed;
-        bottom: 20px;
-        left: 30px;
-        z-index: 99;
-        border: none;
-        outline: none;
-        background-color: #4863a0;
-        color: #ffffff;
-        cursor: pointer;
-        padding: 15px;
-        border-radius: 10px;
-        font-size: 18px;
-    }
+            /* scroll to top button  */
+            #myBtn {
+                display: none;
+                position: fixed;
+                bottom: 20px;
+                left: 30px;
+                z-index: 99;
+                border: none;
+                outline: none;
+                background-color: #4863a0;
+                color: #ffffff;
+                cursor: pointer;
+                padding: 15px;
+                border-radius: 10px;
+                font-size: 18px;
+            }
 
-    #myBtn:hover {
-        background-color: #4863a0;
-    }
+            #myBtn:hover {
+                background-color: #4863a0;
+            }
 
-    img {
-        object-fit: cover;
-    }
+            img {
+                object-fit: cover;
+            }
 
-    .img-rounded {
-        border-radius: 50%;
-    }
+            .img-rounded {
+                border-radius: 50%;
+            }
 
-    .blogs > a {
-        text-decoration: none;
-        color: #ffffff;
-    }
+            .blogs > a {
+                text-decoration: none;
+                color: #ffffff;
+            }
 
-    .blogs > a:hover {
-        text-decoration: underline;
-        color: #ffffff;
-    }
+            .blogs > a:hover {
+                text-decoration: underline;
+                color: #ffffff;
+            }
 
-    .info {
-        padding: 10px;
-        background-color: #4863a0;
-        color: #ffffff;
-        border-radius: 10px;
-    }
+            .info {
+                padding: 10px;
+                background-color: #4863a0;
+                color: #ffffff;
+                border-radius: 10px;
+            }
 
-    .blue {
-        width: 124px;
-        /* height: 112px; */
-        border-bottom: 2px solid #4863a0;
-        position: absolute;
-    }
+            .blue {
+                width: 124px;
+                /* height: 112px; */
+                border-bottom: 2px solid #4863a0;
+                position: absolute;
+            }
 
-    .white_line {
-        width: 144px;
-        border-bottom: 2px solid #ffffff;
-        position: absolute;
-    }
+            .white_line {
+                width: 144px;
+                border-bottom: 2px solid #ffffff;
+                position: absolute;
+            }
 
-    .about {
-        border-radius: 10px;
-    }
-    .links > p > a:hover {
-        text-decoration: underline;
-    }
+            .about {
+                border-radius: 10px;
+            }
+            .links > p > a:hover {
+                text-decoration: underline;
+            }
         </style>
     </head>
     <body>
@@ -286,7 +284,6 @@
                     </div>
             </div>   
         </div>
-        <br>
         @yield('content')
 
         <div class="footer bg-primar text-white pt-5">

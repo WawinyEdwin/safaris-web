@@ -133,8 +133,14 @@
     .pri {
         color: #4863a0;
     }
+    .active {
+        background-color: #4863a0;
+        color: #ffffff;
+    }
 
     /* custom dropdown  */
+    
+
     .dropdown:hover .dropdown-menu {
         display: block;
         background-color: #4863a0;
@@ -223,17 +229,18 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbar">
                     <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active"><a href="{{ url('/') }}" class="nav-link">Home</a></li>
+                        <li class="nav-item activeNow"><a href="{{ url('/') }}" class="nav-link">Home</a></li>
                         @foreach($categories as $category)
                         <li class="nav-item dropdown show"> 
-                            <a class="nav-link dropdown-toggle" href="{{ route('tour',  $category->category ) }}" id="navbarDropdown"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                {{ $category->category }}
+                            <a class="nav-link dropdown-toggle" href="{{ route('tour',  $category->category_name ) }}" id="navbarDropdown"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                {{ $category->category_name }}
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                @foreach($sub_categories as $cat)
-                                <a class="dropdown-item" href="{{ route('tour_cat', $cat->sub_category) }}">{{ $cat->sub_category }}</a>
+                                <a class="dropdown-item" href="{{ route('tour_cat', $category->sub_category) }}">{{ $category->sub_category}}</a>
                                 <div class="dropdown-divider"></div>
-                                @endforeach
+                                <a class="dropdown-item" href="{{ route('tour_cat', $category->sub_category1) }}">{{ $category->sub_category1}}</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="{{ route('tour_cat', $category->sub_category1) }}">{{ $category->sub_category2}}</a>
                             </div>
                         </li> 
                         @endforeach
