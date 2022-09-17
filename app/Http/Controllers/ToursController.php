@@ -102,13 +102,11 @@ class ToursController extends Controller
 
         $categories = Category::all();
 
-        $sub_categories = Sub_category::all();
         $blogs = Blog::all();
         
         return view('tours.show', compact('tours'),
         [
             'categories' => $categories,
-            'sub_categories' => $sub_categories,
             'blogs' => $blogs
         ]);
     }
@@ -125,12 +123,9 @@ class ToursController extends Controller
         $tours = Tours::find($id);
         $categories = Category::all();
 
-        $sub_categories = Sub_category::all();
-
         return view('tours.edit',
             [
              'categories' => $categories,
-             'sub_categories' => $sub_categories,
              'tours' => $tours
             ]);
         

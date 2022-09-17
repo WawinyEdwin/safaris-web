@@ -64,12 +64,12 @@
                             <div class="row">
                                 <div class="col-lg-6 col-sm-12">
                                     <label for="full_name" class="form-label">Full Name</label>
-                                    <input type="text" name="full_name" id="full_name" class="form-control">
+                                    <input type="text" name="full_name" id="full_name" class="form-control @error('full_name') is-invalid @enderror">
                                     <span class="text-danger">@error('full_name') {{ $message }} @enderror</span>
                                 </div>
                                 <div class="col-lg-6 col-sm-12">
                                     <label for="email_address" class="form-label">Email Address</label>
-                                    <input type="email" name="email_address" id="email_address" class="form-control">
+                                    <input type="email" name="email_address" id="email_address" class="form-control @error('email_address') is-invalid @enderror">
                                     <span class="text-danger">@error('email_address') {{ $message }} @enderror</span>
                                 </div>
                             </div>
@@ -77,7 +77,7 @@
                             <div class="row">
                                 <div class="col-lg-6 col-sm-12">
                                     <label for="phone_number" class="form-label">Phone Number</label>
-                                    <input type="tel" name="phone_number" id="phone_number" class="form-control">
+                                    <input type="tel" name="phone_number" id="phone_number" class="form-control @error('phone_number') is-invalid @enderror">
                                     <span class="text-danger">@error('phone_number') {{ $message }} @enderror</span>
                                 </div>
                                 <div class="col-lg-6 col-sm-12">

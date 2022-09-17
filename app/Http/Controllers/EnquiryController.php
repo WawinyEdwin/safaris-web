@@ -86,7 +86,7 @@ class EnquiryController extends Controller
     
         // \Mail::to('crud3swift@gmail.com')->send( new \App\Mail\EnquiryMail($successMessage));
         
-        return redirect()->route('enquiries.create')->with('success', 'We have recieved your Message, Thank You');
+        return redirect()->route('enquiries.create')->with('success', 'We have recieved your Message, Thank You.. Our customer experience representative will be reaching out shortly via the contacts provided.');
 
     }
 
