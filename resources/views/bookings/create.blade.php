@@ -40,13 +40,13 @@
                         <div class="row">
                             <div class="col-lg-6 col-sm-12">
                                 <label for="first_name" class="form-label">First Name</label>
-                                <input type="text" name="first_name" id="first_name" class="form-control @error('first_name') is-invalid @enderror" required>
+                                <input type="text" name="first_name" id="first_name" value="{{ old('first_name') }}" class="form-control @error('first_name') is-invalid @enderror" required>
                                 <span class="text-danger">@error('first_name') {{ $message }} @enderror</span>
 
                             </div>
                             <div class="col-lg-6 col-sm-12">
                                 <label for="last_name" class="form-label">Last Name</label>
-                                <input type="text" name="last_name" id="last_name" class="form-control  @error('last_name') is-invalid @enderror" required>
+                                <input type="text" name="last_name" id="last_name" value="{{ old('last_name') }}" class="form-control  @error('last_name') is-invalid @enderror" required>
                                 <span class="text-danger" >@error('last_name') {{ $message }} @enderror</span>
 
                             </div>
@@ -55,13 +55,13 @@
                         <div class="row">
                             <div class="col-lg-6 col-sm-12">
                                 <label for="email1" class="form-label"> Email Address</label>
-                                <input type="email" name="email1" id="email1" class="form-control @error('email') is-invalid @enderror" placeholder="example@mail.com" required>
+                                <input type="email" name="email1" id="email1" value="{{ old('email1') }}" class="form-control @error('email') is-invalid @enderror" placeholder="example@mail.com" required>
                                 <span class="text-danger">@error('email') {{ $message }} @enderror</span>
 
                             </div>
                             <div class="col-lg-6 col-sm-12">
                                 <label for="email2" class="form-label"> Confirm Email Address</label>
-                                <input type="email2" name="email2" id="email2" class="form-control @error('email2') is-invalid @enderror" placeholder="example@mail.com" required>
+                                <input type="email2" name="email2" id="email2" value="{{ old('email2') }}" class="form-control @error('email2') is-invalid @enderror" placeholder="example@mail.com" required>
                             </div>
                         </div>
                         <div class="row">
@@ -79,7 +79,7 @@
                             </div>
                             <div class="col-lg-6 col-sm-12">
                                 <label for="phone_number" class="form-label">Phone Number</label>
-                                <input type="tel" name="phone_number" id="phone_number" class="form-control @error('phone_number') is-invalid @enderror" required>
+                                <input type="tel" name="phone_number" id="phone_number" value="{{ old('phone_number') }}" class="form-control @error('phone_number') is-invalid @enderror" required>
                                 <span class="text-danger">@error('phone_number') {{ $message }} @enderror</span>
 
                             </div>
@@ -89,19 +89,19 @@
                         <div class="row">
                             <div class="col-lg-4 col-sm-12">
                                 <label for="arrival_date" class="form-label">Arrival Date</label>
-                                <input type="date" name="arrival_date" id="arrival_date" class="form-control @error('arrival_date') is-invalid @enderror" required>
+                                <input type="date" name="arrival_date" id="arrival_date" value="{{ old('arrival_date') }}" class="form-control @error('arrival_date') is-invalid @enderror" required>
                                 <span class="text-danger">@error('arrival_date') {{ $message }} @enderror</span>
 
                             </div>
                             <div class="col-lg-4 col-sm-12">
                                 <label for="adults" class="form-label">Adults</label>
-                                <input type="number" name="adults" id="adults" class="form-control @error('adults') is-invalid @enderror" required>
+                                <input type="number" name="adults" id="adults" value="{{ old('adults') }}" class="form-control @error('adults') is-invalid @enderror" required>
                                 <span class="text-danger">@error('adults') {{ $message }} @enderror</span>
 
                             </div>
                             <div class="col-lg-4 col-sm-12">
                                 <label for="kids" class="form-label">Kids</label>
-                                <input type="number" name="kids" id="kids" class="form-control @error('kids') is-invalid @enderror" required>
+                                <input type="number" name="kids" id="kids" value="{{ old('kids') }}" class="form-control @error('kids') is-invalid @enderror" required>
                                 <span class="text-danger">@error('kids') {{ $message }} @enderror</span>
                             </div>
                         </div>
@@ -130,7 +130,7 @@
                             </div>
                             <div class="col-lg-6">
                                 <label for="transaction_code" class="form-label">Mpesa Payment Transaction Code</label>
-                                <input type="text" name="transaction_code" id="transaction_code" class="form-control @error('transaction_code') is-invalid @enderror">
+                                <input type="text" name="transaction_code" id="transaction_code"  class="form-control @error('transaction_code') is-invalid @enderror">
                                 <span class="text-danger" >@error('transaction_code') {{ $message }} @enderror</span>
                                 <small class="text-success">This is to be used to verify your booking.</small>
                             </div>

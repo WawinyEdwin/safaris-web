@@ -99,7 +99,7 @@
         </div>
     </div>
     <div class="text-center">
-        <a href="{{ route('bookings.create') }}" class="btn btn-primar"> 
+        <a href="{{ route('bookings.create', $sub_category) }}" class="btn btn-primar"> 
             Book Now
         </a>
     </div>

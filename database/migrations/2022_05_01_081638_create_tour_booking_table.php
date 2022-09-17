@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('first_name');
             $table->string('last_name');
             $table->string('email');
+            // TODO: Run Migrations here
             $table->string('phone_number');
             $table->string('country');
             $table->date('arrival_date');

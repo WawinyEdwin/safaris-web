@@ -141,7 +141,7 @@
                                 <p class="card-text">{{ $tours->hotel }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
                             <div class="blue"></div>
                                 <br>
-                                <p class="price">KSH {{ $tours->single_room }}</p>
+                                <p class="price">{{ $tours->single_room }}</p>
                             </div>
                             <div class="text-right">
                                 <a href="{{ route('tour', 'Tembea Ujionee' ) }}" class="btn btn-primar">

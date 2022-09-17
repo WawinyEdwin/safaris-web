@@ -4,7 +4,7 @@
 
     <div class="bg-primar p-3">
         <div class="container">
-        <h5 class=" text-white"> <a href="{{ url('/') }}" class="text-white"> Home </a> > Exquisite places you can visit and special Deals.</h5>
+        <h5 class=" text-white"> <a href="{{ url('/') }}" class="text-white"> Home </a> / Exquisite places you can visit and special Deals.</h5>
         </div>
     </div> 
 <br>
@@ -12,7 +12,7 @@
     <div class="row">
         <div class="col">
             <div class="">
-                <h5 class="text-center pt-2 pri">Your Search Results</h5>
+                <h5 class="text-center pt-2 pri">We found these amazing places!</h5>
                 <div class="table-responsive">
                     @if(count($tours) > 1)
                     <table class="table table-bordered">
@@ -23,6 +23,7 @@
                             <th scope="col">Per Person Sharing</th>
                             <th scope="col">Single Room</th>
                             <th scope="col">Meals on Board</th>
+                            <th scope="col">ACTION</th>
                         </thead>
                         <tbody>
                        
@@ -33,7 +34,12 @@
                                 <td>{{ $tour->transport }}</td>
                                 <td>{{ $tour->per_person_sharing }}</td>
                                 <td>{{ $tour->single_room }}</td>
-                                <td>{{ $tour-> meals}}</td>
+                                <td>{{ $tour->meals}}</td>
+                                <td>
+                                    <a href="{{ route('bookings.create', $tour->sub_category) }}" class="btn btn-primar"> 
+                                        Book Now
+                                    </a>
+                                </td>
                             </tr>
                             @endforeach
                         </tbody>
@@ -65,11 +71,6 @@
                     </div>
                 </div>
             <div>
-                <div class="text-center">
-                    <a href="{{ route('bookings.create') }}" class="btn btn-primar"> 
-                        Book Now
-                    </a>
-                </div>
             </div>
             </div>
         </div>

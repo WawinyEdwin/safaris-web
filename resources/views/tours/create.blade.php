@@ -93,7 +93,7 @@
                     </div>
                     <div class="col-lg-6 col-sm-12">
                         <label for="per_person_sharing" class="form-label">PerPerson Sharing</label>
-                        <input type="text" name="per_person_sharing" id="per_person_sharing" class="form-control @error('per_person_sharing') is-invalid @enderror"  value="{{ old('per_person_sharing') }}" required>
+                        <input type="text" name="per_person_sharing" id="per_person_sharing" class="form-control @error('per_person_sharing') is-invalid @enderror"  value="{{ old('per_person_sharing') }}"placeholder="e.g KSH 000"required>
                         <small class="form-text text-muted">Prices of per person sharing</small>
                         <span class="text-danger">@error('per_person_sharing') {{ $message }} @enderror</span>
                     </div>
@@ -102,12 +102,12 @@
                 <div class="row">
                     <div class="col-lg-6 col-sm-12">
                         <label for="single_room" class="form-label">Single Room</label>
-                        <input type="text" name="single_room" id="single_room"  class="form-control @error('single_room') is-invalid @enderror"  value="{{ old('single_room') }}" required>
+                        <input type="text" name="single_room" id="single_room"  class="form-control @error('single_room') is-invalid @enderror"  value="{{ old('single_room') }}" placeholder="e.g KSH 000" required>
                         <small class="form-text text-muted">Prices of single rooms</small>
                         <span class="text-danger">@error('single_room') {{ $message }} @enderror</span>
                     </div>
                     <div class="col-lg-6 col-sm-12" class="form-label">
-                        <label for="meals" class="form-label">Meals</label>
+                        <label for="meals" class="form-label">Meals.</label>
                         <input type="text" name="meals" id="meals"class="form-control @error('meals') is-invalid @enderror"  value="{{ old('meals') }}"required>
                         <small class="form-text text-muted">Information about meals</small>
                         <span class="text-danger">@error('meals') {{ $message }} @enderror</span>
