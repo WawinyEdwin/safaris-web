@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="row">
-    <div class="col-lg-4 col-sm-12">
+    <div class="col-lg-3 col-sm-12">
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title"><i class="bi bi-geo-alt"></i> Tours</h5>
@@ -13,7 +13,7 @@
             </div>
         </div> 
     </div>
-    <div class="col-lg-4 col-sm-12">
+    <div class="col-lg-3 col-sm-12">
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title"><i class="bi bi-tags"></i> Categories </h5>
@@ -23,12 +23,21 @@
             </div>
         </div> 
     </div>
-    <div class="col-lg-4 col-sm-12">
+    <div class="col-lg-3 col-sm-12">
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title"><i class="bi bi-book"></i> Bookings</h5>
                 <p class="card-text">Easily Manage Bookings, For your Users</p>
                 <a href="{{ route('bookings') }}" class="btn btn-primar">Bookings</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-sm-12">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title"><i class="bi bi-people"></i> Users</h5>
+                <p class="card-text">Interaction wwith your Users</p>
+                <a href="{{ route('users') }}" class="btn btn-primar">Users.</a>
             </div>
         </div>
     </div>

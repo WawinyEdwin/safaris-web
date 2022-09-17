@@ -23,7 +23,7 @@ class UserController extends Controller
 
         $user = User::find($id);
 
-        return view('auth.register', compact('user'));
+        return view('users.edit', compact('user'));
     }
 
      //credentials update
@@ -41,7 +41,7 @@ class UserController extends Controller
 
             $user->name = $request->name;
 
-            // $user->email = $request->email;
+            $user->email = $request->email;
 
             $user->password = Hash::make($request->password);
         
@@ -49,7 +49,7 @@ class UserController extends Controller
         } else {
 
             unset($user['name']);
-            // unset($user['email']);
+            unset($user['email']);
             unset($user['password']);
 
         }   

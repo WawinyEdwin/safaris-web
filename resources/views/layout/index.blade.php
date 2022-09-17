@@ -29,193 +29,20 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
 
        <!-- favicon   -->
-        <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('favicon_io/apple-touch-icon.png') }} ">
-        <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('favicon_io/favicon-32x32.png') }} ">
-        <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('favicon_io/favicon-16x16.png') }} ">
-        <link rel="manifest" href="{{ asset('favicon_ico/site.webmanifest') }}">
+        <link rel="apple-touch-icon" sizes="180x180" href="{{ secure_asset('favicon_io/apple-touch-icon.png') }} ">
+        <link rel="icon" type="image/png" sizes="32x32" href="{{ secure_asset('favicon_io/favicon-32x32.png') }} ">
+        <link rel="icon" type="image/png" sizes="16x16" href="{{ secure_asset('favicon_io/favicon-16x16.png') }} ">
+        <link rel="manifest" href="{{ secure_asset('favicon_ico/site.webmanifest') }}">
+
+
+        @production
+        <link rel="stylesheet" href="{{ secure_asset('css/main.css') }}" />
+        @endproduction
+
+        <link rel="stylesheet" href="{{ asset('css/main.css') }}" />
 
         <style>
-             body {
-                font-family: 'Varela Round', sans-serif;
-        
-            }
-            /* custom coloring */
-            .btn-primar {
-                background-color: #550a35;
-                color: #ffffff;
-            }
-            .btn-outline-primar {
-                background-color: #4863a0;
-                color: #ffffff;
-            }
-                 /* universal styles  */
-   
-
-    .nav-link {
-        color: white;
-    }
-
-    .nav-item > a:hover {
-        color: white;
-    }
-
-    .text-center > a:hover {
-        color: #ffffff;
-    }
-    .text-right > a:hover {
-        color: #ffffff;
-    }
-
-    .safari {
-        list-style-type: square;
-    }
-
-    .price {
-        color:  #550a35;
-    }
-
-    a:hover {
-        text-decoration: none;
-        color: #ffffff;
-    }
-
-    .bg-primar {
-        background-color: #4863a0;
-    }
-
-    .carousel {
-        max-height: 440px;
-        overflow: hidden;
-        margin:auto;
-
-    }
-
-    @media only screen and (max-width: 600px){
-        
-        .carousel {
-        max-height: 300px;
-        overflow: hidden;
-        margin:auto;
-        }
-        .carousel-inner .carousel-item > img {
-            /* position: absolute; */
-            object-fit: cover;
-            height: 300px;
-            width:100%;
-        }
-    }
-
-    .carousel-inner .carousel-item > img {
-        /* position: absolute; */
-        object-fit: cover;
-        height: 440px;
-        width:100%;
-    }
-
-    /* custom coloring */
-    .bt-primar {
-        background-color: #4863a0;
-        color: #ffffff;
-    }
-
-    .text-primar {
-        color:  #550a35;
-    }
-    .btn-outline-primar {
-        color:  #ffffff;
-        background-color: #4863a0;
-    }
-
-    .card-title {
-        color: #4863a0;
-    }
-
-    .pri {
-        color: #4863a0;
-    }
-    .active {
-        background-color: #4863a0;
-        color: #ffffff;
-    }
-
-    /* custom dropdown  */
-    
-
-    .dropdown:hover .dropdown-menu {
-        display: block;
-        background-color: #4863a0;
-        color: #ffffff;
-    }
-
-    .dropdown-item {
-        color: #ffffff;
-    }
-
-    /* scroll to top button  */
-    #myBtn {
-        display: none;
-        position: fixed;
-        bottom: 20px;
-        left: 30px;
-        z-index: 99;
-        border: none;
-        outline: none;
-        background-color: #4863a0;
-        color: #ffffff;
-        cursor: pointer;
-        padding: 15px;
-        border-radius: 10px;
-        font-size: 18px;
-    }
-
-    #myBtn:hover {
-        background-color: #4863a0;
-    }
-
-    img {
-        object-fit: cover;
-    }
-
-    .img-rounded {
-        border-radius: 50%;
-    }
-
-    .blogs > a {
-        text-decoration: none;
-        color: #ffffff;
-    }
-
-    .blogs > a:hover {
-        text-decoration: underline;
-        color: #ffffff;
-    }
-
-    .info {
-        padding: 5px;
-        background-color: #4863a0;
-        color: #ffffff;
-        border-radius: 10px;
-    }
-
-    .blue {
-        width: 124px;
-        /* height: 112px; */
-        border-bottom: 2px solid #4863a0;
-        position: absolute;
-    }
-
-    .white_line {
-        width: 144px;
-        border-bottom: 2px solid #ffffff;
-        position: absolute;
-    }
-
-    .about {
-        border-radius: 10px;
-    }
-    .links > p > a:hover {
-        text-decoration: underline;
-    }
+            
         </style>
         
     </head>

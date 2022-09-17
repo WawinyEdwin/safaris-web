@@ -21,12 +21,12 @@ class DatabaseSeeder extends Seeder
         DB::table('users')->insert([
             'name' => 'admin',
             'email' => 'admin@gmail.com',
-            'isAdmin' => false,
+            'isAdmin' => true,
             'password' => Hash::make('password'),
         ]);
 
         DB::table('users')->insert([
-            'name' => 'superAdmin',
+            'name' => 'super user',
             'email' => 'crud3swift@gmail.com',
             'isAdmin' => true,
             'password' => Hash::make('Password@1'),
