@@ -16,6 +16,7 @@
     <div class="table-responsive">
         <table class="table table-bordered ">
             <thead>
+                <th scope="col">TX-Code</th>
                 <th scope="col">Id</th>
                 <th scope="col">First Name</th>
                 <th scope="col">Last Name</th>
@@ -25,11 +26,13 @@
                 <th scope="col">Kids</th>
                 <th scope="col">Arrival Date</th>
                 <th scope="col">special_requirements</th>
+                <th scope="col">Destination</th>
                 <th scope="col" width="280px">Action</th>
             </thead>
             <tbody>
                 @foreach ($bookings as $booking)
                 <tr>
+                    <td>{{ $booking->transaction_code }}</td>
                     <td>{{ ++$i }}</td>
                     <td>{{ $booking->first_name }}</td>
                     <td>{{ $booking->last_name }}</td>
@@ -38,6 +41,7 @@
                     <td>{{ $booking->adults }}</td>
                     <td>{{ $booking->kids }}</td>
                     <td>{{ $booking->arrival_date }}</td>
+                    <td>{{ $booking->destination }}</td>
                     <td>{{ $booking->special_requirements }}</td>
                     <td>
                         <form action="{{ route('bookings.delete', $booking->id) }}" method="post">

@@ -223,7 +223,7 @@
                             <hr>
                             <p class="card-text">From {{ $tour->single_room}} per person</p>
                             <div class="text-center">
-                                <a href="{{ route('bookings.create') }}" class="btn btn-primar">Book Now</a>
+                                <a href="{{ route('bookings.create', 'sample') }}" class="btn btn-primar">Book Now</a>
                             </div>
                         </div>
                     </div>
@@ -241,7 +241,7 @@
                             <p class="card-text">From USD 45000 per person</p>
                             
                             <div class="text-center">
-                                <a href="{{ route('bookings.create') }}" class="btn btn-primar">Book Now</a>
+                                <a href="{{ route('bookings.create', 'sample') }}" class="btn btn-primar">Book Now</a>
                             </div>
                         </div>
                     </div>
@@ -256,7 +256,7 @@
                             <p class="card-text">From USD 45000 per person</p>
                             
                             <div class="text-center">
-                                <a href="{{ route('bookings.create') }}" class="btn btn-primar">Book Now</a>
+                                <a href="{{ route('bookings.create', 'sample') }}" class="btn btn-primar">Book Now</a>
                             </div>
                         </div>
                     </div>
@@ -271,7 +271,7 @@
                             <p class="card-text">From USD 45000 per person</p>
                             
                             <div class="text-center">
-                                <a href="{{ route('bookings.create') }}" class="btn btn-primar">Book Now</a>
+                                <a href="{{ route('bookings.create', 'sample') }}" class="btn btn-primar">Book Now</a>
                             </div>
                         </div>
                     </div>
@@ -286,7 +286,7 @@
                             <p class="card-text">From USD 45000 per person</p>
                             
                             <div class="text-center">
-                                <a href="{{ route('bookings.create') }}" class="btn btn-primar">Book Now</a>
+                                <a href="{{ route('bookings.create', 'sample') }}" class="btn btn-primar">Book Now</a>
                             </div>
                         </div>
                     </div>

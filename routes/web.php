@@ -50,7 +50,7 @@ Route::resource('enquiries', EnquiryController::class);
 //TOURS
 Route::get('/bookings',[BookingController::class, 'index'])->name('bookings')->middleware('auth');
 Route::get('/bookings/show/{id}',[BookingController::class, 'show'])->name('bookings.show')->middleware('auth');
-Route::get('/bookings/create',[BookingController::class, 'create'])->name('bookings.create');
+Route::get('/bookings/create/{destination}',[BookingController::class, 'create'])->name('bookings.create');
 Route::post('/bookings/new',[BookingController::class, 'store'])->name('bookings.store')->middleware('auth');
 Route::get('/bookings/edit/{id}',[BookingController::class, 'edit'])->name('bookings.edit')->middleware('auth');
 Route::post('/bookings/update/{id}',[BookingController::class, 'update'])->name('bookings.update')->middleware('auth');

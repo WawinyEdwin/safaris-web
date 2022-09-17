@@ -11,7 +11,7 @@
 <br>
 <div class="container">
     <div class="text-center">
-        <a href="{{ route('bookings.create') }}" class="btn btn-primar"> 
+        <a href="{{ route('bookings.create', $category ) }}" class="btn btn-primar"> 
             Book Now
         </a>
     </div>
@@ -98,7 +98,7 @@
             </div>
         </div>
     <div class="text-center">
-        <a href="{{ route('bookings.create') }}" class="btn btn-primar"> 
+        <a href="{{ route('bookings.create', $category) }}" class="btn btn-primar"> 
             Book Now
         </a>
     </div>

@@ -29,7 +29,7 @@ class BookingController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($destination)
     {
         //
         // $tours =  Tours::where('category', $category)->get();
@@ -46,7 +46,8 @@ class BookingController extends Controller
             [
                 'categories' => $categories,
                 'tours' => $tours,
-                'blogs' => $blogs
+                'blogs' => $blogs,
+                'destination' => $destination
             ]);
 
     }
@@ -69,6 +70,7 @@ class BookingController extends Controller
             'arrival_date' => 'required',
             'adults' => 'required',
             'kids' => 'required',
+            'destination' => 'required',
             'g-recaptcha-response' => 'required|captcha',
         ]);
 
@@ -90,6 +92,8 @@ class BookingController extends Controller
         $booking->kids = $request->kids;
         $booking->phone_number = $request->phone_number;
         $booking->country = $request->country;
+        $booking->destination = $request->destination;
+        $booking->transaction_code = $request->transaction_code;
         $booking->special_requirements = $request->special_requirements;
 
         $booking->save();

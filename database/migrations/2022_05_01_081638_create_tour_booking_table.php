@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('tour_bookings', function (Blueprint $table) {
             $table->id();
+            $table->string('transaction_code');
             $table->string('first_name');
             $table->string('last_name');
             $table->string('email');
@@ -23,6 +24,7 @@ return new class extends Migration
             $table->date('arrival_date');
             $table->string('adults');
             $table->string('kids');
+            $table->string('destination');
             $table->text('special_requirements');
             $table->timestamps();
         });
