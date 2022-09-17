@@ -30,7 +30,7 @@
             <tbody>
                 @foreach ($enquiries as $enquiry)
                 <tr>
-                    <td>{{ ++$i }}</td>
+                    <td><i class="bi bi-check-square text-success"></i> {{ ++$i }}</td>
                     <td>{{ $enquiry->full_name }}</td>
                     <td>{{ $enquiry->email_address }}</td>
                     <td>{{ $enquiry->phone_number }}</td>
@@ -49,6 +49,8 @@
 
                             @csrf 
                             @method('DELETE')
+
+                            
 
                             <button type="submit" class="btn btn-danger">Delete</button>
                             

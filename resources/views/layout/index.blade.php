@@ -64,9 +64,9 @@
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{{ route('tour_cat', $category->sub_category) }}">{{ $category->sub_category}}</a>
-                                <div class="dropdown-divider"></div>
+                               
                                 <a class="dropdown-item" href="{{ route('tour_cat', $category->sub_category1) }}">{{ $category->sub_category1}}</a>
-                                <div class="dropdown-divider"></div>
+                               
                                 <a class="dropdown-item" href="{{ route('tour_cat', $category->sub_category1) }}">{{ $category->sub_category2}}</a>
                             </div>
                         </li> 
@@ -83,11 +83,21 @@
                         </li> 
                     </ul>
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"> 
-                            <a class="nav-link" href="{{ route('admin') }}">
-                                <i class="bi bi-lock"></i>Account
-                            </a>
-                        </li>
+                    @guest
+                    <li class="nav-item"> 
+                        <a class="nav-link" href="{{ route('login') }}">
+                            <i class="bi bi-lock"></i> Account
+                        </a>
+                    </li>
+                    @endguest
+
+                    @auth
+                    <li class="nav-item"> 
+                        <a class="nav-link" href="{{ route('admin') }}">
+                            <i class="bi bi-speedometer2"></i> Dashboard
+                        </a>
+                    </li> 
+                    @endauth
                     </ul>
                 </div>
             </div>

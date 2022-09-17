@@ -2,11 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\TourController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\ToursController;
-use App\Http\Controllers\HolidayController;
-use App\Http\Controllers\HoneyMoonController;
 use App\Http\Controllers\EnquiryController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\BlogController;
@@ -89,8 +86,8 @@ Route::post('/videos/update/{id}',[VideoController::class, 'update'])->name('vid
 Route::delete('/videos/delete/{id}',[VideoController::class, 'destroy'])->name('videos.delete')->middleware('auth');
 
 //DYNAMIC TOUR ROUTE.
-Route::get('/tour/{category}', [HomeController::class, 'tours'])->name('tour');
-Route::get('/tour/categories/{sub_category}', [HomeController::class, 'tour_cat'])->name('tour_cat');
+Route::get('/tours/{category}', [HomeController::class, 'tours'])->name('tour');
+Route::get('/tours/categories/{sub_category}', [HomeController::class, 'tour_cat'])->name('tour_cat');
 
 
 //CATEGORIES ROUTE

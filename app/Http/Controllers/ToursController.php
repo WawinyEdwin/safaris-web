@@ -64,6 +64,7 @@ class ToursController extends Controller
             'per_person_sharing' => 'required',
             'meals' => 'required',
             'category' => 'required',
+            'sub_category' => 'required',
             'location' => 'required',
         ]);
 
@@ -76,7 +77,7 @@ class ToursController extends Controller
         $tours->single_room = $request->single_room;
         $tours->meals = $request->meals;
         $tours->category = $request->category;
-        $tours->sub_category = $request->category;
+        $tours->sub_category = $request->sub_category;
         $tours->additional_info = $request->additional_info;
         $tours->per_person_sharing = $request->per_person_sharing;
         $tours->image = $path;

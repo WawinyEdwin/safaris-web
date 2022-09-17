@@ -115,7 +115,8 @@ class HomeController extends Controller
         return view('tour.sub_category',[
             'categories' => $categories,
             'tours' => $tours,
-            'blogs' => $blogs
+            'blogs' => $blogs,
+            'sub_category' => $sub_category
         ]);
      }
 

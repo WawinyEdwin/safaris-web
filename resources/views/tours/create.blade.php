@@ -57,6 +57,18 @@
                         </select>
                         <span class="text-danger">@error('category') {{ $message }} @enderror</span>
                     </div>
+                    <div class="col-lg-6 col-sm-12">
+                        <label for="sub_category" class="form-label">Sub Category</label>
+                            <select name="sub_category" id="sub_category" class="form-control @error('sub_category') is-invalid @enderror">
+                                <option value="">--choose category--</option>
+                                @foreach($categories as $category )
+                                    <option value="{{ $category->sub_category }}">{{ $category->sub_category }}</option>
+                                    <option value="{{ $category->sub_category1 }}">{{ $category->sub_category1 }}</option>
+                                    <option value="{{ $category->sub_category2 }}">{{ $category->sub_category2 }}</option>
+                                @endforeach
+                            </select>
+                            <span class="text-danger">@error('sub_category') {{ $message }} @enderror</span>
+                        </div>
                     
                 </div>
                 <div class="row">
