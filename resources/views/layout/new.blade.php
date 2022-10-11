@@ -212,7 +212,7 @@
         <nav class="navbar navbar-expand-lg bg-primar text-white fixed-top">
             <div class="container">
                 <a href="{{ url('/')}}" class="navbar-brand text-white">
-                <img src="{{ asset('okulink.jpg') }}" alt="Okulink" width="50" height="50" class="d-inline-block-align-top img-rounded"> Okulink Safaris</a>
+                <img src="{{ asset('logo.png') }}" alt="Okulink" width="50" height="50" class="d-inline-block-align-top img-rounded"> Okulink Safaris</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar">
                 <i class="bi bi-list text-white"></i>
                 </button>
@@ -331,7 +331,7 @@
                     <h5>Our Values</h5>
                     <div class="white_line"></div>
                     <br>
-                    <img src="{{ asset('okulink.jpg') }} " alt="about" class="about" heigth="400" width="200" >
+                    <img src="{{ asset('logo.jpg') }} " alt="about" class="about" heigth="400" width="200" >
                 </div>
  
                 <div class="col-lg-3  col-sm-12 p-2">
