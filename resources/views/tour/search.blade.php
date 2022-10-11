@@ -64,7 +64,7 @@
                     <div class="col-lg-6 col-sm-12">
                         <h5>Exclusions</h5>
                         <ul>
-                            <li>Peronal Expenses</li>
+                            <li>Personal Expenses</li>
                             <li>Park/Conservancy Fees</li>
                             <li>Any other fees not included</li>
                         </ul>

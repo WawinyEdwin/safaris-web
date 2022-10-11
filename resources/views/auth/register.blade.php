@@ -1,4 +1,4 @@
-@extends('layout.admin')
+@extends('layout.new')
 
 @section('content')
 <br>
@@ -6,17 +6,17 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header bg-primar text-white text-center">{{ __('Reset Credentials') }}</div>
+                <div class="card-header bg-primar text-white text-center">{{ __('Create Account') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('updateUser', auth()->user()->id ) }}">
+                    <form method="POST" action="{{ route('register' ) }}">
                         @csrf
 
                         <div class="row mb-3">
                             <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Name') }}</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ $user->name }}" autocomplete="name" autofocus>
+                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" autocomplete="name" autofocus>
 
                                 @error('name')
                                     <span class="invalid-feedback" role="alert">
@@ -30,7 +30,7 @@
                             <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ $user->email }}"  autocomplete="email">
+                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" autocomplete="email">
 
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
@@ -62,17 +62,21 @@
                             </div>
                         </div>
 
-                        <div class="row mb-0">
+                        <div class="row mb-0 text-center">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn bg-primar text-white">
-                                    {{ __('Reset') }}
+                                    {{ __('Sign up') }}
                                 </button>
                             </div>
+                            <br>
+                            <p>Already have an account? <a href="{{ url('login') }}">Login</a></p>
                         </div>
+
                     </form>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<br>
 @endsection

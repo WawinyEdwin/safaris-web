@@ -78,8 +78,11 @@ a:hover {
 }
 
 .text-primar {
-    color: #550a35;
+    color: #550a35 !important;
 }
+
+
+
 .btn-outline-primar {
     color: #ffffff;
     background-color: #4863a0;

@@ -86,17 +86,50 @@
                     @guest
                     <li class="nav-item"> 
                         <a class="nav-link" href="{{ route('login') }}">
-                            <i class="bi bi-lock"></i> Account
+                            <i class="bi bi-lock"></i> Log In
+                        </a>
+                    </li>
+                    <li class="nav-item"> 
+                        <a class="nav-link" href="{{ route('register') }}">
+                            <i class="bi bi-lock"></i> Sign up
                         </a>
                     </li>
                     @endguest
 
                     @auth
+                    @if(Auth::user()->isAdmin == 1)
                     <li class="nav-item"> 
                         <a class="nav-link" href="{{ route('admin') }}">
                             <i class="bi bi-speedometer2"></i> Dashboard
                         </a>
                     </li> 
+
+                    @else
+                    <ul class="navbar-nav dropdown  ms-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="bi bi-person-check"></i>
+                        {{ Auth::user()->name }}
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              
+                        <a class="dropdown-item" href="{{ route('profile') }}">
+                            <i class="bi bi-speedometer2"></i> Profile
+                        </a>
+                        <a href="{{ route('updatePage', Auth::user()->id) }}" class="dropdown-item">
+                            <i class="bi bi-lock"></i>Reset Credentials
+                        </a>
+                        <a class="dropdown-item" href="{{ route('logout') }}"  onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                            <i class="bi bi-power"></i> Logout
+                        </a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
+                    </div>
+                </li>
+
+            </ul>
+                    @endif
                     @endauth
                     </ul>
                 </div>

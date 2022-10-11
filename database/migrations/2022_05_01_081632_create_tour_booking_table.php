@@ -19,7 +19,6 @@ return new class extends Migration
             $table->string('first_name');
             $table->string('last_name');
             $table->string('email');
-            // TODO: Run Migrations here
             $table->string('phone_number');
             $table->string('country');
             $table->date('arrival_date');
@@ -27,6 +26,8 @@ return new class extends Migration
             $table->string('kids');
             $table->string('destination');
             $table->text('special_requirements');
+            $table->integer('user_id');
+            $table->string('status')->default(0);
             $table->timestamps();
         });
     }

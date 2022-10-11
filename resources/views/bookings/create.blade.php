@@ -108,7 +108,7 @@
 
                         <label for="special_requirements" class="form-label">Special Requirements</label>
                         <textarea name="special_requirements" id="special_requirements" cols="30" rows="5" class="form-control">
-
+                        {{ old('special_requirements') }}
                         </textarea>
                         <br>
                         <div class="row">
@@ -130,7 +130,7 @@
                             </div>
                             <div class="col-lg-6">
                                 <label for="transaction_code" class="form-label">Mpesa Payment Transaction Code</label>
-                                <input type="text" name="transaction_code" id="transaction_code"  class="form-control @error('transaction_code') is-invalid @enderror">
+                                <input type="text" value="{{ old('transaction_code') }}" name="transaction_code" id="transaction_code"  class="form-control @error('transaction_code') is-invalid @enderror">
                                 <span class="text-danger" >@error('transaction_code') {{ $message }} @enderror</span>
                                 <small class="text-success">This is to be used to verify your booking.</small>
                             </div>

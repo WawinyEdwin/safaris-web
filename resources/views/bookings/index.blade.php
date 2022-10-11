@@ -3,14 +3,16 @@
 @section('content')
 
 <div class="container-fluid">
+@if($message = Session::get('success'))
+    <div class="alert alert-success">
+        <p>{{ $message }}</p>
+    </div>
+    @endif
     <div class="col-lg-12">
         <div class="text-left">
             <h2  class="pri">Bookings</h2>
         </div>
-        <div class="text-right">
-            <a href="{{ route('bookings.create') }}" class="btn btn-primar">Add Booking</a>
-            <p>Customer boooking based on tour information you have on the site</p>
-        </div>
+    
     </div>
     <br>
     <div class="table-responsive">
@@ -44,11 +46,14 @@
                     <td>{{ $booking->destination }}</td>
                     <td>{{ $booking->special_requirements }}</td>
                     <td>
-                        <form action="{{ route('bookings.delete', $booking->id) }}" method="post">
-                            @csrf 
-                            @method('DELETE')
-
-                            <button type="submit" class="btn btn-danger">Delete</button>
+                        <form method="POST" action="{{route('bookings.confirm', $booking->id )}}">
+                          @method('PUT')
+                          @csrf
+                          @if ($booking->status == 1)
+                          <button type="submit"  class="btn btn-warning"  ><i class="bi bi-x-octagon"></i>Pending</button>
+                          @else
+                          <button type="submit"  class="btn btn-success"  title="confirm"><i class="bi bi-check"></i>Done</button>
+                          @endif
                         </form>
                     </td>
                 </tr>

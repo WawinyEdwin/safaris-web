@@ -50,11 +50,12 @@ Route::resource('enquiries', EnquiryController::class);
 //TOURS
 Route::get('/bookings',[BookingController::class, 'index'])->name('bookings')->middleware('auth');
 Route::get('/bookings/show/{id}',[BookingController::class, 'show'])->name('bookings.show')->middleware('auth');
-Route::get('/bookings/create/{destination}',[BookingController::class, 'create'])->name('bookings.create');
+Route::get('/bookings/create/{destination}',[BookingController::class, 'create'])->name('bookings.create')->middleware('auth');
 Route::post('/bookings/new',[BookingController::class, 'store'])->name('bookings.store')->middleware('auth');
 Route::get('/bookings/edit/{id}',[BookingController::class, 'edit'])->name('bookings.edit')->middleware('auth');
 Route::post('/bookings/update/{id}',[BookingController::class, 'update'])->name('bookings.update')->middleware('auth');
 Route::delete('/bookings/delete/{id}',[BookingController::class, 'destroy'])->name('bookings.delete')->middleware('auth');
+Route::delete('/bookings/publish/{id}',[BookingController::class, 'confirm'])->name('bookings.confirm')->middleware('auth');
 
 //TOURS
 Route::get('/addtour',[ToursController::class, 'index'])->name('tours')->middleware('auth');
@@ -117,6 +118,10 @@ Route::get('/send-mail', function() {
 Auth::routes();
 
 //CREDENTIALS ROUTE
+
+Route::get('/profile', [BookingController::class, 'profile'])->name('profile');
+
+
 
 Route::get('/users', [UserController::class, 'users'])->name('users');
 

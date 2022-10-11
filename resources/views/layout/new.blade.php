@@ -218,7 +218,7 @@
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbar">
-                    <div class="navbar-nav">
+                    <ul class="navbar-nav mr-auto">
                         
                         <li class="nav-item active"><a href="{{ url('/') }}" class="nav-link">Home</a></li>
 
@@ -248,7 +248,56 @@
                                 Blog
                             </a>
                         </li>
+        </ul>
+        <ul class="navbar-nav ms-auto">
+                    @guest
+                    <li class="nav-item"> 
+                        <a class="nav-link" href="{{ route('login') }}">
+                            <i class="bi bi-lock"></i> Log In
+                        </a>
+                    </li>
+                    <li class="nav-item"> 
+                        <a class="nav-link" href="{{ route('register') }}">
+                            <i class="bi bi-lock"></i> Sign up
+                        </a>
+                    </li>
+                    @endguest
+
+                    @auth
+
+                    @if(Auth::user()->isAdmin == 1)
+                    <li class="nav-item"> 
+                        <a class="nav-link" href="{{ route('admin') }}">
+                            <i class="bi bi-speedometer2"></i> Dashboard
+                        </a>
+                    </li> 
+
+                    @else
+                
+                    <ul class="navbar-nav dropdown  ms-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="bi bi-person-check"></i>
+                        {{ Auth::user()->name }}
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a href="{{ route('updatePage', Auth::user()->id) }}" class="dropdown-item">
+                            <i class="bi bi-lock"></i>Reset Credentials
+                        </a>
+                        <a class="dropdown-item" href="{{ route('logout') }}"  onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                            <i class="bi bi-power"></i> Logout
+                        </a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
                     </div>
+                </li>
+
+            </ul>
+                    @endif
+
+                    @endauth
+                    </ul>
                 </div>
             </div>
         </nav>
@@ -257,33 +306,7 @@
         <br>
         <br>
 
-        <div class="bg-white navbar">
-            <div class="container p-2">
-                <a href="{{ url('/')}}" class="navbar-brand d-none d-lg-flex">
-                    <img src="{{ asset('okulink.jpg') }}" alt="Okulink" width="130" height="100" class="d-inline-block-align-top">
-                </a>
-                <div class="navbar-nav text-center">
-                    <form class="form-inline " action="{{ route('search') }}" method="GET" role="search">
-                        <div class="form-group mx-sm-3 mb-2">
-                            <input class="form-control mr-sm-2" type="search" placeholder="Search destination" name="term" id="term" aria-label="Search">
-                        </div>
-                        <button class="btn btn-outline-primar mb-2" type="submit">
-                            <i class="bi bi-search"></i>
-                        </button>
-                    </form>
-                </div>
-                    <div class="info">
-                    <ul class="navbar-nav ml-auto ">
-                        <li class="nav-item">&nbsp;<i class="bi bi-telephone-outbound"></i> &nbsp;0742 659 292/0701 700 144</li>
-                        <li class="nav-item d-none d-lg-flex">
-                            <i class="bi bi-facebook "></i>&nbsp;&nbsp;&nbsp;
-                            <i class="bi bi-twitter "></i>&nbsp;&nbsp;&nbsp;
-                            <a href="http://www.instagram.com/okulinksafaris"><i class="bi bi-instagram text-white"></i></a>
-                        </li>
-                    </ul>             
-                    </div>
-            </div>   
-        </div>
+      
         @yield('content')
 
         <div class="footer bg-primar text-white pt-5">
@@ -326,11 +349,7 @@
                     <h5 class="">Latest from Blog</h5>
                     <div class="white_line"></div>
                     <br>
-                    @foreach($blogs as $blog)
-                    <a href="{{ route('blogs.show',$blog->id) }}">
-                        <p> + {{ \Illuminate\Support\Str::limit($blog->title, 30, $end='...') }} | {!! \Illuminate\Support\Str::limit($blog->content, 100, $end='...') !!}</p>
-                        </a>
-                    @endforeach
+                   
                 </div>
             </div>
         </div>

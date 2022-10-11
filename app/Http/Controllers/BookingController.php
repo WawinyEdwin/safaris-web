@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Mail\BookingMail;
+use App\Mail;
 use App\Models\Booking;
 use App\Models\Tours;
 use App\Models\Blog;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class BookingController extends Controller
 {
@@ -24,6 +25,12 @@ class BookingController extends Controller
         return view('bookings.index', compact('bookings'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
+
+    public function profile()
+    {
+        $bookings = Booking::where('user_id', Auth::user()->id )->latest()->paginate(10);
+        return view('users.profile', compact('bookings'))->with('i', (request()->input('page', 1) - 1) * 5);
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -72,6 +79,7 @@ class BookingController extends Controller
             'kids' => 'required',
             'destination' => 'required',
             'g-recaptcha-response' => 'required|captcha',
+            'transaction_code' => 'required'
         ]);
 
         if($request->email1 == $request->email2 ) 
@@ -95,18 +103,11 @@ class BookingController extends Controller
         $booking->destination = $request->destination;
         $booking->transaction_code = $request->transaction_code;
         $booking->special_requirements = $request->special_requirements;
+        $booking->user_id = Auth::user()->id;
 
         $booking->save();
 
-        
-        // $successMessage = [
-        //     'title' => 'Booking Success!',
-        //     'body' => 'We have recieved your booking confirmation and one of our customer representatives will get back to you with further details.'
-        // ];
-    
-        // \Mail::to('crud3swift@gmail.com')->send( new \App\Mail\BookingMail($successMessage));
-
-        return redirect()->route('bookings.create')->with('success', 'Booking has been successfull!');
+        return redirect()->route('profile')->with('success', 'Booking has been successfull!');
         
     }
 
@@ -173,4 +174,20 @@ class BookingController extends Controller
         $booking->delete();
         return redirect()->route('bookings')->with('success', 'Booking deleted successfully!');
     }
+
+
+     //Published toggle
+     public function confirm($id)
+     {
+         $booking = Booking::find($id);
+         if ($booking->status == 0) {
+             $booking->status = 1;
+             $booking->update();
+         } else {
+             $booking->status = 0;
+             $booking->update();
+         }
+ 
+         return redirect()->route('bookings')->with('success', 'Booking deleted successfully!');
+     }
 }
