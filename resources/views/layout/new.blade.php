@@ -331,7 +331,7 @@
                     <h5>Our Values</h5>
                     <div class="white_line"></div>
                     <br>
-                    <img src="{{ asset('logo.jpg') }} " alt="about" class="about" heigth="400" width="200" >
+                    <img src="{{ asset('logo.png') }} " alt="about" class="about" heigth="400" width="200" >
                 </div>
  
                 <div class="col-lg-3  col-sm-12 p-2">
