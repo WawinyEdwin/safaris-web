@@ -55,7 +55,7 @@ class BookingController extends Controller
                 'tours' => $tours,
                 'blogs' => $blogs,
                 'destination' => $destination
-            ]);
+            ])->with('success', 'you must be logged in to book a destination.');
 
     }
 
@@ -107,7 +107,7 @@ class BookingController extends Controller
 
         $booking->save();
 
-        return redirect()->route('profile')->with('success', 'Booking has been successfull!');
+        return redirect()->route('profile')->with('success', 'Booking has been successfull, We will contact you within 24hrs!');
         
     }
 

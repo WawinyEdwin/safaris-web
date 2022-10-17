@@ -5,6 +5,12 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
+        @if($message = Session::get('success'))
+            <div class="alert alert-success">
+                <p>{{ $message }}</p>
+            </div>
+            @endif
+            
             <div class="card">
                 <div class="card-header text-white text-center bg-primar">{{ __('Login') }}</div>
                 <div class="card-body">
