@@ -20,15 +20,15 @@
       <div class="carousel-inner">
           
         @forelse($tours as $tour)
-            <div class="carousel-item active">
-              <img class="d-block w-100" src="{{ asset('/storage/'.$tour->image) }}" alt="Second slide">
+        <div class="carousel-item active">
+              <img class="d-block" src="{{ asset('/storage/'.$tour->image) }}" alt="{{ $tour->image }}" style="object-fit: cover;">
             </div>
             <div class="carousel-item ">
-                <img class="d-block w-100" src="{{ asset('/storage/'.$tour->image1) }}" alt="First slide">
+                <img class="d-block" src="{{ asset('/storage/'.$tour->image1) }}" alt="{{ $tour->image }}">
             </div>
-          <div class="carousel-item ">
-            <img class="d-block w-100" src="{{ asset('/storage/'.$tour->image2) }}" alt="First slide">
-          </div>
+            <div class="carousel-item active">
+                <img class="d-block" src="{{ asset('/storage/'.$tour->image2) }}" alt="{{ $tour->image }}">
+            </div>
 
         @empty
           <div class="carousel-item active">
@@ -57,7 +57,6 @@
                 <th scope="col">Transport</th>
                 <th scope="col">PerPerson Sharing</th>
                 <th scope="col">Single Room</th>
-                
                 <th scope="col">Meals</th>
             </thead>
             <tbody>
@@ -77,26 +76,7 @@
     <br>
     <div class="">
         <h5 class="pri text-center">More Information</h5>
-        <br>
-        <div class="row">
-            <div class="col-lg-6 col-sm-12">
-                <h5>Inclusions</h5>
-                <ul>
-                    <li>Accomodation</li>
-                    <li>Meals as indicated</li>
-                    <li>Use of Hotel Facilities</li>
-                    <li>Entertainment at the Hotel</li>
-                </ul>
-            </div>
-            <div class="col-lg-6 col-sm-12">
-                <h5>Exclusions</h5>
-                <ul>
-                    <li>Personal Expenses</li>
-                    <li>Park/Conservancy Fees</li>
-                    <li>Any other fees not included</li>
-                </ul>
-            </div>
-        </div>
+        <div>{!! $info->additional_info !!}</div>
     </div>
     <div class="text-center">
         <a href="{{ route('bookings.create', $sub_category) }}" class="btn btn-primar"> 

@@ -1,4 +1,4 @@
-@extends('layout.admin')
+@extends('layout.new')
 
 @section('content')
 <br>
@@ -45,4 +45,5 @@
         </div>
     </div>
 </div>
+<br>
 @endsection

@@ -26,15 +26,11 @@ class HomeController extends Controller
                 }
             }]
         ])->orderBy("id", "desc")->paginate(10);
-
         //find categories
         $categories = Category::all();
-
         //find blogs
         $blogs =  Blog::latest()->limit(2)->get();
-
         $tours = Tours::inRandomOrder()->limit(3)->get();
-
         return view('tour.search',
             [
                 'categories' => $categories,
@@ -48,24 +44,15 @@ class HomeController extends Controller
 
         //find categories
         $categories = Category::all();
-
         //find blogs 
         $blogs = Blog::latest()->limit(2)->get();
-
         $coverBlogs = Blog::latest()->limit(3)->get();
-
         $videos = Video::inRandomOrder()->limit(4)->get();
-
         //fetches tours
         $tours = Tours::inRandomOrder()->limit(3)->get();
-
         $holidayOffers = Tours::where('category', 'Exciting Holiday Offers')->limit(3)->get();
-      
         $localTours = Tours::where('category', 'Local Tours')->limit(4)->get();
-
         $tembeaTours = Tours::where('category', 'Tembea Ujionee')->limit(3)->get();
-
-
         //to appear in carousel
         $highlights = Highlight::all();
     
@@ -83,40 +70,32 @@ class HomeController extends Controller
     }
 
     //dynamic category switch.
-    public function tours($category) {
-
+    public function tours($category) 
+    {
         $tours =  Tours::where('category', $category)->get();
-
         $categories = Category::all();
-
         $blogs =  Blog::latest()->limit(2)->get();
-
-        // dd($categories);
-
+        $info = Tours::where('category', $category)->latest()->first();
         return view('tour.category',[
             'categories' => $categories,
             'category' => $category,
             'tours' => $tours,
-            'blogs' => $blogs
+            'blogs' => $blogs,
+            'info' => $info
         ]);
      }
-
      //dynamic subcategory switch.
     public function tour_cat($sub_category) {
-
+        $info = Tours::where('sub_category', $sub_category)->latest()->first();
         $tours =  Tours::where('sub_category', $sub_category)->get();
-      
         $categories = Category::all();
-
         $blogs =  Blog::latest()->limit(2)->get();
-
-        // dd($categories);
-
         return view('tour.sub_category',[
             'categories' => $categories,
             'tours' => $tours,
             'blogs' => $blogs,
-            'sub_category' => $sub_category
+            'sub_category' => $sub_category,
+            'info' => $info
         ]);
      }
 
@@ -125,9 +104,7 @@ class HomeController extends Controller
     public function about()
     {
         $blogs = Blog::latest()->limit(2)->get();
-
         $categories = Category::all();
-
         return view('safaris.about-us',
         [
             'categories' => $categories,
@@ -140,9 +117,7 @@ class HomeController extends Controller
     public function  careers()
     {
         $blogs = Blog::latest()->limit(2)->get();
-
         $categories = Category::all();
-
         return view('safaris.careers', 
     [
         'categories' => $categories,

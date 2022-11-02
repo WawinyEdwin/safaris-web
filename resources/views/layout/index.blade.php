@@ -4,47 +4,33 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="author" content="_wawiny" >
-        <meta name="description" content="Okulink safaris is about discoveries, exploration and transformation. We believe that people are
-        in pursuit of something new, identity and ability to transform themselves for better. We are on a journey of giving magical experiences
-        through travel, branding and celebrating Africa's tourism industry.">
+        <meta name="keywords" content="africa, okulink, safaris, socio-cultural, discoveried" />
+        <meta name="description" content="Okulink safaris is the story of discoveries, exploration and transformation. We are on a journey of giving magical experiences through travel, branding and celebrating the beauty of Africa and socialcultural practices.">
         <meta name="robots" content="index, follow">
         <meta name="google-site-verification" content="YFUSoj09b1SvxCBLp5rcoHrN67CJdW6tnJXCfKbekiM" />
-
-        <title>Okulink Safaris | We are on a journey of giving magical experiences through travel, branding and celebrating Africa's tourism industry.</title>
-
+        <title>Okulink Safaris | magical experiences through travel, branding and celebrating Africa's tourism industry.</title>
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
-        
-        
         <!-- Styles -->
         <link rel="stylesheet" href="{{ asset('bootstrap/app.css') }}">
-
         <!-- bootstrap  -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
          integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-
         <!-- Icons  -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
-
-       <!-- favicon   -->
+       <!-- faicon   -->
         <link rel="apple-touch-icon" sizes="180x180" href="{{ secure_asset('favicon_io/apple-touch-icon.png') }} ">
         <link rel="icon" type="image/png" sizes="32x32" href="{{ secure_asset('favicon_io/favicon-32x32.png') }} ">
         <link rel="icon" type="image/png" sizes="16x16" href="{{ secure_asset('favicon_io/favicon-16x16.png') }} ">
         <link rel="manifest" href="{{ secure_asset('favicon_ico/site.webmanifest') }}">
-
-
         @production
         <link rel="stylesheet" href="{{ secure_asset('css/main.css') }}" />
         @endproduction
-
         <link rel="stylesheet" href="{{ asset('css/main.css') }}" />
-
         <style>
-            
         </style>
-        
     </head>
     <body class="scrollTop">
         <nav class="navbar navbar-expand-lg bg-primar text-white fixed-top mb-2">
@@ -127,7 +113,6 @@
                         </form>
                     </div>
                 </li>
-
             </ul>
                     @endif
                     @endauth
@@ -135,11 +120,9 @@
                 </div>
             </div>
         </nav>
-
         <br>
         <br>
         <br>
-
         <div class="bg-white navbar pt-2">
             <div class="container ">
                 <a href="{{ url('/')}}" class="navbar-brand d-none d-lg-flex">
@@ -156,20 +139,19 @@
                     </form>
                 </div>
                     <div class="info" >
-                    <ul class="navbar-nav ml-auto ">
+                    <ul class="navbar-nav text-center">
                         <li class="nav-item">&nbsp;<i class="bi bi-telephone-outbound"></i> &nbsp;0742 659 292/0701 700 144</li>
-                        <li class="nav-item d-none d-lg-flex ">
-                            <i class="bi bi-facebook "></i>&nbsp;&nbsp;&nbsp;
-                            <i class="bi bi-twitter "></i>&nbsp;&nbsp;&nbsp;
-                            <a href="http://www.instagram.com/okulinksafaris"><i class="bi bi-instagram text-white"></i></a>
+                        <li class="nav-item d-flex ">
+                            <a href="https://www.facebook.com/okulinksafaris" target="_blank"><i class="bi bi-facebook text-white"></i></a>&nbsp;&nbsp;&nbsp;
+                            <a href="https://twitter.com/okulinksafaris" target="_blank"><i class="bi bi-twitter text-white"></i></a>&nbsp;&nbsp;&nbsp;
+                            <a href="https://www.tiktok.com/@okulinksafaris?_t=8WzTDf232YP&_r=1" target="_blank"><i class="bi bi-tiktok text-white"></i></a>&nbsp;&nbsp;&nbsp;
+                            <a href="http://www.instagram.com/okulinksafaris" target="_blank"><i class="bi bi-instagram text-white"></i></a>
                         </li>
                     </ul>             
                     </div>
             </div>   
         </div>
-      
         @yield('content')
-
     <div class="footer bg-primar text-white pt-5">
         <div class="container ">
             <div class="row">
@@ -200,8 +182,7 @@
                     <div class="white_line"></div>
                     <br>
                     <div class="">
-                        <p>Okulink safaris is about discoveries, exploration and transformation. We are on a journey of giving magical experiences
-                            through travel, branding and celebrating Africa's tourism industry.
+                        <p>Okulink safaris is the story of discoveries, exploration and transformation. We are on a journey of giving magical experiences through travel, branding and celebrating the beauty of Africa and socialcultural practices.
                         </p>
                         <a href="{{ route('about') }}" class="btn btn-outline-light">About Us</a>
                     </div>
@@ -228,26 +209,20 @@
         <span onclick="topFunction()" id="myBtn" title="Back to Top">
             <i class="bi bi-arrow-up text-white"></i>
         </span>
-
         <script>
             myButton = document.getElementById("myBtn");
-
             //show button on scroll
             window.onscroll = function() {
                 scrollFunction()
             }
-
             //when there is a scroll down 20px
-
             function scrollFunction() {
                 if(document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
                     myButton.style.display = "block";
                 } else{
                     myButton.style.display = "none";
                 }
-              
             }
-
             //when the button is clicked.
             function topFunction() {
                 document.body.scrollTop = 0;
@@ -267,9 +242,7 @@
             })();
         </script>
         <!--End of Tawk.to Script-->
-
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
-
     </body>
 </html>

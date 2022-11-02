@@ -13,8 +13,7 @@ class CategoryController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        
+    {    
         $categories = Category::latest()->paginate(10);
         return view('categories.index', compact('categories'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
@@ -26,7 +25,6 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
         return view('categories.create');
     }
 
@@ -38,7 +36,6 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
         $request->validate([
             'category_name' => 'required'
         ]);
@@ -93,17 +90,13 @@ class CategoryController extends Controller
         $request->validate([
             'category_name' => 'required'
         ]);
-
         $category = new Category;
         $category = Category::find($id);
-
         $category->category_name = $request->category_name;
         $category->sub_category = $request->sub_category;
         $category->sub_category1 = $request->sub_category1;
         $category->sub_category2 = $request->sub_category2;
-
         $category->update();
-
         return redirect()->route('categories')->with('success', 'Category Updated!');
     }
 
@@ -115,8 +108,6 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
-      
         $category= Category::find($id);
 
         $category->delete();

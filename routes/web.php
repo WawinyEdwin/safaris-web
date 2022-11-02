@@ -11,7 +11,8 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\VideoController;
 use App\Http\Controllers\HighlightController;
 use App\Http\Controllers\UserController;
-
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
+use Illuminate\Http\Request;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -49,43 +50,43 @@ Route::resource('enquiries', EnquiryController::class);
 
 
 //TOURS
-Route::get('/bookings',[BookingController::class, 'index'])->name('bookings')->middleware('auth');
-Route::get('/bookings/show/{id}',[BookingController::class, 'show'])->name('bookings.show')->middleware('auth');
-Route::get('/bookings/create/{destination}',[BookingController::class, 'create'])->name('bookings.create')->middleware('auth');
-Route::post('/bookings/new',[BookingController::class, 'store'])->name('bookings.store')->middleware('auth');
-Route::get('/bookings/edit/{id}',[BookingController::class, 'edit'])->name('bookings.edit')->middleware('auth');
-Route::post('/bookings/update/{id}',[BookingController::class, 'update'])->name('bookings.update')->middleware('auth');
-Route::delete('/bookings/delete/{id}',[BookingController::class, 'destroy'])->name('bookings.delete')->middleware('auth');
-Route::delete('/bookings/publish/{id}',[BookingController::class, 'confirm'])->name('bookings.confirm')->middleware('auth');
+Route::get('/bookings',[BookingController::class, 'index'])->name('bookings')->middleware(['auth', 'verified']);
+Route::get('/bookings/show/{id}',[BookingController::class, 'show'])->name('bookings.show')->middleware(['auth', 'verified']);
+Route::get('/bookings/create/{destination}',[BookingController::class, 'create'])->name('bookings.create')->middleware(['auth', 'verified']);
+Route::post('/bookings/new',[BookingController::class, 'store'])->name('bookings.store')->middleware(['auth', 'verified']);
+Route::get('/bookings/edit/{id}',[BookingController::class, 'edit'])->name('bookings.edit')->middleware(['auth', 'verified']);
+Route::post('/bookings/update/{id}',[BookingController::class, 'update'])->name('bookings.update')->middleware(['auth', 'verified']);
+Route::delete('/bookings/delete/{id}',[BookingController::class, 'destroy'])->name('bookings.delete')->middleware(['auth', 'verified']);
+Route::delete('/bookings/publish/{id}',[BookingController::class, 'confirm'])->name('bookings.confirm')->middleware(['auth', 'verified']);
 
 //TOURS
-Route::get('/addtour',[ToursController::class, 'index'])->name('tours')->middleware('auth');
-Route::get('/addtour/show/{id}',[ToursController::class, 'show'])->name('addtour.show')->middleware('auth');
-Route::get('/addtour/create',[ToursController::class, 'create'])->name('addtour.create')->middleware('auth');
-Route::post('/addtour/store',[ToursController::class, 'store'])->name('addtour.store')->middleware('auth');
-Route::get('/addtour/edit/{id}',[ToursController::class, 'edit'])->name('addtour.edit')->middleware('auth');
-Route::post('/addtour/update/{id}',[ToursController::class, 'update'])->name('addtour.update')->middleware('auth');
-Route::delete('/addtour/delete/{id}',[ToursController::class, 'destroy'])->name('addtour.delete')->middleware('auth');
+Route::get('/addtour',[ToursController::class, 'index'])->name('tours')->middleware(['auth', 'verified']);
+Route::get('/addtour/show/{id}',[ToursController::class, 'show'])->name('addtour.show')->middleware(['auth', 'verified']);
+Route::get('/addtour/create',[ToursController::class, 'create'])->name('addtour.create')->middleware(['auth', 'verified']);
+Route::post('/addtour/store',[ToursController::class, 'store'])->name('addtour.store')->middleware(['auth', 'verified']);
+Route::get('/addtour/edit/{id}',[ToursController::class, 'edit'])->name('addtour.edit')->middleware(['auth', 'verified']);
+Route::post('/addtour/update/{id}',[ToursController::class, 'update'])->name('addtour.update')->middleware(['auth', 'verified']);
+Route::delete('/addtour/delete/{id}',[ToursController::class, 'destroy'])->name('addtour.delete')->middleware(['auth', 'verified']);
 
 //TOUR SEARCH ROUTE.
 Route::get('/search',[HomeController::class, 'search'])->name('search');
 
 //BLOGS
 Route::get('/blogs',[BlogController::class, 'index'])->name('blogs');
-Route::get('/blogs/create',[BlogController::class, 'create'])->name('blogs.create')->middleware('auth');
+Route::get('/blogs/create',[BlogController::class, 'create'])->name('blogs.create')->middleware(['auth', 'verified']);
 Route::get('/blogs/show/{id}',[BlogController::class, 'show'])->name('blogs.show');
-Route::post('/blogs/store',[BlogController::class, 'store'])->name('blogs.store')->middleware('auth');
-Route::get('/blogs/edit/{id}',[BlogController::class, 'edit'])->name('blogs.edit')->middleware('auth');
-Route::post('/blogs/update/{id}',[BlogController::class, 'update'])->name('blogs.update')->middleware('auth');
-Route::delete('/blogs/delete/{id}',[BlogController::class, 'destroy'])->name('blogs.delete')->middleware('auth');
+Route::post('/blogs/store',[BlogController::class, 'store'])->name('blogs.store')->middleware(['auth', 'verified']);
+Route::get('/blogs/edit/{id}',[BlogController::class, 'edit'])->name('blogs.edit')->middleware(['auth', 'verified']);
+Route::post('/blogs/update/{id}',[BlogController::class, 'update'])->name('blogs.update')->middleware(['auth', 'verified']);
+Route::delete('/blogs/delete/{id}',[BlogController::class, 'destroy'])->name('blogs.delete')->middleware(['auth', 'verified']);
 
 //VIDEOS
 Route::get('/videos',[VideoController::class, 'index'])->name('videos');
-Route::get('/videos/create',[VideoController::class, 'create'])->name('videos.create')->middleware('auth');
-Route::post('/videos/store',[VideoController::class, 'store'])->name('videos.store')->middleware('auth');
-Route::get('/videos/edit/{id}',[VideoController::class, 'edit'])->name('videos.edit')->middleware('auth');
-Route::post('/videos/update/{id}',[VideoController::class, 'update'])->name('videos.update')->middleware('auth');
-Route::delete('/videos/delete/{id}',[VideoController::class, 'destroy'])->name('videos.delete')->middleware('auth');
+Route::get('/videos/create',[VideoController::class, 'create'])->name('videos.create')->middleware(['auth', 'verified']);
+Route::post('/videos/store',[VideoController::class, 'store'])->name('videos.store')->middleware(['auth', 'verified']);
+Route::get('/videos/edit/{id}',[VideoController::class, 'edit'])->name('videos.edit')->middleware(['auth', 'verified']);
+Route::post('/videos/update/{id}',[VideoController::class, 'update'])->name('videos.update')->middleware(['auth', 'verified']);
+Route::delete('/videos/delete/{id}',[VideoController::class, 'destroy'])->name('videos.delete')->middleware(['auth', 'verified']);
 
 //DYNAMIC TOUR ROUTE.
 Route::get('/tours/{category}', [HomeController::class, 'tours'])->name('tour');
@@ -94,42 +95,37 @@ Route::get('/tours/categories/{sub_category}', [HomeController::class, 'tour_cat
 
 //CATEGORIES ROUTE
 Route::get('/categories',[CategoryController::class, 'index'])->name('categories');
-Route::get('/category/create',[CategoryController::class, 'create'])->name('category.create')->middleware('auth');
-Route::post('/category/new',[CategoryController::class, 'store'])->name('category.store')->middleware('auth');
-Route::get('/category/edit/{id}',[CategoryController::class, 'edit'])->name('category.edit')->middleware('auth');
-Route::post('/category/update/{id}',[CategoryController::class, 'update'])->name('category.update')->middleware('auth');
-Route::delete('/category/delete/{id}',[CategoryController::class, 'destroy'])->name('category.delete')->middleware('auth');
+Route::get('/category/create',[CategoryController::class, 'create'])->name('category.create')->middleware(['auth', 'verified']);
+Route::post('/category/new',[CategoryController::class, 'store'])->name('category.store')->middleware(['auth', 'verified']);
+Route::get('/category/edit/{id}',[CategoryController::class, 'edit'])->name('category.edit')->middleware(['auth', 'verified']);
+Route::post('/category/update/{id}',[CategoryController::class, 'update'])->name('category.update')->middleware(['auth', 'verified']);
+Route::delete('/category/delete/{id}',[CategoryController::class, 'destroy'])->name('category.delete')->middleware(['auth', 'verified']);
 
 //HIGHLIGHTS
 Route::resource('highlights', HighlightController::class);
 
-
-
-Route::get('/send-mail', function() {
-    $successMessage = [
-        'title' => 'Booking Confirmation',
-        'body' => 'We have recieved your details and one of our representatives will get back to you with further details.'
-    ];
-
-    \Mail::to('crud3swift@gmail.com')->send( new \App\Mail\BookingMail($successMessage));
-
-});
-
 //AUTH ROUTE
-Auth::routes();
+Auth::routes(['verify' => true]);
+// Email Verification Routes.......................................................
+Route::get('/email/verify', function () {
+    return view('auth.verify');
+})->middleware('auth')->name('verification.notice');
+Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
+    $request->fulfill();
+
+    return redirect('/');
+})->middleware(['auth', 'signed'])->name('verification.verify');
+
+Route::post('/email/verification-notification', function (Request $request) {
+    $request->user()->sendEmailVerificationNotification();
+    return back()->with('message', 'Verification link sent!');
+})->middleware(['auth', 'throttle:6,1'])->name('verification.send');
 
 //CREDENTIALS ROUTE
-
-Route::get('/profile', [BookingController::class, 'profile'])->name('profile');
-
-
-
+Route::get('/profile', [BookingController::class, 'profile'])->name('profile')->middleware(['auth', 'verified']);
 Route::get('/users', [UserController::class, 'users'])->name('users');
-
 Route::get('/users/update-user/{id}', [UserController::class, 'updateView'])->name('updatePage');
-
 Route::post('users/update/{id}', [UserController::class, 'update'])->name('updateUser');
-
 Route::delete('users/delete', [UserController::class, 'destroy'])->name('deleteUser');
 
 

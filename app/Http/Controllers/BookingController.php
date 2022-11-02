@@ -41,10 +41,7 @@ class BookingController extends Controller
         //
         // $tours =  Tours::where('category', $category)->get();
         $tours = Tours::latest()->limit(3)->get();
-
-
         // dd($tours);
-    
         $categories = Category::all();
 
         $blogs = Blog::all();
@@ -67,8 +64,6 @@ class BookingController extends Controller
      */
     public function store(Request $request)
     {
-        
-        
         //
         $request->validate([
             'first_name' => 'required',
@@ -81,16 +76,12 @@ class BookingController extends Controller
             'g-recaptcha-response' => 'required|captcha',
             'transaction_code' => 'required'
         ]);
-
         if($request->email1 == $request->email2 ) 
         {
             $email = $request->email1;
         } else {
-           
             return redirect()->route('bookings.create')->with('failure', 'please provide matching emails');
         }
-
-     
         $booking = new Booking;
         $booking->first_name = $request->first_name;
         $booking->last_name = $request->last_name;
@@ -104,9 +95,7 @@ class BookingController extends Controller
         $booking->transaction_code = $request->transaction_code;
         $booking->special_requirements = $request->special_requirements;
         $booking->user_id = Auth::user()->id;
-
         $booking->save();
-
         return redirect()->route('profile')->with('success', 'Booking has been successfull, We will contact you within 24hrs!');
         
     }
@@ -156,8 +145,7 @@ class BookingController extends Controller
 
         ]);
 
-        Booking::update($request->all());
-
+        $booking->update($request->all());
         return redirect()->route('tours.bookings')->with('success', 'Booking updated successfully!');
     }
 

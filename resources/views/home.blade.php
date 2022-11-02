@@ -1,7 +1,5 @@
 @extends('layout.index')
-
 @section('content')
-
         <div id="carouselExampleControls" class="carousel slide carousel-slide" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
@@ -22,9 +20,7 @@
                 <span class="sr-only">Next</span>
             </a>
         </div>
-
         <br>
-
         <div class="container">
             <h3 class="text-center">Exciting Holiday Offers</h3>
             <div class="row">
@@ -35,7 +31,7 @@
                         <div class="card-body">
                             <h5 class="card-title">{{ $tour->sub_category }}</h5>
                             <div class="d-flex space-between">
-                                <p class="card-text">Single Room From&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                                <p class="card-text"> Single person per room&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
                                 <p class="price">{{ $tour->single_room }}</p>
                             </div>
                             <div class="blue"></div>
@@ -315,10 +311,8 @@
                         </div>
                     </div>
                     <br>
-                </div>
-
+            </div>
                 @empty 
-
                 <div class="col-lg-4 col-sm-12">
                     <div class="card">
                         <img src="{{ asset('elephant.jpg') }}" alt="" class="card-img-top">
@@ -374,7 +368,7 @@
             </div>
         </div>
         <div class="container">
-        <h3 class="text-center ">Discover videos about past our adventures.</h3>
+        <h3 class="text-center ">Watch our videos about past adventures</h3>
         <br>
             <div class="row">
                 @forelse($videos as $video)
@@ -393,7 +387,6 @@
                         </div>
                     </div>
                 </div>
-
                 @empty 
                 <div class="col-lg-3 col-sm-12">
                     <div class="card">
@@ -465,5 +458,4 @@
             </div>
         </div>
         <br>
-
 @endsection
