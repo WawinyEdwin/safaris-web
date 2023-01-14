@@ -1,7 +1,7 @@
-@extends('layout.admin')
+@extends('layout.new')
 
 @section('content')
-<div class="container">
+<div class="container pt-2 pb-2">
     <div class="">
         <br>
         <div class="text-right">
@@ -11,14 +11,14 @@
     <br>
     <div class="row">
         <div class="col-lg-6 col-sm-12">
-            <img src="{{ asset('/storage/'.$tours->image) }}" alt="" class="img-fluid" >
+            <img src="{{ asset('/storage/'.$tours->image) }}" alt="{{ $tours->hotel }}" class="img-fluid" >
             <p>Other Images</p>
             <div class="row">
                 <div class="col">
-                    <img src="{{ asset('/storage/'.$tours->image1) }}" alt="" class="img-fluid" >
+                    <img src="{{ asset('/storage/'.$tours->image1) }}" alt="{{ $tours->hotel }}" class="img-fluid" >
                 </div>
                 <div class="col">
-                    <img src="{{ asset('/storage/'.$tours->image1) }}" alt="" class="img-fluid"  >
+                    <img src="{{ asset('/storage/'.$tours->image1) }}" alt="{{ $tours->hotel }}" class="img-fluid"  >
                 </div>
             </div>
         </div>

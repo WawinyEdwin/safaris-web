@@ -15,37 +15,7 @@
             Book Now
         </a>
     </div>
-    <br>
-  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-      <div class="carousel-inner">
-          
-        @forelse($tours as $tour)
-        <div class="carousel-item active">
-              <img class="d-block" src="{{ asset('/storage/'.$tour->image) }}" alt="{{ $tour->image }}" style="object-fit: cover;">
-            </div>
-            <div class="carousel-item ">
-                <img class="d-block" src="{{ asset('/storage/'.$tour->image1) }}" alt="{{ $tour->image }}">
-            </div>
-            <div class="carousel-item active">
-                <img class="d-block" src="{{ asset('/storage/'.$tour->image2) }}" alt="{{ $tour->image }}">
-            </div>
 
-        @empty
-          <div class="carousel-item active">
-              <img class="d-block w-100" src="{{ asset('okulink.jpg') }}" alt="Second slide">
-            </div>
-
-        @endforelse
-      </div>
-      <a class="carousel-control-prev kala" href="#carouselExampleControls" role="button" data-slide="prev">
-            <span><i class="bi bi-arrow-left-circle-fill" style="font-size: 40px; color: #000;"  aria-hidden="true"></i></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="carousel-control-next kala" href="#carouselExampleControls" role="button" data-slide="next">
-            <span><i class="bi bi-arrow-right-circle-fill" style="font-size: 40px; color: #000;"  aria-hidden="true"></i></span>
-        <span class="sr-only">Next</span>
-      </a>
-  </div>
 <br>
     
       <h5 class="text-center ">Exciting Holiday Offers</h5>

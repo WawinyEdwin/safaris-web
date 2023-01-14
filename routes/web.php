@@ -10,6 +10,8 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\VideoController;
 use App\Http\Controllers\HighlightController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\UserController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Http\Request;
@@ -49,7 +51,7 @@ Route::get('/admin', [ToursController::class, 'admin'])->name('admin')->middlewa
 Route::resource('enquiries', EnquiryController::class);
 
 
-//TOURS
+//bookings
 Route::get('/bookings',[BookingController::class, 'index'])->name('bookings')->middleware(['auth', 'verified']);
 Route::get('/bookings/show/{id}',[BookingController::class, 'show'])->name('bookings.show')->middleware(['auth', 'verified']);
 Route::get('/bookings/create/{destination}',[BookingController::class, 'create'])->name('bookings.create')->middleware(['auth', 'verified']);
@@ -60,6 +62,7 @@ Route::delete('/bookings/delete/{id}',[BookingController::class, 'destroy'])->na
 Route::delete('/bookings/publish/{id}',[BookingController::class, 'confirm'])->name('bookings.confirm')->middleware(['auth', 'verified']);
 
 //TOURS
+Route::get("/safaris", [ToursController::class, 'safaris'])->name("safaris");
 Route::get('/addtour',[ToursController::class, 'index'])->name('tours')->middleware(['auth', 'verified']);
 Route::get('/addtour/show/{id}',[ToursController::class, 'show'])->name('addtour.show')->middleware(['auth', 'verified']);
 Route::get('/addtour/create',[ToursController::class, 'create'])->name('addtour.create')->middleware(['auth', 'verified']);
@@ -130,6 +133,22 @@ Route::delete('users/delete', [UserController::class, 'destroy'])->name('deleteU
 
 
 
+
+// services
+Route::get("/products", [ProductController::class, "index"])->name("products");
+Route::get("/product/new", [ProductController::class, "create"])->name("products.create")->middleware(['auth', 'verified']);
+Route::post("/product/create", [ProductController::class, "store"])->name("products.store")->middleware(['auth', 'verified']);
+Route::post("/product/edit/{id}", [ProductController::class, "edit"])->name("products.edit")->middleware(['auth', 'verified']);
+Route::get("/product/{slug}", [ProductController::class, "show"])->name("products.show");
+Route::post("/product/publish/{id}", [ProductController::class, "publish"])->name("products.publish")->middleware(['auth', 'verified']);
+
+//services
+Route::get("/services", [ServiceController::class, "index"])->name("services");
+Route::get("/service/new", [ServiceController::class, "create"])->name("services.create")->middleware(['auth', 'verified']);
+Route::post("/service/create", [ServiceController::class, "store"])->name("services.store")->middleware(['auth', 'verified']);
+Route::post("/service/edit/{id}", [ServiceController::class, "edit"])->name("services.edit")->middleware(['auth', 'verified']);
+Route::get("/service/{slug}", [ServiceController::class, "show"])->name("services.show");
+Route::post("/service/publish/{id}", [ServiceController::class, "publish"])->name("services.publish")->middleware(['auth', 'verified']);
 
 
 

@@ -4,16 +4,25 @@ namespace App\Http\Controllers;
 
 use App\Models\Tours;
 use App\Models\Blog;
-use App\Models\Booking;
 use App\Models\Category;
 use Illuminate\Http\Request;
 
 class ToursController extends Controller
 {
     //show admin page
-    public function admin() {
+    public function admin()
+    {
         return view('admin.home');
 
+    }
+
+    // safaris
+    public function safaris() 
+    {
+        $categories = Category::all();
+        $blogs =  Blog::latest()->limit(2)->get();
+        $safaris = Tours::all();
+        return view("safaris.index", compact("categories", "blogs", "safaris"));
     }
 
     /**
@@ -23,6 +32,7 @@ class ToursController extends Controller
      */
     public function index()
     {
+        
         $tours = Tours::latest()->paginate(20);
         return view('tours.index', compact('tours'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
@@ -34,7 +44,9 @@ class ToursController extends Controller
      */
     public function create()
     {
+        //
         $categories = Category::all();
+
         return view('tours.create', 
         [
             'categories' => $categories,
@@ -96,8 +108,11 @@ class ToursController extends Controller
     {
         //
         $tours = Tours::find($id);
+
         $categories = Category::all();
+
         $blogs = Blog::all();
+        
         return view('tours.show', compact('tours'),
         [
             'categories' => $categories,
@@ -113,8 +128,10 @@ class ToursController extends Controller
      */
     public function edit(Tours $tours, $id)
     {
+        //
         $tours = Tours::find($id);
         $categories = Category::all();
+
         return view('tours.edit',
             [
              'categories' => $categories,
@@ -132,6 +149,8 @@ class ToursController extends Controller
      */
     public function update(Request $request, Tours $tours, $id)
     {
+        //
+
         $request->validate([
             'hotel' => 'required',
             'transport' => 'required',
@@ -141,8 +160,10 @@ class ToursController extends Controller
             'category' => 'required',
             'sub_category' => 'required'
         ]);
+
         $tours = new Tours;
         $tours = Tours::find($id);
+
         //Check the presence of images first.
         if($request->hasFile('image') || $request->hasFile('image1') || $request->hasFile('image2')) 
         {
@@ -151,12 +172,15 @@ class ToursController extends Controller
             $path2 = $request->image2->store('images', 'public');
             $tours->image = $path;
             $tours->image1 = $path1;
-            $tours->image2 = $path2; 
+            $tours->image2 = $path2;
+            
         } else {
+
             unset($tours['image']);
             unset($tours['image1']);
             unset($tours['image2']);
         }
+
             $tours->hotel = $request->hotel;
             $tours->transport = $request->transport;
             $tours->single_room = $request->single_room;
@@ -165,7 +189,10 @@ class ToursController extends Controller
             $tours->sub_category = $request->sub_category;
             $tours->per_person_sharing = $request->per_person_sharing;
             $tours->additional_info = $request->additional_info;
+            
+        
         $tours->update();
+
         return redirect()->route('tours')->with('success', 'You Updated a Tour.');
     }
 
@@ -179,7 +206,9 @@ class ToursController extends Controller
     {
         //
         $tours = Tours::find($id);
+
         $tours->delete();
+
         return redirect()->route('tours')->with('success', 'You Deleted a Tour.');
     }
 }

@@ -6,10 +6,7 @@
 
         <title>Safaris | Admin</title>
 
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+           <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Spinnaker&display=swap" rel="stylesheet">
         
         <!-- Styles -->
         <link rel="stylesheet" href="{{ asset('bootstrap/app.css') }}">
@@ -21,230 +18,37 @@
         <link rel="manifest" href="{{ asset('favicon_ico/site.webmanifest') }}">
 
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
-
-
-
     <!-- include summernote css/js -->
     
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
-
-        <style>
-
-            body {
-                font-family: 'Varela Round', sans-serif;
-            }
-
-            a {
-                color: #ffffff;
-            }
-
-            .bg-primar {
-                background-color: #4863a0;
-             
-            }
-
-            .card-body > a:hover {
-                color: #ffffff;
-            }
-
-
-            .btn-primar {
-            background-color: #550a35;
-            color: #ffffff;
-            }
-
-            /* custom dropdown  */
-            .dropdown:hover .dropdown-menu {
-                display: block;
-                background-color: #4863a0;
-            }
-
-            .dropdown-item {
-                color: #ffffff;
-            }
-
-                 /* universal styles  */
-   
-
-    .nav-link {
-        color: white;
-    }
-
-    .nav-item > a:hover {
-        color: white;
-    }
-
-    .text-center > a:hover {
-        color: #ffffff;
-    }
-    .text-right > a:hover {
-        color: #ffffff;
-    }
-
-    .safari {
-        list-style-type: square;
-    }
-
-    .price {
-        color:  #550a35;
-    }
-
-    a:hover {
-        text-decoration: none;
-        color: #ffffff;
-    }
-
-    .bg-primar {
-        background-color: #4863a0;
-    }
-
-    .carousel {
-        max-height: 440px;
-        overflow: hidden;
-        margin:auto;
-
-    }
-
-    @media only screen and (max-width: 600px){
-        
-        .carousel {
-        max-height: 300px;
-        overflow: hidden;
-        margin:auto;
-        }
-        .carousel-inner .carousel-item > img {
-            /* position: absolute; */
-            object-fit: cover;
-            height: 300px;
-            width:100%;
-        }
-    }
-
-    .carousel-inner .carousel-item > img {
-        /* position: absolute; */
-        object-fit: cover;
-        height: 440px;
-        width:100%;
-    }
-
-    /* custom coloring */
-    .bt-primar {
-        background-color: #4863a0;
-        color: #ffffff;
-    }
-
-    .text-primar {
-        color:  #550a35;
-    }
-    .btn-outline-primar {
-        color:  #ffffff;
-        background-color: #4863a0;
-    }
-
-    .card-title {
-        color: #4863a0;
-    }
-
-    .pri {
-        color: #4863a0;
-    }
-
-    /* custom dropdown  */
-    .dropdown:hover .dropdown-menu {
-        display: block;
-        background-color: #4863a0;
-        color: #ffffff;
-    }
-
-    .dropdown-item {
-        color: #ffffff;
-    }
-
-    /* scroll to top button  */
-    #myBtn {
-        display: none;
-        position: fixed;
-        bottom: 20px;
-        left: 30px;
-        z-index: 99;
-        border: none;
-        outline: none;
-        background-color: #4863a0;
-        color: #ffffff;
-        cursor: pointer;
-        padding: 15px;
-        border-radius: 10px;
-        font-size: 18px;
-    }
-
-    #myBtn:hover {
-        background-color: #4863a0;
-    }
-
-    img {
-        object-fit: cover;
-    }
-
-    .img-rounded {
-        border-radius: 50%;
-    }
-
-    .blogs > a {
-        text-decoration: none;
-        color: #ffffff;
-    }
-
-    .blogs > a:hover {
-        text-decoration: underline;
-        color: #ffffff;
-    }
-
-    .info {
-        padding: 10px;
-        background-color: #4863a0;
-        color: #ffffff;
-        border-radius: 10px;
-    }
-
-    .blue {
-        width: 124px;
-        /* height: 112px; */
-        border-bottom: 2px solid #4863a0;
-        position: absolute;
-    }
-
-    .white_line {
-        width: 144px;
-        border-bottom: 2px solid #ffffff;
-        position: absolute;
-    }
-
-    .about {
-        border-radius: 10px;
-    }
-    .links > p > a:hover {
-        text-decoration: underline;
-    }
-
-        </style>
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
+    
+         @production
+            <link rel="stylesheet" href="{{ secure_asset('css/main.css') }}" />
+            @endproduction
+            <link rel="stylesheet" href="{{ asset('css/main.css') }}" />
     </head>
 <body>
     <nav class="navbar navbar-expand-lg bg-primar text-white">
-        <a href="{{ route('admin') }}" class="navbar-brand">Dashboard</a>
+        <div class="container">
+        <a href="{{ route('admin') }}" class="navbar-brand text-white">Dashboard</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupported" aria-controls="navbarSupported" aria-expanded="false" aria-label="Toggle Navigation">
             <i class="bi bi-list text-white"></i>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupported">
             @auth
             <ul class="navbar-nav mr-auto">
+                <li>
+                    <a href="{{ route('home') }}" class="nav-link">
+                        <i class="bi bi-home"></i> Home
+                    </a>
+                </li>
                     <li class="nav-item">
                         <a href="{{ route('bookings') }}" class="nav-link "><i class="bi bi-book"></i> Bookings</a>
                     </li>
@@ -260,11 +64,11 @@
                     <li class="nav-item">
                         <a href="https://dashboard.tawk.to/#/dashboard" target="_blank"  class="nav-link"><i class="bi bi-chat-dots"></i> Support Chat</a>
                     </li> 
-                    @if(auth()->user()->isAdmin == True)
-                    <li class="nav-item">
-                        <a href="{{ route('users') }}" class="nav-link"><i class="bi bi-people"></i> Users</a>
-                    </li> 
-                    @endif 
+                    <!--@if(auth()->user()->isAdmin == True)-->
+                    <!--<li class="nav-item">-->
+                    <!--    <a href="{{ route('users') }}" class="nav-link"><i class="bi bi-people"></i> Users</a>-->
+                    <!--</li> -->
+                    <!--@endif -->
             </ul>
             <ul class="navbar-nav dropdown  ms-auto">
                 <li class="nav-item dropdown">
@@ -284,13 +88,10 @@
                         </form>
                     </div>
                 </li>
-                <li>
-                    <a href="{{ route('home') }}" class="nav-link">
-                        <i class="bi bi-home"></i> Home
-                    </a>
-                </li>
+                
             </ul>
             @endauth
+        </div>
         </div>
     </nav>
     <br>

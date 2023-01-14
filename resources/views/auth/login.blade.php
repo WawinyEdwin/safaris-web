@@ -1,8 +1,8 @@
 @extends('layout.new')
 
 @section('content')
-<hr>
-<div class="container">
+
+<div class="container pt-3 pb-3">
     <div class="row justify-content-center">
         <div class="col-md-8">
         @if($message = Session::get('success'))

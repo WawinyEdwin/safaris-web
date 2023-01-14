@@ -5,11 +5,12 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Tours;
 use App\Models\Video;
-use App\Models\User;
 use App\Models\Blog;
 use App\Models\Category;
 use App\Models\Highlight;
-use Illuminate\Support\Facades\Hash;
+use App\Models\Product;
+use App\Models\Service;
+
 
 class HomeController extends Controller
 {
@@ -50,23 +51,17 @@ class HomeController extends Controller
         $videos = Video::inRandomOrder()->limit(4)->get();
         //fetches tours
         $tours = Tours::inRandomOrder()->limit(3)->get();
-        $holidayOffers = Tours::where('category', 'Exciting Holiday Offers')->limit(3)->get();
+        $holidayOffers = Tours::where('category', 'Exciting Holiday Offers')->limit(4)->get();
         $localTours = Tours::where('category', 'Local Tours')->limit(4)->get();
-        $tembeaTours = Tours::where('category', 'Tembea Ujionee')->limit(3)->get();
+        $tembeaTours = Tours::where('category', 'Tembea Ujionee')->limit(4)->get();
         //to appear in carousel
         $highlights = Highlight::all();
+        //products
+        $products = Product::inRandomOrder()->limit(4)->get();
+        $services = Service::inRandomOrder()->limit(4)->get();
+
     
-        return view('home', [
-            'categories' => $categories,
-            'tours' => $tours,
-            'blogs' => $blogs,
-            'coverBlogs' => $coverBlogs,
-            'videos' => $videos,
-            'holidayOffers' => $holidayOffers,
-            'localTours' => $localTours,
-            'tembeaTours' => $tembeaTours,
-            'highlights' => $highlights
-        ]);
+        return view('home', compact("products", "services", "categories", "tours", "blogs", "coverBlogs", "videos", "holidayOffers", "localTours", "tembeaTours", "highlights"));
     }
 
     //dynamic category switch.

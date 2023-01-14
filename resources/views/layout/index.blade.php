@@ -4,20 +4,17 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="author" content="_wawiny" >
-        <meta name="keywords" content="africa, okulink, safaris, socio-cultural, discoveried" />
+        <meta name="keywords" content="africa, okulink, safaris, socio-cultural, discoveries" />
         <meta name="description" content="Okulink safaris is the story of discoveries, exploration and transformation. We are on a journey of giving magical experiences through travel, branding and celebrating the beauty of Africa and socialcultural practices.">
         <meta name="robots" content="index, follow">
         <meta name="google-site-verification" content="YFUSoj09b1SvxCBLp5rcoHrN67CJdW6tnJXCfKbekiM" />
-        <title>Okulink Safaris | magical experiences through travel, branding and celebrating Africa's tourism industry.</title>
+        <title>Okulink Safaris | magical experiences through tours & travel.</title>
         <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Spinnaker&display=swap" rel="stylesheet">
         <!-- Styles -->
         <link rel="stylesheet" href="{{ asset('bootstrap/app.css') }}">
         <!-- bootstrap  -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
-         integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <!-- Icons  -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
        <!-- faicon   -->
@@ -29,37 +26,56 @@
         <link rel="stylesheet" href="{{ secure_asset('css/main.css') }}" />
         @endproduction
         <link rel="stylesheet" href="{{ asset('css/main.css') }}" />
-        <style>
-        </style>
+
+        <link
+            rel="stylesheet"  
+            href="https://cdn.jsdelivr.net/npm/@splidejs/splide@2.4.21/dist/css/splide.min.css"
+            />
     </head>
     <body class="scrollTop">
         <nav class="navbar navbar-expand-lg bg-primar text-white fixed-top mb-2">
             <div class="container">
                 <a href="{{ url('/')}}" class="navbar-brand text-white">
-                    <img src="{{ asset('logo.png') }}" alt="Okulink" width="50" height="50" class="d-inline-block-align-top img-rounded">&nbsp;Okulink Safaris</a>
+                    <img src="{{ asset('okulink-1.png') }}" alt="Okulink" width="50" height="50" class="d-inline-block-align-top img-rounded">&nbsp;Okulink Safaris</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar">
                 <i class="bi bi-list text-white"></i>
                 </button>
                 <div class="collapse navbar-collapse" id="navbar">
                     <ul class="navbar-nav mr-auto">
-                        <li class="nav-item activeNow"><a href="{{ url('/') }}" class="nav-link">Home</a></li>
-                        @foreach($categories as $category)
-                        <li class="nav-item dropdown show"> 
-                            <a class="nav-link dropdown-toggle" href="{{ route('tour',  $category->category_name ) }}" id="navbarDropdown"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                {{ $category->category_name }}
+                        
+                        <!-- <li class="nav-item dropdown show"> 
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Safaris
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('tour_cat', $category->sub_category) }}">{{ $category->sub_category}}</a>
-                               
-                                <a class="dropdown-item" href="{{ route('tour_cat', $category->sub_category1) }}">{{ $category->sub_category1}}</a>
-                               
-                                <a class="dropdown-item" href="{{ route('tour_cat', $category->sub_category1) }}">{{ $category->sub_category2}}</a>
+                            @foreach($categories as $category)
+                                <a class="dropdown-item" href="{{ route('tour',  $category->category_name ) }}">{{ $category->category_name }}</a>
+                                @endforeach
                             </div>
-                        </li> 
-                        @endforeach
+                        </li>  -->
                         <li class="nav-item"> 
-                            <a class="nav-link btn btn-outline-light" href="{{ route('enquiries.create') }}">
-                                Contact
+                            <a class="nav-link " href="{{ route('safaris') }}">
+                                Safaris
+                            </a>
+                        </li>
+                        <li class="nav-item"> 
+                            <a class="nav-link " href="{{ route('safaris') }}">
+                                Accomodation
+                            </a>
+                        </li>
+                        <li class="nav-item"> 
+                            <a class="nav-link " href="{{ route('safaris') }}">
+                                Events
+                            </a>
+                        </li>
+                        <li class="nav-item"> 
+                            <a class="nav-link " href="{{ route('safaris') }}">
+                                Products
+                            </a>
+                        </li>
+                        <li class="nav-item"> 
+                            <a class="nav-link " href="{{ route('services') }}">
+                                Services
                             </a>
                         </li>
                         <li class="nav-item"> 
@@ -77,7 +93,7 @@
                     </li>
                     <li class="nav-item"> 
                         <a class="nav-link" href="{{ route('register') }}">
-                            <i class="bi bi-lock"></i> Sign up
+                            Sign up
                         </a>
                     </li>
                     @endguest
@@ -126,26 +142,28 @@
         <div class="bg-white navbar pt-2">
             <div class="container ">
                 <a href="{{ url('/')}}" class="navbar-brand d-none d-lg-flex">
-                    <img src="{{ asset('logo.png') }}" alt="Okulink" width="130" height="90" class="d-inline-block-align-top">
+                    <img src="{{ asset('okulink-1.png') }}" alt="Okulink" width="130" height="90" class="d-inline-block-align-top">
                 </a>
                 <div class="navbar-nav text-center">
                     <form class="form-inline " action="{{ route('search') }}" method="GET" role="search">
                         <div class="form-group mx-sm-3 mb-2">
-                            <input class="form-control mx-sm-2" type="search" placeholder="Search hotel" name="term" id="term" aria-label="Search">
+                            <input class="form-control mx-sm-2" type="search" placeholder="type hotel/location" name="term" id="term" aria-label="Search">
                         </div>
                         <button class="btn btn-outline-primar mb-2" type="submit">
                             <i class="bi bi-search"></i>
                         </button>
                     </form>
                 </div>
-                    <div class="info" >
-                    <ul class="navbar-nav text-center">
-                        <li class="nav-item">&nbsp;<i class="bi bi-telephone-outbound"></i> &nbsp;0742 659 292/0701 700 144</li>
-                        <li class="nav-item d-flex ">
-                            <a href="https://www.facebook.com/okulinksafaris" target="_blank"><i class="bi bi-facebook text-white"></i></a>&nbsp;&nbsp;&nbsp;
-                            <a href="https://twitter.com/okulinksafaris" target="_blank"><i class="bi bi-twitter text-white"></i></a>&nbsp;&nbsp;&nbsp;
-                            <a href="https://www.tiktok.com/@okulinksafaris?_t=8WzTDf232YP&_r=1" target="_blank"><i class="bi bi-tiktok text-white"></i></a>&nbsp;&nbsp;&nbsp;
-                            <a href="http://www.instagram.com/okulinksafaris" target="_blank"><i class="bi bi-instagram text-white"></i></a>
+                    <div class="" >
+                    <ul class="navbar-nav ml-auto ">
+                        <li class="nav-item">Call&nbsp;+254742659292|+254701700144</li>
+                        <br />
+                        <li class="nav-item  d-flex ">
+                            Let us Connect.&nbsp;
+                            <a href="https://www.facebook.com/okulinksafaris" target="_blank"><i class="bi bi-facebook bit"></i></a>&nbsp;&nbsp;&nbsp;
+                            <a href="https://twitter.com/okulinksafaris" target="_blank"><i class="bi bi-twitter bit"></i></a>&nbsp;&nbsp;&nbsp;
+                            <a href="https://www.tiktok.com/@okulinksafaris?_t=8WzTDf232YP&_r=1" target="_blank"><i class="bi bi-tiktok bit"></i></a>&nbsp;&nbsp;&nbsp;
+                            <a href="http://www.instagram.com/okulinksafaris" target="_blank"><i class="bi bi-instagram bit"></i></a>
                         </li>
                     </ul>             
                     </div>
@@ -174,7 +192,7 @@
                     <h5>Our Values</h5>
                     <div class="white_line"></div>
                     <br>
-                    <img src="{{ asset('logo.png') }} " alt="about" class="about" heigth="400" width="200" >
+                    <img src="{{ asset('okulink-1.png') }} " alt="about" class="about" heigth="400" width="200" >
                 </div>
  
                 <div class="col-lg-3  col-sm-12 p-2">
@@ -210,6 +228,10 @@
             <i class="bi bi-arrow-up text-white"></i>
         </span>
         <script>
+            new Splide( '.splide' ).mount();
+        </script>
+
+        <script>
             myButton = document.getElementById("myBtn");
             //show button on scroll
             window.onscroll = function() {
@@ -243,6 +265,6 @@
         </script>
         <!--End of Tawk.to Script-->
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     </body>
 </html>
