@@ -93,8 +93,12 @@
     <div class="row">
         @foreach($products as $product)
         @if($product->published == 1)
+        
         <div class="col-lg-3 col-md-3 col-sm-12">
             <div class="card">
+            <div class="text-center">
+                    <small><i class="bi bi-geo-alt-fill"></i>  {{ $product->location }}</small>
+                    </div>
                 <img
                     src="{{ asset('/storage/'.$product->image ) }}"
                     alt="{{ $product->name }}"
@@ -174,6 +178,9 @@
         @if($service->published == 1)
         <div class="col-lg-3 col-md-3 col-sm-12">
             <div class="card">
+            <div class="text-center">
+                    <small><i class="bi bi-geo-alt-fill"></i>  {{ $service->location }}</small>
+                    </div>
                 <img
                     src="{{ asset('/storage/'.$service->image ) }}"
                     alt="{{ $service->name }}"

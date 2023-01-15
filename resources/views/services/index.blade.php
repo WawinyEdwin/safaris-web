@@ -4,6 +4,14 @@
         height: 200px;
         object-fit: cover;
     }
+    .p_link {
+        text-decoration: none !important;
+        color: #4d1b0c;
+    }
+    .p_link:hover {
+        text-decoration: none !important;
+        color: #4d1b0c;
+    }
 </style>
 @section('content')
 
@@ -18,8 +26,11 @@
         @forelse($services as $service)
         @if($service->published == 1)
         <div class="col-lg-3 col-sm-12 col-md-4">
-        <a href="{{ route('services.show', $service->slug) }}">
-            <div class="card" style="width: 18rem;">
+        <a href="{{ route('services.show', $service->slug) }}" class="p_link">
+            <div class="card">
+            <div class="text-center">
+                    <small><i class="bi bi-geo-alt-fill"></i>  {{ $service->location }}</small>
+                    </div>
                 <img src="{{ asset('/storage/'. $service->image) }}" alt="" class="card-img-top h-4">
                 <div class="card-body">
                 <div class="text-center">

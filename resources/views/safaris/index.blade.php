@@ -4,6 +4,7 @@
         height: 200px;
         object-fit: cover;
     }
+    
 </style>
 @section('content')
 
@@ -16,6 +17,7 @@
                 <img src="{{ asset('/storage/'. $safari->image) }}" alt="{{ $safari->hotel }}" class="card-img-top h-4">
                 <div class="card-body">
                     <p class="card-text pri">{{ $safari->hotel }}</p>
+                    <small><i class="bi bi-geo-alt-fill"></i>  {{ $safari->location }}</small>
                     <hr />
                     <p class="card-text">
                         From {{ $safari->single_room}} per person

@@ -12,9 +12,14 @@
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Spinnaker&display=swap" rel="stylesheet">
         <!-- Styles -->
-        <link rel="stylesheet" href="{{ asset('bootstrap/app.css') }}">
+        
         <!-- bootstrap  -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+            crossorigin="anonymous"
+        />
         <!-- Icons  -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
        <!-- faicon   -->
@@ -22,22 +27,20 @@
         <link rel="icon" type="image/png" sizes="32x32" href="{{ secure_asset('favicon_io/favicon-32x32.png') }} ">
         <link rel="icon" type="image/png" sizes="16x16" href="{{ secure_asset('favicon_io/favicon-16x16.png') }} ">
         <link rel="manifest" href="{{ secure_asset('favicon_ico/site.webmanifest') }}">
+        <link rel="stylesheet" href="{{ asset('bootstrap/app.css') }}">
         @production
         <link rel="stylesheet" href="{{ secure_asset('css/main.css') }}" />
         @endproduction
         <link rel="stylesheet" href="{{ asset('css/main.css') }}" />
 
-        <link
-            rel="stylesheet"  
-            href="https://cdn.jsdelivr.net/npm/@splidejs/splide@2.4.21/dist/css/splide.min.css"
-            />
+      
     </head>
     <body class="scrollTop">
         <nav class="navbar navbar-expand-lg bg-primar text-white fixed-top mb-2">
             <div class="container">
                 <a href="{{ url('/')}}" class="navbar-brand text-white">
                     <img src="{{ asset('okulink-1.png') }}" alt="Okulink" width="50" height="50" class="d-inline-block-align-top img-rounded">&nbsp;Okulink Safaris</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar">
                 <i class="bi bi-list text-white"></i>
                 </button>
                 <div class="collapse navbar-collapse" id="navbar">
@@ -225,7 +228,15 @@
             })();
         </script>
         <!--End of Tawk.to Script-->
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"
+        ></script>
     </body>
 </html>

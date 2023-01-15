@@ -4,6 +4,14 @@
         height: 200px;
         object-fit: cover;
     }
+    .p_link {
+        text-decoration: none !important;
+        color: #4d1b0c;
+    }
+    .p_link:hover {
+        text-decoration: none !important;
+        color: #4d1b0c;
+    }
 </style>
 @section('content')
 
@@ -20,8 +28,12 @@
     <div class="row">
         @forelse($products as $product) @if($product->published == 1)
         <div class="col-lg-3 col-sm-12 col-md-4">
-            <a href="{{ route('products.show', $product->slug) }}">
-                <div class="card" style="width: 18rem">
+            <a href="{{ route('products.show', $product->slug) }}" class="p_link">
+                <div class="card" >
+                    <div class="text-center">
+                    <small><i class="bi bi-geo-alt-fill"></i>  {{ $product->location }}</small>
+                    </div>
+               
                     <img
                         src="{{ asset('/storage/'. $product->image) }}"
                         alt=""
@@ -30,6 +42,8 @@
                     <div class="card-body">
                         <div class="text-center">
                             <h5 class="card-title">{{ $product->name }}</h5>
+                    
+                    <br>
                             <button class="btn btn-outline-primar">
                                 <i class="bi bi-basket"></i> KES {{ $product->price }}
                             </button>
