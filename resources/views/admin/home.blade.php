@@ -2,6 +2,7 @@
 
 @section('content')
 
+
 <div class="row">
     <div class="col-lg-3 col-sm-12">
         <div class="card">
@@ -14,12 +15,12 @@
         </div> 
     </div>
     <div class="col-lg-3 col-sm-12">
-        <div class="card">
+    <div class="card">
             <div class="card-body">
-                <h5 class="card-title"><i class="bi bi-tags"></i> Categories </h5>
-                <p class="card-text">manage tour categories</p>
-                <a href="{{ route('category.create') }}" class="btn btn-primar"><i class="bi bi-bag-plus"></i> new</a>
-                <a href="{{ route('categories') }}" class="btn btn-primar">Categories</a>
+                <h5 class="card-title"><i class="bi bi-bag"></i> Products</h5>
+                    <p class="card-text">Manage products on the platform</p>
+                    <a href="{{ route('products.all') }}" class="btn btn-primar">All Products</a>
+                    <a href="{{ route('products.create') }}" class="btn btn-primar"><i class="bi bi-bag-plus"></i> new </a>
             </div>
         </div> 
     </div>
@@ -33,11 +34,12 @@
         </div>
     </div>
     <div class="col-lg-3 col-sm-12">
-        <div class="card">
+    <div class="card">
             <div class="card-body">
-                <h5 class="card-title"><i class="bi bi-people"></i> Users</h5>
-                <p class="card-text">Interaction with your Users</p>
-                <a href="{{ route('users') }}" class="btn btn-primar">Users.</a>
+                <h5 class="card-title"><i class="bi bi-database"></i> Services</h5>
+                    <p class="card-text">Manage services on the platform</p>
+                    <a href="{{ route('services.all') }}" class="btn btn-primar">all services</a>
+                    <a href="{{ route('services.create') }}" class="btn btn-primar"><i class="bi bi-bag-plus"></i> new </a>
             </div>
         </div>
     </div>
@@ -86,23 +88,32 @@
 </div>
 <br>
 <div class="row">
-<div class="col-lg-6 col-sm-12">
-        <div class="card">
+<div class="col-lg-4 col-sm-12">
+<div class="card">
             <div class="card-body">
-                <h5 class="card-title"><i class="bi bi-bag"></i> Products</h5>
-                    <p class="card-text">Manage products on the platform</p>
-                    <a href="{{ route('products') }}" class="btn btn-primar">All Products</a>
-                    <a href="{{ route('products.create') }}" class="btn btn-primar"><i class="bi bi-bag-plus"></i> new </a>
+                <h5 class="card-title"><i class="bi bi-tags"></i> Categories </h5>
+                <p class="card-text">manage tour categories</p>
+                <a href="{{ route('category.create') }}" class="btn btn-primar"><i class="bi bi-bag-plus"></i> new</a>
+                <a href="{{ route('categories') }}" class="btn btn-primar">Categories</a>
             </div>
         </div>
     </div>
-    <div class="col-lg-6 col-sm-12">
-        <div class="card">
+    <div class="col-lg-4 col-sm-12">
+    <div class="card">
             <div class="card-body">
-                <h5 class="card-title"><i class="bi bi-database"></i> Services</h5>
-                    <p class="card-text">Manage services on the platform</p>
-                    <a href="{{ route('services') }}" class="btn btn-primar">all services</a>
-                    <a href="{{ route('services.create') }}" class="btn btn-primar"><i class="bi bi-bag-plus"></i> new </a>
+                <h5 class="card-title"><i class="bi bi-people"></i> Users</h5>
+                <p class="card-text">Interaction with your Users</p>
+                <a href="{{ route('users') }}" class="btn btn-primar">Users.</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-lg-4 col-sm-12">
+    <div class="card">
+            <div class="card-body">
+                <h5 class="card-title"><i class="bi bi-people"></i> events.</h5>
+                <p class="card-text">coming soon..</p>
+                <a href="{{ route('users') }}" class="btn btn-primar">events.</a>
             </div>
         </div>
     </div>

@@ -49,17 +49,17 @@
                             </a>
                         </li>
                         <li class="nav-item"> 
-                            <a class="nav-link " href="{{ route('safaris') }}">
+                            <a class="nav-link "  href="#">
                                 Accomodation
                             </a>
                         </li>
                         <li class="nav-item"> 
-                            <a class="nav-link " href="{{ route('safaris') }}">
+                            <a class="nav-link " href="#">
                                 Events
                             </a>
                         </li>
                         <li class="nav-item"> 
-                            <a class="nav-link " href="{{ route('safaris') }}">
+                            <a class="nav-link " href="{{ route('products') }}">
                                 Products
                             </a>
                         </li>
@@ -184,9 +184,14 @@
             <i class="bi bi-arrow-up text-white"></i>
         </span>
         <script>
-            new Splide( '.splide' ).mount();
-        </script>
+    function change_image(image) {
+        var container = document.getElementById("main-image");
 
+        container.src = image.src;
+    }
+
+    document.addEventListener("DOMContentLoaded", function (event) {});
+</script>
         <script>
             myButton = document.getElementById("myBtn");
             //show button on scroll

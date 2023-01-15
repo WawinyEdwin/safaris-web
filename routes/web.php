@@ -70,6 +70,8 @@ Route::post('/addtour/store',[ToursController::class, 'store'])->name('addtour.s
 Route::get('/addtour/edit/{id}',[ToursController::class, 'edit'])->name('addtour.edit')->middleware(['auth', 'verified']);
 Route::post('/addtour/update/{id}',[ToursController::class, 'update'])->name('addtour.update')->middleware(['auth', 'verified']);
 Route::delete('/addtour/delete/{id}',[ToursController::class, 'destroy'])->name('addtour.delete')->middleware(['auth', 'verified']);
+Route::put('/addtour/publish/{id}',[ToursController::class, 'publish'])->name('addtour.publish')->middleware(['auth', 'verified']);
+
 
 //TOUR SEARCH ROUTE.
 Route::get('/search',[HomeController::class, 'search'])->name('search');
@@ -82,6 +84,8 @@ Route::post('/blogs/store',[BlogController::class, 'store'])->name('blogs.store'
 Route::get('/blogs/edit/{id}',[BlogController::class, 'edit'])->name('blogs.edit')->middleware(['auth', 'verified']);
 Route::post('/blogs/update/{id}',[BlogController::class, 'update'])->name('blogs.update')->middleware(['auth', 'verified']);
 Route::delete('/blogs/delete/{id}',[BlogController::class, 'destroy'])->name('blogs.delete')->middleware(['auth', 'verified']);
+Route::put('/blogs/publish/{id}',[BlogController::class, 'publish'])->name('blogs.publish')->middleware(['auth', 'verified']);
+
 
 //VIDEOS
 Route::get('/videos',[VideoController::class, 'index'])->name('videos');
@@ -135,20 +139,27 @@ Route::delete('users/delete', [UserController::class, 'destroy'])->name('deleteU
 
 
 // services
+Route::get("/all-products", [ProductController::class, "all"])->name("products.all")->middleware(['auth', 'verified']);
 Route::get("/products", [ProductController::class, "index"])->name("products");
 Route::get("/product/new", [ProductController::class, "create"])->name("products.create")->middleware(['auth', 'verified']);
 Route::post("/product/create", [ProductController::class, "store"])->name("products.store")->middleware(['auth', 'verified']);
-Route::post("/product/edit/{id}", [ProductController::class, "edit"])->name("products.edit")->middleware(['auth', 'verified']);
+Route::get("/product/edit/{id}", [ProductController::class, "edit"])->name("products.edit")->middleware(['auth', 'verified']);
+Route::put("/product/update/{id}", [ProductController::class, "update"])->name("products.update")->middleware(['auth', 'verified']);
 Route::get("/product/{slug}", [ProductController::class, "show"])->name("products.show");
-Route::post("/product/publish/{id}", [ProductController::class, "publish"])->name("products.publish")->middleware(['auth', 'verified']);
+Route::put("/product/publish/{id}", [ProductController::class, "publish"])->name("products.publish")->middleware(['auth', 'verified']);
+Route::delete('/product/delete/{id}',[CategoryController::class, 'destroy'])->name('products.delete')->middleware(['auth', 'verified']);
 
 //services
+Route::get("/all-services", [ServiceController::class, "all"])->name("services.all")->middleware(['auth', 'verified']);
 Route::get("/services", [ServiceController::class, "index"])->name("services");
 Route::get("/service/new", [ServiceController::class, "create"])->name("services.create")->middleware(['auth', 'verified']);
 Route::post("/service/create", [ServiceController::class, "store"])->name("services.store")->middleware(['auth', 'verified']);
-Route::post("/service/edit/{id}", [ServiceController::class, "edit"])->name("services.edit")->middleware(['auth', 'verified']);
+Route::get("/service/edit/{id}", [ServiceController::class, "edit"])->name("services.edit")->middleware(['auth', 'verified']);
+Route::put("/service/update/{id}", [ProductController::class, "update"])->name("services.update")->middleware(['auth', 'verified']);
 Route::get("/service/{slug}", [ServiceController::class, "show"])->name("services.show");
-Route::post("/service/publish/{id}", [ServiceController::class, "publish"])->name("services.publish")->middleware(['auth', 'verified']);
+Route::put("/service/publish/{id}", [ServiceController::class, "publish"])->name("services.publish")->middleware(['auth', 'verified']);
+Route::delete('/service/delete/{id}',[CategoryController::class, 'destroy'])->name('services.delete')->middleware(['auth', 'verified']);
+
 
 
 

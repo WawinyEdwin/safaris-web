@@ -44,6 +44,7 @@
     <h5 class="text-center">Exciting Holiday Offers</h5>
     <div class="row">
         @foreach($holidayOffers as $tour )
+        @if($tour->published == 1)
         <div class="col-lg-3 col-md-3 col-sm-12">
             <div class="card">
                 <img
@@ -80,6 +81,7 @@
                 </div>
             </div>
         </div>
+        @endif
         @endforeach
     </div>
 </div>
@@ -90,6 +92,7 @@
     <h5 class="text-center">Nearby Products.</h5>
     <div class="row">
         @foreach($products as $product)
+        @if($product->published == 1)
         <div class="col-lg-3 col-md-3 col-sm-12">
             <div class="card">
                 <img
@@ -102,14 +105,15 @@
                     <div class="text-center">
                         <a
                             href="{{ route('products.show', $product->slug ) }}"
-                            class="btn btn-primar"
+                            class="btn btn-outline-primar"
                         >
-                            KSH - {{ $product-price }}
+                        <i class="bi bi-basket"></i>  KSH - {{ $product->price }}
                         </a>
                     </div>
                 </div>
             </div>
         </div>
+        @endif
         @endforeach
     </div>
 </div>
@@ -125,6 +129,7 @@
     </h5>
     <div class="row">
         @foreach($tembeaTours as $tours)
+        @if($tours->published == 1)
         <div class="col-lg-3 col-md-3 col-sm-12">
             <div class="card">
                 <img
@@ -155,6 +160,7 @@
                 </div>
             </div>
         </div>
+        @endif
         @endforeach
     </div>
 </div>
@@ -165,6 +171,7 @@
     <h5 class="text-center">Nearby Services.</h5>
     <div class="row">
         @foreach($services as $service)
+        @if($service->published == 1)
         <div class="col-lg-3 col-md-3 col-sm-12">
             <div class="card">
                 <img
@@ -177,14 +184,15 @@
                     <div class="text-center">
                         <a
                             href="{{ route('services.show', $service->slug ) }}"
-                            class="btn btn-primar"
+                            class="btn btn-outline-primar"
                         >
-                            KSH - {{ service-price }}
+                        <i class="bi bi-basket"></i> KSH - {{ $service->price }}
                         </a>
                     </div>
                 </div>
             </div>
         </div>
+        @endif
         @endforeach
     </div>
 </div>
@@ -195,6 +203,7 @@
     <h5 class="text-center">Urban Tours</h5>
     <div class="row">
         @foreach($localTours as $tour)
+        @if($tour->published == 1)
         <div class="col-lg-3 col-sm-12 col-md-3">
             <div class="card">
                 <img
@@ -218,6 +227,7 @@
                 </div>
             </div>
         </div>
+        @endif
         @endforeach
     </div>
 </div>

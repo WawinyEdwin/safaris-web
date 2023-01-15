@@ -1,5 +1,10 @@
 @extends('layout.new')
-
+<style>
+    .h-4 {
+        height: 200px;
+        object-fit: cover;
+    }
+</style>
 @section('content')
 
 <div class="bg-primar p-3">
@@ -13,86 +18,47 @@
         @forelse($coverBlogs as $blog)
         <div class="col-lg-4 col-sm-12">
             <div class="card">
-                <img src="{{ asset('/storage/'. $blog->image) }}" alt="" class="card-img-top">
+                <img src="{{ asset('/storage/'. $blog->image) }}" alt="" class="card-img-top h-4">
                 <div class="card-body">
                     <h5 class="card-title">{{ \Illuminate\Support\Str::limit($blog->title, 30, $end='...') }}</h5>
                     <p class="card-text">{!! \Illuminate\Support\Str::limit($blog->content, 100, $end='...') !!}</p>
                     <a href="{{ route('blogs.show', $blog->id) }}"class="btn btn-primar" >Read More</a>
-                    <br>
-                    <br>
-                    @auth
-                        <div class="row">
-                            <div class="col">
+                  <br>
+                   @auth
+                    @if(Auth::user()->isAdmin == 1)
                                 <a href="{{ route('blogs.edit', $blog->id) }}" class="btn btn-info">Edit</a>
-                            </div>
+                                <br>
                             <form action="{{ route('blogs.delete', $blog->id ) }}" method="post">
                                 @csrf 
                                 @method('DELETE')
-
-                                <div class="col">
                                     <button type="submit" class="btn btn-danger">Delete</button>
-                                </div>
                             </form>
-                        </div>
+                            <br>
+                            @if($blog->published == 0)
+                            <form action="{{ route('blogs.publish', $blog->id) }}" method="post">
+                                <button class="btn btn-success" type="submit">publish</button>
+                                @csrf 
+                                @method('PUT')
+                        </form>
+                        @else
+                        <form action="{{ route('blogs.publish', $blog->id) }}" method="post">
+                                <button class="btn btn-warning" type="submit">un-publish</button>
+                                @csrf 
+                                @method('PUT')
+                        </form>
+                        @endif
+                         
+                        
+                    @endif
                     @endauth
                 </div>
             </div>
             <br>
         </div>
-
         @empty 
-
-        <div class="col-lg-4 col-sm-12">
-                    <div class="card">
-                        <img src="{{ asset('elephant.jpg') }}" alt="" class="card-img-top">
-                        <div class="card-body">
-                            <h5 class="card-title">Cool Title 2</h5>
-                            <div class="blue"></div>
-                                <br>
-                            <p class="card-text">some cool blog content 3 here</p>
-                            <div class="text-right">
-                                <a href="{{ url('/') }}" class="btn btn-primar" >
-                                    Read More <i class="bi bi-arrow-right"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <br>
-                </div>
-                <div class="col-lg-4 col-sm-12">
-                    <div class="card">
-                        <img src="{{ asset('elephant.jpg') }}" alt="" class="card-img-top">
-                        <div class="card-body">
-                            <h5 class="card-title">Cool Title 1</h5>
-                            <div class="blue"></div>
-                                <br>
-                            <p class="card-text">some cool blog content 2 here</p>
-                            <div class="text-right">
-                                <a href="{{ url('/') }}" class="btn btn-primar" >
-                                    Read More <i class="bi bi-arrow-right"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <br>
-                </div>
-                <div class="col-lg-4 col-sm-12">
-                    <div class="card">
-                        <img src="{{ asset('elephant.jpg') }}" alt="" class="card-img-top">
-                        <div class="card-body">
-                            <h5 class="card-title">Cool Title</h5>
-                            <div class="blue"></div>
-                                <br>
-                            <p class="card-text">some cool blog content here</p>
-                            <div class="text-right">
-                                <a href="{{ url('/') }}" class="btn btn-primar" >
-                                    Read More <i class="bi bi-arrow-right"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <br>
-                </div>
+        <div class="text-center">
+            <h2>exciting stories coming soon....</h2>
+        </div>
         @endforelse
     </div>
     <h5 class="text-center pri">Explore More Tales</h5>

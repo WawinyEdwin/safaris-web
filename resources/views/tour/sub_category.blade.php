@@ -31,6 +31,7 @@
             </thead>
             <tbody>
                 @foreach ($tours as $tour)
+                @if($tour->published == 1)
                 <tr>
                     <td>{{ $tour->hotel }}</td>
                     <td>{{ $tour->location }}</td>
@@ -39,6 +40,7 @@
                     <td>{{ $tour->single_room }}</td>
                     <td>{{ $tour->meals }}</td>
                 </tr>
+                @endif
                 @endforeach
             </tbody>
         </table>

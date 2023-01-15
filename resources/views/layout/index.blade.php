@@ -42,34 +42,23 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbar">
                     <ul class="navbar-nav mr-auto">
-                        
-                        <!-- <li class="nav-item dropdown show"> 
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Safaris
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            @foreach($categories as $category)
-                                <a class="dropdown-item" href="{{ route('tour',  $category->category_name ) }}">{{ $category->category_name }}</a>
-                                @endforeach
-                            </div>
-                        </li>  -->
                         <li class="nav-item"> 
                             <a class="nav-link " href="{{ route('safaris') }}">
                                 Safaris
                             </a>
                         </li>
                         <li class="nav-item"> 
-                            <a class="nav-link " href="{{ route('safaris') }}">
+                            <a class="nav-link " href="#">
                                 Accomodation
                             </a>
                         </li>
                         <li class="nav-item"> 
-                            <a class="nav-link " href="{{ route('safaris') }}">
+                            <a class="nav-link " href="#">
                                 Events
                             </a>
                         </li>
                         <li class="nav-item"> 
-                            <a class="nav-link " href="{{ route('safaris') }}">
+                            <a class="nav-link " href="{{ route('products') }}">
                                 Products
                             </a>
                         </li>

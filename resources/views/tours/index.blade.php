@@ -43,16 +43,37 @@
                         <img src="{{ asset('/storage/'.$tour->image) }}" alt="" style="width: 100px; height: 50px;">
                     </td>
                     <td>
-                        <form action="{{ route('addtour.delete', $tour->id) }}" method="post">
+                        <div class="row">
+                            <div class="col">
                             <a href="{{ route('addtour.show', $tour->id) }}" class="btn btn-info">Show</a>
+                            </div>
+                            <div class="col">
                             <a href="{{ route('addtour.edit', $tour->id) }}" class="btn btn-primary">Edit</a>
-
+                            </div>
+                            <div class="col">
+                            <form action="{{ route('addtour.delete', $tour->id) }}" method="post">
                             @csrf 
                             @method('DELETE')
-
                             <button type="submit" class="btn btn-danger">Delete</button>
-                            
                         </form>
+                            </div>
+                            <div class="col">
+                            @if($tour->published == 0)
+                        <form action="{{ route('addtour.publish', $tour->id) }}" method="post">
+                            <button class="btn btn-success">publish</button>
+                            @csrf 
+                            @method('PUT')
+                        </form>
+
+                        @else 
+                        <form action="{{ route('addtour.publish', $tour->id) }}" method="post">
+                            <button class="btn btn-warning">un-publish</button>
+                            @csrf 
+                            @method('PUT')
+                        </form>
+                        @endif
+                            </div>
+                        </div>
                     </td>
                 </tr>
                 @endforeach

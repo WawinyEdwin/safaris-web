@@ -53,6 +53,7 @@ background-color: #4d1b0c;
 }
 
 
+
 /* custom coloring */
 .bt-primar {
 background-color: #4863a0;
@@ -70,6 +71,10 @@ color: #ffffff;
 background-color: #4d1b0c;
 }
 
+.btn-outline-primar:hover {
+   color: #ffffff;
+   background-color: #4d1b0c;
+   }
 .card-title {
 color: #4d1b0c;
 }

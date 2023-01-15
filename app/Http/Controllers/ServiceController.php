@@ -8,6 +8,13 @@ use App\Models\Service;
 
 class ServiceController extends Controller
 {
+    public function all()
+    {
+        
+        $services = Service::latest()->paginate(20);
+        return view('admin.services', compact('services'))->with('i', (request()->input('page', 1) - 1) * 5);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -64,7 +71,7 @@ class ServiceController extends Controller
 
         $service->save();
 
-        return redirect()->route('services')->with('success', 'You Added a service.');
+        return redirect()->route('services.all')->with('success', 'You Added a service.');
 
     }
 
@@ -77,7 +84,7 @@ class ServiceController extends Controller
     public function show($slug)
     {
         //
-        $service = Service::find($slug);
+        $service = Service::where("slug", $slug)->first();
         return view("services.show", compact("service"));
     }
 
@@ -91,7 +98,7 @@ class ServiceController extends Controller
     {
         //
         $service = Service::find($id);
-        return view("services.show", compact("service"));
+        return view("services.edit", compact("service"));
     }
 
     /**
@@ -103,14 +110,6 @@ class ServiceController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $request->validate([
-            "name" => "required",
-            "category" => "required",
-            "location" => "required",
-            "price" => "required",
-            "description" => "required"
-        ]);
-
 
         $service = Service::find($id);
         //
@@ -136,7 +135,7 @@ class ServiceController extends Controller
 
         $service->update();
 
-        return redirect()->route("services")->with("success", "Product Updated");
+        return redirect()->route("services.all")->with("success", "Product Updated");
     
     }
 
@@ -151,7 +150,7 @@ class ServiceController extends Controller
         //
         $service = Service::find($id);
         $service->delete();
-        return redirect()->route('services')->with('success', 'You Deleted Service.');
+        return redirect()->route('services.all')->with('success', 'You Deleted Service.');
     }
 
 
@@ -159,8 +158,18 @@ class ServiceController extends Controller
     * Publish Service.
      */
 
+     //Published toggle
      public function publish($id)
      {
-
+         $service = Service::find($id);
+         if ($service->published == 0) {
+             $service->published = 1;
+             $service->update();
+         } else {
+             $service->published = 0;
+             $service->update();
+         }
+ 
+         return redirect()->route('services.all');
      }
 }

@@ -8,6 +8,12 @@ use Illuminate\Support\Facades\Auth;
 
 class ProductController extends Controller
 {
+    public function all()
+    {
+        
+        $products = Product::latest()->paginate(20);
+        return view('admin.products', compact('products'))->with('i', (request()->input('page', 1) - 1) * 5);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -65,7 +71,7 @@ class ProductController extends Controller
         $product->description = $request->description;
         $product->user_id = Auth::id();
         $product->save();
-        return redirect()->route('admin')->with('success', 'You Added a Product.');
+        return redirect()->route('products.all')->with('success', 'You Added a Product.');
 
     }
 
@@ -78,7 +84,7 @@ class ProductController extends Controller
     public function show($slug)
     {
         //
-        $product = Product::find($slug);
+        $product = Product::where("slug", $slug)->first();
         return view("products.show", compact("product"));
     }
 
@@ -92,7 +98,7 @@ class ProductController extends Controller
     {
         //
         $product = Product::find($id);
-        return view("products.show", compact("product"));
+        return view("products.edit", compact("product"));
     }
 
     /**
@@ -103,16 +109,7 @@ class ProductController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {
-        $request->validate([
-            "name" => "required",
-            "category" => "required",
-            "location" => "required",
-            "price" => "required",
-            "quantity_available" => "required",
-            "description" => "required"
-        ]);
-
+{
 
         $product = Product::find($id);
         //
@@ -139,7 +136,7 @@ class ProductController extends Controller
 
         $product->update();
 
-        return redirect()->route("services")->with("success", "Product Updated");
+        return redirect()->route("products.all")->with("success", "Product Updated");
     
     }
 
@@ -154,6 +151,21 @@ class ProductController extends Controller
         //
         $product = Product::find($id);
         $product->delete();
-        return redirect()->route('products')->with('success', 'You Deleted Product.');
+        return redirect()->route('products.all')->with('success', 'You Deleted Product.');
+    }
+
+    //Published toggle
+    public function publish($id)
+    {
+        $product = Product::find($id);
+        if ($product->published == 0) {
+            $product->published = 1;
+            $product->update();
+        } else {
+            $product->published = 0;
+            $product->update();
+        }
+
+        return redirect()->route('products.all');
     }
 }

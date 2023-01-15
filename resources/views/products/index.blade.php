@@ -1,33 +1,50 @@
 @extends('layout.new')
-
+<style>
+    .h-4 {
+        height: 200px;
+        object-fit: cover;
+    }
+</style>
 @section('content')
 
 <div class="bg-primar p-3">
     <div class="container">
-    <h5 class=" text-white"> <a href="{{ url('/') }}" class="text-white"> Home </a> > Explore Amazing Products.</h5>
+        <h5 class="text-white">
+            <a href="{{ url('/') }}" class="text-white"> Home </a> > Explore
+            Amazing Products.
+        </h5>
     </div>
 </div>
-<br>
+<br />
 <div class="container">
     <div class="row">
-        @forelse($products as $product)
-        <div class="col-lg-4 col-sm-12">
-        <a href="{{ route('products.show', $product->id) }}">
-            <div class="card">
-                <img src="{{ asset('/storage/'. $product->image) }}" alt="" class="card-img-top">
-                <div class="card-body">
-                    <h5 class="card-title">{{ $product->name }}</h5>
-                    <button class="btn btn-primar">{{ $product-price }}</button>
+        @forelse($products as $product) @if($product->published == 1)
+        <div class="col-lg-3 col-sm-12 col-md-4">
+            <a href="{{ route('products.show', $product->slug) }}">
+                <div class="card" style="width: 18rem">
+                    <img
+                        src="{{ asset('/storage/'. $product->image) }}"
+                        alt=""
+                        class="card-img-top h-4"
+                    />
+                    <div class="card-body">
+                        <div class="text-center">
+                            <h5 class="card-title">{{ $product->name }}</h5>
+                            <button class="btn btn-outline-primar">
+                                <i class="bi bi-basket"></i> KES {{ $product->price }}
+                            </button>
+                        </div>
+                    </div>
                 </div>
-            </div>
             </a>
-            <br>
+            @endif
         </div>
-        @empty 
+        @empty
         <div class="pt-5 pb-5">
             <h1 class="text-center">No Products to Explore</h1>
         </div>
         @endforelse
     </div>
 </div>
+
 @endsection

@@ -3,37 +3,43 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-md-6 offset-md-3">
+        <div class="col-md-6 offset-md-3 col-sm-12 offset-sm-1">
             <div class="card">
+                <div class="card-header"><h5 class="text-center">Update product.</h5></div>
                 <div class="card-body">
-                    <h5 class="text-center">update product.</h5>
                     <form
-                        action="{{ route('products.store') }}"
+                        action="{{ route('products.update', $product->id ) }}"
                         method="post"
                         enctype="multipart/form-data"
                     >
-                        @csrf @method('POST')
+                        @csrf
+                        @method('POST')
 
                         <div class="form-group">
                             <div class="row">
                                 <div class="col-6">
                                     <label  class="form-label"
-                                        >product name</label
+                                        >name</label
                                     >
                                     <input
                                         type="text"
                                         name="name"
-                                        id="title"
-                                        class="form-control"
+                                        value="{{old('name', $product->name )}}"
+                                        class="form-control @error('name') is-invalid @enderror"
                                         required
                                     />
+                                    @error('name')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                                 </div>
                                 <div class="col-6">
                                 <label  class="form-label"
-                                        >product category</label
+                                        >category</label
                                     >
-                                    <select name="category" id="" class="form-control">
-                                        <option value="">Select</option>
+                                    <select name="category" class="form-control @error('category') is-invalid @enderror">
+                                        <option  value="{{old('category', $product->category )}}">--Select--</option>
                                         <option
                                             value="Smartphones-and-Accessories"
                                         >
@@ -90,6 +96,11 @@
                                             Watch Store
                                         </option>
                                     </select>
+                                    @error('category')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                                 </div>
                             </div>
                         </div>
@@ -97,28 +108,36 @@
                         <div class="form-group">
                             <div class="row">
                                 <div class="col-6">
-                                    <label for="image" class="form-label"
-                                        >product image</label
+                                    <label class="form-label"
+                                        >image</label
                                     >
                                     <input
                                         type="file"
                                         name="image"
-                                        id="image"
-                                        class="form-control-file"
-                                        required
+                                        class="form-control-file  @error('image') is-invalid @enderror"
+                                      
                                     />
+                                    @error('image')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                                 </div>
                                 <div class="col-6">
                                     <label for="image2" class="form-label"
-                                        >product image</label
+                                        >image2</label
                                     >
                                     <input
                                         type="file"
                                         name="image2"
-                                        id="image2"
-                                        class="form-control-file"
-                                        required
+                                        class="form-control-file  @error('image2') is-invalid @enderror"
+                                       
                                     />
+                                    @error('image2')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                                 </div>
                             </div>
                         </div>
@@ -127,32 +146,57 @@
                             <div class="row">
                                 <div class="col-6">
                                     <label
-                                        for="quantity_available"
                                         class="form-label"
-                                        >stock available</label
+                                        >in stock</label
                                     >
-                                    <input type="number" name="quantity_available" id="" class="form-control"/>
+                                    <input type="number" name="quantity_available"  value="{{old('quantity_available', $product->quantity_available)}}" class="form-control  @error('quantity_available') is-invalid @enderror" />
+                                    @error('quantity_available')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                                 </div>
                                 <div class="col-6">
-                                    <label for="price" class="form-label"
-                                        >product price</label
+                                    <label  class="form-label"
+                                        >price(in ksh)</label
                                     >
-                                    <input type="number" name="price" id="" class="form-control"/>
+                                    <input type="number" name="price" value="{{old('price', $product->price)}}"  class="form-control  @error('price') is-invalid @enderror"/>
+                                    @error('price')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                                 </div>
                             </div>
                         </div>
+                        <br>
                         <div class="form-group">
-                            <label for="content" class="form-label"
+                            <label for="" class="form-label">product location</label>
+                            <input type="text" name="location" value="{{ old('location', $product->location) }}" class="form-control @error('location') is-invalid @enderror">
+                            @error('location')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label"
                                 >product description</label
                             >
                             <textarea
-                                name="description"
+                            name="description"
                                 id="summernote"
                                 cols="30"
-                                rows="7"
-                                class="form-control"
+                                rows="5"
+                                value="{{old('description', $product->description )}}"
+                                class="form-control @error('description') is-invalid @enderror"
                                 required
                             ></textarea>
+                            @error('description')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                         </div>
                         <div class="text-center">
                         <button type="submit" class="btn btn-primar">

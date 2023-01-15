@@ -6,6 +6,7 @@ use App\Models\Tours;
 use App\Models\Blog;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ToursController extends Controller
 {
@@ -92,6 +93,7 @@ class ToursController extends Controller
         $tours->image1 = $path1;
         $tours->image2 = $path2;
         $tours->location = $request->location;
+        $tours->user_id = Auth::id();
 
         $tours->save();
 
@@ -211,4 +213,22 @@ class ToursController extends Controller
 
         return redirect()->route('tours')->with('success', 'You Deleted a Tour.');
     }
+
+       //Published toggle
+       public function publish($id)
+       {
+           $tour = Tours::find($id);
+
+           if ($tour->published == 0) {
+               $tour->published = 1;
+               $tour->update();
+           } else {
+               $tour->published = 0;
+               $tour->update();
+           }
+   
+           return redirect()->route('tours');
+       }
+   
+   
 }

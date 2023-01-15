@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Blog;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class BlogController extends Controller
 {
@@ -61,6 +62,7 @@ class BlogController extends Controller
         $blog->title = $request->title;
         $blog->image = $path;
         $blog->content = $request->content;
+        $blog->user_id = Auth::id();
 
         $blog->save();
 
@@ -123,10 +125,10 @@ class BlogController extends Controller
 
 
         $path = $request->image->store('images', 'public');
-
         $blog->title = $request->title;
         $blog->image = $path;
         $blog->content = $request->content;
+        $blog->user_id = Auth::id();
 
         $blog->save();
 
@@ -148,4 +150,21 @@ class BlogController extends Controller
         return redirect()->route('blogs')->with('success', 'Content Deleted');
 
     }
+
+        //Published toggle
+        public function publish($id)
+        {
+            $blog = Blog::find($id);
+ 
+            if ($blog->published == 0) {
+                $blog->published = 1;
+                $blog->update();
+            } else {
+                $blog->published = 0;
+                $blog->update();
+            }
+    
+            return redirect()->route('blogs');
+        }
+    
 }

@@ -26,7 +26,8 @@
                                     <input
                                         type="text"
                                         name="name"
-                                        id="title"
+
+                                       value="{{old('name')}}" 
                                         class="form-control"
                                         required
                                     />
@@ -36,7 +37,7 @@
                                 <label  class="form-label"
                                         >category</label
                                     >
-                                    <select name="category" id="" class="form-control" >
+                                    <select name="category" class="form-control" >
                                         <option value="">--select--</option>
                                     <option value="Photography-and-video-coverage">Photography and video coverage</option>
                                         <option value="Housekeeping-and-Cleaning">Housekeeping and Cleaning</option>
@@ -69,33 +70,32 @@
                                         <option value="Pet-and-animal-training">Pet and animal training</option>
                                         <option value="Personal-Section">Personal Section</option>
                                     </select>
-                                    <span class="text-danger">@error('category') {{ $message }} @enderror</span>
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="row">
                                 <div class="col-6">
-                                    <label for="image" class="form-label"
+                                    <label  class="form-label"
                                         >image</label
                                     >
                                     <input
                                         type="file"
                                         name="image"
-                                        id="image"
+                                        
                                         class="form-control-file"
                                         required
                                     />
                                     <span class="text-danger">@error('image') {{ $message }} @enderror</span>
                                 </div>
                                 <div class="col-6">
-                                    <label for="image2" class="form-label"
+                                    <label  class="form-label"
                                         >image2</label
                                     >
                                     <input
                                         type="file"
                                         name="image2"
-                                        id="image"
+                                        
                                         class="form-control-file"
                                         required
                                     />
@@ -103,11 +103,19 @@
                             </div>
                         </div>
                         <div class="form-group">
-                                    <label for="price">price(in ksh)</label>
-                                    <input type="number" name="price" id="" class="form-control" />
+                            <div class="row">
+                                <div class="col-md-6 col-sm-12">
+                                <label for="price">price(in ksh)</label>
+                                    <input type="number" name="price" value="{{old('price')}}"  class="form-control" />
+                                </div>
+                                <div class="col-md-6 col-sm-12">
+                                <label for="" class="form-label">location</label>
+                            <input type="text" name="location" value="{{ old('location') }}" class="form-control">
+                                </div>
+                            </div>
                         </div>
                         <div class="form-group">
-                            <label for="content" class="form-label"
+                            <label  class="form-label"
                                 >service description</label
                             >
                             <textarea

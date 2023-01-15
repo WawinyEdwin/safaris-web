@@ -6,12 +6,12 @@
         <div class="col-md-6 offset-md-3">
             <div class="card">
                 <div class="card-header">
-                <h5 class="text-center">Upload service.</h5>
+                <h5 class="text-center">update service.</h5>
                 </div>
                 <div class="card-body">
                    
                     <form
-                        action="{{ route('services.store') }}"
+                        action="{{ route('services.update', $service->id ) }}"
                         method="post"
                         enctype="multipart/form-data"
                     >
@@ -26,17 +26,18 @@
                                     <input
                                         type="text"
                                         name="name"
-                                        id="title"
+                                       value="{{old('name', $service->name)}}" 
                                         class="form-control"
                                         required
                                     />
+                                    <span class="text-danger">@error('name') {{ $message }} @enderror</span>
                                 </div>
                                 <div class="col-6">
                                 <label  class="form-label"
                                         >category</label
                                     >
-                                    <select name="category" id="" class="form-control" >
-                                        <option value="">--select--</option>
+                                    <select name="category" class="form-control" >
+                                        <option value="{{old('category', $service->category)}}" >--select--</option>
                                     <option value="Photography-and-video-coverage">Photography and video coverage</option>
                                         <option value="Housekeeping-and-Cleaning">Housekeeping and Cleaning</option>
                                         <option value="Barber-and-Hair-Dressing">Barber and Hair Dressing</option>
@@ -74,37 +75,46 @@
                         <div class="form-group">
                             <div class="row">
                                 <div class="col-6">
-                                    <label for="image" class="form-label"
+                                    <label  class="form-label"
                                         >image</label
                                     >
                                     <input
                                         type="file"
                                         name="image"
-                                        id="image"
+                                        
                                         class="form-control-file"
-                                        required
+                                    
                                     />
+                                    <span class="text-danger">@error('image') {{ $message }} @enderror</span>
                                 </div>
                                 <div class="col-6">
-                                    <label for="image2" class="form-label"
+                                    <label  class="form-label"
                                         >image2</label
                                     >
                                     <input
                                         type="file"
                                         name="image2"
-                                        id="image"
+                                        
                                         class="form-control-file"
-                                        required
+                                      
                                     />
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
-                                    <label for="price">price(in ksh)</label>
-                                    <input type="number" name="price" id="" class="form-control" />
+                            <div class="row">
+                                <div class="col-md-6 col-sm-12">
+                                <label for="price">price(in ksh)</label>
+                                    <input type="number" name="price" value="{{old('price', $service->price )}}"  class="form-control" />
+                                </div>
+                                <div class="col-md-6 col-sm-12">
+                                <label for="" class="form-label">location</label>
+                            <input type="text" name="location" value="{{ old('location', $service->location) }}" class="form-control">
+                                </div>
+                            </div>
                         </div>
                         <div class="form-group">
-                            <label for="content" class="form-label"
+                            <label  class="form-label"
                                 >service description</label
                             >
                             <textarea
@@ -113,15 +123,15 @@
                                 cols="30"
                                 rows="5"
                                 class="form-control"
+                                value="{{old('description', $service->description)}}" 
                                 required
                             ></textarea>
                         </div>
                         <div class="text-center">
                         <button type="submit" class="btn btn-primar">
-                            Upload
+                            update
                         </button>
                         </div>
-                       
                     </form>
                 </div>
             </div>

@@ -16,17 +16,25 @@
 <div class="container">
     <div class="row">
         @forelse($services as $service)
-        <div class="col-lg-4 col-sm-12">
-        <a href="{{ route('services.show', $service->id) }}">
-            <div class="card">
+        @if($service->published == 1)
+        <div class="col-lg-3 col-sm-12 col-md-4">
+        <a href="{{ route('services.show', $service->slug) }}">
+            <div class="card" style="width: 18rem;">
                 <img src="{{ asset('/storage/'. $service->image) }}" alt="" class="card-img-top h-4">
                 <div class="card-body">
+                <div class="text-center">
                     <h5 class="card-title">{{ $service->name }}</h5>
-                    <button class="btn btn-primar">{{ $service->price }}</button>
+                        <button class="btn btn-outline-primar"><i class="bi bi-basket"></i> KES {{ $service->price }}</button>
+                    </div>
+                    
                 </div>
             </div>
             </a>
-            <br>
+            @else
+            <div class="pt-5 pb-5">
+            <h1 class="text-center">No services to Explore</h1>
+        </div>
+           @endif
         </div>
         @empty 
         <div class="pt-5 pb-5">
