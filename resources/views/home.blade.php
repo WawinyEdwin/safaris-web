@@ -84,6 +84,12 @@
         @endif
         @endforeach
     </div>
+    <br />
+    <div class="text-center">
+        <a href="{{ route('tour', 'Exciting Holiday Offers') }}" class="btn btn-primar">
+            explore tours <i class="bi bi-arrow-right"></i>
+        </a>
+    </div>
 </div>
 
 <br />
@@ -119,6 +125,12 @@
         </div>
         @endif
         @endforeach
+    </div>
+    <br />
+    <div class="text-center">
+        <a href="/products" class="btn btn-primar">
+            more products <i class="bi bi-arrow-right"></i>
+        </a>
     </div>
 </div>
 
@@ -167,6 +179,12 @@
         @endif
         @endforeach
     </div>
+    <br />
+    <div class="text-center">
+        <a href="{{ route('tour', 'Tembea Ujionee') }}" class="btn btn-primar">
+            explore tours <i class="bi bi-arrow-right"></i>
+        </a>
+    </div>
 </div>
 
 <br />
@@ -202,6 +220,12 @@
         @endif
         @endforeach
     </div>
+    <br />
+    <div class="text-center">
+        <a href="/services" class="btn btn-primar">
+            more services <i class="bi bi-arrow-right"></i>
+        </a>
+    </div>
 </div>
 
 <br />
@@ -236,6 +260,12 @@
         </div>
         @endif
         @endforeach
+    </div>
+    <br />
+    <div class="text-center">
+        <a href="/safaris" class="btn btn-primar">
+            explore tours <i class="bi bi-arrow-right"></i>
+        </a>
     </div>
 </div>
 <br />
@@ -275,6 +305,12 @@
         @endif
         @endforeach
     </div>
+    <br />
+    <div class="text-center">
+        <a href="/blogs" class="btn btn-primar">
+            more tales <i class="bi bi-arrow-right"></i>
+        </a>
+    </div>
 </div>
 
 <br />
@@ -306,8 +342,8 @@
         @endforeach
     </div>
     <br />
-    <div class="text-right">
-        <a href="/videos" class="btn btn-primar">
+    <div class="text-center">
+        <a href="#" class="btn btn-primar">
             Watch More <i class="bi bi-arrow-right"></i>
         </a>
     </div>
