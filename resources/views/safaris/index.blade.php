@@ -10,6 +10,7 @@
 <div class="container pt-3">
     <div class="row">
         @forelse($safaris as $safari)
+        @if($safari->published == 1)
         <div class="col-lg-4 col-sm-12">
             <div class="card">
                 <img src="{{ asset('/storage/'. $safari->image) }}" alt="{{ $safari->hotel }}" class="card-img-top h-4">
@@ -30,6 +31,7 @@
             </div>
             <br>
         </div>
+        @endif
         @empty 
         <div>
             <h1 class="text-center">No safaris to Explore</h1>

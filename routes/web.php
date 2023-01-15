@@ -100,6 +100,8 @@ Route::get('/tours/{category}', [HomeController::class, 'tours'])->name('tour');
 Route::get('/tours/categories/{sub_category}', [HomeController::class, 'tour_cat'])->name('tour_cat');
 
 
+
+
 //CATEGORIES ROUTE
 Route::get('/categories',[CategoryController::class, 'index'])->name('categories');
 Route::get('/category/create',[CategoryController::class, 'create'])->name('category.create')->middleware(['auth', 'verified']);

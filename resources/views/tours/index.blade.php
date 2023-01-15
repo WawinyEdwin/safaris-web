@@ -1,5 +1,6 @@
 @extends('layout.admin')
 
+
 @section('content')
 
 .<div class="container-fluid">
@@ -43,37 +44,28 @@
                         <img src="{{ asset('/storage/'.$tour->image) }}" alt="" style="width: 100px; height: 50px;">
                     </td>
                     <td>
-                        <div class="row">
-                            <div class="col">
-                            <a href="{{ route('addtour.show', $tour->id) }}" class="btn btn-info">Show</a>
-                            </div>
-                            <div class="col">
-                            <a href="{{ route('addtour.edit', $tour->id) }}" class="btn btn-primary">Edit</a>
-                            </div>
-                            <div class="col">
+                    <form action="{{ route('addtour.publish', $tour->id) }}" method="post">
+                        @csrf 
+                            @method('PUT')
+
+                        @if($tour->published == 0)
+                            <button class="btn btn-success"><i class="bi bi-bag-check"></i></button>
+                            @else 
+                            <button class="btn btn-warning"><i class="bi bi-x-square"></i></button>
+                            @endif
+                           
+                        </form>
                             <form action="{{ route('addtour.delete', $tour->id) }}" method="post">
                             @csrf 
                             @method('DELETE')
-                            <button type="submit" class="btn btn-danger">Delete</button>
-                        </form>
-                            </div>
-                            <div class="col">
-                            @if($tour->published == 0)
-                        <form action="{{ route('addtour.publish', $tour->id) }}" method="post">
-                            <button class="btn btn-success">publish</button>
-                            @csrf 
-                            @method('PUT')
-                        </form>
+                            
+                            <a href="{{ route('addtour.show', $tour->id) }}" class="btn btn-info"><i class="bi bi-eye-fill"></i></a>
+                            <a href="{{ route('addtour.edit', $tour->id) }}" class="btn btn-primary"><i class="bi bi-pencil-square"></i></a>
 
-                        @else 
-                        <form action="{{ route('addtour.publish', $tour->id) }}" method="post">
-                            <button class="btn btn-warning">un-publish</button>
-                            @csrf 
-                            @method('PUT')
+                            <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i></button>
                         </form>
-                        @endif
-                            </div>
-                        </div>
+                            
+                       
                     </td>
                 </tr>
                 @endforeach

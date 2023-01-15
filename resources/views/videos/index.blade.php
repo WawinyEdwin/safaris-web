@@ -22,9 +22,12 @@
         @forelse($videos as $video)
         <div class="col-lg-4 col-sm-12">
             <div class="card">
+                <div class="card-img-top">
                 <div class="embed-responsive embed-responsive-16by9">
                     <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{{$video->url}}" allowfullscreen></iframe>
                 </div>
+                </div>
+               
                 <p class="text-center">{{ $video->name }}</p>
                 @auth
                 <div class="card-body">
@@ -42,51 +45,9 @@
 
         @empty
       
-                <div class="col-lg-4 col-sm-12">
-                    <div class="card">
-                        <div class="card-body">
-                        <div class="embed-responsive embed-responsive-16by9">
-                            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/watch?v=cVecpIbonnU" allowfullscreen></iframe>
-                            </div>
-                            <br>
-                            <div class="blue"></div>
-                                <br>
-                            <div class="card-title text-center">
-                                <p>Good Content</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-12">
-                    <div class="card">
-                        <div class="card-body">
-                        <div class="embed-responsive embed-responsive-16by9">
-                            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/watch?v=cVecpIbonnU" allowfullscreen></iframe>
-                            </div>
-                            <br>
-                            <div class="blue"></div>
-                                <br>
-                            <div class="card-title text-center">
-                                <p>Maasai Mara Tings</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-12">
-                    <div class="card">
-                        <div class="card-body">
-                        <div class="embed-responsive embed-responsive-16by9">
-                            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/watch?v=cVecpIbonnU" allowfullscreen></iframe>
-                            </div>
-                            <br>
-                            <div class="blue"></div>
-                                <br>
-                            <div class="card-title text-center">
-                                <p>Mt. Kenya Peak</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <div class="text-center">
+            <h2>videos coming soon...</h2>
+        </div>
         @endforelse
     </div>
 </div>

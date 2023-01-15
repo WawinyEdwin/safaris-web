@@ -5,7 +5,7 @@
     <div class="">
         <br>
         <div class="text-right">
-            <a href="{{ route('tours') }}" class="btn btn-primar">Back</a>
+            <a href="{{ route('safaris') }}" class="btn btn-primar"> <i class="bi bi-arrow-left"></i> Back</a>
         </div>
     </div>
     <br>
@@ -23,10 +23,14 @@
             </div>
         </div>
         <div class="col-lg-6 col-sm-12">
-            <div class="card">
+            <div class="card pb-3">
                 <div class="card-body">
+                <div class="text-center">
+                    <a href="{{ route('bookings.create', $tours->category ) }}" class="btn btn-primar"> 
+                        Book Now
+                    </a>
+                </div>
                     <h5 class="card-title">Hotel {{ $tours->hotel }}</h5>
-                    <p class="lead text-center">Tour Information</p>
                     <ul>
                         <li>Category : {{ $tours->category }}</li>
                         <br>
@@ -44,6 +48,11 @@
                         <p>Additional Info</p>
                         <p>{!! $tours->additional_info !!}</p>
                     </div>
+                </div>
+                <div class="text-center">
+                    <a href="{{ route('bookings.create', $tours->category ) }}" class="btn btn-primar"> 
+                        Book Now
+                    </a>
                 </div>
             </div>
         </div>

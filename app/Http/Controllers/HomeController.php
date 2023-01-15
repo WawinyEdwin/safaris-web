@@ -47,7 +47,7 @@ class HomeController extends Controller
         $categories = Category::all();
         //find blogs 
         $blogs = Blog::latest()->limit(2)->get();
-        $coverBlogs = Blog::latest()->limit(3)->get();
+        $coverBlogs = Blog::latest()->limit(4)->get();
         $videos = Video::inRandomOrder()->limit(4)->get();
         //fetches tours
         $tours = Tours::inRandomOrder()->limit(3)->get();

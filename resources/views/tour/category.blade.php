@@ -17,17 +17,19 @@
     <div class="table-responsive">
         <table class="table table-bordered">
             <thead>
+                <th scope="col">More</th>
                 <th scope="col">Hotel Name</th>
                 <th scope="col">Location</th>
                 <th scope="col">Transport</th>
                 <th scope="col">PerPerson Sharing</th>
-                <th scope="col">Single person per room/th>
+                <th scope="col">Single person per room</th>
                 <th scope="col">Meals</th>
             </thead>
             <tbody>
                 @foreach ($tours as $tour)
                 @if($tour->published == 1)
                 <tr>
+                <td> <a href="{{ route('addtour.show', $tour->id) }}" style="color: #000">info</a> </td>
                     <td>{{ $tour->hotel }}</td>
                     <td>{{ $tour->location }}</td>
                     <td>{{ $tour->transport }}</td>
@@ -45,7 +47,7 @@
     <div class="text-center">
     <div class="">
         <h5 class="pri text-center">More Information</h5>
-        @if($info >= 1)
+        @if($info)
         <div>{!! $info->additional_info !!}</div>
         @endif
     </div>

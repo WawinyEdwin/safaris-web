@@ -1,5 +1,12 @@
 @extends('layout.index')
-
+<style>
+    .a {
+        color: #000 !important;
+    }
+    .a:hover {
+        color: #000 !important;
+    }
+</style>
 @section('content')
 
     <div class=" bg-primar navbar expand-lg ">
@@ -22,6 +29,7 @@
 <div class="table-responsive">
         <table class="table table-bordered">
             <thead>
+                <th scope="col">More</th>
                 <th scope="col">Hotel Name</th>
                 <th scope="col">Location</th>
                 <th scope="col">Transport</th>
@@ -33,6 +41,7 @@
                 @foreach ($tours as $tour)
                 @if($tour->published == 1)
                 <tr>
+                    <td> <a href="{{ route('addtour.show', $tour->id) }}" class="text-black" style="color: #000">info</a> </td>
                     <td>{{ $tour->hotel }}</td>
                     <td>{{ $tour->location }}</td>
                     <td>{{ $tour->transport }}</td>

@@ -35,7 +35,7 @@
                         @csrf 
                         @method('POST')
 
-                        <input type="destination" name="destination" id="destination"  value={{ $destination }} class="form-control" required hidden>
+                        <input type="destination" name="destination" id="destination"  value="{{ $destination }}" class="form-control" required hidden>
 
                         <div class="row">
                             <div class="col-lg-6 col-sm-12">
@@ -146,7 +146,7 @@
             </div> 
             <br>
             <div class="text-center">
-                <a href="{{ url('/') }}" class="btn btn-primar"> 
+                <a href="{{ url('/safaris') }}" class="btn btn-primar"> 
                     More Holiday Deals <i class="bi bi-arrow-right text-white"></i>
                 </a>
             </div>
@@ -182,7 +182,7 @@
                 </p>
                 <br>
                 
-                <a href="tel: 0701 700 144" class="btn btn-primar"><i class="bi bi-phone text-white"></i> <b>0701 700 144</b></a>
+                <a href="tel: 0701 700 144" class="btn btn-primar"><i class="bi bi-phone text-white"></i> <b>+254 701 700 144</b></a>
             </div>
         </div>
 

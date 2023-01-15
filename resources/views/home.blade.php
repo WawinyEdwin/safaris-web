@@ -238,6 +238,7 @@
 
     <div class="row">
         @foreach($coverBlogs as $blog)
+        @if($blog->published == 1)
         <div class="col-lg-3 col-md-3 col-sm-12">
             <div class="card">
                 <img
@@ -264,6 +265,7 @@
                 </div>
             </div>
         </div>
+        @endif
         @endforeach
     </div>
 </div>

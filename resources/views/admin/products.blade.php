@@ -1,5 +1,10 @@
 @extends('layout.admin')
-
+<style>
+    form {
+        padding: 0;
+        margin: 0;
+    }
+</style>
 @section('content')
 
 .<div class="container-fluid">
@@ -38,27 +43,27 @@
                         <img src="{{ asset('/storage/'.$product->image) }}" alt="" style="width: 100px; height: 50px;">
                     </td>
                     <td>
+                    <form action="{{ route('products.publish', $product->id) }}" method="post">
+                        @csrf 
+                            @method('PUT')
+
+                        @if($product->published == 0)
+                        <button class="btn btn-success" type="submit"><i class="bi bi-bag-check"></i></button>
+                        @else
+                        <button class="btn btn-warning" type="submit"><i class="bi bi-x-square"></i></button>
+                        @endif
+                        </form>
+                       
                         <form action="{{ route('products.delete', $product->id) }}" method="post">
-                            <a href="{{ route('products.show', $product->slug) }}" class="btn btn-info">Show</a>
-                            <a href="{{ route('products.edit', $product->id) }}" class="btn btn-primary">Edit</a>
+                            <a href="{{ route('products.show', $product->slug) }}" class="btn btn-info"><i class="bi bi-eye-fill"></i></a>
+                            <a href="{{ route('products.edit', $product->id) }}" class="btn btn-primary"><i class="bi bi-pencil-square"></i></a>
 
                             @csrf 
                             @method('DELETE')
-                            <button type="submit" class="btn btn-danger">Delete</button>
+                            <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i></button>
                         </form>
-                        @if($product->published == 0)
-                        <form action="{{ route('products.publish', $product->id) }}" method="post">
-                        <button class="btn btn-success">publish</button>
-                        @csrf 
-                            @method('PUT')
-                        </form>
-                        @else
-                        <form action="{{ route('products.publish', $product->id) }}" method="post">
-                        <button class="btn btn-warning">un-publish</button>
-                        @csrf 
-                            @method('PUT')
-                        </form>
-                        @endif
+                       
+                       
                     </td>
                 </tr>
                 @endforeach
