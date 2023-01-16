@@ -7,6 +7,7 @@ use App\Models\Tours;
 use App\Models\Video;
 use App\Models\Blog;
 use App\Models\Category;
+use App\Models\Event;
 use App\Models\Highlight;
 use App\Models\Product;
 use App\Models\Service;
@@ -51,17 +52,23 @@ class HomeController extends Controller
         $videos = Video::inRandomOrder()->limit(4)->get();
         //fetches tours
         $tours = Tours::inRandomOrder()->limit(3)->get();
-        $holidayOffers = Tours::where('category', 'Exciting Holiday Offers')->limit(4)->get();
+        $holidayOffers = Tours::inRandomOrder()->limit(4)->get();
         $localTours = Tours::where('category', 'Local Tours')->limit(4)->get();
-        $tembeaTours = Tours::where('category', 'Tembea Ujionee')->limit(4)->get();
+        $tembea = Tours::where('category', 'Tembea Ujionee')->limit(4)->get();
+
+
         //to appear in carousel
         $highlights = Highlight::all();
         //products
         $products = Product::inRandomOrder()->limit(4)->get();
         $services = Service::inRandomOrder()->limit(4)->get();
 
+        $events = Event::inRandomOrder()->limit(4)->get();
+
     
-        return view('home', compact("products", "services", "categories", "tours", "blogs", "coverBlogs", "videos", "holidayOffers", "localTours", "tembeaTours", "highlights"));
+        return view('home', compact("products", "services", "categories", "tours", "blogs", "coverBlogs", "tembea", 
+        "localTours",
+        "videos", "holidayOffers", "events", "highlights"));
     }
 
     //dynamic category switch.

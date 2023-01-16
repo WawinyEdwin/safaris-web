@@ -103,8 +103,8 @@
                             >
                             <a href="{{ route('services') }}" class="text-black">
                                 <div class="d-flex align-items-center">
-                                    <i class="bi bi-arrow-left"></i>
-                                    <span class="ml-1 text-black"> Back</span>
+                                    <i class="bi bi-arrow-left bit"></i>
+                                    <span class="ml-1 bit"> Back</span>
                                 </div>
                                 </a>
                                 <i class="bi bi-shopping-cart text-muted"></i>

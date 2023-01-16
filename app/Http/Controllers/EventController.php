@@ -3,23 +3,24 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Product;
+use App\Models\Event;
 use Illuminate\Support\Facades\Auth;
 
-class ProductController extends Controller
+class EventController extends Controller
 {
 
     public function category($category)
     {
-        $products =  Product::where('category', $category)->get();
-        return view('products.index', compact('products'));
+        $events =  Event::where('category', $category)->get();
+        return view('events.index', compact('events'));
 
     }
+
     public function all()
     {
         
-        $products = Product::latest()->paginate(20);
-        return view('admin.products', compact('products'))->with('i', (request()->input('page', 1) - 1) * 5);
+        $events = Event::latest()->paginate(20);
+        return view('admin.events', compact('events'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
     /**
      * Display a listing of the resource.
@@ -29,8 +30,8 @@ class ProductController extends Controller
     public function index()
     {
         //
-        $products = Product::latest()->paginate(20);
-        return view('products.index', compact('products'))->with('i', (request()->input('page', 1) - 1) * 5);
+        $events = Event::latest()->paginate(20);
+        return view('events.index', compact('events'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     /**
@@ -41,7 +42,7 @@ class ProductController extends Controller
     public function create()
     {
         //
-        return view("products.create");
+        return view("events.create");
     }
 
     /**
@@ -60,25 +61,29 @@ class ProductController extends Controller
             "image" => "required",
             "location" => "required",
             "price" => "required",
-            "quantity_available" => "required",
+            "when" => "required",
+            "starts" => "required",
+            "ends" => "required",
             "description" => "required"
         ]);
 
-        $product = new Product;
+        $event = new Event;
         $path = $request->image->store('images', 'public');
         $path_1 = $request->image2->store('images', 'public');
-        $product->image = $path;
-        $product->image2 = $path_1;
-        $product->name = $request->name;
-        $product->slug = str_replace(" ", "-", $request->name) ;
-        $product->category = $request->category;
-        $product->location = $request->location;
-        $product->price = $request->price;
-        $product->quantity_available = $request->quantity_available;
-        $product->description = $request->description;
-        $product->user_id = Auth::id();
-        $product->save();
-        return redirect()->route('products.all')->with('success', 'You Added a Product.');
+        $event->image = $path;
+        $event->image2 = $path_1;
+        $event->name = $request->name;
+        $event->slug = str_replace(" ", "-", $request->name) ;
+        $event->category = $request->category;
+        $event->location = $request->location;
+        $event->price = $request->price;
+        $event->when = $request->when;
+        $event->starts = $request->starts;
+        $event->ends = $request->ends;
+        $event->description = $request->description;
+        $event->user_id = Auth::id();
+        $event->save();
+        return redirect()->route('events.all')->with('success', 'You Added a Product.');
 
     }
 
@@ -91,8 +96,8 @@ class ProductController extends Controller
     public function show($slug)
     {
         //
-        $product = Product::where("slug", $slug)->first();
-        return view("products.show", compact("product"));
+        $event = Event::where("slug", $slug)->first();
+        return view("events.show", compact("event"));
     }
 
     /**
@@ -104,8 +109,8 @@ class ProductController extends Controller
     public function edit($id)
     {
         //
-        $product = Product::find($id);
-        return view("products.edit", compact("product"));
+        $product = Event::find($id);
+        return view("events.edit", compact("event"));
     }
 
     /**
@@ -118,32 +123,34 @@ class ProductController extends Controller
     public function update(Request $request, $id)
 {
 
-        $product = Product::find($id);
+        $event = Event::find($id);
         //
             //Check the presence of images first.
             if($request->hasFile('image') || $request->hasFile('image2')) 
             {
                 $path = $request->image->store('images', 'public');
                 $path2 = $request->image2->store('images', 'public');
-                $product->image = $path;
-                $product->image2 = $path2;
+                $event->image = $path;
+                $event->image2 = $path2;
                 
             } else {
-                unset($product['image']);
-                unset($product['image2']);
+                unset($event['image']);
+                unset($event['image2']);
             }
 
-        $product->name = $request->name;
-        $product->slug = $request->slug;
-        $product->category = $request->category;
-        $product->location = $request->location;
-        $product->price = $request->price;
-        $product->quantity_available = $request->quantity_available;
-        $product->description = $request->description;
+        $event->name = $request->name;
+        $event->slug = $request->slug;
+        $event->category = $request->category;
+        $event->location = $request->location;
+        $event->price = $request->price;
+        $event->when = $request->when;
+        $event->starts = $request->starts;
+        $event->ends = $request->ends;
+        $event->description = $request->description;
 
-        $product->update();
+        $event->update();
 
-        return redirect()->route("products.all")->with("success", "Product Updated");
+        return redirect()->route("events.all")->with("success", "event Updated");
     
     }
 
@@ -156,15 +163,15 @@ class ProductController extends Controller
     public function destroy($id)
     {
         //
-        $product = Product::find($id);
+        $product = Event::find($id);
         $product->delete();
-        return redirect()->route('products.all')->with('success', 'You Deleted Product.');
+        return redirect()->route('events.all')->with('success', 'You Deleted event.');
     }
 
     //Published toggle
     public function publish($id)
     {
-        $product = Product::find($id);
+        $product = Event::find($id);
         if ($product->published == 0) {
             $product->published = 1;
             $product->update();
@@ -173,6 +180,6 @@ class ProductController extends Controller
             $product->update();
         }
 
-        return redirect()->route('products.all');
+        return redirect()->route('events.all');
     }
 }

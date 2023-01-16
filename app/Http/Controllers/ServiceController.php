@@ -8,6 +8,14 @@ use App\Models\Service;
 
 class ServiceController extends Controller
 {
+    
+    public function category($category)
+    {
+        $services =  Service::where('category', $category)->get();
+        return view('services.index', compact('services'));
+
+    }
+
     public function all()
     {
         

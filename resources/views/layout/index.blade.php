@@ -70,8 +70,11 @@
 
         <link
             rel="stylesheet"
-            href="https://cdn.jsdelivr.net/npm/@splidejs/splide@2.4.21/dist/css/splide.min.css"
-        />
+            href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+            />
+
+            <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+
     </head>
     <body class="scrollTop">
         <nav
@@ -107,7 +110,7 @@
                             <a class="nav-link" href="{{ route('safaris') }}"> Accomodation </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#"> Events </a>
+                            <a class="nav-link" href="{{ route('events') }}"> Events </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('products') }}">
@@ -239,37 +242,6 @@
                         </button>
                     </form>
                 </div>
-                <div class="">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">
-                            Call&nbsp;+254742659292|+254701700144
-                        </li>
-                        <br />
-                        <li class="nav-item d-flex">
-                            Let us Connect.&nbsp;
-                            <a
-                                href="https://www.facebook.com/okulinksafaris"
-                                target="_blank"
-                                ><i class="bi bi-facebook bit"></i></a
-                            >&nbsp;&nbsp;&nbsp;
-                            <a
-                                href="https://twitter.com/okulinksafaris"
-                                target="_blank"
-                                ><i class="bi bi-twitter bit"></i></a
-                            >&nbsp;&nbsp;&nbsp;
-                            <a
-                                href="https://www.tiktok.com/@okulinksafaris?_t=8WzTDf232YP&_r=1"
-                                target="_blank"
-                                ><i class="bi bi-tiktok bit"></i></a
-                            >&nbsp;&nbsp;&nbsp;
-                            <a
-                                href="http://www.instagram.com/okulinksafaris"
-                                target="_blank"
-                                ><i class="bi bi-instagram bit"></i
-                            ></a>
-                        </li>
-                    </ul>
-                </div>
             </div>
         </div>
         @yield('content')
@@ -292,7 +264,6 @@
                                 >About Us</a
                             >
                         </p>
-                        <!-- <p><a href="{{ route('videos') }}" class="text-white">Safari Videos</a></p> -->
                         <p>
                             <a href="{{ url('/') }}" class="text-white"
                                 >In the Media</a
@@ -308,8 +279,7 @@
                                 >Careers</a
                             >
                         </p>
-                        <!-- <p><a href="{{ url('/') }}" class="text-white">Affiliations</a></p> -->
-                        <!-- <p><a href="{{ url('/') }}" class="text-white">Our Team</a></p> -->
+            
                         <p>
                             <a href="{{ route('about') }}" class="text-white"
                                 >FAQs & Help</a
@@ -354,20 +324,39 @@
                         </div>
                     </div>
                     <div class="col-lg-3 col-sm-12 blogs p-2">
-                        <h5 class="">Latest from Blog</h5>
+                        <h5 class="">Connect with us</h5>
                         <div class="white_line"></div>
                         <br />
-                        @foreach($blogs as $blog)
-                        <a href="{{ route('blogs.show',$blog->id) }}">
-                            <p>
-                                + {{
-                                \Illuminate\Support\Str::limit($blog->title, 30,
-                                $end='...') }} | {!!
-                                \Illuminate\Support\Str::limit($blog->content,
-                                100, $end='...') !!}
-                            </p>
-                        </a>
-                        @endforeach
+                        <li class="nav-item d-flex">
+                            &nbsp;
+                            <a
+                                href="https://www.facebook.com/okulinksafaris"
+                                target="_blank"
+                                ><i class="bi bi-facebook bit"></i></a
+                            >&nbsp;&nbsp;&nbsp;
+                            <a
+                                href="https://twitter.com/okulinksafaris"
+                                target="_blank"
+                                ><i class="bi bi-twitter bit"></i></a
+                            >&nbsp;&nbsp;&nbsp;
+                            <a
+                                href="https://www.tiktok.com/@okulinksafaris?_t=8WzTDf232YP&_r=1"
+                                target="_blank"
+                                ><i class="bi bi-tiktok bit"></i></a
+                            >&nbsp;&nbsp;&nbsp;
+                            <a
+                                href="http://www.instagram.com/okulinksafaris"
+                                target="_blank"
+                                ><i class="bi bi-instagram bit"></i
+                            ></a>
+                        </li>
+                        <p>
+                           <a href="tel:+254742659292" class="bit"><i class="bi bi-telephone"></i> +254742659292</a>
+</p>
+                        <p>
+                           <a href="tel:++254701700144" class="bit"><i class="bi bi-telephone"></i> +254701700144</a> 
+</p>
+                        
                     </div>
                 </div>
             </div>
@@ -389,6 +378,27 @@
                                 </span>
 
         <script>
+            const swiper = new Swiper('.swiper', {
+                // Optional parameters
+                direction: 'horizontal',
+                loop: true,
+
+                // If we need pagination
+                pagination: {
+                    el: '.swiper-pagination',
+                },
+
+                // Navigation arrows
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+
+                // And if we need scrollbar
+                scrollbar: {
+                    el: '.swiper-scrollbar',
+                },
+                });
             myButton = document.getElementById("myBtn");
             //show button on scroll
             window.onscroll = function () {

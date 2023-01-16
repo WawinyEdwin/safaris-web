@@ -12,6 +12,7 @@ use App\Http\Controllers\VideoController;
 use App\Http\Controllers\HighlightController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\EventController;
 use App\Http\Controllers\UserController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Http\Request;
@@ -145,6 +146,7 @@ Route::get("/all-products", [ProductController::class, "all"])->name("products.a
 Route::get("/products", [ProductController::class, "index"])->name("products");
 Route::get("/product/new", [ProductController::class, "create"])->name("products.create")->middleware(['auth', 'verified']);
 Route::post("/product/create", [ProductController::class, "store"])->name("products.store")->middleware(['auth', 'verified']);
+Route::get("/product/category/{category}", [ProductController::class, "category"])->name("products.category")->middleware(['auth', 'verified']);
 Route::get("/product/edit/{id}", [ProductController::class, "edit"])->name("products.edit")->middleware(['auth', 'verified']);
 Route::put("/product/update/{id}", [ProductController::class, "update"])->name("products.update")->middleware(['auth', 'verified']);
 Route::get("/product/{slug}", [ProductController::class, "show"])->name("products.show");
@@ -157,10 +159,24 @@ Route::get("/services", [ServiceController::class, "index"])->name("services");
 Route::get("/service/new", [ServiceController::class, "create"])->name("services.create")->middleware(['auth', 'verified']);
 Route::post("/service/create", [ServiceController::class, "store"])->name("services.store")->middleware(['auth', 'verified']);
 Route::get("/service/edit/{id}", [ServiceController::class, "edit"])->name("services.edit")->middleware(['auth', 'verified']);
+Route::get("/service/category/{category}", [ServiceController::class, "category"])->name("services.category")->middleware(['auth', 'verified']);
 Route::put("/service/update/{id}", [ProductController::class, "update"])->name("services.update")->middleware(['auth', 'verified']);
 Route::get("/service/{slug}", [ServiceController::class, "show"])->name("services.show");
 Route::put("/service/publish/{id}", [ServiceController::class, "publish"])->name("services.publish")->middleware(['auth', 'verified']);
-Route::delete('/service/delete/{id}',[CategoryController::class, 'destroy'])->name('services.delete')->middleware(['auth', 'verified']);
+Route::delete('/service/delete/{id}',[ServiceController::class, 'destroy'])->name('services.delete')->middleware(['auth', 'verified']);
+
+
+//events
+Route::get("/all-events", [EventController::class, "all"])->name("events.all")->middleware(['auth', 'verified']);
+Route::get("/events", [EventController::class, "index"])->name("events");
+Route::get("/event/new", [EventController::class, "create"])->name("events.create")->middleware(['auth', 'verified']);
+Route::get("/event/category/{category}", [EventController::class, "category"])->name("events.category")->middleware(['auth', 'verified']);
+Route::post("/event/create", [EventController::class, "store"])->name("events.store")->middleware(['auth', 'verified']);
+Route::get("/event/edit/{id}", [EventController::class, "edit"])->name("events.edit")->middleware(['auth', 'verified']);
+Route::put("/event/update/{id}", [EventController::class, "update"])->name("events.update")->middleware(['auth', 'verified']);
+Route::get("/event/{slug}", [EventController::class, "show"])->name("events.show");
+Route::put("/event/publish/{id}", [EventController::class, "publish"])->name("events.publish")->middleware(['auth', 'verified']);
+Route::delete('/event/delete/{id}',[EventController::class, 'destroy'])->name('events.delete')->middleware(['auth', 'verified']);
 
 
 

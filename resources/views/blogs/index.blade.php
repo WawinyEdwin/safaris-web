@@ -26,23 +26,23 @@
                   <br>
                    @auth
                     @if(Auth::user()->isAdmin == 1)
-                                <a href="{{ route('blogs.edit', $blog->id) }}" class="btn btn-info">Edit</a>
+                                <a href="{{ route('blogs.edit', $blog->id) }}" class="btn btn-info"><i class="bi bi-pencil-square"></i></a>
                                 <br>
                             <form action="{{ route('blogs.delete', $blog->id ) }}" method="post">
                                 @csrf 
                                 @method('DELETE')
-                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                    <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i></button>
                             </form>
                             <br>
                             @if($blog->published == 0)
                             <form action="{{ route('blogs.publish', $blog->id) }}" method="post">
-                                <button class="btn btn-success" type="submit">publish</button>
+                                <button class="btn btn-success" type="submit"><i class="bi bi-bag-check"></i></button>
                                 @csrf 
                                 @method('PUT')
                         </form>
                         @else
                         <form action="{{ route('blogs.publish', $blog->id) }}" method="post">
-                                <button class="btn btn-warning" type="submit">un-publish</button>
+                                <button class="btn btn-warning" type="submit"><i class="bi bi-x-square"></i></button>
                                 @csrf 
                                 @method('PUT')
                         </form>

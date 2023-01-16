@@ -75,22 +75,22 @@
                             <div class="text-center p-4">
                                 <img
                                     id="main-image"
-                                    src="{{ asset('/storage/'.$product->image) }}"
-                                    alt="{{ $product->name }}"
+                                    src="{{ asset('/storage/'.$event->image) }}"
+                                    alt="{{ $event->name }}"
                                     width="250"
                                 />
                             </div>
                             <div class="thumbnail text-center">
                                 <img
                                     onclick="change_image(this)"
-                                    src="{{ asset('/storage/'.$product->image2) }}"
-                                    alt="{{ $product->name }}"
+                                    src="{{ asset('/storage/'.$event->image2) }}"
+                                    alt="{{ $event->name }}"
                                     width="70"
                                 />
                                 <img
                                     onclick="change_image(this)"
-                                    alt="{{ $product->name }}"
-                                    src="{{ asset('/storage/'.$product->image) }}"
+                                    alt="{{ $event->name }}"
+                                    src="{{ asset('/storage/'.$event->image) }}"
                                     width="70"
                                 />
                             </div>
@@ -101,7 +101,7 @@
                             <div
                                 class="d-flex justify-content-between align-items-center"
                             >
-                            <a href="{{ route('products') }}" class="text-black">
+                            <a href="{{ route('events') }}" class="text-black">
                                 <div class="d-flex align-items-center">
                                     <i class="bi bi-arrow-left bit"></i>
                                     <span class="ml-1 bit"> Back</span>
@@ -111,22 +111,22 @@
                             </div>
                             <div class="mt-4 mb-3">
                                 <span class="text-uppercase text-muted brand"
-                                    >{{ $product->category}}</span
+                                    >{{ $event->category}}</span
                                 >
                                 <h5 class="text-uppercase">
-                                    {{ $product->name }}
+                                    {{ $event->name }}
                                 </h5>
                                 <div
                                     class="price d-flex flex-row align-items-center"
                                 >
-                                    <span class="act-price">KES {{ $product->price }}</span>
+                                    <span class="act-price">KES {{ $event->price }}</span>
                                 </div>
                             </div>
                             <p class="about">
-                               {!! $product->description !!}
+                               {!! $event->description !!}
                             </p>
                             <div class="sizes mt-5">
-                                <h6 class="text-uppercase"><i class="bi bi-geo-alt-fill"></i> {{ $product->location }}</h6>
+                                <h6 class="text-uppercase"><i class="bi bi-geo-alt-fill"></i> {{ $event->location }}</h6>
                             </div>
                             <!-- <div class="cart mt-4 align-items-center">
                                 <button
