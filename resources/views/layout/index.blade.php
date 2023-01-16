@@ -41,6 +41,12 @@
             rel="stylesheet"
             href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css"
         />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+            />
+
+            <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
         <!-- faicon   -->
         <link
             rel="apple-touch-icon"
@@ -68,12 +74,7 @@
         @endproduction
         <link rel="stylesheet" href="{{ asset('css/main.css') }}" />
 
-        <link
-            rel="stylesheet"
-            href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
-            />
-
-            <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+       
 
     </head>
     <body class="scrollTop">
@@ -382,7 +383,14 @@
                 // Optional parameters
                 direction: 'horizontal',
                 loop: true,
-
+                effect: 'coverflow',
+                coverflowEffect: {
+                    rotate: 30,
+                    slideShadows: false,
+                },
+                // grid: {
+                //     rows: 2,
+                // },
                 // If we need pagination
                 pagination: {
                     el: '.swiper-pagination',

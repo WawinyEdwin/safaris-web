@@ -26,8 +26,19 @@
     }
     .swiper {
         /* width: 600px; */
-        height: 430px;
+        height: 349px !important;
+        object-fit: cover;
     }
+    .card {
+        height: 349px !important;
+    }
+
+    .swiper-slide {
+        /* width: 600px; */
+        height: 349px !important;
+        object-fit: cover;
+    }
+
     .swiper-button-prev {
         color: #4d1b0c !important;
     }
@@ -110,15 +121,7 @@
                                 <h5 class="card-title">
                                     {{ $tour->sub_category }}
                                 </h5>
-                                <div class="d-flex space-between">
-                                    <small class="card-text"
-                                        >Single person per
-                                        room&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</small
-                                    >
-                                    <p class="price">
-                                        {{ $tour->single_room }}
-                                    </p>
-                                </div>
+                               
                                 <div class="blue"></div>
                                 <br />
                                 <div class="d-flex space-between">
@@ -160,15 +163,7 @@
                                 <h5 class="card-title">
                                     {{ $tour->sub_category }}
                                 </h5>
-                                <div class="d-flex space-between">
-                                    <small class="card-text"
-                                        >Single person per
-                                        room&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</small
-                                    >
-                                    <p class="price">
-                                        {{ $tour->single_room }}
-                                    </p>
-                                </div>
+                               
                                 <div class="blue"></div>
                                 <br />
                                 <div class="d-flex space-between">
@@ -211,15 +206,7 @@
                                 <h5 class="card-title">
                                     {{ $tour->sub_category }}
                                 </h5>
-                                <div class="d-flex space-between">
-                                    <small class="card-text"
-                                        >Single person per
-                                        room&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</small
-                                    >
-                                    <p class="price">
-                                        {{ $tour->single_room }}
-                                    </p>
-                                </div>
+                               
                                 <div class="blue"></div>
                                 <br />
                                 <div class="d-flex space-between">
@@ -251,7 +238,7 @@
         <div class="swiper-button-prev"></div>
         <div class="swiper-button-next"></div>
     </div>
-    <br />
+    <br>
     <div class="text-center">
         <a
             href="/safaris"
@@ -270,12 +257,12 @@
     <h5 class="text-center">Nearby Products.</h5>
     <div class="nav-scroller py-1 mb-2">
         <nav class="nav d-flex justify-content-between">
-            <a class="p-2 link-secondary" href="#">smartphones</a>
-            <a class="p-2 link-secondary" href="#">hair & beauty</a>
-            <a class="p-2 link-secondary" href="#">electronics</a>
-            <a class="p-2 link-secondary" href="#">home appliances</a>
-            <a class="p-2 link-secondary" href="#">baby store</a>
-            <a class="p-2 link-secondary" href="#">food & groceries</a>
+            <a class="p-2 link-secondary" href="{{ route('products.category', 'Smartphones-and-Accessories') }}">smartphones</a>
+            <a class="p-2 link-secondary" href="{{ route('products.category', 'Hair-and-beauty') }}">hair & beauty</a>
+            <a class="p-2 link-secondary" href="{{ route('products.category', 'Electronics-and-Appliances') }}">electronics</a>
+            <a class="p-2 link-secondary" href="{{ route('products.category', 'Home-Appliances-and-Accessories') }}">home appliances</a>
+            <a class="p-2 link-secondary" href="{{ route('products.category', 'Baby-store') }}">baby store</a>
+            <a class="p-2 link-secondary" href="{{ route('products.category', 'Foods-and-Groceries') }}">food & groceries</a>
         </nav>
     </div>
     <div class="swiper">
@@ -392,7 +379,6 @@
         <div class="swiper-button-prev"></div>
         <div class="swiper-button-next"></div>
     </div>
-    <br />
             <div class="text-center">
                 <a href="/products" class="btn btn-primar">
                     more products <i class="bi bi-arrow-right"></i>
@@ -416,11 +402,11 @@
         <a class="p-2 link-secondary" href="{{ route('events.category', 'Charities') }}">charities</a>
     </nav>
     </div>
-    <!-- Slider main container -->
+
 <div class="swiper">
-  <!-- Additional required wrapper -->
+
   <div class="swiper-wrapper">
-    <!-- Slides -->
+    
     <div class="swiper-slide">    <div class="row">
         @foreach($events as $event) @if($event->published == 1)
         <div class="col-lg-3 col-md-3 col-sm-12">
@@ -500,15 +486,11 @@
         @endif @endforeach
     </div>
     </div>
-   
   </div>
- 
-
-  <!-- If we need navigation buttons -->
   <div class="swiper-button-prev"></div>
   <div class="swiper-button-next"></div>
 </div>
-<br />
+
     <div class="text-center">
         <a href="/events" class="btn btn-primar">
             more events<i class="bi bi-arrow-right"></i>
@@ -537,9 +519,7 @@
         </nav>
     </div>
 <div class="swiper">
-
   <div class="swiper-wrapper">
-
     <div class="swiper-slide"> <div class="row">
         @foreach($services as $service) @if($service->published == 1)
         <div class="col-lg-3 col-md-3 col-sm-12">
@@ -639,16 +619,12 @@
     </div>
   
   </div>
- 
-  <!-- If we need navigation buttons -->
   <div class="swiper-button-prev"></div>
   <div class="swiper-button-next"></div>
     
  
  
 </div>
-
-<br />
     <div class="text-center">
         <a href="/services" class="btn btn-primar">
             more services <i class="bi bi-arrow-right"></i>
