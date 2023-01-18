@@ -159,7 +159,7 @@ Route::get("/services", [ServiceController::class, "index"])->name("services");
 Route::get("/service/new", [ServiceController::class, "create"])->name("services.create")->middleware(['auth', 'verified']);
 Route::post("/service/create", [ServiceController::class, "store"])->name("services.store")->middleware(['auth', 'verified']);
 Route::get("/service/edit/{id}", [ServiceController::class, "edit"])->name("services.edit")->middleware(['auth', 'verified']);
-Route::get("/service/category/{category}", [ServiceController::class, "category"])->name("services.category")->middleware(['auth', 'verified']);
+Route::get("/service/category/{category}", [ServiceController::class, "category"])->name("services.category");
 Route::put("/service/update/{id}", [ProductController::class, "update"])->name("services.update")->middleware(['auth', 'verified']);
 Route::get("/service/{slug}", [ServiceController::class, "show"])->name("services.show");
 Route::put("/service/publish/{id}", [ServiceController::class, "publish"])->name("services.publish")->middleware(['auth', 'verified']);
@@ -170,7 +170,7 @@ Route::delete('/service/delete/{id}',[ServiceController::class, 'destroy'])->nam
 Route::get("/all-events", [EventController::class, "all"])->name("events.all")->middleware(['auth', 'verified']);
 Route::get("/events", [EventController::class, "index"])->name("events");
 Route::get("/event/new", [EventController::class, "create"])->name("events.create")->middleware(['auth', 'verified']);
-Route::get("/event/category/{category}", [EventController::class, "category"])->name("events.category")->middleware(['auth', 'verified']);
+Route::get("/event/category/{category}", [EventController::class, "category"])->name("events.category");
 Route::post("/event/create", [EventController::class, "store"])->name("events.store")->middleware(['auth', 'verified']);
 Route::get("/event/edit/{id}", [EventController::class, "edit"])->name("events.edit")->middleware(['auth', 'verified']);
 Route::put("/event/update/{id}", [EventController::class, "update"])->name("events.update")->middleware(['auth', 'verified']);

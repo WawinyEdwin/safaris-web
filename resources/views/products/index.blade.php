@@ -40,15 +40,17 @@
                         class="card-img-top h-4"
                     />
                     <div class="card-body">
-                        <div class="text-center">
-                            <h5 class="card-title">{{ $product->name }}</h5>
-                    
-                    <br>
-                            <button class="btn btn-outline-primar">
-                                <i class="bi bi-basket"></i> KES {{ $product->price }}
-                            </button>
-                        </div>
-                    </div>
+                                <p class="card-title">{{ $product->name }}</p>
+                                <p><b>KES {{ $product->price }}/piece</b> </p>
+                                <div class="text-end">
+                                    <a
+                                        href="{{ route('products.show', $product->slug ) }}"
+                                        class="btn btn-outline-primar"
+                                    >
+                                        <i class="bi bi-basket"></i> 
+                                    </a>
+                                </div>
+                            </div>
                 </div>
             </a>
             @endif

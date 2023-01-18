@@ -33,11 +33,16 @@
                     </div>
                 <img src="{{ asset('/storage/'. $service->image) }}" alt="" class="card-img-top h-4">
                 <div class="card-body">
-                <div class="text-center">
-                    <h5 class="card-title">{{ $service->name }}</h5>
-                        <button class="btn btn-outline-primar"><i class="bi bi-basket"></i> KES {{ $service->price }}</button>
+                    <p class="card-title">{{ $service->name }}</p>
+                    <p><b>from KES {{ $service->price }}</b></p>
+                    <div class="text-end">
+                        <a
+                            href="{{ route('services.show', $service->slug ) }}"
+                            class="btn btn-outline-primar"
+                        >
+                            <i class="bi bi-basket"></i> 
+                        </a>
                     </div>
-                    
                 </div>
             </div>
             </a>

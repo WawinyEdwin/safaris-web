@@ -66,7 +66,13 @@ class HomeController extends Controller
         $events = Event::inRandomOrder()->limit(4)->get();
 
     
-        return view('home', compact("products", "services", "categories", "tours", "blogs", "coverBlogs", "tembea", 
+        return view('home', compact("products",
+         "services", 
+         "categories", 
+         "tours", 
+         "blogs", 
+         "coverBlogs", 
+         "tembea", 
         "localTours",
         "videos", "holidayOffers", "events", "highlights"));
     }

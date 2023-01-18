@@ -35,18 +35,18 @@
                         class="card-img-top h-4"
                     />
                     <div class="card-body">
-                        <div class="text-center">
-                            <h5 class="card-title">{{ $event->name }}</h5>
+                    <p class="card-title">{{ $event->name }}</p>
+                    <p><b>tickets - KES {{ $event->price }}  </b></p>
+                    <div class="text-end">
+                        <a
+                            href="{{ route('events.show', $event->slug ) }}"
+                            class="btn btn-outline-primar"
+                        >
+                            <i class="bi bi-ticket"></i> 
+                        </a>
+                    </div>
+                </div>
                     
-                    <br>
-                            <button class="btn btn-outline-primar">
-                                <i class="bi bi-ticket"></i> {{ $event->price }} KES
-                            </button>
-                            <div class="text-center">
-                    <small><i class="bi bi-geo-alt-fill"></i>  {{ $event->location }}</small>
-                    </div>
-                        </div>
-                    </div>
                 </div>
             </a>
             @endif

@@ -383,6 +383,7 @@
                 // Optional parameters
                 direction: 'horizontal',
                 loop: true,
+                autoPlay: true,
                 effect: 'coverflow',
                 coverflowEffect: {
                     rotate: 30,
