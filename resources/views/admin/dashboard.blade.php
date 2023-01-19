@@ -19,8 +19,10 @@
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
+                                            <a href="{{ route('tours') }}">
                                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                                 Safaris</div>
+                                                </a>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800">$40,000</div>
                                         </div>
                                         <div class="col-auto">
@@ -37,8 +39,10 @@
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
+                                        <a href="{{ route('accomodations.all') }}">
                                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                                 Accomodations</div>
+                                        </a>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800">$215,000</div>
                                         </div>
                                         <div class="col-auto">
@@ -56,8 +60,10 @@
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
+                                        <a href="{{ route('events.all') }}">
                                             <div class="text-xs font-weight-bold text-info text-uppercase mb-1">events
                                             </div>
+                                        </a>
                                             <div class="row no-gutters align-items-center">
                                                 <div class="col-auto">
                                                     <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">50%</div>
@@ -85,8 +91,10 @@
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
+                                        <a href="{{ route('products.all') }}">
                                             <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
                                                 products</div>
+                                        </a>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
                                         </div>
                                         <div class="col-auto">
@@ -119,8 +127,10 @@
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                                        <a href="{{ route('categories') }}">
+                                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
                                                 safari categories</div>
+                                        </a>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
                                         </div>
                                         <div class="col-auto">
@@ -136,10 +146,13 @@
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                                        <a href="{{ route('bookings') }}">
+                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                                 bookings</div>
+                                        </a>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
                                         </div>
+                                        
                                         <div class="col-auto">
                                             <i class="bi bi-book fa-2x text-gray-300"></i>
                                         </div>
@@ -153,8 +166,10 @@
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
+                                        <a href="{{ route('enquiries.index') }}">
                                             <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
                                                 enquiries</div>
+                                        </a>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
                                         </div>
                                         <div class="col-auto">
@@ -170,8 +185,10 @@
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                                        <a href="{{ route('highlights.index') }}">
+                                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
                                                 highlights</div>
+                                        </a>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
                                         </div>
                                         <div class="col-auto">
@@ -189,8 +206,10 @@
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
+                                        <a href="{{ route('videos') }}">
                                             <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
                                                 videos</div>
+                                        </a>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
                                         </div>
                                         <div class="col-auto">
@@ -207,8 +226,10 @@
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
+                                        <a href="{{ route('blogs') }}">
                                             <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
                                                 blogs</div>
+                                        </a>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
                                         </div>
                                         <div class="col-auto">
