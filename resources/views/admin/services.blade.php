@@ -3,16 +3,11 @@
 @section('content')
 
 <div class="container-fluid">
-<div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h6 class="m-0 font-weight-bold text-primary">services</h6>
-                        <a href="{{ route('services.create') }}"class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                                class="fas fa-comments  fa-sm text-white-50"></i> add service</a>
+<h2 class="pri">services</h2>
+<div class="text-right">
+                        <a href="{{ route('services.create') }}"class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"> add service</a>
                     </div>
-<div class="card shadow mb-4">
-        <div class="card-header py-3">
-       
-        </div>
-        <div class="card-body">
+<br>
         <div class="table-responsive">
         <table class="table table-bordered"  id="dataTable"
                     width="100%"
@@ -74,8 +69,7 @@
             </tbody>
         </table>
     </div>
-        </div>
-</div>
+        
 
 
     {{ $services->links() }}

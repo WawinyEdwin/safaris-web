@@ -3,12 +3,12 @@
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
                     <!-- DataTales Example -->
-                    <div class="card shadow mb-4">
-                        <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">accomodations</h6>
-                            <a href="{{ route('events.create') }}" class="btn btn-primary text-end">add event</a>
+                   
+                    <h2 class="pri">accomodations</h2>
+                            <div class="text-right">
+                            <a href="{{ route('accomodations.create') }}" class="btn btn-primary ">add accomodation</a>
                         </div>
-                        <div class="card-body">
+                    
                             <div class="table-responsive">
                                 <table
                     class="table table-bordered"
@@ -105,10 +105,8 @@
                     </tbody>
                 </table>
                             </div>
-                        </div>
-                    </div>
-
-                </div>
+                        
+</div>
                 <!-- /.container-fluid -->
 
             </div>

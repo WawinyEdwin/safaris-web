@@ -12,14 +12,10 @@
             <h2 class="pri">events</h2>
         </div>
         <div class="text-right">
-            <a href="{{ route('events.create') }}" class="btn btn-primar">add event</a>
+            <a href="{{ route('events.create') }}" class="btn btn-primary">add event</a>
         </div>
     <br>
-    <div class="card shadow mb-4">
-        <div class="card-header py-3">
-       <p>manage events </p>
-        </div>
-        <div class="card-body">
+  
         <div class="table-responsive">
         <table class="table table-bordered"  id="dataTable"
                     width="100%"
@@ -93,8 +89,7 @@
             </tbody>
         </table>
     </div>
-        </div>
-    </div>
+     
 
     {{ $events->links() }}
 </div>

@@ -1,4 +1,4 @@
-@extends('layout.admin')
+@extends('layout.dash')
 
 @section('content')
 
@@ -6,7 +6,7 @@
     <br>
 <p class="text-center pri lead">These Images Appear to your users in a slider fashion.</p>
 <div class="text-right">
-    <a href="{{ route('highlights.create' )}}" class="btn btn-primar">Add New</a>
+    <a href="{{ route('highlights.create' )}}" class="btn btn-primary">Add New</a>
 </div>
 <br>
     <div class="row">

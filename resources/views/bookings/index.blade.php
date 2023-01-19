@@ -1,4 +1,4 @@
-@extends('layout.admin')
+@extends('layout.dash')
 
 @section('content')
 
@@ -18,19 +18,33 @@
     <div class="table-responsive">
         <table class="table table-bordered ">
             <thead>
-                <th scope="col">TX-Code</th>
-                <th scope="col">Id</th>
-                <th scope="col">First Name</th>
-                <th scope="col">Last Name</th>
-                <th scope="col">Email</th>
-                <th scope="col">Phone Number</th>
-                <th scope="col">Adults</th>
-                <th scope="col">Kids</th>
-                <th scope="col">Arrival Date</th>
-                <th scope="col">special_requirements</th>
-                <th scope="col">Destination</th>
-                <th scope="col" width="280px">Action</th>
+                <th >TX-Code</th>
+                <th>Id</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Phone Number</th>
+                <th>Adults</th>
+                <th>Kids</th>
+                <th>Arrival Date</th>
+                <th>special_requirements</th>
+                <th>Destination</th>
+                <th>Action</th>
             </thead>
+            <tfoot>
+                <th >TX-Code</th>
+                <th>Id</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Phone Number</th>
+                <th>Adults</th>
+                <th>Kids</th>
+                <th>Arrival Date</th>
+                <th>special_requirements</th>
+                <th>Destination</th>
+                <th>Action</th>
+            </tfoot>
             <tbody>
                 @foreach ($bookings as $booking)
                 <tr>
@@ -52,7 +66,7 @@
                           @if ($booking->status == 1)
                           <button type="submit"  class="btn btn-warning"  ><i class="bi bi-x-octagon"></i>Pending</button>
                           @else
-                          <button type="submit"  class="btn btn-success"  title="confirm"><i class="bi bi-check"></i>Done</button>
+                          <button type="submit"  class="btn btn-success"  title="confirm"><i class="bi bi-check"></i></button>
                           @endif
                         </form>
                     </td>

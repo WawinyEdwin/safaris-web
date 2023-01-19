@@ -5,10 +5,10 @@
 
 .<div class="container-fluid">
         <div class="text-left">
-            <h2 class="pri">Tours Posted</h2>
+            <h2 class="pri">safaris</h2>
         </div>
         <div class="text-right">
-            <a href="{{ route('addtour.create') }}" class="btn btn-primar">Add Tour</a>
+            <a href="{{ route('addtour.create') }}" class="btn btn-primary">Add Tour</a>
         </div>
     <br>
 

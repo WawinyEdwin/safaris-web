@@ -1,8 +1,8 @@
-@extends('layout.admin')
+@extends('layout.dash')
 
 @section('content')
 
-<div class="">
+<div class="container-fluid">
     <br>
         <div class="text-left">
             <h2 class="pri">Enquiry</h2>
@@ -12,21 +12,37 @@
     <div class="table-responsive">
         <table class="table table-bordered">
             <thead>
-                <th scope="col">Id</th>
-                <th scope="col">Full Name</th>
-                <th scope="col">Email Address</th>
-                <th scope="col">Phone Number</th>
-                <th scope="col">Destinations</th>
-                <th scope="col">Adults</th>
-                <th scope="col">Kids</th>
-                <th scope="col">Nationality</th>
-                <th scope="col">Travel Date</th>
-                <th scope="col">Budget</th>
-                <th scope="col">Medium</th>
-                <th scope="col">Luxury</th>
-                <th scope="col">Additional Info</th>
-                <th scope="col">Action</th>
+                <th >Id</th>
+                <th >Full Name</th>
+                <th >Email Address</th>
+                <th >Phone Number</th>
+                <th >Destinations</th>
+                <th >Adults</th>
+                <th >Kids</th>
+                <th >Nationality</th>
+                <th >Travel Date</th>
+                <th >Budget</th>
+                <th >Medium</th>
+                <th >Luxury</th>
+                <th >Additional Info</th>
+                <th >Action</th>
             </thead>
+            <tfoot>
+                <th >Id</th>
+                <th >Full Name</th>
+                <th >Email Address</th>
+                <th >Phone Number</th>
+                <th >Destinations</th>
+                <th >Adults</th>
+                <th >Kids</th>
+                <th >Nationality</th>
+                <th >Travel Date</th>
+                <th >Budget</th>
+                <th >Medium</th>
+                <th >Luxury</th>
+                <th >Additional Info</th>
+                <th >Action</th>
+            </tfoot>
             <tbody>
                 @foreach ($enquiries as $enquiry)
                 <tr>
