@@ -1,7 +1,7 @@
 @extends('layout.index')
 <style>
     .h-4 {
-        height: 200px;
+        height: 100px !important;
         object-fit: cover;
     }
     .nav-scroller {
@@ -35,20 +35,24 @@
         margin: 1px;
         text-decoration: none;
     }
-    .swiper {
+    /* .swiper { */
         /* width: 600px; */
-        height: 249px !important;
+        /* height: 349px !important;
         object-fit: cover;
-    }
+    } */
     .card {
-        height: 249px !important;
+        height: 349px !important;
     }
 
-    .swiper-slide {
+    /* .swiper-slide { */
         /* width: 600px; */
-        height: 249px !important;
+        /* height: 349px !important;
         object-fit: cover;
-    }
+    } */
+    .swiper {
+  /* width: 600px; */
+  height: 450px !important;
+}
 
     .swiper-button-prev {
         color: #4d1b0c !important;
@@ -136,7 +140,7 @@
             @endforeach
         </nav>
     </div>
-    <div class="swiper">
+    <div class="swiper"  style="height: 349px !important;" >
         <div class="swiper-wrapper">
             <div class="swiper-slide">
                 <div class="row">
@@ -145,7 +149,7 @@
                     <div class="col-lg-3 col-md-3 col-sm-12">
                         <div class="card">
                             <img
-                                src="{{ asset('/storage/'.$tour->image) }}"
+                                src="https://www.okulinksafaris.com/storage/images/SnVUsXYLumGeDcylQTA9MCsPE5jILKgGParLxw5k.webp"
                                 alt="{{ $tour->hotel }}"
                                 class="card-img-top h-4"
                             />
@@ -158,14 +162,14 @@
                                 <p class="card-title">{{ $tour->category }}</p>
                                 <div class="blue"></div>
                                 <div class="d-flex space-between pt-1">
-                                    <p class="card-text">
+                                    <small class="card-text">
                                         Offers From&nbsp;
 
                                         <b
                                             >KES {{ $tour->per_person_sharing
                                             }}</b
                                         >
-                                    </p>
+                                    </small>
                                 </div>
                                 <br />
                                 <div class="text-end">
@@ -206,14 +210,14 @@
                                 <div class="blue"></div>
 
                                 <div class="d-flex space-between pt-1">
-                                    <p class="card-text">
+                                    <small class="card-text">
                                         Offers From&nbsp;
 
                                         <b
                                             >KES {{ $tour->per_person_sharing
                                             }}</b
                                         >
-                                    </p>
+                                    </small>
                                 </div>
                                 <br />
                                 <div class="text-end">
@@ -253,14 +257,14 @@
                                 <div class="blue"></div>
 
                                 <div class="d-flex space-between pt-1">
-                                    <p class="card-text">
+                                    <small class="card-text">
                                         Offers From&nbsp;
 
                                         <b
                                             >KES {{ $tour->per_person_sharing
                                             }}</b
                                         >
-                                    </p>
+                                    </small>
                                 </div>
                                 <br />
                                 <div class="text-end">
@@ -345,7 +349,7 @@
             >
         </nav>
     </div>
-    <div class="swiper">
+    <div class="swiper" style="height: 349px !important;">
         <div class="swiper-wrapper">
             <div class="swiper-slide">
                 <div class="row">
@@ -369,11 +373,11 @@
                                 </p>
                                 <div class="blue"></div>
                                 <div class="d-flex space-between pt-1">
-                                    <p class="card-text">
+                                    <small class="card-text">
                                         Rates &nbsp;
 
                                         <b>KES {{ $accomodation->rates }}</b>
-                                    </p>
+                                    </small>
                                 </div>
                                 <br />
                                 <div class="text-end">
@@ -408,18 +412,18 @@
                                         >{{ $accomodation->location }}</i
                                     ></small
                                 >
-                                <p class="card-title">
+                                <h5 class="card-title">
                                     {{ $accomodation->category }}
-                                </p>
+                                </h5>
 
                                 <div class="blue"></div>
 
                                 <div class="d-flex space-between pt-1">
-                                    <p class="card-text">
+                                    <small class="card-text">
                                         Rates &nbsp;
 
                                         <b>KES {{ $accomodation->rates }}</b>
-                                    </p>
+                                    </small>
                                 </div>
                                 <br />
                                 <div class="text-end">
@@ -455,18 +459,18 @@
                                         >{{ $accomodation->location }}</i
                                     ></small
                                 >
-                                <p class="card-title">
+                                <h5 class="card-title">
                                     {{ $accomodation->category }}
-                                </p>
+                                </h5>
 
                                 <div class="blue"></div>
 
                                 <div class="d-flex space-between pt-1">
-                                    <p class="card-text">
+                                    <small class="card-text">
                                         Rates &nbsp;
 
                                         <b>KES {{ $accomodation->rates }}</b>
-                                    </p>
+                                    </small>
                                 </div>
                                 <br />
                                 <div class="text-end">
@@ -537,7 +541,7 @@
             >
         </nav>
     </div>
-    <div class="swiper">
+    <div class="swiper" style="height: 349px !important;">
         <div class="swiper-wrapper">
             <div class="swiper-slide">
                 <div class="row">
@@ -558,8 +562,7 @@
                                     ></small
                                 >
                                 <p class="card-title">{{ $product->name }}</p>
-                                
-                                <p><b>KES {{ $product->price }}/piece</b></p>
+                                <small><b>KES {{ $product->price }}/piece</b></small>
                                 <div class="text-end">
                                     <a
                                         href="{{ route('products.show', $product->slug ) }}"
@@ -593,7 +596,7 @@
                                     ></small
                                 >
                                 <p class="card-title">{{ $product->name }}</p>
-                                <p><b>KES {{ $product->price }}/piece</b></p>
+                                <small><b>KES {{ $product->price }}/piece</b></small>
                                 <div class="text-end">
                                     <a
                                         href="{{ route('products.show', $product->slug ) }}"
@@ -627,7 +630,7 @@
                                     ></small
                                 >
                                 <p class="card-title">{{ $product->name }}</p>
-                                <p><b>KES {{ $product->price }}/piece</b></p>
+                                <small><b>KES {{ $product->price }}/piece</b></small>
                                 <div class="text-end">
                                     <a
                                         href="{{ route('products.show', $product->slug ) }}"
@@ -695,7 +698,7 @@
         </nav>
     </div>
 
-    <div class="swiper">
+    <div class="swiper" style="height: 349px !important;" >
         <div class="swiper-wrapper">
             <div class="swiper-slide">
                 <div class="row">
@@ -714,7 +717,7 @@
                                     ></small
                                 >
                                 <p class="card-title">{{ $event->name }}</p>
-                                <p><b>tickets - KES {{ $event->price }} </b></p>
+                                <small><b>tickets - KES {{ $event->price }} </b></small>
                                 <div class="text-end">
                                     <a
                                         href="{{ route('events.show', $event->slug ) }}"
@@ -746,7 +749,7 @@
                                     ></small
                                 >
                                 <p class="card-title">{{ $event->name }}</p>
-                                <p><b>tickets - KES {{ $event->price }} </b></p>
+                                <small><b>tickets - KES {{ $event->price }} </b></small>
                                 <div class="text-end">
                                     <a
                                         href="{{ route('events.show', $event->slug ) }}"
@@ -778,7 +781,7 @@
                                     ></small
                                 >
                                 <p class="card-title">{{ $event->name }}</p>
-                                <p><b>tickets - KES {{ $event->price }} </b></p>
+                                <small><b>tickets - KES {{ $event->price }} </b></small>
                                 <div class="text-end">
                                     <a
                                         href="{{ route('events.show', $event->slug ) }}"
@@ -865,7 +868,7 @@
             >
         </nav>
     </div>
-    <div class="swiper">
+    <div class="swiper" style="height: 349px !important;">
         <div class="swiper-wrapper">
             <div class="swiper-slide">
                 <div class="row">
@@ -885,7 +888,7 @@
                                     ></small
                                 >
                                 <p class="card-title">{{ $service->name }}</p>
-                                <p><b>from KES {{ $service->price }}</b></p>
+                                <small><b>from KES {{ $service->price }}</b></small>
                                 <div class="text-end">
                                     <a
                                         href="{{ route('services.show', $service->slug ) }}"
@@ -918,7 +921,7 @@
                                     ></small
                                 >
                                 <p class="card-title">{{ $service->name }}</p>
-                                <p><b>from KES {{ $service->price }}</b></p>
+                                <small><b>from KES {{ $service->price }}</b></small>
                                 <div class="text-end">
                                     <a
                                         href="{{ route('services.show', $service->slug ) }}"
@@ -951,7 +954,7 @@
                                     ></small
                                 >
                                 <p class="card-title">{{ $service->name }}</p>
-                                <p><b>from KES {{ $service->price }}</b></p>
+                                <small><b>from KES {{ $service->price }}</b></small>
                                 <div class="text-end">
                                     <a
                                         href="{{ route('services.show', $service->slug ) }}"
@@ -1021,40 +1024,40 @@
     </div>
 </div>
 
-<hr />
+<!--<hr />-->
 
-<div class="container">
-    <h5 class="text-center">Watch our videos about past adventures</h5>
-    <br />
-    <div class="row">
-        @foreach($videos as $video)
-        <div class="col-lg-3 col-sm-12 col-md-3">
-            <div class="card">
-                <div class="card-body">
-                    <div class="embed-responsive embed-responsive-16by9">
-                        <iframe
-                            class="embed-responsive-item"
-                            src="https://www.youtube.com/embed/{{$video->url}}"
-                            allowfullscreen
-                        ></iframe>
-                    </div>
-                    <br />
-                    <div class="blue"></div>
-                    <br />
-                    <div class="card-title text-center">
-                        <p>{{ $video->name }}</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        @endforeach
-    </div>
-    <br />
-    <div class="text-end">
-        <a href="#" class="p-2 link-secondary">
-            Watch More <i class="bi bi-arrow-right"></i>
-        </a>
-    </div>
-</div>
+<!--<div class="container">-->
+<!--    <h5 class="text-center">Watch our videos about past adventures</h5>-->
+<!--    <br />-->
+<!--    <div class="row">-->
+<!--        @foreach($videos as $video)-->
+<!--        <div class="col-lg-3 col-sm-12 col-md-3">-->
+<!--            <div class="card">-->
+<!--                <div class="card-body">-->
+<!--                    <div class="embed-responsive embed-responsive-16by9">-->
+<!--                        <iframe-->
+<!--                            class="embed-responsive-item"-->
+<!--                            src="https://www.youtube.com/embed/{{$video->url}}"-->
+<!--                            allowfullscreen-->
+<!--                        ></iframe>-->
+<!--                    </div>-->
+<!--                    <br />-->
+<!--                    <div class="blue"></div>-->
+<!--                    <br />-->
+<!--                    <div class="card-title text-center">-->
+<!--                        <p>{{ $video->name }}</p>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        @endforeach-->
+<!--    </div>-->
+<!--    <br />-->
+<!--    <div class="text-end">-->
+<!--        <a href="#" class="p-2 link-secondary">-->
+<!--            Watch More <i class="bi bi-arrow-right"></i>-->
+<!--        </a>-->
+<!--    </div>-->
+<!--</div>-->
 <br />
 @endsection
