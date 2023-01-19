@@ -28,11 +28,9 @@
         <div class="col-lg-3 col-sm-12 col-md-4">
         <a href="{{ route('services.show', $service->slug) }}" class="p_link">
             <div class="card">
-            <div class="text-center">
-                    <small><i class="bi bi-geo-alt-fill"></i>  {{ $service->location }}</small>
-                    </div>
                 <img src="{{ asset('/storage/'. $service->image) }}" alt="" class="card-img-top h-4">
                 <div class="card-body">
+                <small class="text-muted"><i class="bi bi-geo-alt">{{ $service->location }}</i></small>
                     <p class="card-title">{{ $service->name }}</p>
                     <p><b>from KES {{ $service->price }}</b></p>
                     <div class="text-end">
@@ -40,7 +38,7 @@
                             href="{{ route('services.show', $service->slug ) }}"
                             class="btn btn-outline-primar"
                         >
-                            <i class="bi bi-basket"></i> 
+                            <i class="bi bi-cart-plus"></i> 
                         </a>
                     </div>
                 </div>

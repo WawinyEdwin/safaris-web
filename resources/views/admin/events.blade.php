@@ -1,4 +1,4 @@
-@extends('layout.admin')
+@extends('layout.dash')
 <style>
     form {
         padding: 0;
@@ -15,22 +15,41 @@
             <a href="{{ route('events.create') }}" class="btn btn-primar">add event</a>
         </div>
     <br>
-
-<div class="table-responsive">
-        <table class="table table-bordered">
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+       <p>manage events </p>
+        </div>
+        <div class="card-body">
+        <div class="table-responsive">
+        <table class="table table-bordered"  id="dataTable"
+                    width="100%"
+                    cellspacing="0">
             <thead>
-                <th scope="col">Id</th>
-                <th scope="col">name</th>
-                <th scope="col">category</th>
-                <th scope="col">location</th>
-                <th scope="col">price</th>
-                <th scope="col">when</th>
-                <th scope="col">starts</th>
-                <th scope="col">ends</th>
-                <th scope="col">description</th>
-                <th scope="col">Image</th>
-                <th scope="col" width="280px">Action</th>
+                <th >Id</th>
+                <th >name</th>
+                <th >category</th>
+                <th >location</th>
+                <th >price</th>
+                <th >when</th>
+                <th >starts</th>
+                <th >ends</th>
+                <th >description</th>
+                <th >Image</th>
+                <th>Action</th>
             </thead>
+            <tfoot>
+                <th >Id</th>
+                <th >name</th>
+                <th >category</th>
+                <th >location</th>
+                <th >price</th>
+                <th >when</th>
+                <th >starts</th>
+                <th >ends</th>
+                <th >description</th>
+                <th >Image</th>
+                <th>Action</th>
+            </tfoot>
             <tbody>
                 @foreach ($events as $event)
                 <tr>
@@ -42,7 +61,7 @@
                     <td>{{ $event->when }}</td>
                     <td>{{ $event->starts }}</td>
                     <td>{{ $event->ends }}</td>
-                    <td>{{ $event->description }}</td>
+                    <td>{!! $event->description !!}</td>
                     <td>
                         <img src="{{ asset('/storage/'.$event->image) }}" alt="" style="width: 100px; height: 50px;">
                     </td>
@@ -74,6 +93,9 @@
             </tbody>
         </table>
     </div>
+        </div>
+    </div>
+
     {{ $events->links() }}
 </div>
     <hr>

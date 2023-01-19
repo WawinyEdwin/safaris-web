@@ -79,9 +79,9 @@
     </head>
     <body class="scrollTop">
         <nav
-            class="navbar navbar-expand-lg bg-primar text-white fixed-top mb-2"
+            class="navbar navbar-expand-lg bg-primar text-white fixed-top mb-1"
         >
-            <div class="container">
+            <div class="container-fluid">
                 <a href="{{ url('/')}}" class="navbar-brand text-white">
                     <img
                         src="{{ asset('okulink-1.png') }}"
@@ -101,14 +101,15 @@
                     <i class="bi bi-list text-white"></i>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav mr-auto">
+                
+                    <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('safaris') }}">
                                 Safaris
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('safaris') }}"> Accomodation </a>
+                            <a class="nav-link" href="{{ route('accomodations') }}"> Accomodation </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('events') }}"> Events </a>
@@ -129,7 +130,21 @@
                             </a>
                         </li>
                     </ul>
+                   
                     <ul class="navbar-nav ms-auto">
+                    <form class="d-flex" action="{{ route('search') }}"
+                        method="GET"
+                        role="search">
+                        <input class="form-control me-2" type="search"
+                                placeholder="type hotel/location"
+                                name="term"
+                                id="term"
+                                aria-label="Search">
+                        <button class="btn btn-outline-primar" type="submit"><i class="bi bi-search"></i></button>
+                    </form>
+                    <li class="nav-item">
+                    </li>
+                   
                         @guest
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('login') }}">
@@ -150,6 +165,7 @@
 
                         @else
                         <ul class="navbar-nav dropdown ms-auto">
+
                             <li class="nav-item dropdown">
                                 <a
                                     class="nav-link dropdown-toggle"
@@ -201,50 +217,14 @@
                         </ul>
                         @endif @endauth
                     </ul>
+                    
                 </div>
             </div>
         </nav>
         <br />
         <br />
         <br />
-        <div class="bg-white navbar  pt-2">
-            <div class="container">
-                <a href="{{ url('/')}}" class="navbar-brand d-none d-lg-flex">
-                    <img
-                        src="{{ asset('okulink-1.png') }}"
-                        alt="Okulink"
-                        width="130"
-                        height="90"
-                        class="d-inline-block-align-top"
-                    />
-                </a>
-                <div class="navbar-nav text-center">
-                    <form
-                        class="d-flex"
-                        action="{{ route('search') }}"
-                        method="GET"
-                        role="search"
-                    >
-                        <div class="form-group mx-sm-3 mb-2 px-3">
-                            <input
-                                class="form-control mx-sm-2"
-                                type="search"
-                                placeholder="type hotel/location"
-                                name="term"
-                                id="term"
-                                aria-label="Search"
-                            />
-                        </div>
-                        <button
-                            class="btn btn-outline-primar mb-2"
-                            type="submit"
-                        >
-                            <i class="bi bi-search"></i>
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
+       
         @yield('content')
         <div class="footer bg-primar text-white pt-5">
             <div class="container">
@@ -263,16 +243,6 @@
                         <p>
                             <a href="{{ route('about') }}" class="text-white"
                                 >About Us</a
-                            >
-                        </p>
-                        <p>
-                            <a href="{{ url('/') }}" class="text-white"
-                                >In the Media</a
-                            >
-                        </p>
-                        <p>
-                            <a href="{{ url('/') }}" class="text-white"
-                                >Travel Info</a
                             >
                         </p>
                         <p>

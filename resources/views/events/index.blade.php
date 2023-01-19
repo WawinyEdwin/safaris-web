@@ -35,6 +35,7 @@
                         class="card-img-top h-4"
                     />
                     <div class="card-body">
+                    <small class="text-muted"><i class="bi bi-geo-alt">{{ $event->location }}</i></small>
                     <p class="card-title">{{ $event->name }}</p>
                     <p><b>tickets - KES {{ $event->price }}  </b></p>
                     <div class="text-end">
@@ -42,7 +43,7 @@
                             href="{{ route('events.show', $event->slug ) }}"
                             class="btn btn-outline-primar"
                         >
-                            <i class="bi bi-ticket"></i> 
+                        <i class="bi bi-calendar-event"></i>
                         </a>
                     </div>
                 </div>

@@ -14,6 +14,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\AccomodationController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Http\Request;
 /*
@@ -47,7 +48,7 @@ Route::get('/blog', [HomeController::class, 'blog'])->name('blog');
 //Admin dashboard Authentication middleware
 
 Route::get('/admin', [ToursController::class, 'admin'])->name('admin')->middleware('auth');
-
+Route::get('/dashboard', [HomeController::class, 'admin'])->name('dashboard')->middleware('auth');
 //Enquiry Routes
 Route::resource('enquiries', EnquiryController::class);
 
@@ -179,5 +180,15 @@ Route::put("/event/publish/{id}", [EventController::class, "publish"])->name("ev
 Route::delete('/event/delete/{id}',[EventController::class, 'destroy'])->name('events.delete')->middleware(['auth', 'verified']);
 
 
-
+// accomodations
+Route::get("/all-accomodations", [AccomodationController::class, "all"])->name("accomodations.all")->middleware(['auth', 'verified']);
+Route::get("/accomodations", [AccomodationController::class, "index"])->name("accomodations");
+Route::get("/accomodation/new", [AccomodationController::class, "create"])->name("accomodations.create")->middleware(['auth', 'verified']);
+Route::get("/accomodation/category/{category}", [AccomodationController::class, "category"])->name("accomodations.category");
+Route::post("/accomodation/create", [AccomodationController::class, "store"])->name("accomodations.store")->middleware(['auth', 'verified']);
+Route::get("/accomodation/edit/{id}", [AccomodationController::class, "edit"])->name("accomodations.edit")->middleware(['auth', 'verified']);
+Route::put("/accomodation/update/{id}", [AccomodationController::class, "update"])->name("accomodations.update")->middleware(['auth', 'verified']);
+Route::get("/accomodation/{slug}", [AccomodationController::class, "show"])->name("accomodations.show");
+Route::put("/accomodation/publish/{id}", [AccomodationController::class, "publish"])->name("accomodations.publish")->middleware(['auth', 'verified']);
+Route::delete('/accomodation/delete/{id}',[AccomodationController::class, 'destroy'])->name('accomodations.delete')->middleware(['auth', 'verified']);
 

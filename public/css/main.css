@@ -1,3 +1,23 @@
+
+
+.product-scroller {
+   position: relative;
+   z-index: 1;
+   /* height: 2.75rem; */
+   overflow-y: hidden;
+}
+
+.product-scroller .nav {
+   display: flex;
+   flex-wrap: nowrap;
+   padding-bottom: 1rem;
+   margin-top: -1px;
+   overflow-x: auto;
+   text-align: center;
+   white-space: nowrap;
+   -webkit-overflow-scrolling: touch;
+}
+
 body {
     font-family: 'Spinnaker', sans-serif; 
     background-color: #fffefe;
@@ -82,11 +102,6 @@ color: #4d1b0c;
 .pri {
 color: #4d1b0c;
 }
-
-/* .active {
-background-color:#e3a532;
-color: #ffffff;
-} */
 
 /* custom dropdown  */
 

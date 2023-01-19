@@ -1,28 +1,42 @@
-@extends('layout.admin')
+@extends('layout.dash')
 
 @section('content')
 
-.<div class="container-fluid">
-        <div class="text-left">
-            <h2 class="pri">services</h2>
+<div class="container-fluid">
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h6 class="m-0 font-weight-bold text-primary">services</h6>
+                        <a href="{{ route('services.create') }}"class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                                class="fas fa-comments  fa-sm text-white-50"></i> add service</a>
+                    </div>
+<div class="card shadow mb-4">
+        <div class="card-header py-3">
+       
         </div>
-        <div class="text-right">
-            <a href="{{ route('services.create') }}" class="btn btn-primar">Add service</a>
-        </div>
-    <br>
-
-<div class="table-responsive">
-        <table class="table table-bordered">
+        <div class="card-body">
+        <div class="table-responsive">
+        <table class="table table-bordered"  id="dataTable"
+                    width="100%"
+                    cellspacing="0">
             <thead>
-                <th scope="col">Id</th>
-                <th scope="col">name</th>
-                <th scope="col">category</th>
-                <th scope="col">location</th>
-                <th scope="col">price</th>
-                <th scope="col">description</th>
-                <th scope="col">Image</th>
-                <th scope="col" width="280px">Action</th>
+                <th >Id</th>
+                <th >name</th>
+                <th >category</th>
+                <th >location</th>
+                <th >price</th>
+                <th >description</th>
+                <th >Image</th>
+                <th >Action</th>
             </thead>
+            <tfoot>
+                <th >Id</th>
+                <th >name</th>
+                <th >category</th>
+                <th >location</th>
+                <th >price</th>
+                <th >description</th>
+                <th >Image</th>
+                <th >Action</th>
+            </tfoot>
             <tbody>
                 @foreach ($services as $service)
                 <tr>
@@ -60,6 +74,10 @@
             </tbody>
         </table>
     </div>
+        </div>
+</div>
+
+
     {{ $services->links() }}
 </div>
     <hr>

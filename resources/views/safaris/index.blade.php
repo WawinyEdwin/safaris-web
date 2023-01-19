@@ -17,17 +17,19 @@
                 <img src="{{ asset('/storage/'. $safari->image) }}" alt="{{ $safari->hotel }}" class="card-img-top h-4">
                 <div class="card-body">
                     <p class="card-text pri">{{ $safari->hotel }}</p>
-                    <small><i class="bi bi-geo-alt-fill"></i>  {{ $safari->location }}</small>
+                    <small class="text-muted"><i class="bi bi-geo-alt">{{ $safari->location }}</i></small>
                     <hr />
                     <p class="card-text">
-                        From {{ $safari->single_room}} per person
+                        From <b>{{ $safari->single_room}}</b> per person
                     </p>
-                    <div class="text-center">
-                        <a
-                            href="{{ route('addtour.show', $safari->id) }}"
-                            class="btn btn-primar"
-                            >explore...</a
-                        >
+                    <div class="text-end">
+                    <a
+                                        href="{{ route('bookings.create', $safari->hotel ) }}"
+                                        class="p-2 link-secondary"
+                                    >
+                                        book now
+                                        <i class="bi bi-arrow-right"></i>
+                                    </a>
                     </div>
                 </div>
             </div>

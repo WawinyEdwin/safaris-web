@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Accomodation;
 use Illuminate\Http\Request;
 use App\Models\Tours;
 use App\Models\Video;
@@ -62,6 +63,8 @@ class HomeController extends Controller
         //products
         $products = Product::inRandomOrder()->limit(4)->get();
         $services = Service::inRandomOrder()->limit(4)->get();
+        $accomodations = Accomodation::inRandomOrder()->limit(4)->get();
+
 
         $events = Event::inRandomOrder()->limit(4)->get();
 
@@ -69,6 +72,7 @@ class HomeController extends Controller
         return view('home', compact("products",
          "services", 
          "categories", 
+         "accomodations",
          "tours", 
          "blogs", 
          "coverBlogs", 
@@ -164,7 +168,7 @@ class HomeController extends Controller
     //admin homepage
     public function admin()
     {
-        return view('admin.home');
+        return view('admin.dashboard');
     }
 
     //contact us page

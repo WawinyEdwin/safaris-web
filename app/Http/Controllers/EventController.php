@@ -163,21 +163,21 @@ class EventController extends Controller
     public function destroy($id)
     {
         //
-        $product = Event::find($id);
-        $product->delete();
+        $event = Event::find($id);
+        $event->delete();
         return redirect()->route('events.all')->with('success', 'You Deleted event.');
     }
 
     //Published toggle
     public function publish($id)
     {
-        $product = Event::find($id);
-        if ($product->published == 0) {
-            $product->published = 1;
-            $product->update();
+        $event = Event::find($id);
+        if ($event->published == 0) {
+            $event->published = 1;
+            $event->update();
         } else {
-            $product->published = 0;
-            $product->update();
+            $event->published = 0;
+            $event->update();
         }
 
         return redirect()->route('events.all');

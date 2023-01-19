@@ -1,4 +1,4 @@
-@extends('layout.admin')
+@extends('layout.dash')
 
 
 @section('content')
@@ -13,21 +13,37 @@
     <br>
 
 <div class="table-responsive">
-        <table class="table table-bordered">
+        <table class="table table-bordered"   id="dataTable"
+                    width="100%"
+                    cellspacing="0">
             <thead>
-                <th scope="col">Id</th>
-                <th scope="col">Category</th>
-                <th scope="col">Sub-Category</th>
-                <th scope="col">Hotel</th>
-                <th scope="col">Location</th>
-                <th scope="col">Transport</th>
-                <th scope="col">PerPerson Sharing</th>
-                <th scope="col">Single Room</th>
+                <th >Id</th>
+                <th >Category</th>
+                <th >Sub-Category</th>
+                <th >Hotel</th>
+                <th >Location</th>
+                <th >Transport</th>
+                <th >PerPerson Sharing</th>
+                <th >Single Room</th>
                 
-                <th scope="col">Meals</th>
-                <th scope="col">Image</th>
-                <th scope="col" width="280px">Action</th>
+                <th >Meals</th>
+                <th >Image</th>
+                <th >Action</th>
             </thead>
+            <tfoot>
+                <th >Id</th>
+                <th >Category</th>
+                <th >Sub-Category</th>
+                <th >Hotel</th>
+                <th >Location</th>
+                <th >Transport</th>
+                <th >PerPerson Sharing</th>
+                <th >Single Room</th>
+                
+                <th >Meals</th>
+                <th >Image</th>
+                <th >Action</th>
+            </tfoot>
             <tbody>
                 @foreach ($tours as $tour)
                 <tr>
