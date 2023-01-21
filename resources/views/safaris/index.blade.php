@@ -4,7 +4,13 @@
         height: 200px;
         object-fit: cover;
     }
-    
+    .link-secondary {
+        color: #ffffff !important;
+        background-color: #e3a532;
+        font-size: x-small;
+        margin: 1px;
+        text-decoration: none;
+    }
 </style>
 @section('content')
 

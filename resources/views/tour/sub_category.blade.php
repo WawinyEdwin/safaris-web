@@ -1,70 +1,58 @@
 @extends('layout.index')
 <style>
-    .a {
-        color: #000 !important;
+    .h-4 {
+        height: 200px;
+        object-fit: cover;
     }
-    .a:hover {
-        color: #000 !important;
+   
+    .link-secondary {
+        color: #ffffff !important;
+        background-color: #e3a532;
+        font-size: x-small;
+        margin: 1px;
+        text-decoration: none;
     }
 </style>
 @section('content')
-
     <div class=" bg-primar navbar expand-lg ">
         <div class="container">
         <h2 class="lead text-white"> <a href="{{ url('/') }}" class="text-white" >Home </a>> {{ $sub_category  }} </h2>
         </div>
     </div>
     <br>
-
-<div class="container">
-    <div class="text-center">
-        <a href="{{ route('bookings.create', $sub_category) }}" class="btn btn-primar"> 
-            Book Now
-        </a>
-    </div>
-
-<br>
-    
-      <h5 class="text-center ">Exciting Holiday Offers</h5>
-<div class="table-responsive">
-        <table class="table table-bordered">
-            <thead>
-                <th scope="col">More</th>
-                <th scope="col">Hotel Name</th>
-                <th scope="col">Location</th>
-                <th scope="col">Transport</th>
-                <th scope="col">PerPerson Sharing</th>
-                <th scope="col">Single Room</th>
-                <th scope="col">Meals</th>
-            </thead>
-            <tbody>
-                @foreach ($tours as $tour)
-                @if($tour->published == 1)
-                <tr>
-                    <td> <a href="{{ route('addtour.show', $tour->id) }}" class="text-black" style="color: #000">info</a> </td>
-                    <td>{{ $tour->hotel }}</td>
-                    <td>{{ $tour->location }}</td>
-                    <td>{{ $tour->transport }}</td>
-                    <td>{{ $tour->per_person_sharing }}</td>
-                    <td>{{ $tour->single_room }}</td>
-                    <td>{{ $tour->meals }}</td>
-                </tr>
-                @endif
-                @endforeach
-            </tbody>
-        </table>
-    </div>
-    <br>
-    <div class="">
-        <h5 class="pri text-center">More Information</h5>
-        <div>{!! $info->additional_info !!}</div>
-    </div>
-    <div class="text-center">
-        <a href="{{ route('bookings.create', $sub_category) }}" class="btn btn-primar"> 
-            Book Now
-        </a>
+    <div class="container pt-3">
+    <div class="row">
+        @forelse($tours as $safari)
+        @if($safari->published == 1)
+        <div class="col-lg-4 col-sm-12">
+            <div class="card">
+                <img src="{{ asset('/storage/'. $safari->image) }}" alt="{{ $safari->hotel }}" class="card-img-top h-4">
+                <div class="card-body">
+                    <p class="card-text pri">{{ $safari->hotel }}</p>
+                    <small class="text-muted"><i class="bi bi-geo-alt">{{ $safari->location }}</i></small>
+                    <hr />
+                    <p class="card-text">
+                        From <b>{{ $safari->single_room}}</b> per person
+                    </p>
+                    <div class="text-end">
+                    <a
+                                        href="{{ route('bookings.create', $safari->hotel ) }}"
+                                        class="p-2 link-secondary"
+                                    >
+                                        book now
+                                        <i class="bi bi-arrow-right"></i>
+                                    </a>
+                    </div>
+                </div>
+            </div>
+            <br>
+        </div>
+        @endif
+        @empty 
+        <div>
+            <h1 class="text-center">No safaris to Explore</h1>
+        </div>
+        @endforelse
     </div>
 </div>
-
-<br>
 @endsection

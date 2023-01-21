@@ -1,5 +1,18 @@
 @extends('layout.new')
-
+<style>
+    .h-4 {
+        height: 200px;
+        object-fit: cover;
+    }
+   
+    .link-secondary {
+        color: #ffffff !important;
+        background-color: #e3a532;
+        font-size: x-small;
+        margin: 1px;
+        text-decoration: none;
+    }
+</style>
 @section('content')
 
     <div class="bg-primar p-3">
@@ -8,73 +21,40 @@
         </div>
     </div> 
 <br>
-<div class="container">
+<div class="container pt-3">
     <div class="row">
-        <div class="col">
-            <div class="">
-                <h5 class="text-center pt-2 pri">We found these amazing places!</h5>
-                <div class="table-responsive">
-                    @if(count($tours) > 1)
-                    <table class="table table-bordered">
-                        <thead>
-                            <th scope="col">Hotel</th>
-                            <th scope="col">Location</th>
-                            <th scope="col">Transport</th>
-                            <th scope="col">Per Person Sharing</th>
-                            <th scope="col">Single Room</th>
-                            <th scope="col">Meals on Board</th>
-                            <th scope="col">ACTION</th>
-                        </thead>
-                        <tbody>
-                       
-                            @foreach($tours as $tour)
-                            <tr>
-                                <td>{{ $tour->hotel }}</td>
-                                <td>{{ $tour->location }}</td>
-                                <td>{{ $tour->transport }}</td>
-                                <td>{{ $tour->per_person_sharing }}</td>
-                                <td>{{ $tour->single_room }}</td>
-                                <td>{{ $tour->meals}}</td>
-                                <td>
-                                    <a href="{{ route('bookings.create', $tour->sub_category) }}" class="btn btn-primar"> 
-                                        Book Now
+        @forelse($tours as $safari)
+        @if($safari->published == 1)
+        <div class="col-lg-4 col-sm-12">
+            <div class="card">
+                <img src="{{ asset('/storage/'. $safari->image) }}" alt="{{ $safari->hotel }}" class="card-img-top h-4">
+                <div class="card-body">
+                    <p class="card-text pri">{{ $safari->hotel }}</p>
+                    <small class="text-muted"><i class="bi bi-geo-alt">{{ $safari->location }}</i></small>
+                    <hr />
+                    <p class="card-text">
+                        From <b>{{ $safari->single_room}}</b> per person
+                    </p>
+                    <div class="text-end">
+                    <a
+                                        href="{{ route('bookings.create', $safari->hotel ) }}"
+                                        class="p-2 link-secondary"
+                                    >
+                                        book now
+                                        <i class="bi bi-arrow-right"></i>
                                     </a>
-                                </td>
-                            </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
-                            @else
-                                <h5 class="text-danger text-center" >Oops! No Deals were found, Try a different Search term</h5>
-
-                            @endif
-                </div>
-                <br>
-                <h5 class="pri text-center">More Information</h5>
-                <div class="row">
-                    <div class="col-lg-6 col-sm-12">
-                        <h5>Inclusions</h5>
-                        <ul>
-                            <li>1/2 nights Accomodation</li>
-                            <li>Meals as indicated</li>
-                            <li>Use of Hotel Facilities</li>
-                            <li>Entertainment at the Hotel</li>
-                        </ul>
-                    </div>
-                    <div class="col-lg-6 col-sm-12">
-                        <h5>Exclusions</h5>
-                        <ul>
-                            <li>Personal Expenses</li>
-                            <li>Park/Conservancy Fees</li>
-                            <li>Any other fees not included</li>
-                        </ul>
                     </div>
                 </div>
-            <div>
             </div>
-            </div>
+            <br>
         </div>
-</div>
+        @endif
+        @empty 
+        <div>
+            <h1 class="text-center">No safaris to Explore</h1>
+        </div>
+        @endforelse
+    </div>
 </div>
 <br>
 @endsection
