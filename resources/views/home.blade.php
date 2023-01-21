@@ -147,6 +147,7 @@
                     @foreach($holidayOffers as $tour ) @if($tour->published ==
                     1)
                     <div class="col-lg-3 col-md-3 col-sm-12">
+                         <a href="{{ route('addtour.show', $tour->id ) }}" class="p_link">
                         <div class="card">
                             <img
                                 src="https://www.okulinksafaris.com/storage/images/SnVUsXYLumGeDcylQTA9MCsPE5jILKgGParLxw5k.webp"
@@ -183,6 +184,7 @@
                                 </div>
                             </div>
                         </div>
+                        </a>
                     </div>
                     @endif @endforeach
                 </div>
@@ -191,6 +193,7 @@
                 <div class="row">
                     @foreach($tembea as $tour ) @if($tour->published == 1)
                     <div class="col-lg-3 col-md-3 col-sm-12">
+                    <a href="{{ route('addtour.show', $tour->id ) }}" class="p_link">
                         <div class="card">
                             <img
                                 src="{{ asset('/storage/'.$tour->image) }}"
@@ -231,6 +234,7 @@
                                 </div>
                             </div>
                         </div>
+                    </a>
                     </div>
                     @endif @endforeach
                 </div>
@@ -240,6 +244,7 @@
                 <div class="row">
                     @foreach($localTours as $tour ) @if($tour->published == 1)
                     <div class="col-lg-3 col-md-3 col-sm-12">
+                    <a href="{{ route('addtour.show', $tour->id ) }}" class="p_link">
                         <div class="card">
                             <img
                                 src="{{ asset('/storage/'.$tour->image) }}"
@@ -278,6 +283,7 @@
                                 </div>
                             </div>
                         </div>
+                    </a>
                     </div>
                     @endif @endforeach
                 </div>
@@ -356,6 +362,7 @@
                     @foreach($accomodations as $accomodation )
                     @if($accomodation->published == 1)
                     <div class="col-lg-3 col-md-3 col-sm-12">
+                    <a href="{{ route('accomodations.show', $accomodation->slug ) }}" class="p_link">
                         <div class="card">
                             <img
                                 src="{{ asset('/storage/'.$accomodation->image) }}"
@@ -391,6 +398,7 @@
                                 </div>
                             </div>
                         </div>
+                    </a>
                     </div>
                     @endif @endforeach
                 </div>
@@ -400,6 +408,7 @@
                     @foreach($accomodations as $accomodation )
                     @if($accomodation->published == 1)
                     <div class="col-lg-3 col-md-3 col-sm-12">
+                    <a href="{{ route('accomodations.show', $accomodation->slug ) }}" class="p_link">
                         <div class="card">
                             <img
                                 src="{{ asset('/storage/'.$accomodation->image) }}"
@@ -437,6 +446,7 @@
                                 </div>
                             </div>
                         </div>
+                    </a>
                     </div>
                     @endif @endforeach
                 </div>
@@ -447,6 +457,7 @@
                     @foreach($accomodations as $accomodation )
                     @if($accomodation->published == 1)
                     <div class="col-lg-3 col-md-3 col-sm-12">
+                    <a href="{{ route('accomodations.show', $accomodation->slug ) }}" class="p_link">
                         <div class="card">
                             <img
                                 src="{{ asset('/storage/'.$accomodation->image) }}"
@@ -484,6 +495,7 @@
                                 </div>
                             </div>
                         </div>
+                    </a>
                     </div>
                     @endif @endforeach
                 </div>
@@ -547,8 +559,8 @@
                 <div class="row">
                     @foreach($products as $product) @if($product->published ==
                     1)
-
                     <div class="col-lg-3 col-md-3 col-sm-12">
+                    <a href="{{ route('products.show', $product->slug) }}" class="p_link">
                         <div class="card">
                             <img
                                 src="{{ asset('/storage/'.$product->image ) }}"
@@ -573,6 +585,7 @@
                                 </div>
                             </div>
                         </div>
+                    </a>
                     </div>
                     @endif @endforeach
                 </div>
@@ -583,6 +596,7 @@
                     1)
 
                     <div class="col-lg-3 col-md-3 col-sm-12">
+                    <a href="{{ route('products.show', $product->slug) }}" class="p_link">
                         <div class="card">
                             <img
                                 src="{{ asset('/storage/'.$product->image ) }}"
@@ -607,6 +621,7 @@
                                 </div>
                             </div>
                         </div>
+                    </a>
                     </div>
                     @endif @endforeach
                 </div>
@@ -617,6 +632,7 @@
                     1)
 
                     <div class="col-lg-3 col-md-3 col-sm-12">
+                    <a href="{{ route('products.show', $product->slug) }}" class="p_link">
                         <div class="card">
                             <img
                                 src="{{ asset('/storage/'.$product->image ) }}"
@@ -641,6 +657,7 @@
                                 </div>
                             </div>
                         </div>
+                    </a>
                     </div>
                     @endif @endforeach
                 </div>
@@ -704,6 +721,7 @@
                 <div class="row">
                     @foreach($events as $event) @if($event->published == 1)
                     <div class="col-lg-3 col-md-3 col-sm-12">
+                    <a href="{{ route('events.show', $event->slug) }}" class="p_link">
                         <div class="card">
                             <img
                                 src="{{ asset('/storage/'.$event->image ) }}"
@@ -728,6 +746,7 @@
                                 </div>
                             </div>
                         </div>
+                    </a>
                     </div>
                     @endif @endforeach
                 </div>
@@ -736,6 +755,7 @@
                 <div class="row">
                     @foreach($events as $event) @if($event->published == 1)
                     <div class="col-lg-3 col-md-3 col-sm-12">
+                    <a href="{{ route('events.show', $event->slug) }}" class="p_link">
                         <div class="card">
                             <img
                                 src="{{ asset('/storage/'.$event->image ) }}"
@@ -760,6 +780,7 @@
                                 </div>
                             </div>
                         </div>
+                    </a>
                     </div>
                     @endif @endforeach
                 </div>
@@ -768,6 +789,7 @@
                 <div class="row">
                     @foreach($events as $event) @if($event->published == 1)
                     <div class="col-lg-3 col-md-3 col-sm-12">
+                    <a href="{{ route('events.show', $event->slug) }}" class="p_link">
                         <div class="card">
                             <img
                                 src="{{ asset('/storage/'.$event->image ) }}"
@@ -792,6 +814,7 @@
                                 </div>
                             </div>
                         </div>
+                    </a>
                     </div>
                     @endif @endforeach
                 </div>
@@ -875,6 +898,7 @@
                     @foreach($services as $service) @if($service->published ==
                     1)
                     <div class="col-lg-3 col-md-3 col-sm-12">
+                    <a href="{{ route('services.show', $service->slug) }}" class="p_link">
                         <div class="card">
                             <img
                                 src="{{ asset('/storage/'.$service->image ) }}"
@@ -899,6 +923,7 @@
                                 </div>
                             </div>
                         </div>
+                    </a>
                     </div>
                     @endif @endforeach
                 </div>
@@ -908,6 +933,7 @@
                     @foreach($services as $service) @if($service->published ==
                     1)
                     <div class="col-lg-3 col-md-3 col-sm-12">
+                    <a href="{{ route('services.show', $service->slug) }}" class="p_link">
                         <div class="card">
                             <img
                                 src="{{ asset('/storage/'.$service->image ) }}"
@@ -932,6 +958,7 @@
                                 </div>
                             </div>
                         </div>
+                                        </a>
                     </div>
                     @endif @endforeach
                 </div>
@@ -941,6 +968,7 @@
                     @foreach($services as $service) @if($service->published ==
                     1)
                     <div class="col-lg-3 col-md-3 col-sm-12">
+                    <a href="{{ route('services.show', $service->slug) }}" class="p_link">
                         <div class="card">
                             <img
                                 src="{{ asset('/storage/'.$service->image ) }}"
@@ -965,6 +993,7 @@
                                 </div>
                             </div>
                         </div>
+                    </a>
                     </div>
                     @endif @endforeach
                 </div>

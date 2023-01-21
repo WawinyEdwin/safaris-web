@@ -1,4 +1,11 @@
-
+.p_link {
+   text-decoration: none !important;
+   color: #4d1b0c;
+}
+.p_link:hover {
+   text-decoration: none !important;
+   color: #4d1b0c;
+}
 
 .product-scroller {
    position: relative;

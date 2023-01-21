@@ -4,14 +4,7 @@
         height: 200px;
         object-fit: cover;
     }
-    .p_link {
-        text-decoration: none !important;
-        color: #4d1b0c;
-    }
-    .p_link:hover {
-        text-decoration: none !important;
-        color: #4d1b0c;
-    }
+  
 </style>
 @section('content')
 
