@@ -132,16 +132,6 @@
                     </ul>
                    
                     <ul class="navbar-nav ms-auto">
-                    <form class="d-flex" action="{{ route('search') }}"
-                        method="GET"
-                        role="search">
-                        <input class="form-control me-2" type="search"
-                                placeholder="type hotel/location"
-                                name="term"
-                                id="term"
-                                aria-label="Search">
-                        <button class="btn btn-outline-primar" type="submit"><i class="bi bi-search"></i></button>
-                    </form>
                     <li class="nav-item">
                     </li>
                    
@@ -158,7 +148,7 @@
                         </li>
                         @endguest @auth @if(Auth::user()->isAdmin == 1)
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('admin') }}">
+                            <a class="nav-link" href="{{ route('dashboard') }}">
                                 <i class="bi bi-speedometer2"></i> Dashboard
                             </a>
                         </li>
@@ -224,7 +214,23 @@
         <br />
         <br />
         <br />
+        <div class="container p-3 text-center">
+            <div class="row">
+                <div class="col-md-4 offset-md-4">
+                <form class="d-flex" action="{{ route('search') }}"
+                        method="GET"
+                        role="search">
+                        <input class="form-control me-2" type="search"
+                                placeholder="type hotel/location"
+                                name="term"
+                                id="term"
+                                aria-label="Search">
+                        <button class="btn btn-outline-primar" type="submit"><i class="bi bi-search"></i></button>
+                    </form>
+                </div>
+            </div>
        
+        </div>
         @yield('content')
         <div class="footer bg-primar text-white pt-5">
             <div class="container">

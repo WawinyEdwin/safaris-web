@@ -7,7 +7,9 @@ use Illuminate\Http\Request;
 use App\Models\Tours;
 use App\Models\Video;
 use App\Models\Blog;
+use App\Models\Booking;
 use App\Models\Category;
+use App\Models\Enquiry;
 use App\Models\Event;
 use App\Models\Highlight;
 use App\Models\Product;
@@ -168,7 +170,20 @@ class HomeController extends Controller
     //admin homepage
     public function admin()
     {
-        return view('admin.dashboard');
+        $safaris = Tours::all()->count();
+        $accomodations = Accomodation::all()->count();
+        $videos = Video::all()->count();
+        $blogs = Blog::all()->count();
+        $categories = Category::all()->count();
+        $products = Product::all()->count();
+        $events = Event::all()->count();
+        $services = Service::all()->count();
+        $bookings = Booking::all()->count();
+        $highlights = Highlight::all()->count();
+        $enquiries = Enquiry::all()->count();
+
+
+        return view('admin.dashboard', compact("safaris", "enquiries", "bookings", "categories", "accomodations", "videos", "blogs", "events", "products", "services", "highlights"));
     }
 
     //contact us page

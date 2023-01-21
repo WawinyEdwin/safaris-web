@@ -23,7 +23,7 @@
                                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                                 Safaris</div>
                                                 </a>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">$40,000</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $safaris }}</div>
                                         </div>
                                         <div class="col-auto">
                                         <a href="{{ route('addtour.create') }}" ><i class="bi bi-geo-alt fa-2x text-gray-300"></i></a>  
@@ -43,7 +43,7 @@
                                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                                 Accomodations</div>
                                         </a>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">$215,000</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $accomodations }}</div>
                                         </div>
                                         <div class="col-auto">
                                         <a href="{{ route('accomodations.create') }}"> <i class="fas fa-bed fa-2x text-gray-300"></i></a>
@@ -66,7 +66,7 @@
                                         </a>
                                             <div class="row no-gutters align-items-center">
                                                 <div class="col-auto">
-                                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">50%</div>
+                                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">{{ $events }}</div>
                                                 </div>
                                                 <div class="col">
                                                     <div class="progress progress-sm mr-2">
@@ -95,7 +95,7 @@
                                             <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
                                                 products</div>
                                         </a>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $products }}</div>
                                         </div>
                                         <div class="col-auto">
                                         <a href="{{ route('products.create') }}"><i class="bi bi-bag fa-2x text-gray-300"></i></a>
@@ -112,7 +112,7 @@
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
                                                 services</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $services }}</div>
                                         </div>
                                         <div class="col-auto">
                                         <a href="{{ route('services.create') }}"><i class="fas fa-fw fa-wrench fa-2x text-gray-300"></i></a>
@@ -131,7 +131,7 @@
                                             <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
                                                 safari categories</div>
                                         </a>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $categories }}</div>
                                         </div>
                                         <div class="col-auto">
                                         <a href="{{ route('category.create') }}"><i class="fas fa-comments fa-2x text-gray-300"></i></a>
@@ -150,7 +150,7 @@
                                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                                 bookings</div>
                                         </a>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $bookings }}</div>
                                         </div>
                                         
                                         <div class="col-auto">
@@ -170,7 +170,7 @@
                                             <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
                                                 enquiries</div>
                                         </a>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $enquiries }}</div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="bi bi-card-checklist fa-2x text-gray-300"></i>
@@ -189,7 +189,7 @@
                                             <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
                                                 highlights</div>
                                         </a>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $highlights }}</div>
                                         </div>
                                         <div class="col-auto">
                                         <a href="{{ route('highlights.create') }}"><i class="bi bi-check-square fa-2x text-gray-300"></i></a>
@@ -210,7 +210,7 @@
                                             <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
                                                 videos</div>
                                         </a>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $videos }}</div>
                                         </div>
                                         <div class="col-auto">
                                         <a href="{{ route('videos.create') }}"><i class="fas fa-fw fa-video fa-2x text-gray-300"></i></a>
@@ -230,7 +230,7 @@
                                             <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
                                                 blogs</div>
                                         </a>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $blogs }}</div>
                                         </div>
                                         <div class="col-auto">
                                         <a href="{{ route('blogs.create') }}"><i class="fas fa-comments fa-2x text-gray-300"></i></a>

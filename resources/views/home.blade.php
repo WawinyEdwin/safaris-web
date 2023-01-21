@@ -1,7 +1,7 @@
 @extends('layout.index')
 <style>
     .h-4 {
-        height: 100px !important;
+        height: 170px !important;
         object-fit: cover;
     }
     .nav-scroller {
