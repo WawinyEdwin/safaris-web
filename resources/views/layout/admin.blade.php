@@ -37,7 +37,7 @@
 <body>
     <nav class="navbar navbar-expand-lg bg-primar text-white">
         <div class="container">
-        <a href="{{ route('admin') }}" class="navbar-brand text-white">Dashboard</a>
+        <a href="{{ route('dashboard') }}" class="navbar-brand text-white">Dashboard</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupported" aria-controls="navbarSupported" aria-expanded="false" aria-label="Toggle Navigation">
             <i class="bi bi-list text-white"></i>
         </button>
