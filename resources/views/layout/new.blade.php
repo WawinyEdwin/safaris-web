@@ -38,7 +38,7 @@
       
     </head>
     <body class="scrollTop">
-        <nav class="navbar navbar-expand-lg bg-primar text-white fixed-top mb-2">
+        <nav class="navbar navbar-expand-lg bg-primar text-white fixed-top ">
             <div class="container">
                 <a href="{{ url('/')}}" class="navbar-brand text-white">
                     <img src="{{ asset('okulink-1.png') }}" alt="Okulink" width="50" height="50" class="d-inline-block-align-top img-rounded">&nbsp;Okulink Safaris</a>
@@ -130,28 +130,11 @@
             </div>
         </nav>
      
-        <br>
-        <br>
-        <br>
-        <div class="container p-3 text-center">
-            <div class="row">
-                <div class="col-md-4 offset-md-4">
-                <form class="d-flex" action="{{ route('search') }}"
-                        method="GET"
-                        role="search">
-                        <input class="form-control me-2" type="search"
-                                placeholder="search .."
-                                name="term"
-                                id="term"
-                                aria-label="Search">
-                        <button class="btn btn-outline-primar" type="submit"><i class="bi bi-search"></i></button>
-                    </form>
-                </div>
-            </div>
-       
+        <div class="pt-5">
+
+        @yield('content')
         </div>
         
-        @yield('content')
     <div class="footer bg-primar text-white pt-5">
         <div class="container ">
             <div class="row">

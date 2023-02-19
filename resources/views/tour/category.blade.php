@@ -33,10 +33,13 @@
                     <p class="card-text">
                         From <b>{{ $safari->single_room}}</b> per person
                     </p>
-                    <div class="text-end">
+                    <div class="d-flex justify-content-between">
+                      <a class="btn btn-success" href="{{ route('addtour.show', $safari->id) }}"><i class="bi bi-eye-fill xl"></i
+                                    > explore</a>  
+                    
                     <a
                                         href="{{ route('bookings.create', $safari->hotel ) }}"
-                                        class="p-2 link-secondary"
+                                        class="btn btn-primar"
                                     >
                                         book now
                                         <i class="bi bi-arrow-right"></i>

@@ -26,9 +26,14 @@
             <div class="card pb-3">
                 <div class="card-body">
                 <div class="text-center">
-                    <a href="{{ route('bookings.create', $tours->category ) }}" class="btn btn-primar"> 
+                    <p class="lead"> 
                         Book Now
-                    </a>
+</p>
+                </div>
+                <div class="d-flex justify-content-between pb-2">
+                    <a href="tel:+254701700144" class="btn btn-success"><i class="bi bi-phone"></i> Call</a> 
+                    <a  href="{{ route('bookings.create', $tours->category ) }}" class="btn btn-primar" ><i class="bi bi-card-text"></i> Form</a>
+                    <a href="mailto:okulinksafaris@gmail.com?subject=Booking - {{$tours->hotel}}&body=Hello Okulink, I would like to reserve a spot at {{ $tours->hotel }}.Kindly contact back with the details." class="btn btn-danger"><i class="bi bi-envelope-check"></i>Email</a>
                 </div>
                     <h5 class="card-title">Hotel {{ $tours->hotel }}</h5>
                     <ul>
@@ -49,10 +54,10 @@
                         <p>{!! $tours->additional_info !!}</p>
                     </div>
                 </div>
-                <div class="text-center">
-                    <a href="{{ route('bookings.create', $tours->category ) }}" class="btn btn-primar"> 
-                        Book Now
-                    </a>
+                <div class="d-flex justify-content-between pb-2">
+                    <a href="tel:+254701700144" class="btn btn-success"><i class="bi bi-phone"></i> Call</a> 
+                    <a  href="{{ route('bookings.create', $tours->category ) }}" class="btn btn-primar" ><i class="bi bi-card-text"></i> Form</a>
+                    <a href="mailto:okulinksafaris@gmail.com?subject=Booking - {{$tours->hotel}}&body=Hello Okulink, I would like to reserve a spot at {{ $tours->hotel }}.Kindly contact back with the details." class="btn btn-danger"><i class="bi bi-envelope-check"></i>Email</a>
                 </div>
             </div>
         </div>

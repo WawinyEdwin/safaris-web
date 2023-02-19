@@ -218,7 +218,7 @@
                         method="GET"
                         role="search">
                         <input class="form-control me-2" type="search"
-                                placeholder="search ..."
+                                placeholder="search hotel..."
                                 name="term"
                                 id="term"
                                 aria-label="Search">

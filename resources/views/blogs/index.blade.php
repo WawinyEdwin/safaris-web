@@ -24,33 +24,6 @@
                     <p class="card-text">{!! \Illuminate\Support\Str::limit($blog->content, 100, $end='...') !!}</p>
                     <a href="{{ route('blogs.show', $blog->id) }}"class="btn btn-primar" >Read More</a>
                   <br>
-                   @auth
-                    @if(Auth::user()->isAdmin == 1)
-                                <a href="{{ route('blogs.edit', $blog->id) }}" class="btn btn-info"><i class="bi bi-pencil-square"></i></a>
-                                <br>
-                            <form action="{{ route('blogs.delete', $blog->id ) }}" method="post">
-                                @csrf 
-                                @method('DELETE')
-                                    <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i></button>
-                            </form>
-                            <br>
-                            @if($blog->published == 0)
-                            <form action="{{ route('blogs.publish', $blog->id) }}" method="post">
-                                <button class="btn btn-success" type="submit"><i class="bi bi-bag-check"></i></button>
-                                @csrf 
-                                @method('PUT')
-                        </form>
-                        @else
-                        <form action="{{ route('blogs.publish', $blog->id) }}" method="post">
-                                <button class="btn btn-warning" type="submit"><i class="bi bi-x-square"></i></button>
-                                @csrf 
-                                @method('PUT')
-                        </form>
-                        @endif
-                         
-                        
-                    @endif
-                    @endauth
                 </div>
             </div>
             <br>
