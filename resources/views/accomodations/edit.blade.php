@@ -13,7 +13,7 @@
                         method="post"
                         enctype="multipart/form-data"
                     >
-                        @csrf @method('POST')
+                        @csrf @method('PUT')
 
                         <div class="form-group">
                             <div class="row">
@@ -39,7 +39,7 @@
                                         value="{{ old('category', $accomodation->category ) }}"
                                         class="form-control @error('category') is-invalid @enderror"
                                     >
-                                        <option value="">--Select--</option>
+                                        <option value="{{ $accomodation->category  }}">--Select--</option>
                                         <option value="guest-houses">
                                             guest houses
                                         </option>
@@ -123,7 +123,7 @@
                                 value="{{ old('description', $accomodation->description) }}"
                                 class="form-control @error('description') is-invalid @enderror"
                                 required
-                            ></textarea>
+                            >{{ $accomodation->description }}</textarea>
                             @error('description')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -140,7 +140,7 @@
                                         type="file"
                                         name="image"
                                         class="form-control-file @error('image') is-invalid @enderror"
-                                       
+                                       value="{{ $accomodation->image }}"
                                     />
                                     @error('image')
                                     <span class="invalid-feedback" role="alert">

@@ -67,16 +67,23 @@ class AccomodationController extends Controller
         $accomodation = new Accomodation;
         $path = $request->image->store('images', 'public');
         $path_1 = $request->image2->store('images', 'public');
-        $path_2 = $request->image3->store('images', 'public');
-        $path_3= $request->image4->store('images', 'public');
-        $path_4 = $request->image5->store('images', 'public');
-        $path_5 = $request->image6->store('images', 'public');
+        
+        if($request->image3 || $request->image4 || $request->image5 || $request->image6 )
+        {
+            $path_2 = $request->image3->store('images', 'public');
+            $path_3= $request->image4->store('images', 'public');
+            $path_4 = $request->image5->store('images', 'public');
+            $path_5 = $request->image6->store('images', 'public');
+            $accomodation->image4 = $path_3;
+            $accomodation->image5 = $path_4;
+            $accomodation->image6 = $path_5;
+            $accomodation->image3 = $path_2;
+        }
+       
         $accomodation->image = $path;
         $accomodation->image2 = $path_1;
-        $accomodation->image3 = $path_2;
-        $accomodation->image4 = $path_3;
-        $accomodation->image5 = $path_4;
-        $accomodation->image6 = $path_5;
+   
+    
         $accomodation->name = $request->name;
         $accomodation->slug = str_replace(" ", "-", $request->name) ;
         $accomodation->category = $request->category;
