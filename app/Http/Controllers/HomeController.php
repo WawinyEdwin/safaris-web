@@ -75,10 +75,12 @@ class HomeController extends Controller
         $acc_latest = Accomodation::where('category', 'botique-hotels')->orderBy('id','desc')->limit(4)->get();
         $acc_old = Accomodation::where('category', 'apartments')->orderBy('id','asc')->limit(4)->get();
         //events
-        $date = Carbon::today();
-        $events = Event::orderBy('id','desc')->limit(4)->whereDate("when", "=>", $date );
+          $date = Carbon::today();
+         $events = Event::orderBy('id','desc')->limit(4)->whereDate("when", "=>", $date );
         $events_latest = Event::where('category', 'Massage-and-Parlour')->orderBy('id','desc')->limit(4)->whereDate("when", "=>", $date );
         $events_old = Event::where('category', 'Electronics-and-Appliances')->orderBy('id','desc')->limit(4)->whereDate("when", "=>", $date );
+
+    
 
     
         return view('home', compact("products",

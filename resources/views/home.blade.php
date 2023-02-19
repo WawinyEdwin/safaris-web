@@ -40,9 +40,7 @@
         /* height: 349px !important;
         object-fit: cover;
     } */
-    .card {
-        height: 349px !important;
-    }
+   
 
     /* .swiper-slide { */
         /* width: 600px; */
@@ -51,7 +49,7 @@
     } */
     .swiper {
   /* width: 600px; */
-  height: 450px !important;
+  height: 349px !important;
 }
 
     .swiper-button-prev {
@@ -140,7 +138,7 @@
             @endforeach
         </nav>
     </div>
-    <div class="swiper"  style="height: 349px !important;" >
+    <div class="swiper" >
         <div class="swiper-wrapper">
             <div class="swiper-slide">
                 <div class="row">
@@ -152,7 +150,7 @@
                             <img
                                 src="{{ asset('/storage/'.$tour->image) }}"
                                 alt="{{ $tour->hotel }}"
-                                class="card-img-top h-4"
+                                class="card-img-top h-4 p-1"
                             />
                             <div class="card-body text-center pt-3">
                                 <small class="text-muted"
@@ -162,7 +160,7 @@
                                 >
                                 <p class="card-title">{{ $tour->hotel }}</p>
                                 <div class="blue"></div>
-                                <div class="d-flex space-between pt-1">
+                                <div class="d-flex pt-1 text-center">
                                     <small class="card-text">
                                         Offers From&nbsp;
 
@@ -200,7 +198,7 @@
                             <img
                                 src="{{ asset('/storage/'.$tour->image) }}"
                                 alt="{{ $tour->hotel }}"
-                                class="card-img-top h-4"
+                                class="card-img-top h-4 p-1"
                             />
                             <div class="card-body text-center pt-3">
                                 <small class="text-muted"
@@ -253,7 +251,7 @@
                             <img
                                 src="{{ asset('/storage/'.$tour->image) }}"
                                 alt="{{ $tour->hotel }}"
-                                class="card-img-top h-4"
+                                class="card-img-top h-4 p-1"
                             />
                             <div class="card-body text-center pt-3">
                                 <small class="text-muted"
@@ -361,7 +359,7 @@
             >
         </nav>
     </div>
-    <div class="swiper" style="height: 349px !important;">
+    <div class="swiper">
         <div class="swiper-wrapper">
             <div class="swiper-slide">
                 <div class="row">
@@ -372,7 +370,7 @@
                             <img
                                 src="{{ asset('/storage/'.$accomodation->image) }}"
                                 alt="{{ $accomodation->name }}"
-                                class="card-img-top h-4"
+                                class="card-img-top h-4 p-1"
                             />
                             <div class="card-body text-center pt-3">
                                 <small class="text-muted"
@@ -421,7 +419,7 @@
                             <img
                                 src="{{ asset('/storage/'.$accomodation->image) }}"
                                 alt="{{ $accomodation->name }}"
-                                class="card-img-top h-4"
+                                class="card-img-top h-4 p-1"
                             />
                             <div class="card-body text-center pt-3">
                                 <small class="text-muted"
@@ -469,7 +467,7 @@
                             <img
                                 src="{{ asset('/storage/'.$accomodation->image) }}"
                                 alt="{{ $accomodation->name }}"
-                                class="card-img-top h-4"
+                                class="card-img-top h-4 p-1"
                             />
                             <div class="card-body text-center pt-3">
                                 <small class="text-muted"
@@ -588,7 +586,7 @@
             >
         </nav>
     </div>
-    <div class="swiper" style="height: 349px !important;">
+    <div class="swiper" >
         <div class="swiper-wrapper">
             <div class="swiper-slide">
                 <div class="row">
@@ -596,11 +594,11 @@
                     1)
                     <div class="col-lg-3 col-md-3 col-sm-12">
                     <a href="{{ route('products.show', $product->slug) }}" class="p_link">
-                        <div class="card">
+                        <div class="card" style=" height: 349px !important;" >
                             <img
                                 src="{{ asset('/storage/'.$product->image ) }}"
                                 alt="{{ $product->name }}"
-                                class="card-img-top h-4"
+                                class="card-img-top h-4 p-1"
                             />
                             <br />
                             <div class="card-body text-center pt-3">
@@ -632,11 +630,11 @@
 
                     <div class="col-lg-3 col-md-3 col-sm-12">
                     <a href="{{ route('products.show', $product->slug) }}" class="p_link">
-                        <div class="card">
+                        <div class="card" style=" height: 349px !important;" >
                             <img
                                 src="{{ asset('/storage/'.$product->image ) }}"
                                 alt="{{ $product->name }}"
-                                class="card-img-top h-4"
+                                class="card-img-top h-4 p-1"
                             />
                             <div class="card-body text-center pt-3">
                                 <small class="text-muted"
@@ -668,11 +666,11 @@
 
                     <div class="col-lg-3 col-md-3 col-sm-12">
                     <a href="{{ route('products.show', $product->slug) }}" class="p_link">
-                        <div class="card">
+                        <div class="card" style=" height: 349px !important;" >
                             <img
                                 src="{{ asset('/storage/'.$product->image ) }}"
                                 alt="{{ $product->name }}"
-                                class="card-img-top h-4"
+                                class="card-img-top h-4 p-1"
                             />
                             <div class="card-body text-center pt-3">
                                 <small class="text-muted"
@@ -779,7 +777,7 @@
         </nav>
     </div>
 
-    <div class="swiper" style="height: 349px !important;" >
+    <div class="swiper"  >
         <div class="swiper-wrapper">
             <div class="swiper-slide">
                 <div class="row">
@@ -790,7 +788,7 @@
                             <img
                                 src="{{ asset('/storage/'.$event->image ) }}"
                                 alt="{{ $event->name }}"
-                                class="card-img-top h-4"
+                                class="card-img-top h-4 p-1"
                             />
                             <div class="card-body text-center pt-3">
                                 <small class="text-muted"
@@ -823,7 +821,7 @@
                             <img
                                 src="{{ asset('/storage/'.$event->image ) }}"
                                 alt="{{ $event->name }}"
-                                class="card-img-top h-4"
+                                class="card-img-top h-4 p-1"
                             />
                             <div class="card-body text-center pt-3">
                                 <small class="text-muted"
@@ -857,7 +855,7 @@
                             <img
                                 src="{{ asset('/storage/'.$event->image ) }}"
                                 alt="{{ $event->name }}"
-                                class="card-img-top h-4"
+                                class="card-img-top h-4 p-1"
                             />
                             <div class="card-body text-center pt-3">
                                 <small class="text-muted"
@@ -963,7 +961,7 @@
             >
         </nav>
     </div>
-    <div class="swiper" style="height: 349px !important;">
+    <div class="swiper">
         <div class="swiper-wrapper">
             <div class="swiper-slide">
                 <div class="row">
@@ -975,7 +973,7 @@
                             <img
                                 src="{{ asset('/storage/'.$service->image ) }}"
                                 alt="{{ $service->name }}"
-                                class="card-img-top h-4"
+                                class="card-img-top h-4 p-1"
                             />
                             <div class="card-body text-center pt-3">
                                 <small class="text-muted"
@@ -1009,7 +1007,7 @@
                             <img
                                 src="{{ asset('/storage/'.$service->image ) }}"
                                 alt="{{ $service->name }}"
-                                class="card-img-top h-4"
+                                class="card-img-top h-4 p-1"
                             />
                             <div class="card-body text-center pt-3">
                                 <small class="text-muted"
@@ -1043,7 +1041,7 @@
                             <img
                                 src="{{ asset('/storage/'.$service->image ) }}"
                                 alt="{{ $service->name }}"
-                                class="card-img-top h-4"
+                                class="card-img-top h-4 p-1"
                             />  
                             <div class="card-body text-center pt-3">
                                 <small class="text-muted"
@@ -1085,12 +1083,12 @@
 
     <div class="row">
         @foreach($coverBlogs as $blog) @if($blog->published == 1)
-        <div class="col-lg-3 col-md-3 col-sm-12">
+        <div class="col-lg-3 col-md-3 col-sm-12 pt-2">
             <div class="card">
                 <img
                     src="{{ asset('/storage/'. $blog->image) }}"
                     alt="{{ $blog->title }}"
-                    class="card-img-top h-4"
+                    class="card-img-top h-4 p-1"
                 />
                 <div class="card-body">
                     <h5 class="card-title">
@@ -1103,7 +1101,7 @@
                     <div class="text-end">
                         <a
                             href="{{ route('blogs.show', $blog->id) }}"
-                            class="p-2 link-secondary"
+                            class="btn btn-primar"
                         >
                             Read More <i class="bi bi-arrow-right"></i>
                         </a>
@@ -1127,8 +1125,8 @@
     <h5 class="text-center">Watch our videos about past adventures</h5>
     <br />
     <div class="row">
-        @foreach($videos as $video)
-        <div class="col-lg-4 col-sm-12 col-md-4">
+        @foreach($videos as $video) 
+        <div class="col-lg-4 col-sm-12 col-md-4 pt-2">
             <div class="card">
                 <div class="card-body">
                     <div class="embed-responsive embed-responsive-16by9 card-img-top">
