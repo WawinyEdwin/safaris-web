@@ -127,15 +127,7 @@ class BlogController extends Controller
      */
     public function update(Request $request, Blog $blog, $id)
     {
-        //
-         //validate the request
-         $request->validate([
-            'title' => 'required',
-            'image' => 'required',
-            
-            'content' => 'required'
-        ]);
-
+    
         if($request->hasFile('image') || $request->hasFile('image2') || $request->hasFile('image3') || $request->hasFile('image4') || $request->hasFile('image5') || $request->hasFile('image6')) 
         {
             $path = $request->image->store('images', 'public');
