@@ -93,7 +93,8 @@ class ServiceController extends Controller
     {
         //
         $service = Service::where("slug", $slug)->first();
-        return view("services.show", compact("service"));
+        $services = Service::latest()->get();
+        return view("services.show", compact("service", "services"));
     }
 
     /**
@@ -122,18 +123,29 @@ class ServiceController extends Controller
         $service = Service::find($id);
         //
             //Check the presence of images first.
-            if($request->hasFile('image') || $request->hasFile('image2')) 
+            if($request->hasFile('image') || $request->hasFile('image2') || $request->hasFile('image3') || $request->hasFile('image4') || $request->hasFile('image5') || $request->hasFile('image6')) 
             {
                 $path = $request->image->store('images', 'public');
                 $path2 = $request->image2->store('images', 'public');
+                $path3 = $request->image3->store('images', 'public');
+                $path4 = $request->image4->store('images', 'public');
+                $path5 = $request->image5->store('images', 'public');
+                $path6 = $request->image6->store('images', 'public');
                 $service->image = $path;
                 $service->image2 = $path2;
+                $service->image3 = $path3;
+                $service->image4 = $path4;
+                $service->image5 = $path5;
+                $service->image6 = $path6;
                 
             } else {
                 unset($service['image']);
                 unset($service['image2']);
+                unset($service['image3']);
+                unset($service['image4']);
+                unset($service['image5']);
+                unset($service['image6']);
             }
-
         $service->name = $request->name;
         $service->category = $request->category;
         $service->location = $request->location;

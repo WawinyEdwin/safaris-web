@@ -68,11 +68,15 @@ class AccomodationController extends Controller
         $path = $request->image->store('images', 'public');
         $path_1 = $request->image2->store('images', 'public');
         $path_2 = $request->image3->store('images', 'public');
-        $path_3 = $request->image4->store('images', 'public');
+        $path_3= $request->image4->store('images', 'public');
+        $path_4 = $request->image5->store('images', 'public');
+        $path_5 = $request->image6->store('images', 'public');
         $accomodation->image = $path;
         $accomodation->image2 = $path_1;
         $accomodation->image3 = $path_2;
         $accomodation->image4 = $path_3;
+        $accomodation->image5 = $path_4;
+        $accomodation->image6 = $path_5;
         $accomodation->name = $request->name;
         $accomodation->slug = str_replace(" ", "-", $request->name) ;
         $accomodation->category = $request->category;
@@ -124,22 +128,28 @@ class AccomodationController extends Controller
         $accomodation = Accomodation::find($id);
         //
             //Check the presence of images first.
-            if($request->hasFile('image') || $request->hasFile('image2')) 
+            if($request->hasFile('image') || $request->hasFile('image2') || $request->hasFile('image3') || $request->hasFile('image4') || $request->hasFile('image5') || $request->hasFile('image6')) 
             {
                 $path = $request->image->store('images', 'public');
                 $path2 = $request->image2->store('images', 'public');
-                $path3 = $request->image->store('images', 'public');
-                $path4 = $request->image2->store('images', 'public');
+                $path3 = $request->image3->store('images', 'public');
+                $path4 = $request->image4->store('images', 'public');
+                $path5 = $request->image5->store('images', 'public');
+                $path6 = $request->image6->store('images', 'public');
                 $accomodation->image = $path;
                 $accomodation->image2 = $path2;
                 $accomodation->image3 = $path3;
                 $accomodation->image4 = $path4;
+                $accomodation->image5 = $path5;
+                $accomodation->image6 = $path6;
                 
             } else {
                 unset($accomodation['image']);
                 unset($accomodation['image2']);
                 unset($accomodation['image3']);
                 unset($accomodation['image4']);
+                unset($accomodation['image5']);
+                unset($accomodation['image6']);
             }
 
         $accomodation->name = $request->name;

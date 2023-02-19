@@ -58,9 +58,19 @@ class BlogController extends Controller
         $blog = new Blog;
 
         $path = $request->image->store('images', 'public');
+        $path_1 = $request->image2->store('images', 'public');
+        $path_2 = $request->image3->store('images', 'public');
+        $path_3 = $request->image4->store('images', 'public');
+        $path_4 = $request->image5->store('images', 'public');
+        $path_5 = $request->image6->store('images', 'public');
 
         $blog->title = $request->title;
         $blog->image = $path;
+        $blog->image2 = $path_1;
+        $blog->image3 = $path_2;
+        $blog->image4 = $path_3;
+        $blog->image5 = $path_4;
+        $blog->image6 = $path_5;
         $blog->content = $request->content;
         $blog->user_id = Auth::id();
 
@@ -120,17 +130,39 @@ class BlogController extends Controller
             'content' => 'required'
         ]);
 
+        if($request->hasFile('image') || $request->hasFile('image2') || $request->hasFile('image3') || $request->hasFile('image4') || $request->hasFile('image5') || $request->hasFile('image6')) 
+        {
+            $path = $request->image->store('images', 'public');
+            $path2 = $request->image2->store('images', 'public');
+            $path3 = $request->image3->store('images', 'public');
+            $path4 = $request->image4->store('images', 'public');
+            $path5 = $request->image5->store('images', 'public');
+            $path6 = $request->image6->store('images', 'public');
+            $blog->image = $path;
+            $blog->image2 = $path2;
+            $blog->image3 = $path3;
+            $blog->image4 = $path4;
+            $blog->image5 = $path5;
+            $blog->image6 = $path6;
+            
+        } else {
+            unset($blog['image']);
+            unset($blog['image2']);
+            unset($blog['image3']);
+            unset($blog['image4']);
+            unset($blog['image5']);
+            unset($blog['image6']);
+        }
+
+
         //
         $blog = Blog::find($id);
-
-
         $path = $request->image->store('images', 'public');
         $blog->title = $request->title;
-        $blog->image = $path;
         $blog->content = $request->content;
         $blog->user_id = Auth::id();
 
-        $blog->save();
+        $blog->update();
 
         return redirect()->route('blogs')->with('success', 'Content Created Successfully!');
     }
