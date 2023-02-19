@@ -1,4 +1,4 @@
-@extends('layout.index')
+@extends('layout.new')
 
 @section('content')
 
@@ -24,7 +24,7 @@
         </div>
         <br>
 
-<div class="container">
+<div class="container pb-3">
     <div class="card">
         <div class="card-body">
             <h4>Okulink Safaris Privacy Policy.</h4>

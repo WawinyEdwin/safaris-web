@@ -25,7 +25,7 @@
         @if($safari->published == 1)
         <div class="col-lg-4 col-sm-12">
             <div class="card">
-                <img src="{{ asset('/storage/'. $safari->image) }}" alt="{{ $safari->hotel }}" class="card-img-top h-4">
+                <img src="{{ asset('/storage/'. $safari->image) }}" alt="{{ $safari->hotel }}" class="card-img-top h-4 p-1">
                 <div class="card-body">
                     <p class="card-text pri">{{ $safari->hotel }}</p>
                     <small class="text-muted"><i class="bi bi-geo-alt">{{ $safari->location }}</i></small>

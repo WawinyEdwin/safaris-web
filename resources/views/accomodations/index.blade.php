@@ -135,10 +135,7 @@
         </div>
         @endforelse
     </div>
-    <br />
-    <div class="text-center">
-         {{ $accomodations->links() }}
-    </div>
+ 
    
 </div>
 

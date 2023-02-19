@@ -1,4 +1,4 @@
-@extends('layout.index')
+@extends('layout.new')
 
 @section('content')
 
@@ -14,9 +14,7 @@
     <div class="career text-center">
         <h4>We currently do not have any open positions, keep watch of this section for updates.</h4>
 
-        <div class="">
-            <img src="{{ asset('okulink.jpg') }}" alt="" height="400" class="w-100">
-        </div>
+        
         <br>
         <a href="{{ url('/') }}" class="btn btn-primar">Back Home</a>
     </div>

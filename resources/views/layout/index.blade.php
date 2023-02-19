@@ -218,7 +218,7 @@
                         method="GET"
                         role="search">
                         <input class="form-control me-2" type="search"
-                                placeholder="search hotel..."
+                                placeholder="search hotel ..."
                                 name="term"
                                 id="term"
                                 aria-label="Search">
@@ -324,11 +324,12 @@
                                 ><i class="bi bi-instagram bit"></i
                             ></a>
                         </li>
+                        <br />
                         <p>
-                           <a href="tel:+254742659292" class="bit"><i class="bi bi-telephone"></i> +254742659292</a>
+                           <a href="tel:+254742659292" class="text-white" style="text-decoration: none;"><i class="bi bi-telephone"></i> +254742659292</a>
 </p>
                         <p>
-                           <a href="tel:++254701700144" class="bit"><i class="bi bi-telephone"></i> +254701700144</a> 
+                           <a href="tel:+254701700144"  class="text-white" style="text-decoration: none;"><i class="bi bi-telephone"></i> +254701700144</a> 
 </p>
                         
                     </div>
@@ -362,7 +363,7 @@
                 
                     s.onload = function () { tmWidgetInit(config) };
                     var x = document.getElementsByTagName("script")[0]; x.parentNode.insertBefore(s, x);
-                </script>0
+                </script>
             </footer>
         </div>
         <span onclick="topFunction()" id="myBtn" title="Back to Top">
