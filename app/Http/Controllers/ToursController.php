@@ -84,7 +84,6 @@ class ToursController extends Controller
         $path3 = $request->image3->store('images', 'public');
         $path4 = $request->image4->store('images', 'public');
         $path5 = $request->image5->store('images', 'public');
-        $path6 = $request->image6->store('images', 'public');
         $tours->hotel = $request->hotel;
         $tours->transport = $request->transport;
         $tours->single_room = $request->single_room;
@@ -99,7 +98,7 @@ class ToursController extends Controller
         $tours->image3 = $path3;
         $tours->image4 = $path4;
         $tours->image5 = $path5;
-        $tours->image6 = $path6;
+       
         $tours->location = $request->location;
         $tours->user_id = Auth::id();
 
