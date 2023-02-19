@@ -87,12 +87,12 @@
                 <div class="">
                     <label for="additional_info" class="form-label">Additional Info</label>
                     <small class="form-text text-muted">Tell your visitor more...</small>
-                    <textarea name="additional_info" id="summernote" cols="20" rows="10" class="form-control" value="{!! $tours->additional_info !!}"></textarea>
+                    <textarea name="additional_info" id="summernote" cols="20" rows="10" class="form-control" value="{{ $tours->additional_info }}">{{ $tours->additional_info }}</textarea>
                 </div>
                 <div class="row">
                     <div class="col-lg-6 col-sm-12">
                         <label for="image" class="form-label">Hotel Image</label>
-                        <input type="file" name="image" id="image" value="{!! $tours->image !!}" class="form-control-file" >
+                        <input type="file" name="image" id="image" value="{{ $tours->image }}" class="form-control-file" >
                         <span class="text-danger">@error('image') {{ $message }} @enderror</span>
                     </div>
                     <div class="col-lg-6 col-sm-12">

@@ -67,16 +67,32 @@ class ProductController extends Controller
         $product = new Product;
         $path = $request->image->store('images', 'public');
         $path_1 = $request->image2->store('images', 'public');
-        $path_2 = $request->image3->store('images', 'public');
-        $path_3 = $request->image4->store('images', 'public');
-        $path_4 = $request->image5->store('images', 'public');
-        $path_5 = $request->image6->store('images', 'public');
+        if($request->image3)
+        {
+            $path_2 = $request->image3->store('images', 'public');
+            $product->image3 = $path_2;  
+        }
+        if ($request->image4 )
+        {
+            $path_3 = $request->image4->store('images', 'public');
+            $product->image4 = $path_3;
+        }
+
+        if($request->image5 ) 
+        {
+            $path_4 = $request->image5->store('images', 'public');
+            $product->image5 = $path_4;
+        }
+        if($request->image6)
+        {
+
+            $path_5 = $request->image6->store('images', 'public');
+            $product->image6 = $path_5;
+        }
+        
         $product->image = $path;
         $product->image2 = $path_1;
-        $product->image3 = $path_2;
-        $product->image4 = $path_3;
-        $product->image5 = $path_4;
-        $product->image6 = $path_5;
+       
         $product->name = $request->name;
         $product->slug = str_replace(" ", "-", $request->name) ;
         $product->category = $request->category;
@@ -155,7 +171,7 @@ class ProductController extends Controller
             }
 
         $product->name = $request->name;
-        $product->slug = $request->slug;
+        $product->slug = $product->slug;
         $product->category = $request->category;
         $product->location = $request->location;
         $product->price = $request->price;

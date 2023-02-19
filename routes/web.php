@@ -162,7 +162,7 @@ Route::get("/service/new", [ServiceController::class, "create"])->name("services
 Route::post("/service/create", [ServiceController::class, "store"])->name("services.store")->middleware(['auth', 'verified']);
 Route::get("/service/edit/{id}", [ServiceController::class, "edit"])->name("services.edit")->middleware(['auth', 'verified']);
 Route::get("/service/category/{category}", [ServiceController::class, "category"])->name("services.category");
-Route::put("/service/update/{id}", [ProductController::class, "update"])->name("services.update")->middleware(['auth', 'verified']);
+Route::put("/service/update/{id}", [ServiceController::class, "update"])->name("services.update")->middleware(['auth', 'verified']);
 Route::get("/service/{slug}", [ServiceController::class, "show"])->name("services.show");
 Route::put("/service/publish/{id}", [ServiceController::class, "publish"])->name("services.publish")->middleware(['auth', 'verified']);
 Route::delete('/service/delete/{id}',[ServiceController::class, 'destroy'])->name('services.delete')->middleware(['auth', 'verified']);

@@ -69,6 +69,26 @@ class ServiceController extends Controller
         $path_1 = $request->image->store('images', 'public');
         $service->image = $path;
         $service->image2 = $path_1;
+        if($request->image3)
+        {
+            $path_2 = $request->image3->store('images', 'public');
+            $service->image3 = $path_2;
+        }
+        if($request->image4)
+        {
+            $path_3 = $request->image4->store('images', 'public');
+            $service->image4 = $path_3;
+        }
+        if($request->image5)
+        {
+            $path_4 = $request->image5->store('images', 'public');
+            $service->image5 = $path_4;
+        }
+        if($request->image6)
+        {
+            $path_5 = $request->image6->store('images', 'public');
+            $service->image6 = $path_5;
+        }
         $service->name = $request->name;
         $service->slug = str_replace(" ", "-", $request->name) ;
         $service->category = $request->category;
@@ -150,7 +170,6 @@ class ServiceController extends Controller
         $service->category = $request->category;
         $service->location = $request->location;
         $service->price = $request->price;
-        $service->quantity_available = $request->quantity_available;
         $service->description = $request->description;
 
         $service->update();

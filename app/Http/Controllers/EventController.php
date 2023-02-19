@@ -70,16 +70,29 @@ class EventController extends Controller
         $event = new Event;
         $path = $request->image->store('images', 'public');
         $path_1 = $request->image2->store('images', 'public');
-        $path_2 = $request->image3->store('images', 'public');
-        $path_3 = $request->image4->store('images', 'public');
-        $path_4 = $request->image5->store('images', 'public');
-        $path_5 = $request->image6->store('images', 'public');
+        if( $request->image3)
+        {
+            $path_2 = $request->image3->store('images', 'public');
+            $event->image3 = $path_2;
+        }
+        if( $request->image4)
+        {
+            $path_3 = $request->image4->store('images', 'public');
+            $event->image4 = $path_3;
+        }
+        if($request->image5 )
+        {
+            $path_4 = $request->image5->store('images', 'public');
+            $event->image5 = $path_4;
+        }
+        if(  $request->image6)
+        {
+            $path_5 = $request->image6->store('images', 'public');  
+            $event->image6 = $path_5;
+        }
         $event->image = $path;
         $event->image2 = $path_1;
-        $event->image3 = $path_2;
-        $event->image4 = $path_3;
-        $event->image5 = $path_4;
-        $event->image6 = $path_5;
+        
         $event->name = $request->name;
         $event->slug = str_replace(" ", "-", $request->name) ;
         $event->category = $request->category;
@@ -161,7 +174,7 @@ class EventController extends Controller
     
 
         $event->name = $request->name;
-        $event->slug = $request->slug;
+        $event->slug = $event->slug;
         $event->category = $request->category;
         $event->location = $request->location;
         $event->price = $request->price;

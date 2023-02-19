@@ -111,13 +111,13 @@
                 <div class="row">
                     <div class="col-lg-6 col-sm-12">
                         <label for="image2" class="form-label">Hotel Image 3</label>
-                        <input type="file" name="image2" id="image2" class="form-control-file " required>
+                        <input type="file" name="image2" id="image2" class="form-control-file ">
                         <span class="text-danger">@error('image2') {{ $message }} @enderror</span>
                     </div>
 
                     <div class="col-lg-6 col-sm-12">
                     <label for="image3" class="form-label">Hotel Image 4</label>
-                        <input type="file" name="image3" id="image3" class="form-control-file " required>
+                        <input type="file" name="image3" id="image3" class="form-control-file " >
                         <span class="text-danger">@error('image2') {{ $message }} @enderror</span>
                     </div>
                 </div>
@@ -125,13 +125,13 @@
                 <div class="row">
                     <div class="col-lg-6 col-sm-12">
                         <label for="image4" class="form-label">Hotel Image 5</label>
-                        <input type="file" name="image4" id="image4" class="form-control-file " required>
+                        <input type="file" name="image4" id="image4" class="form-control-file " >
                         <span class="text-danger">@error('image4') {{ $message }} @enderror</span>
                     </div>
 
                     <div class="col-lg-6 col-sm-12">
                     <label for="image5" class="form-label">Hotel Image 6</label>
-                        <input type="file" name="image5" id="image5" class="form-control-file " required>
+                        <input type="file" name="image5" id="image5" class="form-control-file " >
                         <span class="text-danger">@error('image5') {{ $message }} @enderror</span>
                     </div>
                 </div>

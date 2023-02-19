@@ -15,7 +15,7 @@
                         method="post"
                         enctype="multipart/form-data"
                     >
-                        @csrf @method('POST')
+                        @csrf @method('PUT')
 
                         <div class="form-group">
                             <div class="row">
@@ -97,7 +97,7 @@
                                 class="form-control"
                                 value="{{old('description', $service->description)}}" 
                                 required
-                            ></textarea>
+                            >{{ $service->description  }}</textarea>
                         </div>
                         <div class="form-group">
                             <div class="row">
@@ -109,7 +109,7 @@
                                         type="file"
                                         name="image"
                                         class="form-control-file  @error('image') is-invalid @enderror"
-                                        required
+                                       
                                     />
                                     @error('image')
                                     <span class="invalid-feedback" role="alert">
@@ -125,7 +125,7 @@
                                         type="file"
                                         name="image2"
                                         class="form-control-file  @error('image2') is-invalid @enderror"
-                                        required
+                                     
                                     />
                                     @error('image2')
                                     <span class="invalid-feedback" role="alert">

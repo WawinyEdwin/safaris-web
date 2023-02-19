@@ -64,7 +64,7 @@
                                         class="btn btn-success"
                                         type="submit"
                                     >
-                                        <i class="fa fa-bag-check"></i>
+                                        <i class="bi bi-bag-check"></i>
                                     </button>
                                     @else
                                     <button

@@ -68,7 +68,6 @@ class ToursController extends Controller
             'transport' => 'required',
             'image' => 'required|mimes:jpg,jpeg,svg,png,webp',
             'image1' => 'required|mimes:jpg,jpeg,svg,png,webp',
-            'image2' => 'required|mimes:jpg,jpeg,svg,png,webp',
             'single_room' => 'required',
             'per_person_sharing' => 'required',
             'meals' => 'required',
@@ -80,10 +79,40 @@ class ToursController extends Controller
         $tours = new Tours;
         $path = $request->image->store('images', 'public');
         $path1 = $request->image1->store('images', 'public');
-        $path2 = $request->image2->store('images', 'public');
-        $path3 = $request->image3->store('images', 'public');
+        if($request->image2)
+        {
+            $path2 = $request->image2->store('images', 'public');
+            $tours->image2 = $path2;
+        }
+        if($request->image3)
+        {
+            $path3 = $request->image3->store('images', 'public');
+            
+        $tours->image3 = $path3;
+        }
+        if($request->image4)
+        {
+            
         $path4 = $request->image4->store('images', 'public');
-        $path5 = $request->image5->store('images', 'public');
+        $tours->image4 = $path4;
+        }
+        if($request->image5)
+        {
+            $path5 = $request->image5->store('images', 'public');
+            
+        $tours->image5 = $path5;
+            
+        }
+        if($request->image6)
+        {
+            $path6 = $request->image6->store('images', 'public');
+            
+        $tours->image6 = $path6;
+        }
+
+        
+        
+        
         $tours->hotel = $request->hotel;
         $tours->transport = $request->transport;
         $tours->single_room = $request->single_room;
@@ -94,10 +123,8 @@ class ToursController extends Controller
         $tours->per_person_sharing = $request->per_person_sharing;
         $tours->image = $path;
         $tours->image1 = $path1;
-        $tours->image2 = $path2;
-        $tours->image3 = $path3;
-        $tours->image4 = $path4;
-        $tours->image5 = $path5;
+
+        
        
         $tours->location = $request->location;
         $tours->user_id = Auth::id();

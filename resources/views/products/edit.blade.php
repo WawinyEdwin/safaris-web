@@ -13,7 +13,7 @@
                         enctype="multipart/form-data"
                     >
                         @csrf
-                        @method('POST')
+                        @method('PUT')
 
                         <div class="form-group">
                             <div class="row">
@@ -156,7 +156,7 @@
                                 value="{{old('description', $product->description )}}"
                                 class="form-control @error('description') is-invalid @enderror"
                                 required
-                            ></textarea>
+                            >{{ $product->description }}</textarea>
                             @error('description')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
