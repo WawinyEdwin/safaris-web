@@ -117,7 +117,7 @@
                     <img
                         src="{{ asset('/storage/'. $product->image) }}"
                         alt=""
-                        class="card-img-top h-4"
+                        class="card-img-top h-4 p-1"
                     />
                     <div class="card-body text-center">
                     <small class="text-muted"><i class="bi bi-geo-alt">{{ $product->location }}</i></small>

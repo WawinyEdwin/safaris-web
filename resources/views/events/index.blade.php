@@ -119,7 +119,7 @@
                     <img
                         src="{{ asset('/storage/'. $event->image) }}"
                         alt="{{ $event->name }}"
-                        class="card-img-top h-4"
+                        class="card-img-top h-4 p-1"
                     />
                     <div class="card-body text-center pt-3">
                     <small class="text-muted"><i class="bi bi-geo-alt">{{ $event->location }}</i></small>

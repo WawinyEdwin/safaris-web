@@ -116,7 +116,7 @@
         <div class="col-lg-3 col-sm-12 col-md-4">
         <a href="{{ route('services.show', $service->slug) }}" class="p_link">
             <div class="card">
-                <img src="{{ asset('/storage/'. $service->image) }}" alt="" class="card-img-top h-4">
+                <img src="{{ asset('/storage/'. $service->image) }}" alt="" class="card-img-top h-4 p-1">
                 <div class="card-body text-center pt-3">
                 <small class="text-muted"><i class="bi bi-geo-alt">{{ $service->location }}</i></small>
                     <p class="card-title">{{ $service->name }}</p>

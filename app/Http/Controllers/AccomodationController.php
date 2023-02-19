@@ -106,7 +106,8 @@ class AccomodationController extends Controller
     {
         //
         $accomodation = Accomodation::where("slug", $slug)->first();
-        return view("accomodations.show", compact("accomodation"));
+        $accomodations = Accomodation::latest()->limit(5)->get();
+        return view("accomodations.show", compact("accomodation", "accomodations"));
     }
 
     /**

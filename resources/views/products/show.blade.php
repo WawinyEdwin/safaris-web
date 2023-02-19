@@ -65,9 +65,17 @@
     }
 </style>
 @section("content")
-<div class="container mt-5 mb-5">
+<div class="bg-primar p-2">
+    <div class="container">
+        <h5 class="text-white">
+             / product: {{ $product->name }}.
+        </h5>
+    </div>
+</div>
+<br />
+<div class="container mb-5">
     <div class="row d-flex justify-content-center">
-        <div class="col-md-10">
+        <div class="col-lg-7 col-sm-12">
             <div class="card">
                 <div class="row">
                     <div class="col-md-6">
@@ -77,7 +85,7 @@
                                     id="main-image"
                                     src="{{ asset('/storage/'.$product->image) }}"
                                     alt="{{ $product->name }}"
-                                    width="250"
+                                    width="260"
                                 />
                             </div>
                             <div class="thumbnail text-center">
@@ -85,13 +93,13 @@
                                     onclick="change_image(this)"
                                     src="{{ asset('/storage/'.$product->image2) }}"
                                     alt="{{ $product->name }}"
-                                    width="70"
+                                    width="90"
                                 />
                                 <img
                                     onclick="change_image(this)"
                                     alt="{{ $product->name }}"
                                     src="{{ asset('/storage/'.$product->image) }}"
-                                    width="70"
+                                    width="90"
                                 />
                             </div>
                         </div>
@@ -122,10 +130,10 @@
                                     <span class="act-price">KES {{ $product->price }}</span>
                                 </div>
                             </div>
-                            <p class="about">
+                            <p class="about" style="font-family: 'Itim' !important;">
                                {!! $product->description !!}
                             </p>
-                            <div class="sizes mt-5">
+                            <div class="sizes mt-2">
                                 <h6 class="text-uppercase"><i class="bi bi-geo-alt-fill"></i> {{ $product->location }}</h6>
                             </div>
                             <!-- <div class="cart mt-4 align-items-center">
@@ -137,6 +145,36 @@
                             </div> -->
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+       
+        <div class="col-lg-5 col-sm-12 pt-2">
+            <div class="card mb-3">
+                <div class="card-header bg-primar">
+                    <h4 class="text-white text-center">Top rated products</h4>
+                </div>
+                    <div class="card-body">
+                        @foreach($products as $prod)
+                            <div class="row no gutters">
+                                <div class="col">
+                                    <img src="{{ asset('/storage/'. $prod->image ) }}" alt="{{$prod->name }}" class="card-img-top" style="height: 150px;">
+                                </div>
+                                <div class="col">
+                                      <span class="text-uppercase text-muted brand"
+                                    >{{ $prod->category}}</span
+                                >
+                                <h5 class="text-uppercase">
+                                    {{ $prod->name }}
+                                </h5>
+                                    <a href="{{ route('products.show', $prod->slug ) }}" class="btn btn-primar"><i class="bi bi-cart-check"></i>KES {{ $prod->price }}</a>
+                                </div>
+                            </div>
+                            <hr>
+                        @endforeach
+                    </div>
+                    <div class="card-footer text-center bg-white">
+                    <a class="btn btn-primar" href={{ url('/products') }}>More products <i class="bi bi-arrow-right"></i></a>
                 </div>
             </div>
         </div>
