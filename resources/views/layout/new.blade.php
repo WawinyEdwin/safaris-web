@@ -10,7 +10,9 @@
         <meta name="google-site-verification" content="YFUSoj09b1SvxCBLp5rcoHrN67CJdW6tnJXCfKbekiM" />
         <title>Okulink Safaris | magical experiences through tours & travel.</title>
         <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Spinnaker&display=swap" rel="stylesheet">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
         <!-- Styles -->
         
         <!-- bootstrap  -->
@@ -52,7 +54,7 @@
                             </a>
                         </li>
                         <li class="nav-item"> 
-                            <a class="nav-link "  href="{{ route('safaris') }}">
+                            <a class="nav-link "  href="{{ route('accomodations') }}">
                                 Accomodation
                             </a>
                         </li>
@@ -138,7 +140,7 @@
                         method="GET"
                         role="search">
                         <input class="form-control me-2" type="search"
-                                placeholder="type hotel/location"
+                                placeholder="search .."
                                 name="term"
                                 id="term"
                                 aria-label="Search">

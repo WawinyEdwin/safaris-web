@@ -21,12 +21,9 @@
             Okulink Safaris | magical experiences through tours & travel.
         </title>
         <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Spinnaker&display=swap"
-            rel="stylesheet"
-        />
+       <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
         <!-- Styles -->
         <link rel="stylesheet" href="{{ asset('bootstrap/app.css') }}" />
         <!-- bootstrap  -->
@@ -221,7 +218,7 @@
                         method="GET"
                         role="search">
                         <input class="form-control me-2" type="search"
-                                placeholder="type hotel/location"
+                                placeholder="search ..."
                                 name="term"
                                 id="term"
                                 aria-label="Search">
@@ -348,6 +345,24 @@
                         | Okulink Safaris.
                     </h5>
                 </div>
+                <script  type="text/javascript">
+                  var config = {
+                    phone :" 254729294004",
+                    call :"Message Us",
+                    position :"ww-right",
+                    size : "ww-normal",
+                    text : "",
+                    type: "ww-standard",
+                    brand: "Okulink Safaris",
+                    subtitle: "",
+                    welcome: ""
+                  };
+                  var proto = document.location.protocol, host = "cloudfront.net", url = proto + "//d3kzab8jj16n2f." + host;
+                    var s = document.createElement("script"); s.type = "text/javascript"; s.async = true; s.src = url + "/v2/main.js";
+                
+                    s.onload = function () { tmWidgetInit(config) };
+                    var x = document.getElementsByTagName("script")[0]; x.parentNode.insertBefore(s, x);
+                </script>0
             </footer>
         </div>
         <span onclick="topFunction()" id="myBtn" title="Back to Top">
@@ -407,20 +422,6 @@
             }
         </script>
         <!--Start of Tawk.to Script-->
-        <script type="text/javascript">
-            var Tawk_API = Tawk_API || {},
-                Tawk_LoadStart = new Date();
-            (function () {
-                var s1 = document.createElement("script"),
-                    s0 = document.getElementsByTagName("script")[0];
-                s1.async = true;
-                s1.src =
-                    "https://embed.tawk.to/626fac607b967b11798d69cd/1g223inqk";
-                s1.charset = "UTF-8";
-                s1.setAttribute("crossorigin", "*");
-                s0.parentNode.insertBefore(s1, s0);
-            })();
-        </script>
         <!--End of Tawk.to Script-->
         
         <script

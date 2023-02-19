@@ -22,7 +22,7 @@ class ToursController extends Controller
     {
         $categories = Category::all();
         $blogs =  Blog::latest()->limit(2)->get();
-        $safaris = Tours::inRandomOrder()->get();
+        $safaris = Tours::inRandomOrder()->paginate(20);
         return view("safaris.index", compact("categories", "blogs", "safaris"));
     }
 

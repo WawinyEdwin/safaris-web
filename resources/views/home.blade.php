@@ -55,10 +55,10 @@
 }
 
     .swiper-button-prev {
-        color: #4d1b0c !important;
+        color: #e3a532 !important;
     }
     .swiper-button-next {
-        color: #4d1b0c !important;
+        color: #e3a532 !important;
     }
 </style>
 @section('content')
@@ -147,20 +147,20 @@
                     @foreach($holidayOffers as $tour ) @if($tour->published ==
                     1)
                     <div class="col-lg-3 col-md-3 col-sm-12">
-                         <a href="{{ route('addtour.show', $tour->id ) }}" class="p_link">
+
                         <div class="card">
                             <img
-                                src="https://www.okulinksafaris.com/storage/images/SnVUsXYLumGeDcylQTA9MCsPE5jILKgGParLxw5k.webp"
+                                src="{{ asset('/storage/'.$tour->image) }}"
                                 alt="{{ $tour->hotel }}"
                                 class="card-img-top h-4"
                             />
-                            <div class="card-body">
+                            <div class="card-body text-center pt-3">
                                 <small class="text-muted"
                                     ><i class="bi bi-geo-alt"
                                         >{{ $tour->location }}</i
                                     ></small
                                 >
-                                <p class="card-title">{{ $tour->category }}</p>
+                                <p class="card-title">{{ $tour->hotel }}</p>
                                 <div class="blue"></div>
                                 <div class="d-flex space-between pt-1">
                                     <small class="card-text">
@@ -173,18 +173,21 @@
                                     </small>
                                 </div>
                                 <br />
-                                <div class="text-end">
-                                    <a
+                                <div class="d-flex justify-content-between">
+                      <a class="btn btn-success fw-bold" href="{{ route('addtour.show', $tour->id) }}">explore <i class="bi bi-eye-fill "></i
+                                    ></a>  
+                    
+                    <a
                                         href="{{ route('bookings.create', $tour->hotel ) }}"
-                                        class="p-2 link-secondary-1"
+                                        class="btn btn-primar"
                                     >
                                         book now
-                                        <i class="bi bi-arrow-right"></i>
+                                        
                                     </a>
-                                </div>
+                    </div>
                             </div>
                         </div>
-                        </a>
+                        
                     </div>
                     @endif @endforeach
                 </div>
@@ -193,21 +196,20 @@
                 <div class="row">
                     @foreach($tembea as $tour ) @if($tour->published == 1)
                     <div class="col-lg-3 col-md-3 col-sm-12">
-                    <a href="{{ route('addtour.show', $tour->id ) }}" class="p_link">
                         <div class="card">
                             <img
                                 src="{{ asset('/storage/'.$tour->image) }}"
                                 alt="{{ $tour->hotel }}"
                                 class="card-img-top h-4"
                             />
-                            <div class="card-body">
+                            <div class="card-body text-center pt-3">
                                 <small class="text-muted"
                                     ><i class="bi bi-geo-alt"
                                         >{{ $tour->location }}</i
                                     ></small
                                 >
                                 <p class="card-title">
-                                    {{ $tour->sub_category }}
+                                    {{ $tour->hotel }}
                                 </p>
 
                                 <div class="blue"></div>
@@ -223,18 +225,21 @@
                                     </small>
                                 </div>
                                 <br />
-                                <div class="text-end">
-                                    <a
+                                          <div class="d-flex justify-content-between">
+                      <a class="btn btn-success fw-bold" href="{{ route('addtour.show', $tour->id) }}">explore <i class="bi bi-eye-fill "></i
+                                    ></a>  
+                    
+                    <a
                                         href="{{ route('bookings.create', $tour->hotel ) }}"
-                                        class="p-2 link-secondary-1"
+                                        class="btn btn-primar"
                                     >
                                         book now
-                                        <i class="bi bi-arrow-right"></i>
+                                        
                                     </a>
-                                </div>
+                    </div>
                             </div>
                         </div>
-                    </a>
+                
                     </div>
                     @endif @endforeach
                 </div>
@@ -244,20 +249,19 @@
                 <div class="row">
                     @foreach($localTours as $tour ) @if($tour->published == 1)
                     <div class="col-lg-3 col-md-3 col-sm-12">
-                    <a href="{{ route('addtour.show', $tour->id ) }}" class="p_link">
                         <div class="card">
                             <img
                                 src="{{ asset('/storage/'.$tour->image) }}"
                                 alt="{{ $tour->hotel }}"
                                 class="card-img-top h-4"
                             />
-                            <div class="card-body">
+                            <div class="card-body text-center pt-3">
                                 <small class="text-muted"
                                     ><i class="bi bi-geo-alt"
                                         >{{ $tour->location }}</i
                                     ></small
                                 >
-                                <p class="card-title">{{ $tour->category }}</p>
+                                <p class="card-title">{{ $tour->hotel }}</p>
 
                                 <div class="blue"></div>
 
@@ -272,18 +276,20 @@
                                     </small>
                                 </div>
                                 <br />
-                                <div class="text-end">
-                                    <a
+                                          <div class="d-flex justify-content-between">
+                      <a class="btn btn-success fw-bold" href="{{ route('addtour.show', $tour->id) }}">explore <i class="bi bi-eye-fill "></i
+                                    ></a>  
+                    
+                    <a
                                         href="{{ route('bookings.create', $tour->hotel ) }}"
-                                        class="p-2 link-secondary-1"
+                                        class="btn btn-primar"
                                     >
                                         book now
-                                        <i class="bi bi-arrow-right"></i>
+                                        
                                     </a>
-                                </div>
+                    </div>
                             </div>
                         </div>
-                    </a>
                     </div>
                     @endif @endforeach
                 </div>
@@ -295,7 +301,7 @@
     </div>
     <br />
     <div class="text-end">
-        <a href="/safaris" class="p-2 link-secondary">
+        <a href="/safaris" class="p-2 link-secondary-1">
             explore tours <i class="bi bi-arrow-right"></i>
         </a>
     </div>
@@ -362,14 +368,13 @@
                     @foreach($accomodations as $accomodation )
                     @if($accomodation->published == 1)
                     <div class="col-lg-3 col-md-3 col-sm-12">
-                    <a href="{{ route('accomodations.show', $accomodation->slug ) }}" class="p_link">
                         <div class="card">
                             <img
                                 src="{{ asset('/storage/'.$accomodation->image) }}"
                                 alt="{{ $accomodation->name }}"
                                 class="card-img-top h-4"
                             />
-                            <div class="card-body">
+                            <div class="card-body text-center pt-3">
                                 <small class="text-muted"
                                     ><i class="bi bi-geo-alt"
                                         >{{ $accomodation->location }}</i
@@ -387,25 +392,28 @@
                                     </small>
                                 </div>
                                 <br />
-                                <div class="text-end">
-                                    <a
+                                          <div class="d-flex justify-content-between">
+                      <a class="btn btn-success fw-bold" href="{{ route('accomodations.show', $accomodation->slug ) }}">explore <i class="bi bi-eye-fill "></i
+                                    ></a>  
+                    
+                    <a
                                         href="{{ route('bookings.create', $accomodation->name ) }}"
-                                        class="p-2 link-secondary-1"
+                                        class="btn btn-primar"
                                     >
                                         book now
-                                        <i class="bi bi-arrow-right"></i>
+                                        
                                     </a>
-                                </div>
+                    </div>
                             </div>
                         </div>
-                    </a>
+                    
                     </div>
                     @endif @endforeach
                 </div>
             </div>
             <div class="swiper-slide">
                 <div class="row">
-                    @foreach($accomodations as $accomodation )
+                    @foreach($acc_latest as $accomodation )
                     @if($accomodation->published == 1)
                     <div class="col-lg-3 col-md-3 col-sm-12">
                     <a href="{{ route('accomodations.show', $accomodation->slug ) }}" class="p_link">
@@ -415,7 +423,7 @@
                                 alt="{{ $accomodation->name }}"
                                 class="card-img-top h-4"
                             />
-                            <div class="card-body">
+                            <div class="card-body text-center pt-3">
                                 <small class="text-muted"
                                     ><i class="bi bi-geo-alt"
                                         >{{ $accomodation->location }}</i
@@ -454,17 +462,16 @@
 
             <div class="swiper-slide">
                 <div class="row">
-                    @foreach($accomodations as $accomodation )
+                    @foreach($acc_old as $accomodation )
                     @if($accomodation->published == 1)
                     <div class="col-lg-3 col-md-3 col-sm-12">
-                    <a href="{{ route('accomodations.show', $accomodation->slug ) }}" class="p_link">
                         <div class="card">
                             <img
                                 src="{{ asset('/storage/'.$accomodation->image) }}"
                                 alt="{{ $accomodation->name }}"
                                 class="card-img-top h-4"
                             />
-                            <div class="card-body">
+                            <div class="card-body text-center pt-3">
                                 <small class="text-muted"
                                     ><i class="bi bi-geo-alt"
                                         >{{ $accomodation->location }}</i
@@ -484,18 +491,21 @@
                                     </small>
                                 </div>
                                 <br />
-                                <div class="text-end">
-                                    <a
+                                             <div class="d-flex justify-content-between">
+                      <a class="btn btn-success fw-bold" href="{{ route('accomodations.show', $accomodation->slug ) }}">explore <i class="bi bi-eye-fill "></i
+                                    ></a>  
+                    
+                    <a
                                         href="{{ route('bookings.create', $accomodation->name ) }}"
-                                        class="p-2 link-secondary-1"
+                                        class="btn btn-primar"
                                     >
                                         book now
-                                        <i class="bi bi-arrow-right"></i>
+                                        
                                     </a>
-                                </div>
+                    </div>
                             </div>
                         </div>
-                    </a>
+                    
                     </div>
                     @endif @endforeach
                 </div>
@@ -507,7 +517,7 @@
     </div>
     <br />
     <div class="text-end">
-        <a href="/safaris" class="p-2 link-secondary">
+        <a href="/accomodations" class="p-2 link-secondary-1">
             more accomodations <i class="bi bi-arrow-right"></i>
         </a>
     </div>
@@ -551,6 +561,31 @@
                 href="{{ route('products.category', 'Foods-and-Groceries') }}"
                 >food & groceries</a
             >
+            <a
+                class="p-1 link-secondary"
+                href="{{ route('products.category', 'Jewellery-and-Accessories') }}"
+                >Jewellery-and-Accessories</a
+            >
+            <a
+                class="p-1 link-secondary"
+                href="{{ route('products.category', 'Sports-Equipment-and-Art') }}"
+                >Sports Equipment and Art</a
+            >
+             <a
+                class="p-1 link-secondary"
+                href="{{ route('products.category', 'Computer-and-Accessories') }}"
+                >Computer and Accessories</a
+            >
+              <a
+                class="p-1 link-secondary"
+                href="{{ route('products.category', 'Motor-vehicle-parts') }}"
+                >Motor vehicle parts</a
+            >
+             <a
+                class="p-1 link-secondary"
+                href="{{ route('products.category', 'Drinks-and-Beverages') }}"
+                >Drinks and Beverages</a
+            >
         </nav>
     </div>
     <div class="swiper" style="height: 349px !important;">
@@ -567,20 +602,20 @@
                                 alt="{{ $product->name }}"
                                 class="card-img-top h-4"
                             />
-                            <div class="card-body">
+                            <br />
+                            <div class="card-body text-center pt-3">
                                 <small class="text-muted"
                                     ><i class="bi bi-geo-alt"
-                                        >{{ $tour->location }}</i
+                                        >{{ $product->location }}</i
                                     ></small
                                 >
                                 <p class="card-title">{{ $product->name }}</p>
-                                <small><b>KES {{ $product->price }}/piece</b></small>
-                                <div class="text-end">
+                                <div class="">
                                     <a
                                         href="{{ route('products.show', $product->slug ) }}"
                                         class="btn btn-outline-primar"
                                     >
-                                        <i class="bi bi-cart-check"></i>
+                                        <i class="bi bi-cart-check"></i>KES {{ $product->price }}
                                     </a>
                                 </div>
                             </div>
@@ -592,7 +627,7 @@
             </div>
             <div class="swiper-slide">
                 <div class="row">
-                    @foreach($products as $product) @if($product->published ==
+                    @foreach($products_latest as $product) @if($product->published ==
                     1)
 
                     <div class="col-lg-3 col-md-3 col-sm-12">
@@ -603,20 +638,20 @@
                                 alt="{{ $product->name }}"
                                 class="card-img-top h-4"
                             />
-                            <div class="card-body">
+                            <div class="card-body text-center pt-3">
                                 <small class="text-muted"
                                     ><i class="bi bi-geo-alt"
-                                        >{{ $tour->location }}</i
+                                        >{{ $product->location }}</i
                                     ></small
                                 >
                                 <p class="card-title">{{ $product->name }}</p>
-                                <small><b>KES {{ $product->price }}/piece</b></small>
-                                <div class="text-end">
-                                    <a
+                                
+                                <div class="">
+                                     <a
                                         href="{{ route('products.show', $product->slug ) }}"
                                         class="btn btn-outline-primar"
                                     >
-                                        <i class="bi bi-cart-check"></i>
+                                        <i class="bi bi-cart-check"></i>KES {{ $product->price }}
                                     </a>
                                 </div>
                             </div>
@@ -628,7 +663,7 @@
             </div>
             <div class="swiper-slide">
                 <div class="row">
-                    @foreach($products as $product) @if($product->published ==
+                    @foreach($products_old as $product) @if($product->published ==
                     1)
 
                     <div class="col-lg-3 col-md-3 col-sm-12">
@@ -639,20 +674,19 @@
                                 alt="{{ $product->name }}"
                                 class="card-img-top h-4"
                             />
-                            <div class="card-body">
+                            <div class="card-body text-center pt-3">
                                 <small class="text-muted"
                                     ><i class="bi bi-geo-alt"
-                                        >{{ $tour->location }}</i
+                                        >{{ $product->location }}</i
                                     ></small
                                 >
                                 <p class="card-title">{{ $product->name }}</p>
-                                <small><b>KES {{ $product->price }}/piece</b></small>
-                                <div class="text-end">
+                                <div class="">
                                     <a
                                         href="{{ route('products.show', $product->slug ) }}"
                                         class="btn btn-outline-primar"
                                     >
-                                        <i class="bi bi-cart-check"></i>
+                                        <i class="bi bi-cart-check"></i>KES {{ $product->price }}
                                     </a>
                                 </div>
                             </div>
@@ -668,7 +702,7 @@
     </div>
     <br />
     <div class="text-end">
-        <a href="/products" class="p-2 link-secondary">
+        <a href="/products" class="p-2 link-secondary-1">
             more products <i class="bi bi-arrow-right"></i>
         </a>
     </div>
@@ -712,6 +746,36 @@
                 href="{{ route('events.category', 'Charities') }}"
                 >charities</a
             >
+            <a
+                class="p-1 link-secondary"
+                href="{{ route('events.category', 'Parties') }}"
+                >Parties</a
+            >
+            <a
+                class="p-1 link-secondary"
+                href="{{ route('events.category', 'Film-and-Music') }}"
+                >Film and Music</a
+            >
+             <a
+                class="p-1 link-secondary"
+                href="{{ route('events.category', 'Community') }}"
+                >Community</a
+            >
+              <a
+                class="p-1 link-secondary"
+                href="{{ route('events.category', 'Expos') }}"
+                >Expos</a
+            >
+             <a
+                class="p-1 link-secondary"
+                href="{{ route('events.category', 'Photography-and-Shoot') }}"
+                >Photography and Shoot</a
+            >
+            <a
+                class="p-1 link-secondary"
+                href="{{ route('events.category', 'Rideshare-and-road-trips') }}"
+                >Rideshare & road-trips</a
+            >
         </nav>
     </div>
 
@@ -720,7 +784,7 @@
             <div class="swiper-slide">
                 <div class="row">
                     @foreach($events as $event) @if($event->published == 1)
-                    <div class="col-lg-3 col-md-3 col-sm-12">
+                    <div class="col-lg-3 col-md-4 col-sm-12">
                     <a href="{{ route('events.show', $event->slug) }}" class="p_link">
                         <div class="card">
                             <img
@@ -728,20 +792,19 @@
                                 alt="{{ $event->name }}"
                                 class="card-img-top h-4"
                             />
-                            <div class="card-body">
+                            <div class="card-body text-center pt-3">
                                 <small class="text-muted"
                                     ><i class="bi bi-geo-alt"
                                         >{{ $event->location }}</i
                                     ></small
                                 >
                                 <p class="card-title">{{ $event->name }}</p>
-                                <small><b>tickets - KES {{ $event->price }} </b></small>
-                                <div class="text-end">
+                                <div class="">
                                     <a
                                         href="{{ route('events.show', $event->slug ) }}"
                                         class="btn btn-outline-primar"
                                     >
-                                        <i class="bi bi-calendar-event"></i>
+                                        <i class="bi bi-calendar-event"></i> tickets - KES {{ $event->price }}
                                     </a>
                                 </div>
                             </div>
@@ -753,8 +816,8 @@
             </div>
             <div class="swiper-slide">
                 <div class="row">
-                    @foreach($events as $event) @if($event->published == 1)
-                    <div class="col-lg-3 col-md-3 col-sm-12">
+                    @foreach($events_old as $event) @if($event->published == 1)
+                    <div class="col-lg-3 col-md-4 col-sm-12">
                     <a href="{{ route('events.show', $event->slug) }}" class="p_link">
                         <div class="card">
                             <img
@@ -762,20 +825,20 @@
                                 alt="{{ $event->name }}"
                                 class="card-img-top h-4"
                             />
-                            <div class="card-body">
+                            <div class="card-body text-center pt-3">
                                 <small class="text-muted"
                                     ><i class="bi bi-geo-alt"
                                         >{{ $event->location }}</i
                                     ></small
                                 >
                                 <p class="card-title">{{ $event->name }}</p>
-                                <small><b>tickets - KES {{ $event->price }} </b></small>
-                                <div class="text-end">
-                                    <a
+                              
+                                <div class="">
+                                     <a
                                         href="{{ route('events.show', $event->slug ) }}"
                                         class="btn btn-outline-primar"
                                     >
-                                        <i class="bi bi-calendar-event"></i>
+                                        <i class="bi bi-calendar-event"></i> tickets - KES {{ $event->price }}
                                     </a>
                                 </div>
                             </div>
@@ -787,8 +850,8 @@
             </div>
             <div class="swiper-slide">
                 <div class="row">
-                    @foreach($events as $event) @if($event->published == 1)
-                    <div class="col-lg-3 col-md-3 col-sm-12">
+                    @foreach($events_latest as $event) @if($event->published == 1)
+                    <div class="col-lg-3 col-md-4 col-sm-12">
                     <a href="{{ route('events.show', $event->slug) }}" class="p_link">
                         <div class="card">
                             <img
@@ -796,20 +859,19 @@
                                 alt="{{ $event->name }}"
                                 class="card-img-top h-4"
                             />
-                            <div class="card-body">
+                            <div class="card-body text-center pt-3">
                                 <small class="text-muted"
                                     ><i class="bi bi-geo-alt"
                                         >{{ $event->location }}</i
                                     ></small
                                 >
                                 <p class="card-title">{{ $event->name }}</p>
-                                <small><b>tickets - KES {{ $event->price }} </b></small>
-                                <div class="text-end">
+                                <div class="">
                                     <a
                                         href="{{ route('events.show', $event->slug ) }}"
                                         class="btn btn-outline-primar"
                                     >
-                                        <i class="bi bi-calendar-event"></i>
+                                        <i class="bi bi-calendar-event"></i> tickets - KES {{ $event->price }}
                                     </a>
                                 </div>
                             </div>
@@ -825,7 +887,7 @@
     </div>
     <br />
     <div class="text-end">
-        <a href="/events" class="p-2 link-secondary">
+        <a href="/events" class="p-2 link-secondary-1">
             more events<i class="bi bi-arrow-right"></i>
         </a>
     </div>
@@ -843,6 +905,16 @@
                 class="p-1 link-secondary"
                 href="{{ route('services.category', 'Photography-and-video-coverage') }}"
                 >photography & video</a
+            >
+             <a
+                class="p-1 link-secondary"
+                href="{{ route('services.category', 'Tour-Guide-Operators') }}"
+                >Tour Guide Operators</a
+            >
+             <a
+                class="p-1 link-secondary"
+                href="{{ route('services.category', 'Massage-and-Parlour') }}"
+                >Massage and Parlour</a
             >
             <a
                 class="p-1 link-secondary"
@@ -897,7 +969,7 @@
                 <div class="row">
                     @foreach($services as $service) @if($service->published ==
                     1)
-                    <div class="col-lg-3 col-md-3 col-sm-12">
+                    <div class="col-lg-3 col-md-12 col-sm-12">
                     <a href="{{ route('services.show', $service->slug) }}" class="p_link">
                         <div class="card">
                             <img
@@ -905,20 +977,19 @@
                                 alt="{{ $service->name }}"
                                 class="card-img-top h-4"
                             />
-                            <div class="card-body">
+                            <div class="card-body text-center pt-3">
                                 <small class="text-muted"
                                     ><i class="bi bi-geo-alt"
-                                        >{{ $event->location }}</i
+                                        >{{ $service->location }}</i
                                     ></small
                                 >
                                 <p class="card-title">{{ $service->name }}</p>
-                                <small><b>from KES {{ $service->price }}</b></small>
-                                <div class="text-end">
+                                <div class="">
                                     <a
                                         href="{{ route('services.show', $service->slug ) }}"
                                         class="btn btn-outline-primar"
                                     >
-                                        <i class="bi bi-cart-check"></i>
+                                        <i class="bi bi-cart-check"></i> from KES {{ $service->price }}
                                     </a>
                                 </div>
                             </div>
@@ -930,17 +1001,17 @@
             </div>
             <div class="swiper-slide">
                 <div class="row">
-                    @foreach($services as $service) @if($service->published ==
+                    @foreach($services_latest as $service) @if($service->published ==
                     1)
                     <div class="col-lg-3 col-md-3 col-sm-12">
-                    <a href="{{ route('services.show', $service->slug) }}" class="p_link">
+                    
                         <div class="card">
                             <img
                                 src="{{ asset('/storage/'.$service->image ) }}"
                                 alt="{{ $service->name }}"
                                 class="card-img-top h-4"
                             />
-                            <div class="card-body">
+                            <div class="card-body text-center pt-3">
                                 <small class="text-muted"
                                     ><i class="bi bi-geo-alt"
                                         >{{ $event->location }}</i
@@ -949,51 +1020,48 @@
                                 <p class="card-title">{{ $service->name }}</p>
                                 <small><b>from KES {{ $service->price }}</b></small>
                                 <div class="text-end">
-                                    <a
+                                      <a
                                         href="{{ route('services.show', $service->slug ) }}"
                                         class="btn btn-outline-primar"
                                     >
-                                        <i class="bi bi-cart-check"></i>
+                                        <i class="bi bi-cart-check"></i> from KES {{ $service->price }}
                                     </a>
                                 </div>
                             </div>
                         </div>
-                                        </a>
+                                        
                     </div>
                     @endif @endforeach
                 </div>
             </div>
             <div class="swiper-slide">
                 <div class="row">
-                    @foreach($services as $service) @if($service->published ==
+                    @foreach($services_old as $service) @if($service->published ==
                     1)
                     <div class="col-lg-3 col-md-3 col-sm-12">
-                    <a href="{{ route('services.show', $service->slug) }}" class="p_link">
                         <div class="card">
                             <img
                                 src="{{ asset('/storage/'.$service->image ) }}"
                                 alt="{{ $service->name }}"
                                 class="card-img-top h-4"
-                            />
-                            <div class="card-body">
+                            />  
+                            <div class="card-body text-center pt-3">
                                 <small class="text-muted"
                                     ><i class="bi bi-geo-alt"
                                         >{{ $event->location }}</i
                                     ></small
                                 >
                                 <p class="card-title">{{ $service->name }}</p>
-                                <small><b>from KES {{ $service->price }}</b></small>
                                 <div class="text-end">
-                                    <a
+                                      <a
                                         href="{{ route('services.show', $service->slug ) }}"
                                         class="btn btn-outline-primar"
                                     >
-                                        <i class="bi bi-cart-check"></i>
+                                        <i class="bi bi-cart-check"></i> from KES {{ $service->price }}
                                     </a>
                                 </div>
                             </div>
                         </div>
-                    </a>
                     </div>
                     @endif @endforeach
                 </div>
@@ -1004,7 +1072,7 @@
     </div>
     <br />
     <div class="text-end">
-        <a href="/services" class="p-2 link-secondary">
+        <a href="/services" class="p-2 link-secondary-1">
             more services <i class="bi bi-arrow-right"></i>
         </a>
     </div>
@@ -1047,7 +1115,7 @@
     </div>
     <br />
     <div class="text-end">
-        <a href="/blogs" class="p-2 link-secondary">
+        <a href="/blogs" class="p-2 link-secondary-1">
             more tales <i class="bi bi-arrow-right"></i>
         </a>
     </div>
@@ -1055,38 +1123,38 @@
 
 <!--<hr />-->
 
-<!--<div class="container">-->
-<!--    <h5 class="text-center">Watch our videos about past adventures</h5>-->
-<!--    <br />-->
-<!--    <div class="row">-->
-<!--        @foreach($videos as $video)-->
-<!--        <div class="col-lg-3 col-sm-12 col-md-3">-->
-<!--            <div class="card">-->
-<!--                <div class="card-body">-->
-<!--                    <div class="embed-responsive embed-responsive-16by9">-->
-<!--                        <iframe-->
-<!--                            class="embed-responsive-item"-->
-<!--                            src="https://www.youtube.com/embed/{{$video->url}}"-->
-<!--                            allowfullscreen-->
-<!--                        ></iframe>-->
-<!--                    </div>-->
-<!--                    <br />-->
-<!--                    <div class="blue"></div>-->
-<!--                    <br />-->
-<!--                    <div class="card-title text-center">-->
-<!--                        <p>{{ $video->name }}</p>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--        @endforeach-->
-<!--    </div>-->
-<!--    <br />-->
-<!--    <div class="text-end">-->
-<!--        <a href="#" class="p-2 link-secondary">-->
-<!--            Watch More <i class="bi bi-arrow-right"></i>-->
-<!--        </a>-->
-<!--    </div>-->
-<!--</div>-->
+<div class="container">
+    <h5 class="text-center">Watch our videos about past adventures</h5>
+    <br />
+    <div class="row">
+        @foreach($videos as $video)
+        <div class="col-lg-4 col-sm-12 col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <div class="embed-responsive embed-responsive-16by9 card-img-top">
+                        <iframe
+                            class="embed-responsive-item h-4"
+                            src="https://www.youtube.com/embed/{{$video->url}}"
+                            allowfullscreen
+                        ></iframe>
+                    </div>
+                    <br />
+                    <div class="blue"></div>
+                    <br />
+                    <div class="card-title text-center">
+                        <p>{{ $video->name }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @endforeach
+    </div>
+    <br />
+    <div class="text-end">
+        <a href="{{ url('/videos') }}" class="p-2 link-secondary">
+            Watch More <i class="bi bi-arrow-right"></i>
+        </a>
+    </div>
+</div>
 <br />
 @endsection
