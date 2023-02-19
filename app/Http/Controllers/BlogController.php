@@ -8,11 +8,16 @@ use Illuminate\Support\Facades\Auth;
 
 class BlogController extends Controller
 {
+    public function blogs() {
+        $blogs = Blog::latest()->paginate(10);
+        return view('admin.blogs', compact('blogs'))->with('i', (request()->input('page', 1) - 1) * 5);
+    }
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
+
     public function index()
     {
         //

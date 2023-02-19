@@ -111,7 +111,7 @@ class AccomodationController extends Controller
     public function edit($id)
     {
         //
-        $product = Accomodation::find($id);
+        $accomodation = Accomodation::find($id);
         return view("accomodations.edit", compact("accomodation"));
     }
 

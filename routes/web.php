@@ -80,6 +80,7 @@ Route::get('/search',[HomeController::class, 'search'])->name('search');
 
 //BLOGS
 Route::get('/blogs',[BlogController::class, 'index'])->name('blogs');
+Route::get('/all-blogs',[BlogController::class, 'blogs'])->name('all-blogs');
 Route::get('/blogs/create',[BlogController::class, 'create'])->name('blogs.create')->middleware(['auth', 'verified']);
 Route::get('/blogs/show/{id}',[BlogController::class, 'show'])->name('blogs.show');
 Route::post('/blogs/store',[BlogController::class, 'store'])->name('blogs.store')->middleware(['auth', 'verified']);

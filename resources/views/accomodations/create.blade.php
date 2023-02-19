@@ -78,6 +78,60 @@
                             <div class="row">
                                 <div class="col-6">
                                     <label class="form-label"
+                                        >rates(in ksh)</label
+                                    >
+                                    <input
+                                        type="number"
+                                        name="rates"
+                                        value="{{old('rates')}}"
+                                        class="form-control @error('rates') is-invalid @enderror"
+                                    />
+                                    @error('rates')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <br />
+                        <div class="form-group">
+                            <label for="" class="form-label"
+                                >event location</label
+                            >
+                            <input
+                                type="text"
+                                name="location"
+                                value="{{ old('location') }}"
+                                class="form-control @error('location') is-invalid @enderror"
+                            />
+                            @error('location')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">details </label>
+                            <textarea
+                                name="description"
+                                id="summernote"
+                                cols="30"
+                                rows="3"
+                                class="form-control @error('description') is-invalid @enderror"
+                                required
+                            ></textarea>
+                            @error('description')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-6">
+                                    <label class="form-label"
                                         >place-image</label
                                     >
                                     <input
@@ -103,27 +157,6 @@
                                         required
                                     />
                                     @error('image2')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                    @enderror
-                                </div>
-                            </div>
-                        </div>
-                        <br />
-                        <div class="form-group">
-                            <div class="row">
-                                <div class="col-6">
-                                    <label class="form-label"
-                                        >rates(in ksh)</label
-                                    >
-                                    <input
-                                        type="number"
-                                        name="rates"
-                                        value="{{old('rates')}}"
-                                        class="form-control @error('rates') is-invalid @enderror"
-                                    />
-                                    @error('rates')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -167,39 +200,118 @@
                                 </div>
                             </div>
                         </div>
+                    
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-6">
+                                    <label class="form-label"
+                                        >place-image</label
+                                    >
+                                    <input
+                                        type="file"
+                                        name="image"
+                                        class="form-control-file @error('image') is-invalid @enderror"
+                                        required
+                                    />
+                                    @error('image')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+                                </div>
+                                <div class="col-6">
+                                    <label for="image2" class="form-label"
+                                        >placeimage2</label
+                                    >
+                                    <input
+                                        type="file"
+                                        name="image2"
+                                        class="form-control-file @error('image2') is-invalid @enderror"
+                                        required
+                                    />
+                                    @error('image2')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-6">
+                                    <label class="form-label"
+                                        >place-image3</label
+                                    >
+                                    <input
+                                        type="file"
+                                        name="image3"
+                                        class="form-control-file @error('image3') is-invalid @enderror"
+                                     
+                                    />
+                                    @error('image3')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+                                </div>
+                                <div class="col-6">
+                                    <label for="image4" class="form-label"
+                                        >placeimage4</label
+                                    >
+                                    <input
+                                        type="file"
+                                        name="image4"
+                                        class="form-control-file @error('image4') is-invalid @enderror"
+                                  
+                                    />
+                                    @error('image4')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+                                </div>
+                            </div>
+                        </div>
+                       
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-6">
+                                    <label class="form-label"
+                                        >place-image5</label
+                                    >
+                                    <input
+                                        type="file"
+                                        name="image5"
+                                        class="form-control-file @error('image5') is-invalid @enderror"
+                                      
+                                    />
+                                    @error('image5')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+                                </div>
+                                <div class="col-6">
+                                    <label for="image6" class="form-label"
+                                        >placeimage6</label
+                                    >
+                                    <input
+                                        type="file"
+                                        name="image6"
+                                        class="form-control-file @error('image6') is-invalid @enderror"
+                                        required
+                                    />
+                                    @error('image6')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+                                </div>
+                            </div>
+                        </div>
                         <br />
-                        <div class="form-group">
-                            <label for="" class="form-label"
-                                >event location</label
-                            >
-                            <input
-                                type="text"
-                                name="location"
-                                value="{{ old('location') }}"
-                                class="form-control @error('location') is-invalid @enderror"
-                            />
-                            @error('location')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                            @enderror
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label">details </label>
-                            <textarea
-                                name="description"
-                                id="summernote"
-                                cols="30"
-                                rows="5"
-                                class="form-control @error('description') is-invalid @enderror"
-                                required
-                            ></textarea>
-                            @error('description')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                            @enderror
-                        </div>
                         <div class="text-center">
                             <button type="submit" class="btn btn-primar">
                                 Upload

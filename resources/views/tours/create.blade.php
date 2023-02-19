@@ -20,31 +20,6 @@
             <div class="form-group">
                 <div class="row">
                     <div class="col-lg-6 col-sm-12">
-                        <label for="image" class="form-label">Hotel Image</label>
-                        <input type="file" name="image" id="image" class="form-control-file" required>
-                        <span class="text-danger">@error('image') {{ $message }} @enderror</span>
-                    </div>
-                    <div class="col-lg-6 col-sm-12">
-                        <label for="image1" class="form-label">Hotel Image 2</label>
-                        <input type="file" name="image1" id="image1" class="form-control-file" required>
-                        <span class="text-danger">@error('image1') {{ $message }} @enderror</span>
-                    </div>
-                </div>
-                <br>
-                <div class="row">
-                    <div class="col-lg-6 col-sm-12">
-                        <label for="image2" class="form-label">Hotel Image 3</label>
-                        <input type="file" name="image2" id="image2" class="form-control-file " required>
-                        <span class="text-danger">@error('image2') {{ $message }} @enderror</span>
-                    </div>
-
-                    <div class="col-lg-6 col-sm-12">
-                        
-                    </div>
-                </div>
-                <br>
-                <div class="row">
-                    <div class="col-lg-6 col-sm-12">
                     <label for="category" class="form-label">Category</label>
                         <select name="category" id="category" class="form-control @error('category') is-invalid @enderror">
                             <option value="">--choose category--</option>
@@ -120,7 +95,49 @@
                     <textarea name="additional_info" id="summernote" cols="20" rows="10" class="form-control"></textarea>
                     <span class="text-danger">@error('additional_info') {{ $message }} @enderror</span>
                 </div>
+                <div class="row">
+                    <div class="col-lg-6 col-sm-12">
+                        <label for="image" class="form-label">Hotel Image</label>
+                        <input type="file" name="image" id="image" class="form-control-file" required>
+                        <span class="text-danger">@error('image') {{ $message }} @enderror</span>
+                    </div>
+                    <div class="col-lg-6 col-sm-12">
+                        <label for="image1" class="form-label">Hotel Image 2</label>
+                        <input type="file" name="image1" id="image1" class="form-control-file" required>
+                        <span class="text-danger">@error('image1') {{ $message }} @enderror</span>
+                    </div>
+                </div>
+            <br>
+                <div class="row">
+                    <div class="col-lg-6 col-sm-12">
+                        <label for="image2" class="form-label">Hotel Image 3</label>
+                        <input type="file" name="image2" id="image2" class="form-control-file " required>
+                        <span class="text-danger">@error('image2') {{ $message }} @enderror</span>
+                    </div>
+
+                    <div class="col-lg-6 col-sm-12">
+                    <label for="image3" class="form-label">Hotel Image 4</label>
+                        <input type="file" name="image3" id="image3" class="form-control-file " required>
+                        <span class="text-danger">@error('image2') {{ $message }} @enderror</span>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-lg-6 col-sm-12">
+                        <label for="image4" class="form-label">Hotel Image 5</label>
+                        <input type="file" name="image4" id="image4" class="form-control-file " required>
+                        <span class="text-danger">@error('image4') {{ $message }} @enderror</span>
+                    </div>
+
+                    <div class="col-lg-6 col-sm-12">
+                    <label for="image5" class="form-label">Hotel Image 6</label>
+                        <input type="file" name="image5" id="image5" class="form-control-file " required>
+                        <span class="text-danger">@error('image5') {{ $message }} @enderror</span>
+                    </div>
+                </div>
+                <br>
             </div>
+
             <div class="text-center">
                 <button type="submit" class="btn btn-primar" > 
                     Add Tour

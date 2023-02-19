@@ -4,7 +4,7 @@
 
 <h2 class="pri">products</h2>
 <div class="text-right">
-                        <a href="{{ route('addtour.create') }}" class=" btn btn-sm btn-primary">add product</a>
+                        <a href="{{ route('products.create') }}" class=" btn btn-sm btn-primary">add product</a>
 </div>
     <br>
             <div class="table-responsive">
@@ -45,7 +45,7 @@
                             <td>{{ $product->location }}</td>
                             <td>{{ $product->price }}</td>
                             <td>{{ $product->quantity_available }}</td>
-                            <td>{!! $product->description !!}</td>
+                            <td>{!! Str::limit($product->description, 150) !!}</td>
                             <td>
                                 <img
                                     src="{{ asset('/storage/'.$product->image) }}"

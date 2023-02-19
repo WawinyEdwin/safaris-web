@@ -45,7 +45,7 @@
                             <td>{{ $accomodation->location }}</td>
                             <td>{{ $accomodation->rates }}</td>
                             
-                            <td>{!! $accomodation->description !!}</td>
+                            <td>{!! Str::limit($accomodation->description , 100) !!}</td>
                             <td>
                                 <img
                                     src="{{ asset('/storage/'.$accomodation->image) }}"

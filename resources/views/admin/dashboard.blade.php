@@ -110,8 +110,10 @@
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
+                                        <a href="{{ route('services.all') }}">
                                             <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
                                                 services</div>
+                                        </a>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $services }}</div>
                                         </div>
                                         <div class="col-auto">
@@ -226,7 +228,7 @@
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
-                                        <a href="{{ route('blogs') }}">
+                                        <a href="{{ route('all-blogs') }}">
                                             <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
                                                 blogs</div>
                                         </a>

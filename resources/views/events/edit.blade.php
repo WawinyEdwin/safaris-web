@@ -57,43 +57,7 @@
                             </div>
                         </div>
                         <br>
-                        <div class="form-group">
-                            <div class="row">
-                                <div class="col-6">
-                                    <label class="form-label"
-                                        >event-image</label
-                                    >
-                                    <input
-                                        type="file"
-                                        name="image"
-                                        class="form-control-file  @error('image') is-invalid @enderror"
-                                        required
-                                    />
-                                    @error('image')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                                </div>
-                                <div class="col-6">
-                                    <label for="image2" class="form-label"
-                                        >eventimage2</label
-                                    >
-                                    <input
-                                        type="file"
-                                        name="image2"
-                                        class="form-control-file  @error('image2') is-invalid @enderror"
-                                        required
-                                    />
-                                    @error('image2')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                                </div>
-                            </div>
-                        </div>
-                        <br>
+                        
                         <div class="form-group">
                             <div class="row">
                                 <div class="col-6">
@@ -177,6 +141,116 @@
                                     </span>
                                 @enderror
                         </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-6">
+                                    <label class="form-label"
+                                        >event-image</label
+                                    >
+                                    <input
+                                        type="file"
+                                        name="image"
+                                        class="form-control-file  @error('image') is-invalid @enderror"
+                                
+                                    />
+                                    @error('image')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                                </div>
+                                <div class="col-6">
+                                    <label for="image2" class="form-label"
+                                        >eventimage2</label
+                                    >
+                                    <input
+                                        type="file"
+                                        name="image2"
+                                        class="form-control-file  @error('image2') is-invalid @enderror"
+                                
+                                    />
+                                    @error('image2')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-6">
+                                    <label class="form-label"
+                                        >event-image3</label
+                                    >
+                                    <input
+                                        type="file"
+                                        name="image3"
+                                        class="form-control-file  @error('image3') is-invalid @enderror"
+                                
+                                    />
+                                    @error('image3')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                                </div>
+                                <div class="col-6">
+                                    <label for="image4" class="form-label"
+                                        >eventimage4</label
+                                    >
+                                    <input
+                                        type="file"
+                                        name="image4"
+                                        class="form-control-file  @error('image4') is-invalid @enderror"
+                                
+                                    />
+                                    @error('image4')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-6">
+                                    <label class="form-label"
+                                        >event-image5</label
+                                    >
+                                    <input
+                                        type="file"
+                                        name="image5"
+                                        class="form-control-file  @error('image5') is-invalid @enderror"
+                                
+                                    />
+                                    @error('image5')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                                </div>
+                                <div class="col-6">
+                                    <label for="image6" class="form-label"
+                                        >eventimage6</label
+                                    >
+                                    <input
+                                        type="file"
+                                        name="image6"
+                                        class="form-control-file  @error('image6') is-invalid @enderror"
+                                
+                                    />
+                                    @error('image6')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <br>
                         <div class="text-center">
                         <button type="submit" class="btn btn-primar">
                             update

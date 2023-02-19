@@ -40,7 +40,7 @@
                     <td>{{ $service->category }}</td>
                     <td>{{ $service->location }}</td>
                     <td>{{ $service->price }}</td>
-                    <td>{!! $service->description !!}</td>
+                    <td>{!! Str::limit($service->description, 100) !!}</td>
                     <td>
                         <img src="{{ asset('/storage/'.$service->image) }}" alt="" style="width: 100px; height: 50px;">
                     </td>
@@ -62,7 +62,6 @@
                             @method('DELETE')
                             <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i></button>
                         </form>
-                      
                     </td>
                 </tr>
                 @endforeach

@@ -5,8 +5,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>Safaris | Admin</title>
-
-           <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Spinnaker&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
         
         <!-- Styles -->
         <link rel="stylesheet" href="{{ asset('bootstrap/app.css') }}">
@@ -109,7 +110,7 @@
       $('#summernote').summernote({
         placeholder: 'Share any type of content with your users',
         tabsize: 2,
-        height: 300
+        height: 200
       });
     </script>
     

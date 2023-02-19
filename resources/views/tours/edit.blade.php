@@ -20,32 +20,6 @@
             <div class="form-group">
                 <div class="row">
                     <div class="col-lg-6 col-sm-12">
-                        <label for="image" class="form-label">Hotel Image</label>
-                        <input type="file" name="image" id="image" value="{!! $tours->image !!}" class="form-control-file" >
-                        <span class="text-danger">@error('image') {{ $message }} @enderror</span>
-                    </div>
-                    <div class="col-lg-6 col-sm-12">
-                        <label for="image1" class="form-label">Hotel Image 2</label>
-                        <input type="file" name="image1" id="image1" value="{{ $tours->image1 }}" class="form-control-file" >
-                        <span class="text-danger">@error('image1') {{ $message }} @enderror</span>
-                    </div>
-                </div>
-                <br>
-                <br>
-                <div class="row">
-                    <div class="col-lg-6 col-sm-12">
-                        <label for="image2" class="form-label">Hotel Image 3</label>
-                        <input type="file" name="image2" id="image2" value="{{ $tours->image2 }}" class="form-control-file" >
-                        <span class="text-danger">@error('image2') {{ $message }} @enderror</span>
-                    </div>
-
-                    <div class="col-lg-6 col-sm-12">
-                        
-                    </div>
-                </div>
-                <br>
-                <div class="row">
-                    <div class="col-lg-6 col-sm-12">
                     <label for="category" class="form-label">Category</label>
                         <select name="category" id="category" class="form-control">
                             <option value="{{ $tours->category }}">{{ $tours->category }}</option>
@@ -115,7 +89,46 @@
                     <small class="form-text text-muted">Tell your visitor more...</small>
                     <textarea name="additional_info" id="summernote" cols="20" rows="10" class="form-control" value="{!! $tours->additional_info !!}"></textarea>
                 </div>
+                <div class="row">
+                    <div class="col-lg-6 col-sm-12">
+                        <label for="image" class="form-label">Hotel Image</label>
+                        <input type="file" name="image" id="image" value="{!! $tours->image !!}" class="form-control-file" >
+                        <span class="text-danger">@error('image') {{ $message }} @enderror</span>
+                    </div>
+                    <div class="col-lg-6 col-sm-12">
+                        <label for="image1" class="form-label">Hotel Image 2</label>
+                        <input type="file" name="image1" id="image1" value="{{ $tours->image1 }}" class="form-control-file" >
+                        <span class="text-danger">@error('image1') {{ $message }} @enderror</span>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-lg-6 col-sm-12">
+                        <label for="image2" class="form-label">Hotel Image 3</label>
+                        <input type="file" name="image2" id="image2" value="{{ $tours->image2 }}" class="form-control-file" >
+                        <span class="text-danger">@error('image2') {{ $message }} @enderror</span>
+                    </div>
+                    <div class="col-lg-6 col-sm-12">
+                    <label for="image3" class="form-label">Hotel Image 4</label>
+                        <input type="file" name="image3" id="image3" value="{{ $tours->image3 }}" class="form-control-file" >
+                        <span class="text-danger">@error('image3') {{ $message }} @enderror</span>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-lg-6 col-sm-12">
+                        <label for="image4" class="form-label">Hotel Image 5</label>
+                        <input type="file" name="image4" id="image4" value="{{ $tours->image4 }}" class="form-control-file" >
+                        <span class="text-danger">@error('image2') {{ $message }} @enderror</span>
+                    </div>
+                    <div class="col-lg-6 col-sm-12">
+                    <label for="image5" class="form-label">Hotel Image 6</label>
+                        <input type="file" name="image5" id="image5" value="{{ $tours->image5 }}" class="form-control-file" >
+                        <span class="text-danger">@error('image5') {{ $message }} @enderror</span>
+                    </div>
+                </div>
             </div>
+
             <div class="text-center">
                 <button type="submit" class="btn btn-primar" > 
                     Edit Tour
