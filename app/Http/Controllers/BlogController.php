@@ -132,6 +132,7 @@ class BlogController extends Controller
          $request->validate([
             'title' => 'required',
             'image' => 'required',
+            
             'content' => 'required'
         ]);
 
@@ -159,17 +160,12 @@ class BlogController extends Controller
             unset($blog['image6']);
         }
 
-
-        //
         $blog = Blog::find($id);
-        $path = $request->image->store('images', 'public');
         $blog->title = $request->title;
         $blog->content = $request->content;
         $blog->user_id = Auth::id();
-
         $blog->update();
-
-        return redirect()->route('blogs')->with('success', 'Content Created Successfully!');
+        return redirect()->route('all-blogs')->with('success', 'Content updated Successfully!');
     }
 
     /**
