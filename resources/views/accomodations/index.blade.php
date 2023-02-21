@@ -110,17 +110,11 @@
                         <small class="text-muted"><i class="bi bi-geo-alt">{{ $accomodation->location }}</i></small>
                     <p class="card-title">{{ $accomodation->name }}</p>
                     <p><b>rates - KES {{ $accomodation->rates }}  </b></p>
-                     <div class="d-flex justify-content-between">
+                     <div class="text-center">
                       <a class="btn btn-success" href="{{ route('accomodations.show', $accomodation->slug) }}"><i class="bi bi-eye-fill xl"></i
                                     > explore</a>  
                     
-                    <a
-                                        href="{{ route('bookings.create', $accomodation->name ) }}"
-                                        class="btn btn-primar"
-                                    >
-                                        book now
-                                        <i class="bi bi-arrow-right"></i>
-                                    </a>
+                   
                     </div>
                 </div>
                 </div>
