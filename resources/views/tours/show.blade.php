@@ -27,13 +27,14 @@
                 <div class="card-body">
                 <div class="text-center">
                     <p class="lead"> 
-                        Book Now
+                        Book Package.
 </p>
                 </div>
-                <div class="d-flex justify-content-between pb-2">
-                    <a href="tel:+254701700144" class="btn btn-success"><i class="bi bi-phone"></i> Call</a> 
-                    <a  href="{{ route('bookings.create', $tours->category ) }}" class="btn btn-primar" ><i class="bi bi-card-text"></i> Form</a>
-                    <a href="mailto:okulinksafaris@gmail.com?subject=Booking - {{$tours->hotel}}&body=Hello Okulink, I would like to reserve a spot at {{ $tours->hotel }}.Kindly contact back with the details." class="btn btn-danger"><i class="bi bi-envelope-check"></i>Email</a>
+                <div class="d-flex justify-content-around pb-2">
+                    <a href="tel:+254701700144" class="btn btn-info"><i class="bi bi-telephone"></i> </a> 
+                    <a href="https://wa.me/+254701700144?text=I'm%20inquiring%20about%20{{$tours->hotel}}" class="btn btn-success" target="_blank" ><i class="bi bi-whatsapp"></i></a>
+                    <a  href="{{ route('bookings.create', $tours->category ) }}" class="btn btn-warning" ><i class="bi bi-card-text"></i></a>
+                    <a href="mailto:okulinksafaris@gmail.com?subject=Booking - {{$tours->hotel}}&body=Hello Okulink, I would like to reserve a spot at {{ $tours->hotel }}.Kindly contact back with the details." class="btn btn-danger"><i class="bi bi-envelope-check"></i></a>
                 </div>
                     <h5 class="card-title">Hotel {{ $tours->hotel }}</h5>
                     <ul>

@@ -136,13 +136,23 @@
                             <div class="sizes mt-2">
                                 <h6 class="text-uppercase"><i class="bi bi-geo-alt-fill"></i> {{ $accomodation->location }}</h6>
                             </div>
-                            <!-- <div class="cart mt-4 align-items-center">
-                                <button
+                            <div class="mt-4 ">
+                            <div class="text-center">
+                    <p > 
+                        Get accomodation
+</p>
+                </div>
+                <div class="d-flex justify-content-around pb-2">
+                    <a href="tel:+254701700144" class="btn btn-info"><i class="bi bi-telephone"></i></a> 
+                    <a href="https://wa.me/+254701700144?text=I'm%20inquiring%20about%20{{$accomodation->name}}" class="btn btn-success" target="_blank" ><i class="bi bi-whatsapp"></i></a>
+                    <a href="mailto:okulinksafaris@gmail.com?subject=Event Tickets for - {{$accomodation->name}}&body=Hello Okulink, I would like to enquire about the subject accomodation .Kindly contact back with the details." class="btn btn-danger"><i class="bi bi-envelope-check"></i></a>
+                </div>
+                                <!-- <button
                                     class="btn btn-danger text-uppercase mr-2 px-4"
                                 >
                                     checkout
-                                </button>
-                            </div> -->
+                                </button> -->
+                            </div>
                         </div>
                     </div>
                 </div>

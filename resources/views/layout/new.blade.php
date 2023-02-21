@@ -131,62 +131,132 @@
         </nav>
      
         <div class="pt-5">
-
+         <div class="pt-3">
         @yield('content')
         </div>
-        
-    <div class="footer bg-primar text-white pt-5">
-        <div class="container ">
-            <div class="row">
-                <div class="col-lg-3 col-sm-12 links p-2">
-                    <h5>Useful Links</h5>
-                    <div class="white_line"></div>
-                    <br>
-                        <p><a href="{{ route('enquiries.create') }}" class="text-white">Contact Us</a></p>
-                        <p><a href="{{ route('about') }}" class="text-white">About Us</a></p>
-                        <!-- <p><a href="{{ route('videos') }}" class="text-white">Safari Videos</a></p> -->
-                        <p><a href="{{ url('/') }}" class="text-white">In the Media</a></p>
-                        <p><a href="{{ url('/') }}" class="text-white">Travel Info</a></p>
-                        <p><a href="{{ route('careers') }}" class="text-white">Careers</a></p>
-                        <!-- <p><a href="{{ url('/') }}" class="text-white">Affiliations</a></p> -->
-                        <!-- <p><a href="{{ url('/') }}" class="text-white">Our Team</a></p> -->
-                        <p><a href="{{ route('about') }}" class="text-white">FAQs & Help</a></p>
-                        <p><a href="{{ route('policy') }}" class="text-white">Privacy Policy</a></p>
-                </div>
-                <div class="col-lg-3  col-sm-12 p-2">
-                    <h5>Our Values</h5>
-                    <div class="white_line"></div>
-                    <br>
-                    <img src="{{ asset('okulink-1.png') }} " alt="about" class="about" heigth="400" width="200" >
-                </div>
- 
-                <div class="col-lg-3  col-sm-12 p-2">
-                    <h5 class="">About Us</h5>
-                    <div class="white_line"></div>
-                    <br>
-                    <div class="">
-                        <p>Okulink safaris is the story of discoveries, exploration and transformation. We are on a journey of giving magical experiences through travel, branding and celebrating the beauty of Africa and socialcultural practices.
+        </div>
+
+        <div class="footer bg-primar text-white pt-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-sm-12 links p-2">
+                        <h5>Useful Links</h5>
+                        <div class="white_line"></div>
+                        <br />
+                        <p>
+                            <a
+                                href="{{ route('enquiries.create') }}"
+                                class="text-white"
+                                >Contact Us</a
+                            >
                         </p>
-                        <a href="{{ route('about') }}" class="btn btn-outline-light">About Us</a>
+                        <p>
+                            <a href="{{ route('about') }}" class="text-white"
+                                >About Us</a
+                            >
+                        </p>
+                        <p>
+                            <a href="{{ route('careers') }}" class="text-white"
+                                >Careers</a
+                            >
+                        </p>
+            
+                        <p>
+                            <a href="{{ route('about') }}" class="text-white"
+                                >FAQs & Help</a
+                            >
+                        </p>
+                        <p>
+                            <a href="{{ route('policy') }}" class="text-white"
+                                >Privacy Policy</a
+                            >
+                        </p>
+                    </div>
+                    <div class="col-lg-3 col-sm-12 p-2">
+                        <h5>Our Values</h5>
+                        <div class="white_line"></div>
+                        <br />
+                        <img
+                            src="{{ asset('okulink-1.png') }} "
+                            alt="about"
+                            class="about"
+                            heigth="400"
+                            width="200"
+                        />
+                    </div>
+
+                    <div class="col-lg-3 col-sm-12 p-2">
+                        <h5 class="">About Us</h5>
+                        <div class="white_line"></div>
+                        <br />
+                        <div class="">
+                            <p>
+                                Okulink safaris is the story of discoveries,
+                                exploration and transformation. We are on a
+                                journey of giving magical experiences through
+                                travel, branding and celebrating the beauty of
+                                Africa and socialcultural practices.
+                            </p>
+                            <a
+                                href="{{ route('about') }}"
+                                class="btn btn-outline-light"
+                                >About Us</a
+                            >
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-12 blogs p-2">
+                        <h5 class="">Connect with us</h5>
+                        <div class="white_line"></div>
+                        <br />
+                        <li class="nav-item d-flex">
+                            &nbsp;
+                            <a
+                                href="https://www.facebook.com/okulinksafaris"
+                                target="_blank"
+                                ><i class="bi bi-facebook bit"></i></a
+                            >&nbsp;&nbsp;&nbsp;
+                            <a
+                                href="https://twitter.com/okulinksafaris"
+                                target="_blank"
+                                ><i class="bi bi-twitter bit"></i></a
+                            >&nbsp;&nbsp;&nbsp;
+                            <a
+                                href="https://www.tiktok.com/@okulinksafaris?_t=8WzTDf232YP&_r=1"
+                                target="_blank"
+                                ><i class="bi bi-tiktok bit"></i></a
+                            >&nbsp;&nbsp;&nbsp;
+                            <a
+                                href="http://www.instagram.com/okulinksafaris"
+                                target="_blank"
+                                ><i class="bi bi-instagram bit"></i
+                            ></a>
+                        </li>
+                        <br />
+                        <p>
+                           <a href="tel:+254742659292" class="text-white" style="text-decoration: none;"><i class="bi bi-telephone"></i> +254742659292</a>
+</p>
+                        <p>
+                           <a href="tel:+254701700144"  class="text-white" style="text-decoration: none;"><i class="bi bi-telephone"></i> +254701700144</a> 
+</p>
+                        
                     </div>
                 </div>
-                <div class="col-lg-3 col-sm-12 blogs p-2">
-                    <h5 class="">Latest from Blog</h5>
-                    <div class="white_line"></div>
-                    <br>
-                    
-                </div>
             </div>
-        </div>
-        <br>
-        <footer class="pb-2">
+            <br />
+            <footer class="pb-2">
                 <div class="text-center">
-                    <h5 class="" id="year"> &copy; <script type="text/javascript"> document.write( new Date().getFullYear());</script> | Okulink Safaris.</h5>
+                    <h5 class="" id="year">
+                        &copy;
+                        <script type="text/javascript">
+                            document.write(new Date().getFullYear());
+                        </script>
+                        | Okulink Safaris.
+                    </h5>
                 </div>
                 <script  type="text/javascript">
                   var config = {
                     phone :" 254729294004",
-                    call :"Message Us",
+                    call :"WhatsApp",
                     position :"ww-right",
                     size : "ww-normal",
                     text : "",
@@ -201,31 +271,55 @@
                     s.onload = function () { tmWidgetInit(config) };
                     var x = document.getElementsByTagName("script")[0]; x.parentNode.insertBefore(s, x);
                 </script>
-        </footer>
-    </div>
+            </footer>
+        </div>
         <span onclick="topFunction()" id="myBtn" title="Back to Top">
             <i class="bi bi-arrow-up text-white"></i>
-        </span>
-        <script>
-    function change_image(image) {
-        var container = document.getElementById("main-image");
+                                </span>
 
-        container.src = image.src;
-    }
-
-    document.addEventListener("DOMContentLoaded", function (event) {});
-</script>
         <script>
+            const swiper = new Swiper('.swiper', {
+                // Optional parameters
+                direction: 'horizontal',
+                loop: true,
+                autoPlay: true,
+                effect: 'coverflow',
+                coverflowEffect: {
+                    rotate: 30,
+                    slideShadows: false,
+                },
+                // grid: {
+                //     rows: 2,
+                // },
+                // If we need pagination
+                pagination: {
+                    el: '.swiper-pagination',
+                },
+
+                // Navigation arrows
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+
+                // And if we need scrollbar
+                scrollbar: {
+                    el: '.swiper-scrollbar',
+                },
+                });
             myButton = document.getElementById("myBtn");
             //show button on scroll
-            window.onscroll = function() {
-                scrollFunction()
-            }
+            window.onscroll = function () {
+                scrollFunction();
+            };
             //when there is a scroll down 20px
             function scrollFunction() {
-                if(document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                if (
+                    document.body.scrollTop > 20 ||
+                    document.documentElement.scrollTop > 20
+                ) {
                     myButton.style.display = "block";
-                } else{
+                } else {
                     myButton.style.display = "none";
                 }
             }
@@ -235,7 +329,10 @@
                 document.documentElement.scrollTop = 0;
             }
         </script>
-           
+        <!--Start of Tawk.to Script-->
+      
+        <!--End of Tawk.to Script-->
+        
         <script
             src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
@@ -246,5 +343,29 @@
             integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
             crossorigin="anonymous"
         ></script>
+        <script src="{{ asset('OwlCarousel2-2.3.4/dist/owl.carousel.js') }}"></script>
+            <!-- Owl Stylesheets -->
+            <script>
+                $('.owl-carousel').owlCarousel({
+                            margin: 10,
+                            loop: true,
+                            dots: false,
+                            nav: true,
+                            autoPlay: true,
+                            navText:["<div class='nav-btn prev-slide'><i class='bi bi-caret-left-fill'></i></div>","<div class='nav-btn next-slide'><i class='bi bi-caret-right-fill'></i></div>"],
+                            responsive: {
+                                0: {
+                                    items: 1
+                                },
+                                600: {
+                                    items: 3
+                                },
+                                1000: {
+                                    items: 4
+                                }
+                            }
+                        });
+            </script>
+       
     </body>
 </html>

@@ -366,7 +366,7 @@
                                     href="{{ route('products.show', $product->slug ) }}"
                                     class="btn btn-outline-primar"
                                 >
-                                    <i class="bi bi-cart-check"></i>KES {{
+                                    <i class="bi bi-cart-check"></i> View - KES {{
                                     $product->price }}
                                 </a>
                             </div>
@@ -657,7 +657,7 @@
     </div>
 </div>
 
-<!--<hr />-->
+<br />
 
 <div class="container">
     <h5 class="text-center">Watch our videos about past adventures</h5>

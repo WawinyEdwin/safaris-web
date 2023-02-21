@@ -346,7 +346,7 @@
                 <script  type="text/javascript">
                   var config = {
                     phone :" 254729294004",
-                    call :"Message Us",
+                    call :"WhatsApp",
                     position :"ww-right",
                     size : "ww-normal",
                     text : "",
