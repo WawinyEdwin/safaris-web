@@ -50,12 +50,12 @@
                         
                         <li class="nav-item"> 
                             <a class="nav-link " href="{{ route('safaris') }}">
-                                Safaris
+                                Tour Packages
                             </a>
                         </li>
                         <li class="nav-item"> 
                             <a class="nav-link "  href="{{ route('accomodations') }}">
-                                Accomodation
+                                Accomodations
                             </a>
                         </li>
                         <li class="nav-item"> 

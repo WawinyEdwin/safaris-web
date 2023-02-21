@@ -99,11 +99,11 @@
                     <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('safaris') }}">
-                                Safaris
+                                Tour Packages
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('accomodations') }}"> Accomodation </a>
+                            <a class="nav-link" href="{{ route('accomodations') }}"> Accomodations </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('events') }}"> Events </a>
@@ -208,7 +208,7 @@
         <br />
         <br />
         <br />
-        <div class="container p-3 text-center">
+        <div class="container pt-3 text-center">
             <div class="row">
                 <div class="col-md-4 offset-md-4">
                 <form class="d-flex" action="{{ route('search') }}"

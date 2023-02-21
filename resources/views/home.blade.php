@@ -51,7 +51,7 @@
 <div class="">
     <div
         id="carouselExampleControls"
-        class="carousel slide carousel-fade pt-1"
+        class="carousel slide carousel-fade "
         data-bs-ride="carousel"
     >
         <div class="carousel-inner">

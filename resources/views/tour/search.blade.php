@@ -85,8 +85,9 @@
       
         @endif
         @empty 
-        <div>
-            <h1 class="text-center">No safaris to Explore</h1>
+        <div class="pt-5 pb-5 text-center">
+            <h1 class="">more tour packages coming soon...</h1>
+            <a href="{{ url('/safaris') }}" class="btn btn-success">continue exploring <i class="bi bi-arrow-right"></i></a>
         </div>
         @endforelse
     </div>
