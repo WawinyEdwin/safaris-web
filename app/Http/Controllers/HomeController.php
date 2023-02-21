@@ -31,6 +31,7 @@ class HomeController extends Controller
                 }
             }]
         ])->orderBy("id", "desc")->paginate(10);
+        
         //find categories
         $categories = Category::all();
         //find blogs

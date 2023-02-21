@@ -20,10 +20,36 @@
 </div>
 <br>
 <div class="container pt-3">
+<div class="nav-scroller py-1 mb-2">
+        <nav class="nav d-flex justify-content-between">
+            <a
+                class="p-1 link-secondary"
+                href="{{ route('tour', 'Exciting Holiday Offers') }}"
+                >vacation offers</a
+            >
+            <a
+                class="p-1 link-secondary"
+                href="{{ route('tour', 'Tembea Ujionee') }}"
+                >tembea ujionee</a
+            >
+            <a
+                class="p-1 link-secondary"
+                href="{{ route('tour', 'Local Tours') }}"
+                >urban tours</a
+            >
+            @foreach($categories as $category)
+            <a
+                class="p-1 link-secondary"
+                href="{{ route('tour', $category->category_name ) }}"
+                >{{ $category->category_name }}</a
+            >
+            @endforeach
+        </nav>
+    </div>
     <div class="row">
         @forelse($tours as $safari)
         @if($safari->published == 1)
-        <div class="col-lg-4 col-sm-12">
+        <div class="col-lg-3 col-sm-12 col-md-4">
             <div class="card">
                 <img src="{{ asset('/storage/'. $safari->image) }}" alt="{{ $safari->hotel }}" class="card-img-top h-4 p-1">
                 <div class="card-body">
@@ -33,17 +59,10 @@
                     <p class="card-text">
                         From <b>{{ $safari->single_room}}</b> per person
                     </p>
-                    <div class="d-flex justify-content-between">
+                    <div class="text-center">
                       <a class="btn btn-success" href="{{ route('addtour.show', $safari->id) }}"><i class="bi bi-eye-fill xl"></i
                                     > explore</a>  
                     
-                    <a
-                                        href="{{ route('bookings.create', $safari->hotel ) }}"
-                                        class="btn btn-primar"
-                                    >
-                                        book now
-                                        <i class="bi bi-arrow-right"></i>
-                                    </a>
                     </div>
                 </div>
             </div>
