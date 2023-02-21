@@ -56,7 +56,7 @@ Route::resource('enquiries', EnquiryController::class);
 //bookings
 Route::get('/bookings',[BookingController::class, 'index'])->name('bookings')->middleware(['auth', 'verified']);
 Route::get('/bookings/show/{id}',[BookingController::class, 'show'])->name('bookings.show')->middleware(['auth', 'verified']);
-Route::get('/bookings/create/{destination}',[BookingController::class, 'create'])->name('bookings.create')->middleware(['auth', 'verified']);
+Route::get('/bookings/create/{destination}',[BookingController::class, 'create'])->name('bookings.create');
 Route::post('/bookings/new',[BookingController::class, 'store'])->name('bookings.store')->middleware(['auth', 'verified']);
 Route::get('/bookings/edit/{id}',[BookingController::class, 'edit'])->name('bookings.edit')->middleware(['auth', 'verified']);
 Route::post('/bookings/update/{id}',[BookingController::class, 'update'])->name('bookings.update')->middleware(['auth', 'verified']);
@@ -66,7 +66,7 @@ Route::delete('/bookings/publish/{id}',[BookingController::class, 'confirm'])->n
 //TOURS
 Route::get("/safaris", [ToursController::class, 'safaris'])->name("safaris");
 Route::get('/addtour',[ToursController::class, 'index'])->name('tours')->middleware(['auth', 'verified']);
-Route::get('/addtour/show/{id}',[ToursController::class, 'show'])->name('addtour.show')->middleware(['auth', 'verified']);
+Route::get('/addtour/show/{id}',[ToursController::class, 'show'])->name('addtour.show');
 Route::get('/addtour/create',[ToursController::class, 'create'])->name('addtour.create')->middleware(['auth', 'verified']);
 Route::post('/addtour/store',[ToursController::class, 'store'])->name('addtour.store')->middleware(['auth', 'verified']);
 Route::get('/addtour/edit/{id}',[ToursController::class, 'edit'])->name('addtour.edit')->middleware(['auth', 'verified']);

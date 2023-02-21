@@ -38,12 +38,6 @@
             rel="stylesheet"
             href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css"
         />
-        <link
-            rel="stylesheet"
-            href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
-            />
-
-            <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
         <!-- faicon   -->
         <link
             rel="apple-touch-icon"
@@ -70,6 +64,9 @@
         <link rel="stylesheet" href="{{ secure_asset('css/main.css') }}" />
         @endproduction
         <link rel="stylesheet" href="{{ asset('css/main.css') }}" />
+            <!-- Owl Stylesheets -->
+    <link rel="stylesheet" href="{{ asset('OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('OwlCarousel2-2.3.4/dist/assets/owl.theme.default.min.css') }}">
 
        
 
@@ -423,6 +420,7 @@
             }
         </script>
         <!--Start of Tawk.to Script-->
+      
         <!--End of Tawk.to Script-->
         
         <script
@@ -435,5 +433,29 @@
             integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
             crossorigin="anonymous"
         ></script>
+        <script src="{{ asset('OwlCarousel2-2.3.4/dist/owl.carousel.js') }}"></script>
+            <!-- Owl Stylesheets -->
+            <script>
+                $('.owl-carousel').owlCarousel({
+                            margin: 10,
+                            loop: true,
+                            dots: false,
+                            nav: true,
+                            autoPlay: true,
+                            navText:["<div class='nav-btn prev-slide'><i class='bi bi-caret-left-fill'></i></div>","<div class='nav-btn next-slide'><i class='bi bi-caret-right-fill'></i></div>"],
+                            responsive: {
+                                0: {
+                                    items: 1
+                                },
+                                600: {
+                                    items: 3
+                                },
+                                1000: {
+                                    items: 4
+                                }
+                            }
+                        });
+            </script>
+       
     </body>
 </html>

@@ -49,58 +49,37 @@ class HomeController extends Controller
 
         //find categories
         $categories = Category::all();
+
+
         //find blogs 
         $blogs = Blog::latest()->limit(2)->get();
         $coverBlogs = Blog::latest()->limit(4)->get();
         $videos = Video::inRandomOrder()->limit(3)->get();
         //fetches tours
-        $tours = Tours::inRandomOrder()->limit(3)->get();
-        $holidayOffers = Tours::where('category', 'Exciting Holiday Offers')->limit(4)->get();
-        $localTours = Tours::where('category', 'Local Tours')->limit(4)->get();
-        $tembea = Tours::where('category', 'Tembea Ujionee')->limit(4)->get();
-
-
+        $tours = Tours::inRandomOrder()->get();
         //to appear in carousel
         $highlights = Highlight::all();
         //products
-        $products = Product::where('category', 'Hair-and-beauty')->orderBy('id','desc')->limit(4)->get();
-        $products_latest = Product::where('category', 'Smartphones-and-Accessories')->orderBy('id','desc')->limit(4)->get();
-        $products_old = Product::where('category', 'Electronics-and-Appliances')->orderBy('id','desc')->limit(4)->get();
+        $products = Product::orderBy('id','desc')->get();
         // services
-        $services = Service::where('category', 'Pet-and-animal-training')->orderBy('id','desc')->limit(4)->get();
-        $services_latest = Service::where('category', 'Massage-and-Parlour')->orderBy('id','desc')->limit(4)->get();
-        $services_old = Service::where('category', 'Electronics-and-Appliances')->orderBy('id','desc')->limit(4)->get();
-        
-        $accomodations = Accomodation::where('category', 'apartments')->orderBy('id','desc')->limit(4)->get();
-        $acc_latest = Accomodation::where('category', 'botique-hotels')->orderBy('id','desc')->limit(4)->get();
-        $acc_old = Accomodation::where('category', 'apartments')->orderBy('id','asc')->limit(4)->get();
+        $services = Service::orderBy('id','desc')->get();
+        // accomodations
+        $accomodations = Accomodation::orderBy('id','desc')->get();
         //events
-          $date = Carbon::today();
-         $events = Event::orderBy('id','desc')->limit(4)->whereDate("when", "=>", $date );
-        $events_latest = Event::where('category', 'Massage-and-Parlour')->orderBy('id','desc')->limit(4)->whereDate("when", "=>", $date );
-        $events_old = Event::where('category', 'Electronics-and-Appliances')->orderBy('id','desc')->limit(4)->whereDate("when", "=>", $date );
-
+        $date = Carbon::today();
+        $events = Event::orderBy('id','desc')->whereDate("when", "=>", $date );
+       
     
 
     
         return view('home', compact("products",
-        "products_latest",
-        "products_old",
          "services", 
-         "services_latest",
-         "services_old",
-         "events_latest",
-         "events_old",
          "categories", 
          "accomodations",
          "tours", 
          "blogs", 
          "coverBlogs", 
-         "tembea", 
-        "localTours",
-        "acc_latest",
-        "acc_old",
-        "videos", "holidayOffers", "events", "highlights"));
+        "videos", "events", "highlights"));
     }
 
     //dynamic category switch.
